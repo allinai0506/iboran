@@ -128,11 +128,12 @@ function NavbarStateProvider({ children, menuItems, contactData, onOpenDemo }: N
     setIsMounted(true)
   }, [])
 
-  const handleMenuEnter = React.useCallback((_label: string) => {
+  const handleMenuEnter = React.useCallback((label: string) => {
     if (closeTimeoutRef.current) {
       clearTimeout(closeTimeoutRef.current)
       closeTimeoutRef.current = null
     }
+    setActiveDropdown(label)
   }, [])
 
   const handleMenuLeave = React.useCallback(() => {
@@ -257,6 +258,7 @@ const InlineNavbar = React.memo(function InlineNavbar({ menuItems, contactData }
   const {
     activeDropdown,
     setActiveDropdown,
+    handleMenuEnter,
     handleMenuLeave,
     setIsMobileMenuOpen,
     isMobileMenuOpen,
@@ -280,6 +282,7 @@ const InlineNavbar = React.memo(function InlineNavbar({ menuItems, contactData }
             <div
               key={item.label}
               className="flex items-center h-full"
+              onMouseEnter={isDropdown ? () => handleMenuEnter(item.label) : undefined}
               onMouseLeave={isDropdown ? handleMenuLeave : undefined}
             >
               {isDropdown ? (
@@ -287,6 +290,7 @@ const InlineNavbar = React.memo(function InlineNavbar({ menuItems, contactData }
                   type="button"
                   aria-haspopup="menu"
                   aria-expanded={isActive}
+                  onFocus={() => setActiveDropdown(item.label)}
                   onClick={() => setActiveDropdown(isActive ? null : item.label)}
                   className={triggerClassName}
                 >
@@ -297,7 +301,11 @@ const InlineNavbar = React.memo(function InlineNavbar({ menuItems, contactData }
                     }`}
                   />
                   {/* Bottom active line */}
-                  <span className="absolute bottom-0 left-1 w-0 h-[2px] bg-[#0052D9] transition-all duration-300 group-hover:w-[calc(100%-8px)]"></span>
+                  <span
+                    className={`absolute bottom-0 left-1 h-[2px] bg-[#0052D9] transition-all duration-300 group-hover:w-[calc(100%-8px)] ${
+                      isActive ? 'w-[calc(100%-8px)]' : 'w-0'
+                    }`}
+                  ></span>
                 </button>
               ) : (
                 <Link

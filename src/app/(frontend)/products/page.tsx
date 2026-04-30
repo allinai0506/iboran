@@ -117,7 +117,7 @@ export default function ProductsPage() {
                         <Layers className="w-5 h-5 lg:w-6 lg:h-6" />
                       </div>
                       <div>
-                        <h3 className="text-xl font-black text-[#1F2329]">U8 / U9 / NC</h3>
+                        <h3 className="text-xl font-black text-[#1F2329]">用友畅捷通 T+ / U8 / U9 / NC</h3>
                         <p className="text-sm text-slate-500 mt-2">原厂级运维保障·平滑升级BIP·激发数智新动能</p>
                       </div>
                    </div>

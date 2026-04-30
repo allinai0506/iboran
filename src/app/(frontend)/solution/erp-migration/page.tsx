@@ -10,8 +10,8 @@ import { GeoSection } from '@/components/GeoSection'
 import { SeoH1 } from '@/components/SeoH1'
 
 export const metadata: Metadata = {
-  title: '用友 U8/U9/NC 升级迁移解决方案 | ERP 升迁与上云',
-  description: '提供用友 U8/U9/NC/U8 Cloud 原厂级运维与平滑升级服务，覆盖评估、迁移、验证全流程，保障业务连续与数智化转型。',
+  title: '用友畅捷通T+/U8/U9/NC升迁解决方案 | ERP 升迁与上云',
+  description: '提供用友畅捷通T+/U8/U9/NC/U8 Cloud 原厂级运维与平滑升级服务，覆盖评估、迁移、验证全流程，保障业务连续与数智化转型。',
 }
 
 export default function ERPMigrationPage() {

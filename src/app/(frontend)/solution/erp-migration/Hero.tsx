@@ -22,7 +22,7 @@ export default function Hero() {
 
           <h2 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight leading-tight">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-200">
-              用友 U8/U9/NC/U8 Cloud
+              用友畅捷通 T+/U8/U9/NC/U8 Cloud
             </span>
             <br />
             <span className="text-3xl md:text-5xl text-slate-300 mt-2 block">

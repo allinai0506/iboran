@@ -59,7 +59,7 @@ export const productCategories: ProductCategory[] = [
         icon: Cloud 
       },
       { 
-        label: '用友 U8/U9/NC 升迁', 
+        label: '用友畅捷通T+/U8/U9/NC升迁',
         href: '/solution/erp-migration', 
         desc: '原厂级运维保障 · 平滑升级 BIP · 激发数智新动能', 
         icon: Sparkles 
