@@ -128,12 +128,11 @@ function NavbarStateProvider({ children, menuItems, contactData, onOpenDemo }: N
     setIsMounted(true)
   }, [])
 
-  const handleMenuEnter = React.useCallback((label: string) => {
+  const handleMenuEnter = React.useCallback((_label: string) => {
     if (closeTimeoutRef.current) {
       clearTimeout(closeTimeoutRef.current)
       closeTimeoutRef.current = null
     }
-    setActiveDropdown(label)
   }, [])
 
   const handleMenuLeave = React.useCallback(() => {
