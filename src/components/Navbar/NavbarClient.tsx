@@ -255,38 +255,65 @@ function NavbarStateProvider({ children, menuItems, contactData, onOpenDemo }: N
 
 // Inline navigation and actions component
 const InlineNavbar = React.memo(function InlineNavbar({ menuItems, contactData }: NavbarClientProps) {
-  const { activeDropdown, setActiveDropdown, handleMenuEnter, handleMenuLeave, setIsMobileMenuOpen, isMobileMenuOpen, handleOpenDemo, handleOpenConsult, handlePhoneClick } = useNavbarState()
+  const {
+    activeDropdown,
+    setActiveDropdown,
+    handleMenuLeave,
+    setIsMobileMenuOpen,
+    isMobileMenuOpen,
+    handleOpenDemo,
+    handleOpenConsult,
+    handlePhoneClick,
+  } = useNavbarState()
   const phone = contactData?.phone || '400-9955-161'
 
   return (
     <>
       {/* Desktop Navigation */}
       <nav className="hidden lg:flex items-center space-x-8">
-        {menuItems.map((item) => (
-          <div
-            key={item.label}
-            className="flex items-center h-full"
-            onMouseEnter={() => item.hasDropdown && handleMenuEnter(item.label)}
-            onMouseLeave={handleMenuLeave}
-          >
-            <Link
-              href={item.href}
-              onClick={() => setActiveDropdown(null)}
-              className="relative flex items-center gap-1 text-sm font-heading font-bold text-[#1F2329] hover:text-[#0052D9] transition-colors group py-4 px-1"
+        {menuItems.map((item) => {
+          const isDropdown = Boolean(item.hasDropdown)
+          const isActive = activeDropdown === item.label
+          const triggerClassName =
+            'relative flex items-center gap-1 text-sm font-heading font-bold text-[#1F2329] hover:text-[#0052D9] transition-colors group py-4 px-1'
+
+          return (
+            <div
+              key={item.label}
+              className="flex items-center h-full"
+              onMouseLeave={isDropdown ? handleMenuLeave : undefined}
             >
-              {item.label}
-              {item.hasDropdown && (
-                <ChevronDown
-                  className={`w-4 h-4 transition-transform duration-200 ${
-                    activeDropdown === item.label ? 'rotate-180' : ''
-                  }`}
-                />
+              {isDropdown ? (
+                <button
+                  type="button"
+                  aria-haspopup="menu"
+                  aria-expanded={isActive}
+                  onClick={() => setActiveDropdown(isActive ? null : item.label)}
+                  className={triggerClassName}
+                >
+                  {item.label}
+                  <ChevronDown
+                    className={`w-4 h-4 transition-transform duration-200 ${
+                      isActive ? 'rotate-180' : ''
+                    }`}
+                  />
+                  {/* Bottom active line */}
+                  <span className="absolute bottom-0 left-1 w-0 h-[2px] bg-[#0052D9] transition-all duration-300 group-hover:w-[calc(100%-8px)]"></span>
+                </button>
+              ) : (
+                <Link
+                  href={item.href}
+                  onClick={() => setActiveDropdown(null)}
+                  className={triggerClassName}
+                >
+                  {item.label}
+                  {/* Bottom active line */}
+                  <span className="absolute bottom-0 left-1 w-0 h-[2px] bg-[#0052D9] transition-all duration-300 group-hover:w-[calc(100%-8px)]"></span>
+                </Link>
               )}
-              {/* Bottom active line */}
-              <span className="absolute bottom-0 left-1 w-0 h-[2px] bg-[#0052D9] transition-all duration-300 group-hover:w-[calc(100%-8px)]"></span>
-            </Link>
-          </div>
-        ))}
+            </div>
+          )
+        })}
       </nav>
 
       {/* Right: Actions */}

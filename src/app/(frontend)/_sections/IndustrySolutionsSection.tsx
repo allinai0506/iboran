@@ -30,7 +30,7 @@ export const IndustrySolutionsSection: React.FC<Props> = ({ solutions }) => {
             {solutions.map((item: any) => (
               <Link 
                 key={item.id} 
-                href={`/solution/${item.slug}`}
+                href={`/solution/industry/${item.slug}`}
                 className="group block bg-[#F7F8FA] rounded-2xl overflow-hidden border border-slate-100 hover:shadow-2xl hover:border-[#0052D9]/20 transition-all duration-500"
               >
                 <div className="aspect-[16/10] relative overflow-hidden">
