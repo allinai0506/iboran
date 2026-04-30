@@ -421,9 +421,9 @@ const NavbarMegaMenus = React.memo(function NavbarMegaMenus({
         {activeDropdown === '核心产品' && (
           <motion.div
             key="mega-menu-products"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 10, pointerEvents: 'none' }}
+            animate={{ opacity: 1, y: 0, pointerEvents: 'auto' }}
+            exit={{ opacity: 0, y: 10, pointerEvents: 'none' }}
             transition={{ duration: 0.2, ease: 'easeOut' }}
             ref={productsRef}
             className="hidden lg:block fixed top-20 inset-x-0 mx-auto w-full lg:max-w-6xl bg-white backdrop-blur-md rounded-b-2xl border-x border-b border-gray-100 shadow-xl z-[100] max-h-[calc(100vh-6rem)] overflow-y-auto custom-scrollbar"
@@ -509,9 +509,9 @@ const NavbarMegaMenus = React.memo(function NavbarMegaMenus({
         {activeDropdown === '解决方案' && (
           <motion.div
             key="mega-menu-solutions"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 10, pointerEvents: 'none' }}
+            animate={{ opacity: 1, y: 0, pointerEvents: 'auto' }}
+            exit={{ opacity: 0, y: 10, pointerEvents: 'none' }}
             transition={{ duration: 0.2, ease: 'easeOut' }}
             ref={solutionsRef}
             className="hidden lg:block fixed top-20 inset-x-0 mx-auto w-full lg:max-w-6xl bg-white backdrop-blur-md rounded-b-2xl border-x border-b border-gray-100 shadow-xl z-[100] max-h-[calc(100vh-6rem)] overflow-y-auto custom-scrollbar"
