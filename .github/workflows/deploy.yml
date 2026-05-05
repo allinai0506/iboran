@@ -67,6 +67,9 @@ jobs:
             --build-arg NEXT_PUBLIC_SERVER_URL=https://www.iboran.com \
             -t iboran-app:latest \
             .
+          if [ "$(docker inspect -f '{{ index .Config.Labels "com.docker.compose.project" }}' iboran-app 2>/dev/null || true)" != "iboran" ]; then
+            docker rm -f iboran-app 2>/dev/null || true
+          fi
           docker compose -f docker-compose.prod.yml up -d --no-build app
           sleep 8
           curl -fsSI https://www.iboran.com/ >/dev/null

@@ -57,6 +57,10 @@ docker build --network host \
   -t "$IMAGE_NAME:latest" \
   .
 
+if [ "$(docker inspect -f '{{ index .Config.Labels "com.docker.compose.project" }}' "$IMAGE_NAME" 2>/dev/null || true)" != "iboran" ]; then
+  docker rm -f "$IMAGE_NAME" 2>/dev/null || true
+fi
+
 docker compose -f docker-compose.prod.yml up -d --no-build app
 sleep 8
 docker ps --filter "name=$IMAGE_NAME" --format "table {{.Names}}\t{{.Image}}\t{{.Status}}"
