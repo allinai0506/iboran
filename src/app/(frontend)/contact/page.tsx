@@ -117,7 +117,7 @@ export default function ContactPage() {
                     </li>
                     <li className="flex items-start gap-2">
                       <div className="w-1 h-1 rounded-full bg-[#E60012] mt-1.5 shrink-0" />
-                      <span>14年企业数智化转型服务经验，累计服务客户 2500+</span>
+                      <span>14年企业数智化转型服务经验，累计服务客户 5500+</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <div className="w-1 h-1 rounded-full bg-[#E60012] mt-1.5 shrink-0" />
