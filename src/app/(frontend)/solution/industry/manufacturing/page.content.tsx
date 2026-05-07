@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import styles from './manufacturing.module.css'
 import { useAttribution } from '@/providers/Attribution'
 
@@ -45,7 +46,7 @@ export const ManufacturingContent: React.FC = () => {
       } else {
         alert('提交失败，请重试或直接拨打 400-9955-161')
       }
-    } catch (err) {
+    } catch (_err) {
       alert('网络错误，请稍后重试')
     }
   }
@@ -116,7 +117,7 @@ export const ManufacturingContent: React.FC = () => {
               泊冉软件围绕制造企业经营闭环，帮助企业把研发BOM、MPS/MRP/LRP计划、采购协同、生产派工、报工质检、WMS库存、成本核算和经营分析串成一条可执行的数据链路。
             </p>
             <p className={styles.heroDesc}>
-              这不是单点MES页面，而是面向制造企业经营闭环的行业解决方案。车间执行、设备采集和现场追溯可作为生产执行子场景，与 <a href="/solution/business/mes">MES生产执行方案</a> 协同。
+              这不是单点MES页面，而是面向制造企业经营闭环的行业解决方案。车间执行、设备采集和现场追溯可作为生产执行子场景，与 <Link href="/solution/business/mes">MES生产执行方案</Link> 协同。
             </p>
             <div className={styles.valueTags}>
               <span>研产供销财一体化</span>
@@ -358,7 +359,7 @@ export const ManufacturingContent: React.FC = () => {
           </div>
           <div className={styles.contactActions}>
             <a href="tel:400-9955-161">电话咨询 400-9955-161</a>
-            <a href="/contact">在线咨询</a>
+            <Link href="/contact">在线咨询</Link>
           </div>
         </div>
 

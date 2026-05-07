@@ -12,45 +12,13 @@ export const metadata: Metadata = {
 }
 
 export default function Page() {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "制造业数智化解决方案",
-    "description": "面向制造企业的研产供销财一体化解决方案，覆盖研发、计划、采购、生产、仓储、质量、成本、财务和经营分析。",
-    "provider": {
-      "@type": "Organization",
-      "name": "泊冉软件",
-      "url": "https://www.iboran.com/"
-    },
-    "areaServed": {
-      "@type": "Country",
-      "name": "China"
-    },
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "制造业数智化服务",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "制造业ERP实施"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "智能制造方案咨询"
-          }
-        }
-      ]
-    }
-  }
-
   return (
     <>
-      <GEOJsonLd data={jsonLd} />
+      <GEOJsonLd 
+        title="制造业数智化解决方案"
+        description="面向制造企业的研产供销财一体化解决方案，覆盖研发、计划、采购、生产、仓储、质量、成本、财务和经营分析。"
+        url="https://www.iboran.com/solution/industry/manufacturing"
+      />
       <ManufacturingContent />
     </>
   )
