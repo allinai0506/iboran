@@ -6,7 +6,13 @@ import type { Contact } from '@/payload-types'
 // 主菜单项 - static data, no client-side interactivity needed
 const menuItems = [
   {
-    label: '解决方案',
+    label: '业务方案',
+    href: '/solution',
+    hasDropdown: true,
+    isMegaMenu: true,
+  },
+  {
+    label: '行业方案',
     href: '/solution',
     hasDropdown: true,
     isMegaMenu: true,
