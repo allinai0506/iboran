@@ -1,13 +1,6 @@
 import { Metadata } from 'next'
-import Hero from './Hero'
-import IndustryChallenges from './IndustryChallenges'
-import SolutionOverview from './SolutionOverview'
-import KeyScenarios from './KeyScenarios'
-import IndustryCases from './IndustryCases'
-import ValueSection from './ValueSection'
-import CTASection from './CTASection'
-import { GeoSection } from '@/components/GeoSection'
-import { SeoH1 } from '@/components/SeoH1'
+import { StateOwnedContent } from './page.content'
+import { GEOJsonLd } from '@/components/GEOJsonLd'
 
 export const metadata: Metadata = {
   title: '国资国企数智化转型解决方案 - 激活数智新动能 | 泊冉软件',
@@ -24,27 +17,20 @@ export const metadata: Metadata = {
     '财务共享',
     '司库管理'
   ],
+  alternates: {
+    canonical: 'https://www.iboran.com/solution/industry/state-owned',
+  },
 }
 
-export default function StateOwnedSolutionPage() {
+export default function Page() {
   return (
-    <main className="min-h-screen bg-white">
-      <SeoH1 title={metadata.title as string} />
-      <Hero />
-      <IndustryChallenges />
-      <SolutionOverview />
-      <KeyScenarios />
-      <IndustryCases />
-      <ValueSection />
-      <GeoSection
-        title={metadata.title as string}
-        description={metadata.description as string}
-        keywords={metadata.keywords}
+    <>
+      <GEOJsonLd 
+        title="国资国企数智化转型解决方案"
+        description="面向国资国企的智慧监管与智能运营一体化解决方案，涵盖大数据中心、智慧监管应用及企业数字化服务。"
         url="https://www.iboran.com/solution/industry/state-owned"
-        variant="solution"
-        showDecisionFramework
       />
-      <CTASection />
-    </main>
+      <StateOwnedContent />
+    </>
   )
 }

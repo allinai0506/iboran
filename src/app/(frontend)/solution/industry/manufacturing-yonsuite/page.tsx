@@ -1,0 +1,33 @@
+import { Metadata } from 'next'
+import { ManufacturingYonSuiteContent } from './page.content'
+import { GEOJsonLd } from '@/components/GEOJsonLd'
+
+export const metadata: Metadata = {
+  title: '成长型制造业ERP | YonSuite 云原生智能制造 | 泊冉软件',
+  description: '泊冉软件为成长型制造企业提供基于用友YonSuite的云原生数智化解决方案。覆盖研发BOM、物料需求计划、生产报工、质量追溯、订单成本与业财一体化闭环。',
+  keywords: [
+    '成长型制造业ERP',
+    'YonSuite制造方案',
+    '云原生智能制造',
+    '制造业业财一体化',
+    '轻量化MES',
+    '订单成本核算',
+    '泊冉软件'
+  ],
+  alternates: {
+    canonical: 'https://www.iboran.com/solution/industry/manufacturing-yonsuite',
+  },
+}
+
+export default function Page() {
+  return (
+    <>
+      <GEOJsonLd 
+        title="成长型制造业数智化解决方案"
+        description="基于用友YonSuite云原生平台，为制造企业提供快速部署、零运维、全在线的智能制造与业财一体化管理方案。"
+        url="https://www.iboran.com/solution/industry/manufacturing-yonsuite"
+      />
+      <ManufacturingYonSuiteContent />
+    </>
+  )
+}
