@@ -689,6 +689,119 @@ const NavbarMegaMenus = React.memo(function NavbarMegaMenus({
             </div>
           </motion.div>
       )}
+
+      {/* Mega Menu Dropdown - 交付服务 */}
+      {activeDropdown === '交付服务' && (
+          <motion.div
+            key="mega-menu-services"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.2, ease: 'easeOut' }}
+            className="hidden lg:block fixed top-20 inset-x-0 mx-auto w-full lg:max-w-3xl bg-white backdrop-blur-md rounded-b-2xl border-x border-b border-gray-100 shadow-xl z-[100]"
+            onMouseEnter={() => handleMenuEnter('交付服务')}
+            onMouseLeave={handleMenuLeave}
+          >
+            <div className="container mx-auto px-6 py-5">
+              <div className="grid grid-cols-2 gap-6">
+                <div className="space-y-1">
+                  <h3 className="text-sm font-heading font-black text-[#1F2329] mb-4 flex items-center gap-2">
+                    <span className="w-1 h-3 bg-[#0052D9] rounded-full"></span>
+                    交付服务体系
+                  </h3>
+                  <Link
+                    href="/services"
+                    onClick={() => setActiveDropdown(null)}
+                    className="group flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 transition-all duration-200"
+                  >
+                    <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-blue-50 group-hover:bg-[#0052D9] flex items-center justify-center transition-all">
+                      <span className="text-xs font-black text-[#0052D9] group-hover:text-white">总</span>
+                    </div>
+                    <div className="flex-1 min-w-0 pt-0.5">
+                      <div className="font-medium text-[#1F2329] text-sm group-hover:text-[#0052D9] transition-colors">服务总览</div>
+                      <div className="text-xs text-slate-500 mt-1">四大服务线闭环，全生命周期服务体系</div>
+                    </div>
+                  </Link>
+                  <Link
+                    href="/services/implementation"
+                    onClick={() => setActiveDropdown(null)}
+                    className="group flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 transition-all duration-200"
+                  >
+                    <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-blue-50 group-hover:bg-[#0052D9] flex items-center justify-center transition-all">
+                      <span className="text-xs font-black text-[#0052D9] group-hover:text-white">01</span>
+                    </div>
+                    <div className="flex-1 min-w-0 pt-0.5">
+                      <div className="font-medium text-[#1F2329] text-sm group-hover:text-[#0052D9] transition-colors">系统实施</div>
+                      <div className="text-xs text-slate-500 mt-1">YonSuite / BIP 交付与上线</div>
+                    </div>
+                  </Link>
+                  <Link
+                    href="/services/integration-development"
+                    onClick={() => setActiveDropdown(null)}
+                    className="group flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 transition-all duration-200"
+                  >
+                    <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-blue-50 group-hover:bg-[#0052D9] flex items-center justify-center transition-all">
+                      <span className="text-xs font-black text-[#0052D9] group-hover:text-white">02</span>
+                    </div>
+                    <div className="flex-1 min-w-0 pt-0.5">
+                      <div className="font-medium text-[#1F2329] text-sm group-hover:text-[#0052D9] transition-colors">集成与开发</div>
+                      <div className="text-xs text-slate-500 mt-1">API 对接、数据集成、低代码扩展</div>
+                    </div>
+                  </Link>
+                </div>
+                <div className="space-y-1">
+                  <h3 className="text-sm font-heading font-black text-[#1F2329] mb-4 flex items-center gap-2">
+                    <span className="w-1 h-3 bg-[#0052D9] rounded-full"></span>
+                    运维与迁移
+                  </h3>
+                  <Link
+                    href="/services/operations"
+                    onClick={() => setActiveDropdown(null)}
+                    className="group flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 transition-all duration-200"
+                  >
+                    <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-blue-50 group-hover:bg-[#0052D9] flex items-center justify-center transition-all">
+                      <span className="text-xs font-black text-[#0052D9] group-hover:text-white">03</span>
+                    </div>
+                    <div className="flex-1 min-w-0 pt-0.5">
+                      <div className="font-medium text-[#1F2329] text-sm group-hover:text-[#0052D9] transition-colors">系统运维</div>
+                      <div className="text-xs text-slate-500 mt-1">工单支持、巡检、月结保障、版本升级</div>
+                    </div>
+                  </Link>
+                  <Link
+                    href="/services/migration-tools"
+                    onClick={() => setActiveDropdown(null)}
+                    className="group flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 transition-all duration-200"
+                  >
+                    <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-blue-50 group-hover:bg-[#0052D9] flex items-center justify-center transition-all">
+                      <span className="text-xs font-black text-[#0052D9] group-hover:text-white">04</span>
+                    </div>
+                    <div className="flex-1 min-w-0 pt-0.5">
+                      <div className="font-medium text-[#1F2329] text-sm group-hover:text-[#0052D9] transition-colors">迁移与工具</div>
+                      <div className="text-xs text-slate-500 mt-1">数据同步、BIP升迁、数据脱敏</div>
+                    </div>
+                  </Link>
+                </div>
+              </div>
+              {/* Bottom CTA Bar */}
+              <div className="flex items-center justify-between mt-6 pt-4 border-t border-slate-100">
+                <Link
+                  href="/services"
+                  onClick={() => setActiveDropdown(null)}
+                  className="inline-flex items-center gap-2 text-sm font-medium text-[#0052D9] hover:text-blue-700 transition-colors group"
+                >
+                  查看服务总览
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <button
+                  type="button"
+                  onClick={handleOpenDemo}
+                  className="inline-flex items-center justify-center px-5 py-2.5 text-sm font-bold text-white bg-[#E60012] hover:bg-red-700 rounded-md shadow-sm transition-all hover:shadow-md active:scale-95"
+                >
+                  预约服务评估
+                </button>
+              </div>
+            </div>
+          </motion.div>
+      )}
     </>,
     document.body
   )
@@ -906,6 +1019,32 @@ const NavbarMobileMenu = React.memo(function NavbarMobileMenu({
                                     )
                                   })}
                                 </div>
+                              ))}
+                            </div>
+                          )}
+                          {item.label === '交付服务' && (
+                            <div className="max-h-[min(60vh,calc(100dvh-14rem))] overflow-y-auto overscroll-y-contain touch-pan-y">
+                              {[
+                                { label: '服务总览', href: '/services', desc: '四大服务线闭环' },
+                                { label: '系统实施', href: '/services/implementation', desc: 'YonSuite / BIP 交付与上线' },
+                                { label: '集成与开发', href: '/services/integration-development', desc: 'API 对接、数据集成' },
+                                { label: '系统运维', href: '/services/operations', desc: '工单支持、巡检、月结保障' },
+                                { label: '迁移与工具', href: '/services/migration-tools', desc: '数据同步、BIP升迁、脱敏' },
+                              ].map((serviceItem) => (
+                                <Link
+                                  key={serviceItem.href}
+                                  href={serviceItem.href}
+                                  onClick={() => setIsMobileMenuOpen(false)}
+                                  className="flex items-center gap-3 px-5 py-3.5 min-h-[48px] hover:bg-slate-100 active:bg-slate-200/80 transition-colors touch-manipulation"
+                                >
+                                  <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0">
+                                    <span className="text-xs font-black text-[#0052D9]">S</span>
+                                  </div>
+                                  <div className="flex-1 min-w-0">
+                                    <div className="font-medium text-[#1F2329] text-sm">{serviceItem.label}</div>
+                                    <div className="text-xs text-slate-500 mt-0.5">{serviceItem.desc}</div>
+                                  </div>
+                                </Link>
                               ))}
                             </div>
                           )}

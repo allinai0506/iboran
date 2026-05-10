@@ -17,6 +17,11 @@ const menuItems = [
     hasDropdown: true,
     isMegaMenu: true,
   },
+  {
+    label: '交付服务',
+    href: '/services',
+    hasDropdown: true,
+  },
   { label: '客户案例', href: '/cases' },
   { label: '泊冉观察', href: '/posts' },
   { label: '关于我们', href: '/about' },
