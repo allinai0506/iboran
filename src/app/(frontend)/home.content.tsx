@@ -159,17 +159,17 @@ export function HomeContent({ latestPosts }: HomeContentProps) {
             <div className={s.groupTitle}><span>Industries</span><h3>典型行业</h3></div>
             <strong className={s.groupCardTitle}>看行业方案</strong>
             <p className={s.groupDesc}>按企业所在行业或组织形态，查看更贴近真实业务场景的解决方案。</p>
-            <Link href="/products/bip"><strong>多组织集团</strong><em>集团管控、多组织协同、合并与主数据治理</em></Link>
+            <Link href="/solution/industry/state-owned"><strong>多组织集团</strong><em>集团管控、多组织协同、合并与主数据治理</em></Link>
             <Link href="/solution/industry/consumer-goods"><strong>消费品</strong><em>渠道订单、价格政策、库存周转与毛利</em></Link>
-            <Link href="/solution/industry/manufacturing-yonsuite"><strong>个性化制造</strong><em>订单、BOM、计划、生产、质量与成本</em></Link>
-            <Link href="/solution/industry/medical-pharma-yonsuite"><strong>医药医疗器械</strong><em>合规、追溯、渠道协同与经营分析</em></Link>
+            <Link href="/solution/industry/manufacturing-eto"><strong>个性化制造</strong><em>订单、BOM、计划、生产、质量与成本</em></Link>
+            <Link href="/solution/industry/medical-pharma"><strong>医药医疗器械</strong><em>合规、追溯、渠道协同与经营分析</em></Link>
             <Link href="/solution/industry/modern-service"><strong>现代服务业</strong><em>项目、合同、交付、核算与经营分析</em></Link>
           </article>
           <article className={s.entryGroup}>
             <div className={s.groupTitle}><span>Domains</span><h3>领域</h3></div>
             <strong className={s.groupCardTitle}>看管理领域</strong>
             <p className={s.groupDesc}>按财务、人力、营销、全球化等专项管理问题进入对应方案。</p>
-            <Link href="/solution/industry/global-operations"><strong>全球运营</strong><em>出海、多组织、财务供应链与合规</em></Link>
+            <Link href="/solution/business/global-operations"><strong>全球运营</strong><em>出海、多组织、财务供应链与合规</em></Link>
             <Link href="/solution/industry/consumer-goods"><strong>营销多渠道</strong><em>渠道订单、会员、价格政策与库存协同</em></Link>
             <Link href="/solution/business/intelligent-finance"><strong>智能财务</strong><em>业财融合、预算合并、全球多账簿</em></Link>
             <Link href="/solution/business/hrm"><strong>HR</strong><em>组织、员工自助、移动审批与人效分析</em></Link>

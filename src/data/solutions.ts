@@ -83,7 +83,7 @@ export const solutionByBusiness: BusinessCategory[] = [
   {
     name: '财务管控',
     items: [
-      { label: '智能财务', href: '/solution/business/finance-cloud', desc: '事项法会计驱动智能核算、司库与税务协同的一体化财务管理', icon: Wallet },
+      { label: '智能财务', href: '/solution/business/intelligent-finance', desc: '事项法会计驱动智能核算、司库与税务协同的一体化财务管理', icon: Wallet },
       { label: '核算到报告', href: '/solution/business/r2r', desc: '让财务真正参与经营决策，驱动价值创造', icon: FileSpreadsheet },
       { label: '合并报表管理', href: '/solution/consolidated-statements', desc: '多准则一键转换与自动化权益抵销，提升集团合并效率与准确性', icon: FileSpreadsheet },
       { label: 'SPE 纵向 PDCA', href: '/solution/spe', desc: '打通战略、预算、执行与分析的纵向闭环管理体系', icon: Calculator },
@@ -136,7 +136,7 @@ export const solutionByIndustry: IndustryCategory[] = [
   {
     name: '芯片制造',
     icon: Cpu,
-    href: '/solution/industry/semiconductor',
+    href: '/solution/industry/high-tech',
     desc: '芯片半导体行业数字化解决方案',
   },
   {
@@ -154,13 +154,13 @@ export const solutionByIndustry: IndustryCategory[] = [
   {
     name: '医药健康',
     icon: Pill,
-    href: '/solution/industry/biopharmaceutical',
+    href: '/solution/industry/medical-pharma',
     desc: '赋能药企全产业链数智化 · 营销合规 · 事项会计 · AI 智能体',
   },
   {
     name: '研产一体化',
     icon: Microscope,
-    href: '/solution/industry/biomedical-cdmo',
+    href: '/solution/industry/medical-pharma',
     desc: '研产一体化 · GMP/CSV 合规 · 多组织协同 · 精细成本',
   },
   {
@@ -316,7 +316,7 @@ export const solutionByIndustryCategory: IndustryBusinessCategory[] = [
     items: [
       {
         label: '芯片制造',
-        href: '/solution/industry/semiconductor',
+        href: '/solution/industry/high-tech',
         desc: '晶圆制造与封测一体化',
         icon: Cpu,
       },
@@ -348,8 +348,8 @@ export const solutionByIndustryCategory: IndustryBusinessCategory[] = [
   {
     name: '医药与大健康',
     items: [
-      { label: '医药健康', href: '/solution/industry/biopharmaceutical', desc: '赋能药企全产业链数智化 · 营销合规 · 事项会计 · AI 智能体', icon: Pill },
-      { label: '研产一体化', href: '/solution/industry/biomedical-cdmo', desc: '研产一体化 · GMP/CSV 合规 · 多组织协同', icon: Microscope },
+      { label: '医药健康', href: '/solution/industry/medical-pharma', desc: '赋能药企全产业链数智化 · 营销合规 · 事项会计 · AI 智能体', icon: Pill },
+      { label: '研产一体化', href: '/solution/industry/medical-pharma', desc: '研产一体化 · GMP/CSV 合规 · 多组织协同', icon: Microscope },
       { label: '医疗器械', href: '/solution/industry/medical-device', desc: '覆盖研发、制造、GSP、UDI 追溯全链路，助力医疗器械企业合规稳健增长', icon: Activity },
       { label: '中药企业', href: '/solution/industry/traditional-chinese-medicine', desc: '传承精华·守正创新 质量全追溯与成本精细化管控', icon: Pill },
     ]
