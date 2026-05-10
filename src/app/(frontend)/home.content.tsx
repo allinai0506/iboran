@@ -146,11 +146,13 @@ export function HomeContent({ latestPosts }: HomeContentProps) {
           </article>
           <article className={s.entryGroup}>
             <div className={s.groupTitle}><span>Services</span><h3>服务</h3></div>
-            <strong className={s.groupCardTitle}>看交付落地</strong>
+            <Link href="/services">
+              <strong className={s.groupCardTitle}>看交付落地</strong>
+            </Link>
             <p className={s.groupDesc}>了解泊冉如何围绕存量系统服务、实施交付、数据迁移、系统集成和上线运营提供服务。</p>
             <Link href="/services/implementation"><strong>实施服务</strong><em>YonSuite / 用友BIP 交付与上线</em></Link>
-            <a href="#legacy"><strong>当前系统诊断</strong><em>运行状态、权限流程、报表接口与数据口径梳理</em></a>
-            <a href="#legacy"><strong>U8 / NC 服务</strong><em>围绕财务、供应链、制造、集团管控持续优化</em></a>
+            <Link href="/services/operations"><strong>当前系统诊断</strong><em>运行状态、权限流程、报表接口与数据口径梳理</em></Link>
+            <Link href="/services/migration-tools"><strong>U8 / NC 服务</strong><em>围绕财务、供应链、制造、集团管控持续优化</em></Link>
             <Link href="/services/integration-development"><strong>数据治理与系统集成</strong><em>主数据、接口集成、二次开发与报表优化</em></Link>
           </article>
           <article className={s.entryGroup}>
