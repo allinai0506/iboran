@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { 
   Building2, Users, BarChart3, ArrowRight, CheckCircle, 
-  FileText, Briefcase, Clock, CreditCard, PieChart, TrendingUp, Search,
+  FileText, Briefcase, Clock, CreditCard, PieChart, TrendingUp, TrendingDown, Search,
   Cloud, Zap, ShieldCheck, Smartphone
 } from 'lucide-react'
 import styles from '../solution.module.css'

@@ -9,12 +9,14 @@ import { TwoStepLeadForm } from '@/components/TwoStepLeadForm'
 import { getClientSideURL } from '@/utilities/getURL'
 
 interface DemoRequestModalProps {
-    isOpen: boolean
-    onClose: () => void
+    isOpen?: boolean
+    onClose?: () => void
     source?: string
     title?: string
     subtitle?: string
     submitLabel?: string
+    children?: React.ReactNode
+    className?: string
 }
 
 interface LeadFormData {
@@ -29,15 +31,21 @@ interface LeadFormData {
 }
 
 export const DemoRequestModal: React.FC<DemoRequestModalProps> = ({ 
-    isOpen, 
-    onClose, 
+    isOpen: isOpenProp, 
+    onClose: onCloseProp, 
     source: sourceProp = 'demo-modal',
     title = '预约专家演示',
     subtitle = '我们的顾问将在 1 个工作日内与您联系',
-    submitLabel = '提交预约'
+    submitLabel = '提交预约',
+    children,
+    className
 }) => {
     const [isMounted, setIsMounted] = React.useState(false)
+    const [internalIsOpen, setInternalIsOpen] = React.useState(false)
     const attribution = useAttribution()
+
+    const isOpen = isOpenProp !== undefined ? isOpenProp : internalIsOpen
+    const onClose = onCloseProp !== undefined ? onCloseProp : () => setInternalIsOpen(false)
 
     React.useEffect(() => {
         setIsMounted(true)
@@ -117,57 +125,70 @@ export const DemoRequestModal: React.FC<DemoRequestModalProps> = ({
 
     if (!isMounted) return null
 
-    return createPortal(
-        <AnimatePresence>
-            {isOpen && (
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    className="fixed inset-0 z-[201] flex items-center justify-center p-4"
+    return (
+        <>
+            {children && (
+                <button 
+                    type="button" 
+                    className={className} 
+                    onClick={() => setInternalIsOpen(true)}
                 >
-                    {/* Backdrop */}
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        className="absolute inset-0 bg-black/60 backdrop-blur-sm"
-                        onClick={handleClose}
-                    />
-
-                    {/* Modal */}
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.95, y: 20 }}
-                        animate={{ opacity: 1, scale: 1, y: 0 }}
-                        exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                        transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-                        className="relative w-full max-w-lg bg-white rounded-2xl shadow-2xl overflow-hidden"
-                    >
-                        {/* Header */}
-                        <div className="bg-gradient-to-r from-[#E60012] to-red-600 px-6 py-5 text-white">
-                            <div className="flex items-center justify-between">
-                                <div>
-                                    <h2 className="text-xl font-bold">{title}</h2>
-                                    <p className="text-sm text-white/80 mt-1">{subtitle}</p>
-                                </div>
-                                <button
-                                    onClick={handleClose}
-                                    className="w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-colors"
-                                >
-                                    <X className="w-5 h-5" />
-                                </button>
-                            </div>
-                        </div>
-
-                        {/* Content */}
-                        <div className="p-6">
-                            <TwoStepLeadForm onSubmit={onSubmit} source={sourceProp} submitLabel={submitLabel} />
-                        </div>
-                    </motion.div>
-                </motion.div>
+                    {children}
+                </button>
             )}
-        </AnimatePresence>,
-        document.body
+            {createPortal(
+                <AnimatePresence>
+                    {isOpen && (
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            className="fixed inset-0 z-[201] flex items-center justify-center p-4"
+                        >
+                            {/* Backdrop */}
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+                                onClick={handleClose}
+                            />
+
+                            {/* Modal */}
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                                animate={{ opacity: 1, scale: 1, y: 0 }}
+                                exit={{ opacity: 0, scale: 0.95, y: 20 }}
+                                transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+                                className="relative w-full max-w-lg bg-white rounded-2xl shadow-2xl overflow-hidden text-left"
+                            >
+                                {/* Header */}
+                                <div className="bg-gradient-to-r from-[#E60012] to-red-600 px-6 py-5 text-white">
+                                    <div className="flex items-center justify-between">
+                                        <div>
+                                            <h2 className="text-xl font-bold">{title}</h2>
+                                            <p className="text-sm text-white/80 mt-1">{subtitle}</p>
+                                        </div>
+                                        <button
+                                            onClick={handleClose}
+                                            className="w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-colors"
+                                        >
+                                            <X className="w-5 h-5" />
+                                        </button>
+                                    </div>
+                                </div>
+
+                                {/* Content */}
+                                <div className="p-6">
+                                    <TwoStepLeadForm onSubmit={onSubmit} source={sourceProp} submitLabel={submitLabel} />
+                                </div>
+                            </motion.div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>,
+                document.body
+            )}
+        </>
     )
 }
 
