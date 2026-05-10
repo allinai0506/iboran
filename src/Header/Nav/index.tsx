@@ -30,49 +30,6 @@ export const HeaderNav: React.FC<{ data: HeaderNavData }> = ({ data }) => {
 
   return (
     <nav className="flex gap-3 items-center">
-      <div className="relative group z-50">
-        <Link
-          href="/services"
-          className="flex items-center gap-1 px-2 py-1 text-sm font-medium hover:text-primary transition-colors"
-        >
-          服务
-          <ChevronDown className="w-4 h-4" />
-        </Link>
-        <div className="absolute left-0 top-full pt-2 hidden group-hover:block min-w-64">
-          <div className="bg-white dark:bg-zinc-900 shadow-lg rounded-md p-4 border border-zinc-200 dark:border-zinc-800 flex flex-col gap-2">
-            <Link
-              href="/services"
-              className="text-sm px-2 py-1 rounded hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-primary transition-colors"
-            >
-              服务总览
-            </Link>
-            <Link
-              href="/services/implementation"
-              className="text-sm px-2 py-1 rounded hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-primary transition-colors"
-            >
-              系统实施
-            </Link>
-            <Link
-              href="/services/integration-development"
-              className="text-sm px-2 py-1 rounded hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-primary transition-colors"
-            >
-              集成与开发
-            </Link>
-            <Link
-              href="/services/operations"
-              className="text-sm px-2 py-1 rounded hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-primary transition-colors"
-            >
-              系统运维
-            </Link>
-            <Link
-              href="/services/migration-tools"
-              className="text-sm px-2 py-1 rounded hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-primary transition-colors"
-            >
-              迁移与工具
-            </Link>
-          </div>
-        </div>
-      </div>
       {navItems.map((item, i) => {
         if (item.blockType === 'singleLink') {
              return <CMSLink key={i} {...item.link} appearance="link" />

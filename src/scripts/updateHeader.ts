@@ -95,6 +95,32 @@ async function updateHeader() {
                }
             ]
           },
+          {
+            blockType: 'navGroup',
+            label: '交付服务', // Services
+            items: [
+              {
+                blockType: 'singleLink',
+                link: { type: 'custom', label: '服务总览', url: '/services' }
+              },
+              {
+                blockType: 'singleLink',
+                link: { type: 'custom', label: '系统实施', url: '/services/implementation' }
+              },
+              {
+                blockType: 'singleLink',
+                link: { type: 'custom', label: '集成与开发', url: '/services/integration-development' }
+              },
+              {
+                blockType: 'singleLink',
+                link: { type: 'custom', label: '系统运维', url: '/services/operations' }
+              },
+              {
+                blockType: 'singleLink',
+                link: { type: 'custom', label: '迁移与工具', url: '/services/migration-tools' }
+              }
+            ]
+          },
            {
             blockType: 'singleLink',
             link: {
