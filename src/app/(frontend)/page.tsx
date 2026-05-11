@@ -5,7 +5,6 @@ import { getPayload } from 'payload'
 import type { PaginatedDocs } from 'payload'
 import type { Post } from '@/payload-types'
 import { HomeContent } from './home.content'
-import { GeoSection } from '@/components/GeoSection'
 
 export const metadata: Metadata = {
   title: '泊冉软件｜用友存量系统服务、U8/NC服务、YonSuite/BIP实施与行业数智化解决方案',
@@ -78,13 +77,6 @@ export default async function Page() {
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
             <HomeContent latestPosts={latestPosts.docs} />
-            <GeoSection
-                title="泊冉软件首页"
-                description={metadata.description as string}
-                keywords={metadata.keywords as string}
-                url="https://www.iboran.com/"
-                variant="listing"
-            />
         </>
     )
 }
