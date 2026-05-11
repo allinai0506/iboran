@@ -15,6 +15,12 @@
   --gold: #c5952a;
 }
 
+.solutionPage {
+  color: var(--ink);
+  background: var(--paper);
+}
+
+
 /* ─── Hero ─── */
 .hero {
   position: relative;
@@ -143,6 +149,18 @@
 }
 
 .btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 26px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+  text-decoration: none;
   background: var(--cta-red);
   color: #fff;
   box-shadow: 0 4px 20px rgba(215, 51, 36, 0.3);
@@ -150,11 +168,23 @@
 .btnPrimary:hover { background: #c42e1f; transform: translateY(-1px); }
 
 .btnSecondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 26px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
   background: rgba(255, 255, 255, 0.08);
   color: #d5dce8;
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
 .btnSecondary:hover { background: rgba(255, 255, 255, 0.14); color: #fff; }
+
 
 .heroQuote {
   max-width: 540px;
@@ -231,6 +261,87 @@
 .metricGrid b { display: block; font-size: 26px; font-weight: 900; }
 .metricGrid small { display: block; font-size: 11px; color: #64748b; margin-top: 2px; }
 
+/* Aliases for Consumer Goods */
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #91c7ff;
+  background: rgba(0, 82, 217, 0.16);
+  border: 1px solid rgba(88, 166, 255, 0.22);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 13px;
+  line-height: 1.35;
+  font-weight: 900;
+}
+
+.console {
+  border-radius: 8px;
+  border: 1px solid rgba(167, 193, 255, 0.22);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.04)), rgba(7, 13, 28, 0.82);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.36);
+  overflow: hidden;
+}
+
+.consoleHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 18px 18px 0;
+}
+
+.consoleHeader span {
+  color: #8d9bb4;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.consoleHeader strong {
+  color: #ffd1c8;
+  font-size: 13px;
+}
+
+.consoleGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  padding: 18px;
+}
+
+.metric {
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(3, 8, 19, 0.5);
+  text-align: left;
+}
+
+.metric span {
+  display: block;
+  color: #8d9bb4;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.metric strong {
+  display: block;
+  margin-top: 7px;
+  color: #e9f2ff;
+  font-size: 23px;
+  font-weight: 950;
+}
+
+.metric small {
+  display: block;
+  margin-top: 5px;
+  color: #7f8ca3;
+  font-style: normal;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+
 /* ─── Section Layout ─── */
 .section {
   padding: 72px 0;
@@ -270,6 +381,58 @@
   color: var(--muted);
   margin-top: 12px;
 }
+
+/* Card Grid Aliases */
+.cardGrid {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .cardGrid { grid-template-columns: 1fr; }
+}
+
+.card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 28px 24px;
+  transition: all 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+}
+
+.cardIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(0, 82, 217, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  color: var(--boran-blue);
+}
+
+.card h3 {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
 
 /* Challenge Cards */
 .challengeGrid {
@@ -497,6 +660,108 @@
   justify-content: center;
 }
 
+/* Scenario Grid Aliases */
+.scenarios {
+  padding: 72px 0;
+  background: var(--paper);
+}
+
+.scenarioGrid {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 1024px) {
+  .scenarioGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .scenarioGrid { grid-template-columns: 1fr; }
+}
+
+.scenarioCard {
+  padding: 24px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+.scenarioCard:hover {
+  transform: translateY(-5px);
+  border-color: var(--boran-blue);
+  box-shadow: 0 20px 40px rgba(0, 82, 217, 0.1);
+}
+
+.scenarioCard h3 {
+  margin-bottom: 12px;
+  font-size: 18px;
+  font-weight: 950;
+  color: var(--ink);
+}
+
+.scenarioCard p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tags span {
+  padding: 4px 10px;
+  background: var(--soft);
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--boran-sky);
+}
+
+/* Timeline Styles */
+.timeline {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.timelineItem {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 24px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.timelineItem b {
+  font-size: 24px;
+  color: var(--boran-blue);
+  font-weight: 950;
+}
+
+.timelineItem h3 {
+  font-size: 18px;
+  font-weight: 950;
+  margin-bottom: 4px;
+}
+
+.timelineItem p {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+
 /* Value Section */
 .valueSection {
   padding: 72px 0;
@@ -612,6 +877,13 @@
   overflow: hidden;
   text-align: center;
   color: #fff;
+}
+
+.ctaInner {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .cta::before {
