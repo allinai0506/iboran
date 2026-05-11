@@ -1,8 +1,8 @@
-/* State-Owned Enterprise Solution Styles */
-.page {
+.page,
+.solutionPage {
   --boran-blue: #0052d9;
   --boran-sky: #1b80c1;
-  --cta-red: #d73324;
+  --cta-red: #e60012;
   --ink: #101828;
   --muted: #5f6b82;
   --line: #dfe6f1;
@@ -19,6 +19,7 @@
   color: var(--ink);
   background: var(--paper);
 }
+
 
 
 /* ─── Hero ─── */

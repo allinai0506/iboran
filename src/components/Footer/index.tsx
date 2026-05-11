@@ -11,16 +11,9 @@ export const Footer = () => {
           {/* Brand & Description */}
           <div className="space-y-4 max-w-md">
             <div className="flex items-center gap-3">
-              <Image
-                src="/assets/images/boran-logo.png"
-                alt="Boran Logo"
-                width={28}
-                height={28}
-                className="object-contain brightness-0 invert"
-                style={{ height: 'auto' }}
-              />
               <div className="text-2xl font-heading font-black text-white tracking-tight">泊冉软件</div>
             </div>
+
             <p className="text-sm leading-relaxed text-slate-400">
               用友存量系统持续服务、YonSuite / 用友BIP 实施交付与行业数智化解决方案服务商
             </p>
