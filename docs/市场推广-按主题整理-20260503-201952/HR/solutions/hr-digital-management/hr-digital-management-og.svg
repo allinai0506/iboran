@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">成长型企业人力资源数智化管理方案</title>
+  <desc id="desc">员工自助办理，主管移动参与，HR智能减负，管理层实时看人效。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#071022"/>
+      <stop offset="0.58" stop-color="#111a2f"/>
+      <stop offset="1" stop-color="#12314d"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#59c8ff"/>
+      <stop offset="0.62" stop-color="#0052d9"/>
+      <stop offset="1" stop-color="#d73324"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0v48" fill="none" stroke="#2c98d5" stroke-opacity="0.35" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)" opacity="0.55"/>
+  <rect x="70" y="88" width="54" height="54" rx="12" fill="#1b80c1"/>
+  <path d="M86 112h26l-7 22H79l4-12h17l2-6H84z" fill="#fff"/>
+  <text x="138" y="111" fill="#fff" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="30" font-weight="700">泊冉软件</text>
+  <text x="138" y="142" fill="#9fb1ca" font-family="Arial, sans-serif" font-size="18" letter-spacing="2">BORAN SOFTWARE</text>
+  <rect x="70" y="186" width="330" height="42" rx="21" fill="#0052d9"/>
+  <circle cx="100" cy="207" r="6" fill="#59c8ff"/>
+  <text x="122" y="214" fill="#d9ecff" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="18" font-weight="700">DIGITAL HR FOR GROWTH ENTERPRISES</text>
+  <text x="70" y="302" fill="#fff" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="56" font-weight="900">成长型企业人力资源</text>
+  <text x="70" y="374" fill="#fff" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="56" font-weight="900">数智化管理方案</text>
+  <text x="70" y="434" fill="#59c8ff" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="30" font-weight="800">员工自助办理，主管移动参与，HR智能减负</text>
+  <text x="70" y="484" fill="#ff7a6b" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="30" font-weight="800">管理层实时看人效</text>
+  <rect x="705" y="94" width="425" height="448" rx="12" fill="#111a2f" stroke="#59c8ff" stroke-opacity="0.65"/>
+  <rect x="735" y="126" width="365" height="58" rx="8" fill="#fff"/>
+  <text x="760" y="163" fill="#101828" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="21" font-weight="700">HR Flow Console</text>
+  <rect x="948" y="137" width="122" height="36" rx="18" fill="#d73324"/>
+  <text x="978" y="162" fill="#fff" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="18" font-weight="800">预警中</text>
+  <g font-family="Arial, 'Microsoft YaHei', sans-serif" font-weight="800" font-size="22">
+    <rect x="735" y="222" width="92" height="46" rx="8" fill="#0052d9"/>
+    <text x="759" y="252" fill="#fff">自助</text>
+    <path d="M835 245h34" stroke="#59c8ff" stroke-width="4"/>
+    <rect x="878" y="222" width="92" height="46" rx="8" fill="#0052d9"/>
+    <text x="902" y="252" fill="#fff">审批</text>
+    <path d="M978 245h34" stroke="#59c8ff" stroke-width="4"/>
+    <rect x="1021" y="222" width="79" height="46" rx="8" fill="#0052d9"/>
+    <text x="1040" y="252" fill="#fff">看板</text>
+  </g>
+  <g font-family="Arial, 'Microsoft YaHei', sans-serif">
+    <rect x="735" y="310" width="170" height="86" rx="8" fill="#162744" stroke="#2b4775"/>
+    <text x="760" y="348" fill="#9fb1ca" font-size="19" font-weight="700">考勤异常</text>
+    <text x="760" y="375" fill="#fff" font-size="25" font-weight="900">日常提醒</text>
+    <rect x="930" y="310" width="170" height="86" rx="8" fill="#162744" stroke="#2b4775"/>
+    <text x="955" y="348" fill="#9fb1ca" font-size="19" font-weight="700">薪酬核对</text>
+    <text x="955" y="375" fill="#fff" font-size="25" font-weight="900">财务复核</text>
+    <rect x="735" y="420" width="170" height="86" rx="8" fill="#162744" stroke="#2b4775"/>
+    <text x="760" y="458" fill="#9fb1ca" font-size="19" font-weight="700">流程待办</text>
+    <text x="760" y="485" fill="#fff" font-size="25" font-weight="900">移动参与</text>
+    <rect x="930" y="420" width="170" height="86" rx="8" fill="#162744" stroke="#2b4775"/>
+    <text x="955" y="458" fill="#9fb1ca" font-size="19" font-weight="700">人效分析</text>
+    <text x="955" y="485" fill="#fff" font-size="25" font-weight="900">趋势可视</text>
+  </g>
+  <rect x="70" y="552" width="500" height="6" rx="3" fill="url(#accent)"/>
+</svg>

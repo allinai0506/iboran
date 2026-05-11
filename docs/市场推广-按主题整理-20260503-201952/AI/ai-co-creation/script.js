@@ -1,0 +1,448 @@
+const scenarioData = {
+  quote: {
+    kicker: "SAMPLE 01",
+    title: "AI 快速报价数字员工",
+    tagline: "让销售从手工查价、问库存、算毛利、填报价，转向一次输入生成可审批的报价单。",
+    highlights: ["查价", "算毛利", "报价草稿"],
+    flow: ["询价单", "价格/库存/毛利", "报价草稿", "低毛利预警"],
+    fields: [
+      ["适合企业", "制造、消费品、包装、日化、食品、医药、B2B 经销、跨境电商等需要频繁报价的企业。"],
+      ["业务痛点", "客户发来询价单后，销售要反复查价、问库存、算毛利、估运费、找历史报价、填报价单。流程不复杂，但每天重复、耗时、容易出错。"],
+      ["员工怎么用", "销售人员上传客户询价单，输入：“客户要 500 箱 500ml 玻璃瓶，上海仓发货，7 天内交付。帮我做一版报价，毛利率不能低于 18%。”"],
+      ["AI 做什么", "识别客户、商品、规格、数量、交期和收货地；查询成本价、历史报价、库存可用量和信用额度；计算税额、运费、包装成本、毛利和毛利率。"],
+      ["业务闭环", "通过业务系统接口查询客户、物料、价格、库存和信用信息，生成报价单草稿；审批通过后，可继续转销售订单。"],
+      ["智能问数 / 预警", "销售主管可以问本周哪些报价低于目标毛利、哪些客户询价多但转订单少，系统主动推送低毛利报价和库存不足风险。"],
+    ],
+  },
+  order: {
+    kicker: "SAMPLE 02",
+    title: "AI 读单建单数字员工",
+    tagline: "把客户发来的采购单，变成系统里可审批、可发货、可追踪的销售订单草稿。",
+    highlights: ["读采购单", "校验库存", "订单草稿"],
+    flow: ["采购单", "客户/物料匹配", "订单草稿", "异常标红"],
+    fields: [
+      ["适合企业", "经销业务、制造销售内勤、医药流通、消费品分销、B2B 订单处理企业。"],
+      ["业务痛点", "客户采购单、合同、邮件、Excel 格式不统一，销售助理需要逐行复制到系统里，客户、物料、单位、价格、交期稍有不一致就容易出错。"],
+      ["员工怎么用", "销售助理上传客户采购单，输入：“把这份采购单生成销售订单，按合同价执行，库存不足的行先标红。”"],
+      ["AI 做什么", "读取采购单中的客户、商品、规格、数量、价格、交期；自动匹配系统中的客户和物料；识别箱、件、瓶、托等单位换算。"],
+      ["业务闭环", "校验通过后，通过业务系统接口形成销售订单草稿；异常项返回人工确认，不直接创建正式订单。"],
+      ["智能问数 / 预警", "销售负责人可以问今天 AI 生成了多少张订单草稿，系统主动预警客户名称无法匹配、物料编码无法匹配、价格低于底价、库存不足。"],
+    ],
+  },
+  package: {
+    kicker: "SAMPLE 03",
+    title: "AI 包装箱规测算数字员工",
+    tagline: "让 AI 不只会写包装建议，而是能先算出可报价、可交付的箱规和包装成本方案。",
+    highlights: ["算箱规", "算体积重", "包装成本"],
+    flow: ["尺寸/图片", "箱规测算", "包装方案", "成本预警"],
+    fields: [
+      ["适合企业", "包装、日化、食品饮料、玻璃瓶、塑料瓶、跨境电商、消费品制造企业。"],
+      ["业务痛点", "销售报价时经常要先问包装、物流、仓库和工程人员：一箱装多少、箱规多大、总体积多少、运费大概多少。"],
+      ["员工怎么用", "销售或包装工程师上传瓶型图片、尺寸表和订单数量，输入：“客户要 3000 个瓶子，帮我算建议箱规、每箱数量、纸箱数量、总体积和运输体积重。”"],
+      ["AI 做什么", "读取瓶子尺寸、重量、材质和易碎要求；匹配常用纸箱规格和运输要求；输出 2-3 套包装测算方案。"],
+      ["业务闭环", "测算结果可进入报价附件、包装 BOM、物料资料、采购需求或客户确认流程。"],
+      ["智能问数 / 预警", "业务负责人可以问最近哪些订单包装成本偏高，系统主动预警包装成本超预算、体积重异常和包装方案影响毛利。"],
+    ],
+  },
+  retail: {
+    kicker: "SAMPLE 04",
+    title: "AI 门店补货与调拨数字员工",
+    tagline: "让门店通过自然语言提交要货需求，AI 自动计算补多少、从哪里补、是否需要调拨。",
+    highlights: ["识别要货", "建议补货量", "调拨草稿"],
+    flow: ["门店要货", "销量/库存", "补货建议", "缺货预警"],
+    fields: [
+      ["适合企业", "连锁零售、消费品、新零售、多门店运营企业。"],
+      ["业务痛点", "店长在群里说快没货了，总部还要查门店销量、当前库存、仓库库存、促销计划和调拨成本。"],
+      ["员工怎么用", "店长在企业微信门店群里说：“A 款快卖完了，帮我补一点。”"],
+      ["AI 做什么", "识别门店、商品和补货意图；查询门店库存、近期销量、促销计划、仓库库存和区域库存；计算建议补货量或调拨量。"],
+      ["业务闭环", "通过业务系统接口查询门店库存、商品档案、销售数据和仓库库存；生成补货建议、要货申请或调拨申请草稿。"],
+      ["智能问数 / 预警", "区域经理可以问今天哪些门店畅销品缺货，系统主动预警畅销品缺货、安全库存不足、促销备货不足和滞销积压。"],
+    ],
+  },
+  service: {
+    kicker: "SAMPLE 05",
+    title: "AI 服务工单与派工数字员工",
+    tagline: "把客户邮件和群消息，变成可派工、可追踪、可分析的服务工单。",
+    highlights: ["读客户消息", "匹配合同设备", "派工建议"],
+    flow: ["客户消息", "合同/设备/SLA", "工单草稿", "超期预警"],
+    fields: [
+      ["适合企业", "设备服务、工程安装、售后服务、现代服务、项目型服务企业。"],
+      ["业务痛点", "客户通过邮件、微信群、企业微信或电话反馈问题后，客服要判断客户是谁、设备是什么、合同是否有效、派给谁处理。"],
+      ["员工怎么用", "客户发来邮件或群消息：“设备今天下午又报错了，麻烦安排工程师。”"],
+      ["AI 做什么", "读取客户名称、设备信息、问题描述、照片和附件；判断问题类型、紧急程度和服务 SLA；匹配区域工程师、技能标签和可用时间。"],
+      ["业务闭环", "通过业务系统接口查询客户、合同、设备、人员和历史工单；人工确认后生成服务工单或项目任务。"],
+      ["智能问数 / 预警", "服务负责人可以问哪些工单快超 SLA，系统主动预警服务超期、客户投诉高频、人员排班冲突和备件库存不足。"],
+    ],
+  },
+  expense: {
+    kicker: "SAMPLE 06",
+    title: "AI 费用预审数字员工",
+    tagline: "让报销从“员工填、财务查、审批人猜”，变成 AI 先读单、先校验、先提示风险。",
+    highlights: ["读发票", "查预算标准", "预审风险"],
+    flow: ["发票/行程", "预算/标准", "预审结论", "异常费用"],
+    fields: [
+      ["适合企业", "费用报销量大、共享中心作业多、预算控制严格、员工咨询频繁的企业。"],
+      ["业务痛点", "员工不会填单，财务反复退单；发票、行程、合同、附件、预算、费用标准需要人工核对。"],
+      ["员工怎么用", "员工上传发票或语音输入：“帮我报销这次出差费用。”"],
+      ["AI 做什么", "读取发票、行程、附件和报销说明；检查预算余额、费用标准、附件完整性和重复报销风险；生成报销单草稿或预审结论。"],
+      ["业务闭环", "通过业务系统接口查询费用标准、预算余额、报销单、附件状态和审批规则；AI 先生成预审建议。"],
+      ["智能问数 / 预警", "CFO 可以问本月哪个部门差旅费超预算，系统主动预警费用超预算、附件缺失、重复报销和异常费用增长。"],
+    ],
+  },
+  bi: {
+    kicker: "SAMPLE 07",
+    title: "AI 经营问数与预警数字员工",
+    tagline: "不用翻报表，直接问经营；不用等会议，AI 主动推异常。",
+    highlights: ["自然语言问数", "指标归因", "主动预警"],
+    flow: ["自然语言问数", "经营指标", "归因摘要", "风险推送"],
+    fields: [
+      ["适合企业", "老板、CFO、销售负责人、运营负责人、供应链负责人、区域经理、事业部负责人。"],
+      ["业务痛点", "管理层看得到报表，但很难快速知道为什么变动、风险在哪、下一步该看什么。经营会议前，财务和数据团队常常临时拉数、解释指标、写汇报。"],
+      ["员工怎么用", "管理层在智能问数入口或数智工作台中直接问：“本月收入增长了，为什么现金流反而紧张？”“哪个区域毛利下降最明显？”"],
+      ["AI 做什么", "理解经营指标问题；调用销售、财务、库存、费用、应收、应付、现金流等数据；生成指标解释、异常归因和追问建议。"],
+      ["业务闭环", "如需要进一步处理，可触发待办、生成分析报告、创建跟进任务或推送责任人确认。"],
+      ["智能问数 / 预警", "支持销售、库存、毛利、费用、现金流、采购履约、项目毛利、门店经营问数，主动预警毛利、库存、费用、现金流和交付风险。"],
+    ],
+  },
+};
+
+const industryData = {
+  manufacturing: {
+    label: "制造业",
+    title: "优先试点：BOM 校验、采购齐套、生产异常、质量追溯、交期预警",
+    body:
+      "围绕订单、BOM、物料、采购、生产、质量和成本数据，优先让 AI 协助识别交付风险、齐套缺口、异常工单和项目毛利变化。制造业试点更关注研产供销协同、订单交付、BOM 版本、采购齐套、车间异常、质量追溯和成本归集，适合从典型订单或事业部先跑通。",
+    keywords: "制造业 AI · BOM 校验 · 采购齐套 · 生产异常预警 · 质量追溯 · 项目成本问数",
+  },
+  consumer: {
+    label: "消费品",
+    title: "优先试点：渠道订单、促销费用、门店补货、经销商对账、库存预警",
+    body:
+      "围绕渠道订单、SKU、价格政策、促销费用、门店动销、经销商库存和应收数据，优先让 AI 协助读单、核价、补货、对账和预警。消费品试点更关注高频订单、渠道协同、终端动销、费用核销、库存周转和毛利波动，适合从一个区域、品牌或渠道样板开始。",
+    keywords: "消费品 AI · 渠道订单 · 促销费用核验 · 门店补货 · 经销商对账 · 库存预警",
+  },
+  medical: {
+    label: "医药医疗",
+    title: "优先试点：采购单转订单、资质校验、效期预警、批次追溯",
+    body:
+      "客户采购单上传后，AI 识别产品、规格、数量、批号要求和交期，匹配客户资质、物料、库存和价格。涉及近效期、资质到期、批次追溯的风险，可通过智能问数和预警能力主动推送。",
+    keywords: "医药 ERP AI · 医药订单管理 · 资质预警 · 效期预警 · 批次追溯",
+  },
+  retail: {
+    label: "连锁零售",
+    title: "优先试点：门店要货、补货建议、调拨申请、活动库存预警",
+    body:
+      "店长在企业微信或钉钉里说一句“这个商品快没了”，AI 自动识别商品和门店，结合销量、库存和促销计划计算补货量或调拨建议。",
+    keywords: "连锁零售 AI · 门店补货 AI · 调拨管理 · 库存预警 · 企业微信门店管理",
+  },
+  crossborder: {
+    label: "跨境电商",
+    title: "优先试点：平台订单读取、SKU 利润测算、海外仓库存预警、物流费用分析",
+    body:
+      "运营上传平台订单、广告费、物流费、海外仓库存表，AI 帮你识别哪些 SKU 卖得好但不赚钱，哪些 SKU 可能断货，哪些费用正在侵蚀毛利。",
+    keywords: "跨境电商 ERP AI · SKU 利润分析 · 海外仓补货 · 平台订单分析 · 汇率利润测算",
+  },
+  service: {
+    label: "现代服务",
+    title: "优先试点：邮件转工单、客户问题识别、派工建议、项目毛利预警",
+    body:
+      "客户邮件或群消息进入后，AI 自动识别客户、问题、合同、设备和优先级，生成服务工单草稿，并结合人员技能、区域和排班给出派工建议。",
+    keywords: "服务工单 AI · 售后派工 AI · 项目毛利预警 · 客户邮件转工单",
+  },
+  finance: {
+    label: "集团 / 财务共享",
+    title: "优先试点：费用预审、附件核验、共享作业催办、经营问数、资金和费用预警",
+    body:
+      "员工上传发票，AI 先检查费用标准、预算余额、附件完整性和重复报销风险；管理层可通过智能问数直接问费用、现金流、应收、应付和经营指标。",
+    keywords: "财务共享 AI · 费用预审 · 智能问数 · 经营预警 · 集团财务 AI",
+  },
+};
+
+const scenarioButtons = document.querySelectorAll(".scenario-tabs button");
+const scenarioDetail = document.querySelector(".scenario-detail");
+const industryButtons = document.querySelectorAll(".industry-tabs button");
+const industryDetail = document.querySelector(".industry-detail");
+const modal = document.querySelector("#appointment-modal");
+const modalTitle = document.querySelector("#appointment-title");
+const modalOpeners = document.querySelectorAll("[data-modal-open]");
+const modalClosers = document.querySelectorAll("[data-modal-close]");
+const trackTargets = document.querySelectorAll("[data-track]");
+const scrollLinks = document.querySelectorAll("[data-scroll-target]");
+const feedbackTargets = document.querySelectorAll(".btn, .header-cta, .mobile-cta a, .scenario-tabs button, .industry-tabs button, .modal-submit, .modal-close, .mobile-menu");
+const siteHeader = document.querySelector(".site-header");
+const mobileMenu = document.querySelector(".mobile-menu");
+let lastActiveElement = null;
+let scroll50Tracked = false;
+let scroll90Tracked = false;
+
+function trackEvent(name, payload = {}) {
+  if (!name) return;
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ event: name, ...payload });
+  document.dispatchEvent(new CustomEvent("boran:track", { detail: { name, ...payload } }));
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
+function getField(data, label) {
+  return data.fields.find(([fieldLabel]) => fieldLabel === label)?.[1] || "";
+}
+
+function compactText(value, maxLength = 78) {
+  const text = String(value).replace(/\s+/g, " ").trim();
+  if (text.length <= maxLength) return text;
+  return `${text.slice(0, maxLength)}...`;
+}
+
+function renderScenario(key) {
+  const data = scenarioData[key];
+  if (!data || !scenarioDetail) return;
+  const pain = getField(data, "业务痛点");
+  const employeeUse = getField(data, "员工怎么用");
+
+  scenarioDetail.innerHTML = `
+    <div class="scenario-topline">
+      <div class="scenario-kicker">${escapeHtml(data.kicker)}</div>
+      <h3>${escapeHtml(data.title)}</h3>
+      <p class="scenario-tagline">${escapeHtml(data.tagline)}</p>
+    </div>
+    <div class="scenario-context">
+      <div><strong>什么时候用</strong><span>${escapeHtml(compactText(pain, 58))}</span></div>
+      <div><strong>用户怎么开始</strong><span>${escapeHtml(compactText(employeeUse, 58))}</span></div>
+    </div>
+    <div class="scenario-mini-flow" aria-label="场景流程">
+      ${data.flow.map((item, index) => `
+        <div class="${index === data.flow.length - 1 ? "is-result" : ""}">
+          <b>${String(index + 1).padStart(2, "0")}</b>
+          <span>${escapeHtml(item)}</span>
+        </div>
+      `).join("")}
+    </div>
+    <div class="scenario-badges" aria-label="关键结果">
+      ${data.highlights.map((item) => `<span>${escapeHtml(item)}</span>`).join("")}
+    </div>
+    <details class="scenario-more">
+      <summary>展开完整场景说明</summary>
+      <div class="scenario-columns">
+        ${data.fields
+          .map(
+            ([label, body]) => `
+              <div>
+                <strong>${escapeHtml(label)}</strong>
+                <span>${escapeHtml(body)}</span>
+              </div>
+            `,
+          )
+          .join("")}
+      </div>
+    </details>
+  `;
+}
+
+function renderIndustry(key) {
+  const data = industryData[key];
+  if (!data || !industryDetail) return;
+  const actions = data.title.replace("优先试点：", "").split("、");
+
+  industryDetail.innerHTML = `
+    <span>${escapeHtml(data.label)}</span>
+    <h3>优先试点场景</h3>
+    <div class="industry-chips">
+      ${actions.map((action) => `<em>${escapeHtml(action)}</em>`).join("")}
+    </div>
+    <p>${escapeHtml(compactText(data.body, 96))}</p>
+    <details class="industry-more">
+      <summary>查看行业说明与关键词</summary>
+      <p>${escapeHtml(data.body)}</p>
+      <b>${escapeHtml(data.keywords)}</b>
+    </details>
+  `;
+}
+
+function addRipple(event) {
+  const target = event.currentTarget;
+  const rect = target.getBoundingClientRect();
+  const ripple = document.createElement("span");
+  ripple.className = "button-ripple";
+  ripple.style.left = `${event.clientX - rect.left}px`;
+  ripple.style.top = `${event.clientY - rect.top}px`;
+  target.appendChild(ripple);
+  ripple.addEventListener("animationend", () => ripple.remove(), { once: true });
+}
+
+function highlightTarget(target) {
+  target.classList.remove("target-highlight");
+  window.requestAnimationFrame(() => target.classList.add("target-highlight"));
+}
+
+function setFormHint(form, message, type) {
+  const hint = form.querySelector(".form-hint");
+  if (!hint) return;
+  hint.classList.remove("is-error", "is-success");
+  if (type) hint.classList.add(`is-${type}`);
+  hint.textContent = message;
+}
+
+function openModal(title) {
+  if (!modal) return;
+  lastActiveElement = document.activeElement;
+  if (modalTitle && title) modalTitle.textContent = title;
+  modal.classList.add("is-open");
+  modal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("modal-open");
+  modal.querySelectorAll("input, textarea").forEach((input) => input.classList.remove("is-invalid"));
+  const form = modal.querySelector(".lead-form");
+  if (form) setFormHint(form, "");
+  modal.querySelector("input")?.focus();
+}
+
+function closeModal() {
+  if (!modal) return;
+  modal.classList.remove("is-open");
+  modal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("modal-open");
+  if (lastActiveElement && "focus" in lastActiveElement) {
+    lastActiveElement.focus();
+  }
+}
+
+function closeMobileMenu() {
+  siteHeader?.classList.remove("is-menu-open");
+  mobileMenu?.setAttribute("aria-expanded", "false");
+}
+
+mobileMenu?.setAttribute("aria-expanded", "false");
+mobileMenu?.addEventListener("click", () => {
+  const isOpen = siteHeader?.classList.toggle("is-menu-open") || false;
+  mobileMenu.setAttribute("aria-expanded", String(isOpen));
+  trackEvent("mobile_menu_toggle", { open: isOpen });
+});
+
+document.querySelectorAll(".site-nav a").forEach((link) => {
+  link.addEventListener("click", closeMobileMenu);
+});
+
+scenarioButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    scenarioButtons.forEach((item) => item.classList.remove("active"));
+    button.classList.add("active");
+    renderScenario(button.dataset.scenario);
+    trackEvent("scenario_card_click", { scenario: button.dataset.scenario });
+  });
+});
+
+industryButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    industryButtons.forEach((item) => item.classList.remove("active"));
+    button.classList.add("active");
+    renderIndustry(button.dataset.industry);
+    trackEvent("industry_tab_click", { industry: button.dataset.industry });
+  });
+});
+
+document.querySelectorAll(".faq-item button").forEach((button) => {
+  button.addEventListener("click", () => {
+    const item = button.closest(".faq-item");
+    if (!item) return;
+    const isOpen = item.classList.toggle("is-open");
+    button.setAttribute("aria-expanded", String(isOpen));
+    if (isOpen) {
+      trackEvent("faq_expand", { question: button.textContent.trim() });
+    }
+  });
+});
+
+trackTargets.forEach((target) => {
+  target.addEventListener("click", () => {
+    trackEvent(target.dataset.track, { label: target.textContent.trim() });
+  });
+});
+
+feedbackTargets.forEach((button) => {
+  button.addEventListener("click", addRipple);
+});
+
+modalOpeners.forEach((opener) => {
+  opener.addEventListener("click", (event) => {
+    event.preventDefault();
+    closeMobileMenu();
+    openModal(opener.dataset.modalTitle || "预约 AI 业务场景诊断");
+  });
+});
+
+modalClosers.forEach((closer) => {
+  closer.addEventListener("click", closeModal);
+});
+
+scrollLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    const id = link.getAttribute("href");
+    if (!id || !id.startsWith("#")) return;
+    const target = document.querySelector(id);
+    if (!target) return;
+    window.setTimeout(() => highlightTarget(target), 360);
+  });
+});
+
+document.querySelectorAll(".lead-form").forEach((form) => {
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const requiredFields = Array.from(form.querySelectorAll("input[required]"));
+    const invalidFields = requiredFields.filter((field) => !field.value.trim());
+    requiredFields.forEach((field) => field.classList.toggle("is-invalid", invalidFields.includes(field)));
+
+    if (invalidFields.length) {
+      setFormHint(form, "请先补充姓名、公司名称和手机号。", "error");
+      invalidFields[0].focus();
+      return;
+    }
+
+    trackEvent("form_submit_ai_diagnosis", {
+      industry: form.elements.industry?.value || "",
+      system: form.elements.system?.value || "",
+      collaboration: form.elements.collaboration?.value || "",
+    });
+    setFormHint(form, "已收到诊断需求，泊冉顾问会根据场景高频度、数据可取性和流程闭环条件与您沟通。", "success");
+  });
+});
+
+renderScenario("quote");
+renderIndustry("manufacturing");
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && modal?.classList.contains("is-open")) {
+    closeModal();
+    return;
+  }
+
+  if (event.key === "Escape") {
+    closeMobileMenu();
+  }
+});
+
+window.addEventListener(
+  "scroll",
+  () => {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    const progress = scrollTop / maxScroll;
+
+    if (!scroll50Tracked && progress >= 0.5) {
+      scroll50Tracked = true;
+      trackEvent("scroll_50");
+    }
+
+    if (!scroll90Tracked && progress >= 0.9) {
+      scroll90Tracked = true;
+      trackEvent("scroll_90");
+    }
+  },
+  { passive: true },
+);

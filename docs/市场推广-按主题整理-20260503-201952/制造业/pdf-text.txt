@@ -1,0 +1,915 @@
+--- PAGE 1 ---
+免费咨询：4006 600 500
+网址：www.yonsuite.com
+地址：北京市海淀区  北清路 68 号  用友产业园
+制造行业  解决方案
+Yonyou YonSuite Manufacturing Industry Solution
+公众号视频号
+申请试用
+企业微信
+
+--- PAGE 2 ---
+制造行业趋势洞察
+Manufacturing Industry Trend Insights
+为什么选择YonSuite？
+Why choose YonSuite?
+YonSuite AI+制造行业解决方案：精益管理 智能制造
+YonSuite AI + Manufacturing Industry Solution: Digital and Intelligent Empowerment for Revenue and Proﬁt Growth
+01/
+YonSuite：一站式 SaaS 覆盖全业务场景
+YonSuite: One-Stop SaaS Solution for Every Business Scenario
+05/
+07/
+09/
+13/
+Ta们都选择了YonSuite
+They All Chose YonSuite
+29/
+27/
+25/
+23/
+17/
+15/
+目录
+CONTENTS
+11/
+Key Scenario 3    Lean Planning Ensuring Accurate Delivery
+关键场景3   精益计划确保精准交付
+Key Scenario 4    Intelligent Production Management
+关键场景4   生产管理智能化
+Key Scenario 6    Reﬁned Cost Control for Eﬀective "Cost Reduction"
+关键场景6   精细化成本管控实现有效“降本”
+Key Scenario 7    Global Feature Management to Meet Customers’ Personalized Needs
+关键场景7   全局特征管理满足客户个性化需求
+Key Scenario 8    Building an Industrial Chain Network to Achieve Win-Win Value
+关键场景8   构建产业链网络，实现价值共赢
+Key Scenario 2    Reﬁned Product R&D Management
+关键场景2   产品研发精细化管理
+关键场景1   YonSuite AI+全场景  助力制造企业智能运营
+Key Scenario 1    YonSuite AI + Full Scenarios Empowering Intelligent Operations for Manufacturing Enterprises
+21/
+Key Scenario 5    Comprehensive High-Quality Control
+关键场景5   全面高质量管控
+
+--- PAGE 3 ---
+制造行业趋势洞察
+Manufacturing Industry Trend Insights
+人工智能、物联网和大数据等前沿技术的持续迭代，但企业因采用多平台、多系统，反而形成了数据孤岛，亟需基于统一数智平台，融合
+最新技术，实现软件与硬件、流程与数据的一体化，从而提升生产效率。
+Cutting-edge technologies such as artiﬁcial intelligence (AI), the Internet of Things (IoT), and big data continue to evolve.
+However, enterprises’ adoption of multiple platforms and systems has led to the formation of data silos. There is an urgent
+need to integrate the latest technologies based on a uniﬁed digital and intelligent platform, realizing the integration of
+software and hardware, as well as processes and data, to improve production eﬃciency.
+数智化赋能生产效能提升
+Digital & Intelligent Empowerment for Production Eﬃciency Improvement
+当前客户需求呈现高度个性化趋势，企业需以客户为中心，借助CRM系统与大数据分析洞察消费者偏好，进而推动产品设计优化与服务升
+级，提升客户全生命周期体验，增强品牌黏性与忠诚度。
+Currently, customer needs are showing a strong trend of personalization. Enterprises must prioritize customers, leverage CRM
+systems and big data analysis to gain insights into consumer preferences, and further drive product design optimization and
+service upgrades. This enhances the full-lifecycle customer experience and strengthens brand stickiness and customer loyalty.
+柔性化响应客户个性化需求
+Flexible Response to Customers’ Personalized Needs
+供应链受需求波动、外部环境冲击，数据实时同步技术门槛高，易导致资源浪费。企业需打通上下游壁垒，实现销售、生产、采购、仓
+储、物流的全链路高效协同与数据自动同步，降低成本并强化供应链韧性。
+Supply chains are impacted by demand ﬂuctuations and external environment changes, and the technical threshold for
+real-time data synchronization is high, which easily leads to resource waste. Enterprises need to break down barriers between
+upstream and downstream, achieve eﬃcient end-to-end collaboration and automatic data synchronization across sales,
+production, procurement, warehousing, and logistics, reduce costs, and strengthen supply chain resilience.
+一体化重构供应链韧性
+End-to-End Supply Chain Resilience Reconstruction
+01
+在数智化浪潮下，全球制造企业既迎来了提升效率、创新模式的新机遇，也面临着技术、成本等方面的诸多挑战：
+Amid the wave of digitalization and intelligent transformation, global manufacturing enterprises not only embrace new opportunities
+to enhance eﬃciency and innovate business models, but also face numerous challenges in terms of technology, costs, and other
+aspects:
+02
+
+--- PAGE 4 ---
+Integrated R&D-Production-Supply-Sales: Ensuring Order Delivery Eﬃciency
+研产供销一体化 保证订单交付效率
+• CRM销售管理
+• PLM研发管理
+• 生产计划管理
+• 生产过程及车间管理
+• 质量管理
+• 委外管理
+• CRM Sales Management
+• PLM Management
+• Production Planning Management
+• Production Process & Shop Floor Management
+• Quality Management
+• Outsourcing Management
+Eﬃcient Business Collaboration: Improving Inventory Turnover Rate
+高效业务协同 提高库存周转率
+• 销售管理
+• 采购管理
+• 库存管理
+• 内部交易
+• 供应链分析
+• WMS
+• Sales Management
+• Procurement Management
+• Inventory Management
+• Internal Transactions
+• Supply Chain Analysis
+• WMS (Warehouse Management System)
+Lean Management & Intelligent Accounting
+精益管理 智能核算
+• 财务管理
+• 成本管理
+• 人力资源管理
+• 资金管理
+• 全面预算管理
+• 协同办公
+• Financial Management
+• Cost Management
+• Human Resource Management
+• Fund Management
+• Comprehensive Budget Management
+• Collaborative Oﬃce
+03 04
+企业必须摒弃传统管理思维和方式，通过数智化转型，实现智能制造，迈向高质量发展。
+Enterprises must abandon traditional management mindsets and methods, and achieve smart manufacturing to stride towards
+high-quality development through digital and intelligent transformation.
+
+--- PAGE 5 ---
+YonSuite：一站式 SaaS 覆盖全业务场景
+YonSuite: One-Stop SaaS Solution for
+Every Business Scenario
+工作入口：智友 友空间 数字化工作台 第三方入口
+场景服务
+智能服务
+行业服务
+ISV 生态
+数据服务
+社会化链接
+软件融合
+营销云
+人力云
+供应链云
+协同云
+财务云
+采购云 制造云 研发云 项目云
+资产云
+客户关系管理
+采购寻源
+120+招聘渠道
+30+采购电商
+150+商旅服务商
+3000+银行
+60+零售电商
+U8+
+U9 cloud
+异构业财
+……
+……
+消费品行业
+服务行业
+制造行业
+医药行业
+OCR识别
+友智库
+智能体构建器
+智能体运营平台
+RPA机器人
+WMS
+TMS
+GSP
+GMP
+CSV
+条码
+进出口
+……
+……
+……
+智能会计助理
+企业经营分析 企业画像
+对标诊断服务
+宏观经济数据服务
+商业新知 ……
+人力数智分析
+营销分析
+采购可视化
+生产分析
+质量分析
+项目分析
+ChatBI
+智能报告
+……
+商旅报账智能板
+智能采购助理
+库存健康顾问
+零售智能助理
+人事智能助理
+企业经营分析助理
+数智秘书
+…… 供应链协同
+招投标
+组织与员工
+时间与薪酬
+绩效与人才
+人力招聘
+财务会计 管理会计 财资服务 合并报表 全面预算
+税务服务 会计档案 商旅费控 智能会计中台 合同管理
+办公协同
+公文管理
+文库服务
+零代码开发
+销售服务 采购管理 库存管理 供应链控制塔
+生产制造
+质量管理
+设备后服务
+产品数据管理
+研发过程管理
+研制一体协同
+项目预算
+项目过程
+项目成本
+资产管理与经营
+资产维修维护
+全员资产
+全渠道营销
+新零售
+云技术平台
+应用平台 数据平台 智能平台 开发平台
+集成平台
+多组织
+社会化
+全球化
+企业服务大模型
+05 06
+用友YonSuite是集“财务、人力、供应链、
+营销、采购、制造、研发、项目、资产、协
+同” 于一体的数智化商业创新平台，基于统
+一的数智底座，深度融合企业AI，以 SaaS
+全场景应用服务，助力成长型企业实现业务
+在线、数据驱动、智能运营。
+YonSuite is a digital and intelligent
+business innovation platform that
+integrates "ﬁnance, human resources,
+supply chain, marketing, procurement,
+manufacturing, R&D, projects, assets,
+and collaboration" . Based on a uniﬁed
+digital and intelligent foundation, it
+deeply integrates enterprise AI and
+provides full-scenario SaaS application
+services to help grow enterprises
+achieve online business operations,
+data-driven decision-making, and
+intelligent operations.
+
+--- PAGE 6 ---
+用友YonSuite作为全球领先的成长型企业商业创新平台，凭借先进的平台技术与应用架构，为企业搭建起通向全球市场的桥梁，助力企业在全球化
+经营、社会化商业、产业链协同的道路上稳健前行。
+As a world-leading business innovation platform for growing enterprises, YonSuite utilizes cutting-edge platform technologies and
+application architecture to facilitate the access to global markets. It empowers companies to advance steadily in global operations,
+socialized commerce and industry chain coordination.
+拥有先进的智能交付体系，配备专业实施团队，叠加7×24小时
+客户成功支持，独特的BIP运营师体系，助力企业数智化项目低
+风险、高质量落地。
+It has an advanced intelligent delivery system, equipped
+with a professional implementation team, combined with
+7×24-hour customer success support and a unique BIP
+operator system, helping enterprises achieve low-risk and
+high-quality implementation of digital and intelligent
+projects.
+成熟交付体系，专业客户成功保障
+Mature Delivery System, Professional
+Customer Success Assurance
+覆盖机械行业、电子行业、化工及新材料、冶金及新能源等细分
+领域，将积累30多年的企业管理经验和制造行业特性结合，提供
+专业的行业解决方案。
+It covers segmented ﬁelds such as machinery, electronics,
+chemicals & new materials, metallurgy & new energy. By
+combining over 30 years of accumulated enterprise
+management experience with the characteristics of the
+manufacturing industry, it oﬀers professional industry-spe-
+ciﬁc solutions.
+深耕细分行业，提供专业领先实践
+Deep Focus on Segmented Industries,
+Providing Professional and Leading Practices
+平台具有高开放性，拥有低/零代码开发能力，开放覆盖度广、
+安全性高、稳定性强的OpenAPI，同时还积累了丰富的生态资
+源，帮助企业快速构建个性化应用场景。
+The platform features high openness, with low-code/-
+no-code development capabilities, and open OpenAPIs
+with wide coverage, high security, and strong stability. At
+the same time, it has accumulated rich ecological resourc-
+es to help enterprises quickly build customized application
+scenarios.
+高开放性平台，实现个性化场景应用
+Highly Open Platform, Enabling
+Customized Scenario Applications
+覆盖制造企业全链路、全场景、全领域的应用，打破传统多系统
+割裂痛点，基于统一的数据底座，为企业AI分析提供高质量数
+据，辅助企业科学决策。
+It covers the entire value chain, all scenarios, and domains
+of manufacturing enterprises, addressing the fragmenta-
+tion issue in traditional multi-system setups. Built on a
+uniﬁed data foundation, it provides high-quality data for
+enterprise AI analysis, supporting informed decision-mak-
+ing.
+全领域一体化，彻底消除数据孤岛
+Full-domain Integration,
+Eliminating Data Silos Completely
+基于云原生+微服务架构，结合AI技术，通过“流程*数据*AI”，
+重塑企业数字生产力，让企业无需额外投入即可享受行业前沿技
+术，快速响应市场变化。
+Based on a cloud-native + microservice architecture and
+integrated with AI technology, it reshapes enterprise digital
+productivity through "process * data * AI" . This enables
+enterprises to enjoy cutting-edge industry technologies
+without additional investment and quickly respond to
+market changes.
+领先技术架构，AI 驱动持续进化
+Leading Technology Architecture,
+Driven by AI for Continuous Evolution
+为什么选择YonSuite？
+Why choose YonSuite?
+07 08
+
+--- PAGE 7 ---
+用友YonSuite AI+制造行业解决方案，以研产供销一体化全场景应用为核心，全面覆盖研发设计、智能制造、内外供应链协同及精细成本管控等全
+流程。通过深度优化生产与供应链流程，实现业财融合，助力企业高效提质，推动高质量发展。
+Yonyou YonSuite AI + Manufacturing Industry Solution centers on end-to-end integrated R&D-production-supply-sales applications,
+covering the entire process of R&D design, intelligent manufacturing, internal and external supply chain collaboration, and reﬁned
+cost control. By deeply optimizing production and supply chain processes and realizing business-ﬁnance integration, it helps enter-
+prises improve eﬃciency and quality, driving high-quality development.
+09 10
+YonSuite AI+制造行业解决方案：精益管理 智能制造
+YonSuite AI + Manufacturing Industry Solution:
+Lean Management and Intelligent Manufacturing
+数据上行 指令下行
+数控机床 工业机器人 PLC设备 AGV 流量仪表 立体库 电子秤 电能仪表 远程IO 温度传感器 电子标签
+物联与
+集成
+数据采集与监控系统 网络与通讯系统
+人机交互系统
+自动控制系统
+其他控制单元
+统一
+数智底座
+统一用户
+角色权限
+流程
+模板
+主数据
+编码规则
+组织
+多语言
+低代码
+API接口
+数智秘书
+智能问数
+业务助理
+智能审核
+智能分析助理
+管理驾驶舱
+业务协作运营
+集团精细管控
+CRM
+销售报价
+客户需求
+制造BOM
+订货管理
+销售合同
+销售订单
+营销策略
+研发项目
+文档管理
+产品结构
+BOM
+工艺管理
+变更管理
+生产计划
+MRP/LRP
+车间管理
+APS
+生产订单
+生产报工
+MES
+委外管理
+质量管理
+能源安环
+供应商
+招投标
+质量协同
+采购寻源
+采购协同
+委外协同
+仓库管理
+PDA出入库
+WMS
+条码管理
+货物签收
+TMS
+销售
+资金管理
+全面预算
+集团财务
+税务管理
+成本管理
+集团财务
+AI运营
+协同办公
+人事管理
+薪酬福利
+假勤管理
+绩效管理
+集团协同人力
+集团资产
+研发 采购 仓储物流 安装售后计划生产
+安装服务
+设备服务
+售后服务
+技术文件、工艺路线、
+现场反馈
+采购需求
+执行进度
+出入库信息
+库存信息
+资产信息
+资产维修
+资产租赁
+设计软件
+集成
+
+--- PAGE 8 ---
+Key Scenario 1    YonSuite AI + Full Scenarios Empowering Intelligent Operations for Manufacturing
+Enterprises
+关键场景1   YonSuite AI+全场景：助力制造企业智能运营
+用友 YonSuite 企业 AI 深度融合制造业行业经验，全流程赋能企业生产运营各环节，推动智能制造流程自动化、供应链协同敏捷化、生产
+数据洞察精准化，助力制造企业高质量发展！ YonSuite Enterprise AI deeply integrates manufacturing industry experience, empowering all links of enterprise production and opera-
+tions throughout the entire process. It promotes the automation of intelligent manufacturing processes, the agility of supply chain
+collaboration, and the accuracy of production data insights, helping manufacturing enterprises achieve high-quality development!
+智能会计助理
+智能税务助理
+企业经营分析助理
+……
+Intelligent Accounting Assistant
+Intelligent Tax Assistant
+Enterprise Operation Analysis Assistant
+……
+AI+财务
+AI + Finance
+企业研发知识助理
+BOM智能配置助手
+项目管理AI秘书
+……
+Enterprise R&D Knowledge Assistant
+Intelligent BOM Conﬁguration Assistant
+Project Management Al Secretary
+……
+AI+研发
+AI+ R&D
+库存健康助理
+智能采购助理
+销售分析助理
+……
+Inventory Health Assistant
+Intelligent Procurement Assistant
+Sales Analysis Assistant
+……
+AI+供应链
+AI + Supply Chain
+智能排产
+生产计划助理
+质量分析助理
+……
+Intelligent Scheduling
+Production Planning Assistant
+Quality Analysis Assistant
+……
+AI+制造
+AI + Production
+AI+财
+务
+AI+人
+力
+AI+供应链
+AI+营销
+AI+采购
+AI+制造
+AI+协
+同
+AI+研发
+企业服务大模型
+智
+能
+体
+运
+营
+平
+台 智能
+体
+构
+建
+平
+台
+智能平台
+通用大模型（DeepSeek 、豆包、通义千问 ... ... ）、垂类模型
+开发
+智能体
+质量检测
+智能体
+采购
+智能体
+销售教练
+智能体
+会计
+智能体
+人事
+智能体
+协同
+数智秘书
+库存预警
+智能体
+风险预警
+智能体
+AI+资
+产
+/项
+目
+智能体集群
+11 12
+
+--- PAGE 9 ---
+Key Scenario 2    Reﬁned Product R&D Management
+关键场景2   产品研发精细化管理
+文档管理在线化
+Online Document Management
+通过文档分类、权限控制、在线协作等，确保技术资料准确性和安全性；同时基于新物料申请、分类库维护、查重规则等，实现物料使用
+的精准管控，为产品研发提供数据支撑。
+Through document classiﬁcation, permission control, and online collaboration, it ensures the accuracy and security of techni-
+cal documents. Meanwhile, based on new material applications, classiﬁcation library maintenance, and duplicate checking
+rules, it achieves precise control over material usage, providing data support for product R&D.
+产品结构与变更标准化
+Standardized Product Structure and Change
+通过一体化BOM管理，从源头确保产品结构设计合理性与准确性；同时，EC过程管理及ERP变更一体化，使产品变更流程高效、可控。
+Through integrated BOM management, it ensures the rationality and accuracy of product structure design from the source. At
+the same time, end-to-end EC (Engineering Change) process management and ERP change integration make the product
+change process eﬃcient and controllable.
+研发项目管理精细化
+Reﬁned R&D Project Management
+提供研发项目全生命周期管理，涵盖项目资源分配、计划制定、执行跟踪、变更控制以及项目库管理等环节，确保研发项目按时、按质、按预算完
+成，提升研发效率和成功率。
+It provides full-lifecycle R&D project management, covering project resource allocation, plan formulation, execution tracking, change
+control, and project library management. This ensures R&D projects are completed on time, with quality, and within budget, improving
+R&D eﬃciency and success rates.
+13 14
+五氧化二磷
+氧化钙
+无水硫酸铜
+氯化银
+硫酸钡
+氢氧化镁
+项目D
+
+--- PAGE 10 ---
+Key Scenario 3    Lean Planning Ensuring Accurate Delivery
+关键场景3   精益计划确保精准交付
+YonSuite支持多种计划模式，包括主需求计划MPS、物料需求计划MRP、批次需求计划LRP、备料计划等。可根据企业不同层级
+和业务需求，制定个性化计划策略，支撑精益计划管理模式。
+YonSuite supports multiple planning modes, including Master Production Schedule (MPS), Material Requirements
+Planning (MRP), Lot Requirements Planning (LRP), and Material Preparation Planning. It can develop customized
+planning strategies based on diﬀerent enterprise levels and business needs, supporting lean planning management.
+系统能打通端到端的业务流，实现计划运算与采购、生产的实时协同。例如，根据销售订单和库存情况，自动生成生产计划和采
+购计划，并实时同步到各相关部门，提高计划的可执行性和交付的准确性。
+The system connects end-to-end business ﬂows, enabling real-time collaboration between planning calculations,
+procurement, and production. For example, based on sales orders and inventory status, it automatically generates
+production plans and procurement plans, which are synchronized to relevant departments in real time, improving
+plan executability and delivery accuracy.
+15 16
+业务单据
+计划运行
+计划评估 计划订单 评估结果
+产能评估
+运算输入
+计划独立需求
+委外订单
+重排建议 例外信息 计划订单
+订单备料
+订单联副
+工作中心需求能力
+需求能力明细
+工作中心可用能力供需明细 供需追溯
+能力计算参数计划运算参数
+销售订单
+调拨订单
+生产订单
+现存量
+采购订单
+......
+运算输出 运算输出
+运算输入
+运算输入
+16
+支持多计划模式
+Support for Multiple Planning Modes
+计划实时协同
+Real-Time Planning Collaboration
+运用智能算法，根据现有订单、产能、库存等多方面因素，进行计划模拟计算和优化。比如在面对紧急插单时，能快速调整生产计划，合
+理安排资源，确保订单按时精准交付，提升客户满意度。
+Using intelligent algorithms, it conducts plan simulation calculations and optimization based on multiple factors such as
+existing orders, production capacity, and inventory. For instance, when facing urgent order insertions, it can quickly adjust
+production plans and arrange resources rationally to ensure on-time and accurate order delivery, enhancing customer
+satisfaction.
+智能计划优化
+Intelligent Planning Optimization
+
+--- PAGE 11 ---
+Key Scenario 4    Intelligent Production Management
+关键场景4   生产管理智能化
+支持多模式生产
+Support for Multiple Production Modes
+全面支持MTO、MTS、ETO、ATO等多种生产模式，企业可根据产品战略、产品的不同阶段，灵活选择不同的模式及组合。
+It fully supports multiple production modes such as Make-to-Order (MTO), Make-to-Stock (MTS), Engineer-to-Order (ETO), and
+Assemble-to-Order (ATO). Enterprises can ﬂexibly select diﬀerent modes or combinations based on product strategies and
+product life cycle stages.
+支持多种生产任务流转模式
+Support for Multiple Production Task Flow Modes
+支持多种生产任务流转模式，包括分派模式、超市模式和流转卡模式；同时可以对生产订单的状态实时更新，如开工、挂起、解除、完
+工、关闭等。
+It supports multiple production task ﬂow modes, including assignment mode, supermarket mode, and kanban mode. Mean-
+while, it can update the status of production orders in real time, such as start, hold, release, completion, and closure.
+车间作业数据PDA实时采集
+Real-Time PDA Data Collection for Shop Floor Operations
+支持通过PDA一码到底，实现车间数据全面收集，并即时反馈操作结果或任务状态，帮助多团队数据实时共享、高效协作。
+It supports end-to-end data collection through PDA, enabling comprehensive shop ﬂoor data collection and real-time
+feedback of operation results or task statuses. This facilitates real-time data sharing and eﬃcient collaboration among
+multiple teams.
+车间现场物料的精细化管控
+Reﬁned Control of Shop Floor On-Site Materials
+系统支持表外、成套、超额、依开工控制领料等材料的精细化管控，避免在制堆积，降低物料流程管理成本。
+The system supports reﬁned control of materials such as oﬀ-BOM materials, set materials, excess materials, and materials issued based
+on work order start status. This avoids work-in-progress backlogs and reduces material process management costs.
+实时多维呈现现场数据
+Real-Time Multi-Dimensional On-Site Data Presentation
+实时多维呈现现场数据，并通过对数据的监控与分析，帮助企业及时发现生产执行异常情况，有效提高生产效率和产品质量。
+It presents on-site data in real time from multiple dimensions. Through monitoring and analysis of the data, enterprises can promptly
+identify abnormalities in production execution, eﬀectively improving production eﬃciency and product quality.
+17 18
+任务派工 任务报工
+材料出库
+任务开工
+物流配送
+关键件绑定 半成品完工检验 半成品标签打印打印工票
+线边仓
+毛坯加工
+生产订单
+
+--- PAGE 12 ---
+
+
+--- PAGE 13 ---
+Key Scenario 5    Comprehensive High-Quality Control
+关键场景5   全面高质量管控
+It supports incoming inspection (including procurement
+arrival and outsourcing arrival), in-process inspection,
+outsourced process inspection, product inspection,
+in-stock inspection, shipping inspection, return inspec-
+tion, and other types of inspections.
+多检验业务类型
+Multiple Inspection Business Types
+支持来料检验（采购到货、委外到货）、工序检验、工序委外检
+验、产品检验、在库检验、发货检验、退货检验、其他检验。
+It supports a series of sample-related activities such as
+sampling, sample preparation, sample-based inspec-
+tion, sample retention, and sample disposal.
+样品管理
+Sample Management
+支持取样、制样、按样品检验、留样、留样处理等一系列围绕
+样品涉及的活动。
+It sets whether materials require inspection, as well as
+inspection rules for 100% inspection and sampling inspec-
+tion, and conducts attribute inspection and variable
+inspection.
+多检验方式
+Multiple Inspection Methods
+设定物料是否需要检验，全检、抽检检验规则，计数类、计量类
+检验。
+During judgment, multiple disposal methods can be select-
+ed, such as accept, accept with concession, reject, rework,
+scrap, re-judge, and sort. Custom disposal methods are
+also supported.
+多处理方式
+Multiple Disposal Methods
+判定时可选择多种处理方式如：接收、让步接收、拒收、返工、
+报废、改判、挑选等，还可以自定义处理方式。
+Based on materials and batch numbers/serial numbers, it
+quickly traces the composition and ﬂow of each material,
+as well as detailed information of each business link.
+质量追溯
+Quality Traceability
+根据物料及批次号/序列号快速追溯各物料组成及流向，同时追
+溯各业务环节的详细信息。
+21 22
+
+--- PAGE 14 ---
+Key Scenario 6    Reﬁned Cost Control for Eﬀective "Cost Reduction"
+关键场景6   精细化成本管控实现有效“降本”
+支持多种成本核算方式
+Support for Multiple Cost Accounting Methods
+支持实际成本、标准成本、分项成本、专项成本等多种核算方式，满足不同企业、不同场景的成本核算需求，可精细计算产品、订单、批
+次和工序成本等，科学指导销售报价和经营决策。
+It supports multiple accounting methods such as actual cost, standard cost, itemized cost, and project-speciﬁc cost, meeting
+the cost accounting needs of diﬀerent enterprises and scenarios. It can accurately calculate product, order, batch, and process
+costs, providing scientiﬁc guidance for sales quotation and business decision-making.
+标准成本管理与成本预测
+Standard Cost Management and Cost Forecasting
+通过标准成本管理服务，企业可制定产品成本标准构成，用以指导销售报价；同时，在实际生产过程中，可实时提供实际成本与标准成本
+的差异分析，并优化成本标准，实现事前成本计划、事中过程控制及事后成本分析。
+Through standard cost management services, enterprises can formulate the standard cost composition of products to guide
+sales quotation. Meanwhile, during actual production, it can provide real-time variance analysis between actual costs and
+standard costs, optimize cost standards, and realize pre-production cost planning, in-process process control, and post-pro-
+duction cost analysis.
+费用精细化管控与智能分析
+Reﬁned Expense Control and Intelligent Analysis
+通过费用预算、申请、审批、报销、分析等全流程，实现费用的全面管控。同时支持多维度费用数据分析，并支持可视化展示费用变化趋势，为绩
+效考评和组织降本提供真实可靠的一手数据。
+It realizes comprehensive expense control through the entire process of expense budgeting, application, approval, reimbursement, and
+analysis. At the same time, it supports multi-dimensional expense data analysis and visual presentation of expense change trends,
+providing authentic and reliable ﬁrst-hand data for performance evaluation and organizational cost reduction.
+23 24
+
+--- PAGE 15 ---
+Key Scenario 7    Global Feature Management to Meet Customers’ Personalized Needs
+关键场景7   全局特征管理满足客户个性化需求
+构建定制化生产能力
+Building Customized Production Capabilities
+面对客户生产制造企业（如定制家居、消费类电子等行业）提供定制化生产能力。
+It provides customized production capabilities for customer-oriented manufacturing enterprises (such as customized home
+furnishings, consumer electronics, and other industries).
+实现制造企业服务化转型
+Enabling Service-Oriented Transformation of Manufacturing Enterprises
+参数化选配是制造企业的高阶应用，可以助力制造企业更快地响应市场需求，并提供个性化的服务，支撑制造业向服务化转型。
+Parametric conﬁguration is an advanced application for manufacturing enterprises. It can help manufacturing enterprises respond to
+market demands faster, provide personalized services, and support the transformation of manufacturing towards service orientation.
+打通制造企业业务全流程
+Connecting the Entire Business Process of Manufacturing Enterprises
+从销售订单开始支持客户选择配置，按物料＋特征生成订单BOM和工艺，通过规则完成物料清单的计算和工序的匹配。
+Starting from sales orders, it supports customers in selecting conﬁgurations, generates order BOMs and processes based on
+materials + features, and completes the calculation of bill of materials and process matching through rules.
+25 26
+特征管理
+物料静态特征
+产品规格看得清
+成本维度
+成本算得透、管得宽
+BOM维度
+投资生产做得对
+供需匹配
+配仓配货找得快
+特征定价
+结构化定价卖得精
+库存维度
+库存挖得深、配得优
+物料动态特征
+客户需求描得准
+
+--- PAGE 16 ---
+Key Scenario 8    Building an Industrial Chain Network to Achieve Win-Win Value
+关键场景8   构建产业链网络，实现价值共赢
+精细化客户运营
+Reﬁned Customer Operations
+通过商机智能推送、舆情实时预警和自动化客户跟进等，实现从线索挖掘到交付落地的全价值链贯通。基于全流程数据整合，构建360°客
+户画像，精准定位高潜客户群体，帮助企业精准高效触达客户，提升营销赢单率。
+Through intelligent business opportunity push, real-time public opinion early warning, and automated customer follow-up, it
+realizes end-to-end value chain connection from lead generation to delivery. Based on end-to-end data integration, it builds
+360° customer proﬁles, accurately targets high-potential customer groups, helps enterprises reach customers accurately and
+eﬃciently, and improves marketing win rates.
+全渠道客户直联
+Omnichannel Direct Customer Connection
+支持企业对直营门店、加盟商、代理商、经销商等多样化经销体系的统一管理，经销商、代理商可独立进行商品、库存、销售管理，可实
+现从订货到付款的全流程在线协同。
+It supports enterprises in the uniﬁed management of diverse distribution systems such as direct-operated stores, franchisees,
+agents, and distributors. Distributors and agents can independently manage products, inventory, and sales, and realize
+end-to-end online collaboration from ordering to payment.
+全球化采购协同
+Global Procurement Collaboration
+支持多采购业务，包括先货后款采购、供应商寄存（VMI）、大宗商品采购、集中采购业务、固定资产采购等，通过供应商管理、智能寻
+源比价、采购业务协同，实现采购业务从需求、寻源到付款的全流程在线协同。
+It supports multiple procurement businesses, including procurement with payment after goods receipt, vendor-managed
+inventory (VMI), bulk commodity procurement, centralized procurement, and ﬁxed asset procurement. Through supplier
+management, intelligent sourcing and price comparison, and procurement business collaboration, it realizes end-to-end
+online collaboration of procurement business from demand and sourcing to payment.
+多工厂生产协同
+Multi-Factory Production Collaboration
+支持多组织生产计划协同、跨组织材料领用、跨组织完工入库、多工厂委托受托、跨组织委外、跨组织集采等场景，实现从集团到多基地、多工厂
+的流程优化与业务协作，达到全球化工厂高效协作的战略目标。
+It supports scenarios such as multi-organization production planning collaboration, cross-organization material requisition, cross-or-
+ganization completion and warehousing, multi-factory entrusted management, cross-organization outsourcing, and cross-organiza-
+tion centralized procurement. It realizes process optimization and business collaboration from the group to multiple bases and
+factories, achieving the strategic goal of eﬃcient global factory collaboration.
+16
+28
+国内客户
+国内营销中心
+海外公司
+集团
+供应商
+供应商
+成品工厂
+境外工厂 关联部件加工工厂
+一级
+部件加工工厂
+二级
+部件加工工厂虚拟公司（过票） 采购配套公司
+国内客户
+境外客户
+境外客户
+外部 销售
+外部采购与生产
+27
+
+--- PAGE 17 ---
+建筑、环保、游乐设备等多板块运营的集团公司/ All in跨境电商的领军企业
+Diversiﬁed Conglomerate Operating in Construction, Environmental Protection, and Amusement Equip-
+ment Sectors / All-in Cross-border E-commerce Leader
+Guoli Group: 100% "All in" Overseas, Digital & Intelligent
+Innovation Serving the Globe
+河南国立：100%“All in”海外 数智创新服务全球
+100+国家地区一体化集团管控
+数智化平台可以让中小企业具备全球化的能力。
+在YonSuite支撑下，国立集团将信息流、货物
+流、 单证流、审批流、资金流深度融合，形成了
+一个以供应链、财务、人力与协同为特征的一体
+化平台，不但确保数据完善，而且实现了线上办
+公和全面管控，大幅提升了企业运营效率。
+A digital and intelligent platform enables SMEs to gain global capabilities.
+Supported by YonSuite, Guoli Group has deeply integrated information ﬂow,
+goods ﬂow, document ﬂow, approval ﬂow, and capital ﬂow, forming an
+integrated platform featuring supply chain, ﬁnance, human resources, and
+collaboration. This not only ensures data integrity but also realizes online
+oﬃce operations and full-cycle management and control, greatly enhancing
+enterprise operational eﬃciency.
+安志强  国立集团董事长
+Zhiqiang An  Chairman of Guoli Group
+Integrated group management and control
+across 100+ countries and regions
+40%
+业务审批效率提升40%
+Business approval eﬃciency increased by 40%23%
+订单准时交付率提升23%
+On-time order delivery rate improved by 23%
+40%100+
+智能财务与薪资核算效率提升 40%
+Eﬃciency of intelligent ﬁnance and payroll
+accounting increased by 40%
+新型塑料管道研发、生产、销售与服务一体的大型建材产业集团/高新技术企业
+A large-scale building materials group integrating R&D, production, sales, and services of new-type
+plastic pipes / A high-tech enterprise
+Rifeng Group: Forge a Second Growth Curve
+日丰集团：打造第二增长曲线
+仅需3周即可完成一个海外新公司的业务上线
+在企业的海外发展征程中，YonSuite是不可或
+缺的关键力量。通过其强大的功能，我们在成
+本毛利管控、财务数据融合等方面取得了显著
+成效，为企业的全球化运营提供了精准的财务
+指引，让我们在国际市场竞争中充满信心。
+In the journey of the enterprise's overseas development, YonSuite has been an
+indispensable key force. With its powerful functions, we have achieved remark-
+able results in cost and gross proﬁt control, ﬁnancial data integration, etc.,
+providing accurate ﬁnancial guidance for the enterprise's global operations and
+ﬁlling us with conﬁdence in the international market competition.
+梁烁  日丰海外财务负责人
+Shuo Liang  Overseas Financial Director of Rifeng Group
+Only 3 weeks to complete the business launch of
+a new overseas company
+60%
+海外经销商要货效率提升60%
+Order fulﬁllment eﬃciency for overseas
+distributors increased by 60%
+75%
+库存准确率提升75%
+Inventory accuracy rate improved by 75%
+65%3周
+多币种对账效率提升65%
+Multi-currency reconciliation eﬃciency
+increased by 65%
+3029
+
+--- PAGE 18 ---
+全球ERP SaaS市场亚太区厂商
+排名第一
+中国应用平台化云服务APaaS
+市场占有率第一
+中国企业应用市场SaaS
+市场占有率第一
+全球企业级应用软件TOP10
+唯一亚太厂商
+No. 1 among vendors in the
+Asia-Paciﬁc region for the global
+ERP SaaS market
+No. 1 in market share in China's
+application platform-based cloud
+service (APaaS) market
+No. 1 in market share in China's
+enterprise application SaaS
+market
+The only Asia-Paciﬁc vendor in the
+Global Top 10 Enterprise
+Application Software
+YonSuite Continues to Lead Industry Innovation
+持续引领产业创新
+助力企业降本增效

@@ -1,0 +1,737 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI数字员工共创方案_接入业务系统与智能问数_泊冉软件</title>
+    <meta
+      name="description"
+      content="泊冉 AI 数字员工共创方案，基于业务系统接口、MCP/API、智能问数、企业微信、飞书、钉钉与行业算法能力，帮助企业把采购单、询价单、Excel、PDF、图片和聊天记录转化为报价单、销售订单、服务工单、报销预审、智能问数和经营预警。"
+    />
+    <meta
+      name="keywords"
+      content="AI数字员工,用友AI,ERP AI,业务系统集成,MCP,智能问数,AI快速报价,客户采购单生成销售订单,AI读单建单,经营预警,企业微信AI,飞书AI,钉钉AI,泊冉软件"
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.iboran.com/ai-co-creation" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:site_name" content="泊冉软件" />
+    <meta property="og:title" content="AI数字员工共创方案_接入业务系统与智能问数_泊冉软件" />
+    <meta
+      property="og:description"
+      content="AI数字员工接任务，业务系统接口调流程，智能问数看经营和推预警，企业系统沉淀单据和流程。"
+    />
+    <meta property="og:url" content="https://www.iboran.com/ai-co-creation" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="AI数字员工共创方案 | 泊冉软件" />
+    <meta
+      name="twitter:description"
+      content="不只是AI问答，帮助企业从业务指令到流程闭环。"
+    />
+    <link rel="icon" href="../assets/boran-logo.png" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://www.iboran.com/#organization",
+            "name": "泊冉软件",
+            "url": "https://www.iboran.com/",
+            "telephone": "400-9955-161",
+            "logo": "https://www.iboran.com/assets/boran-logo.png",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "上海",
+              "streetAddress": "上海市普陀区曹杨路1888号星光耀广场1号楼1005室"
+            }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://www.iboran.com/ai-co-creation#webpage",
+            "url": "https://www.iboran.com/ai-co-creation",
+            "name": "AI数字员工共创方案",
+            "description": "AI数字员工接任务，业务系统接口调流程，智能问数看经营和推预警，企业系统沉淀单据和流程。",
+            "isPartOf": {
+              "@type": "WebSite",
+              "name": "泊冉软件",
+              "url": "https://www.iboran.com/"
+            },
+            "about": {
+              "@id": "https://www.iboran.com/ai-co-creation#service"
+            }
+          },
+          {
+            "@type": "Service",
+            "@id": "https://www.iboran.com/ai-co-creation#service",
+            "name": "AI数字员工共创方案",
+            "provider": {
+              "@id": "https://www.iboran.com/#organization"
+            },
+            "serviceType": "AI数字员工、业务系统连接、智能问数与经营预警共创服务",
+            "areaServed": "中国",
+            "description": "基于AI数字员工、业务系统接口、智能问数和企业协同入口，帮助企业将客户采购单、询价单、Excel、PDF、图片和聊天记录转化为报价单、销售订单、服务工单、报销预审、智能问数和经营预警。",
+            "audience": {
+              "@type": "Audience",
+              "audienceType": "制造、消费品、医药、连锁零售、跨境电商、现代服务、集团财务共享企业"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "首页",
+                "item": "https://www.iboran.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "AI数字员工共创方案",
+                "item": "https://www.iboran.com/ai-co-creation"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "AI数字员工和普通AI问答有什么区别？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "普通 AI 问答主要回答问题和生成文字。AI 数字员工更强调业务执行：能读客户采购单、识别字段、匹配客户和物料、计算价格和库存、生成单据草稿，并将结果传递到企业现有业务流程中。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "业务系统连接 / MCP 是什么？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "MCP/API 是让 AI 在授权范围内调用业务系统能力的一类连接方式。员工用自然语言描述目标后，AI 可以调用客户、物料、库存、价格、信用、报价、销售订单、采购申请、审批等业务工具，完成多步骤业务动作。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "智能问数能解决什么问题？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "智能问数主要解决指标解释、经营归因和异常预警。管理层、财务、销售、运营可以直接问销售、库存、毛利、费用、现金流、采购履约、项目毛利等数据，也可以接收系统主动推送的风险提醒。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "企业一定要先做复杂算法吗？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "不需要。第一批 AI 场景建议从简单重复工作开始，例如客户采购单转销售订单、询价单快速报价、发票报销预审、门店要货转调拨、客户邮件转工单、经营指标问数和库存预警。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "可以接企业微信、飞书和钉钉吗？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "可以作为协同入口进行设计。员工可以在企业微信、飞书、钉钉中发起任务、接收待办、查看预警和确认结果。具体接入方式需要根据企业当前协同工具、权限体系和业务系统集成条件确认。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "AI 可以直接生成销售订单吗？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "建议第一阶段先生成销售订单草稿。AI 读取客户采购单后，可以识别客户、商品、数量、价格和交期，并做库存、信用、价格等校验。校验通过后生成订单草稿，关键动作由授权人员确认后提交审批。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "哪些企业适合先做 AI 数字员工？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "适合有大量重复录入、查价、核库存、填单、审批、催办、报表和预警工作的企业，尤其是制造、消费品、医药、连锁零售、跨境电商、现代服务和集团财务共享类企业。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "泊冉的 AI 共创怎么开始？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "建议先做一次 AI 业务场景诊断。泊冉会结合企业行业、现有系统、协同工具、数据基础和业务痛点，筛选 1–3 个高频、低风险、可验证的 AI 数字员工样板，先跑通一个小场景，再逐步扩展。"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="../shared/lead-modal.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="https://www.iboran.com" aria-label="泊冉软件首页">
+          <img src="../assets/boran-logo.png" alt="泊冉软件 Logo" />
+          <span class="brand-text">
+            <strong>泊冉软件</strong>
+            <small>BORAN SOFTWARE</small>
+          </span>
+          <span class="brand-divider"></span>
+          <img class="yonyou" src="../assets/yongyoulogo.png" alt="用友合作伙伴 Logo" />
+        </a>
+        <nav class="site-nav" id="site-nav" aria-label="主导航">
+          <a class="nav-link has-chevron" href="https://www.iboran.com/solution">
+            解决方案
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+          </a>
+          <a class="nav-link has-chevron" href="https://www.iboran.com/products">
+            核心产品
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+          </a>
+          <a class="nav-link" href="https://www.iboran.com/cases">客户案例</a>
+          <a class="nav-link" href="https://www.iboran.com/posts">泊冉观察</a>
+          <a class="nav-link" href="https://www.iboran.com/about">关于我们</a>
+        </nav>
+        <div class="header-actions">
+          <a class="header-phone" href="tel:400-9955-161" data-track="phone_click_ai_page" aria-label="拨打 400-9955-161">
+            <span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7A2 2 0 0 1 22 16.9Z" /></svg>
+            </span>
+            400-9955-161
+          </a>
+          <a
+            class="header-cta"
+            href="#diagnosis"
+            data-modal-open
+            data-modal-title="预约 AI 业务场景诊断"
+            data-track="cta_click_ai_diagnosis"
+            aria-haspopup="dialog"
+          >预约专家评估</a>
+          <button class="mobile-menu" type="button" aria-label="打开菜单" aria-controls="site-nav"></button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="grid-bg" aria-hidden="true"></div>
+        <div class="hero-inner">
+          <div class="hero-copy">
+            <div class="eyebrow"><span></span>AI DIGITAL EMPLOYEE · BUSINESS SYSTEM · INSIGHT</div>
+            <h1>AI数字员工：不只是问答，而是把业务动作做完</h1>
+            <p class="hero-lead">
+              AI 接任务，接口调业务，智能问数看经营，系统落单据。
+            </p>
+            <p>
+              先从报价、读单、补货、费用预审、经营问数等高频动作试点。
+            </p>
+            <div class="hero-actions">
+              <a
+                class="btn primary"
+                href="#diagnosis"
+                data-modal-open
+                data-modal-title="预约 AI 业务场景诊断"
+                data-track="cta_click_ai_diagnosis"
+                aria-haspopup="dialog"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v10H7l-3 3V6Zm4 3v2h8V9H8Zm0 4v2h5v-2H8Z" /></svg>
+                预约 AI 业务场景诊断
+              </a>
+              <a class="btn secondary" href="#scenarios" data-scroll-target data-track="cta_click_download_sample">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v4H4V5Zm0 6h7v8H4v-8Zm9 0h7v8h-7v-8Z" /></svg>
+                获取 AI 数字员工样板清单
+              </a>
+            </div>
+            <p class="microcopy">先选一个高频、低风险、可验证的动作做样板。</p>
+            <div class="hero-proof" aria-label="核心价值">
+              <div><strong>读得懂文档</strong><span>Excel、PDF、图片、合同、邮件、采购单与聊天记录</span></div>
+              <div><strong>算得清业务</strong><span>价格、毛利、税额、库存、费用、信用与风险</span></div>
+              <div><strong>落得进系统</strong><span>报价单、销售订单、服务工单、预审与待办</span></div>
+            </div>
+          </div>
+
+          <div class="ai-console" aria-label="AI数字员工业务执行示意">
+            <div class="console-top">
+              <div>
+                <span class="console-label">AI Command Center</span>
+                <h2>从采购单到业务草稿</h2>
+              </div>
+              <span class="status-dot">可控执行中</span>
+            </div>
+            <div class="task-card">
+              <span>员工输入</span>
+              <p>“把这份客户采购单生成销售订单，库存不足的行先标红。”</p>
+            </div>
+            <div class="execution-flow" aria-label="执行链路">
+              <div class="flow-node active">读资料</div>
+              <div class="flow-line"></div>
+              <div class="flow-node">配主数据</div>
+              <div class="flow-line"></div>
+              <div class="flow-node">算结果</div>
+              <div class="flow-line"></div>
+              <div class="flow-node">调接口</div>
+              <div class="flow-line"></div>
+              <div class="flow-node">出草稿</div>
+            </div>
+            <div class="console-body">
+              <div class="draft-panel">
+                <div class="panel-title">
+                  <span>销售订单草稿</span>
+                  <strong>需人工确认</strong>
+                </div>
+                <div class="draft-row ok"><span>客户</span><b>上海某消费品客户</b><em>已匹配</em></div>
+                <div class="draft-row ok"><span>物料</span><b>500ml 玻璃瓶</b><em>已匹配</em></div>
+                <div class="draft-row warn"><span>库存</span><b>可用 420 箱 / 需求 500 箱</b><em>预警</em></div>
+                <div class="draft-row ok"><span>毛利</span><b>目标 18% / 测算 21.6%</b><em>通过</em></div>
+              </div>
+              <div class="agent-panel">
+                <span>智能体协同</span>
+                <ul>
+                  <li>AI 快速报价</li>
+                  <li>AI 读单建单</li>
+                  <li>AI 费用预审</li>
+                  <li>AI 经营问数</li>
+                </ul>
+              </div>
+            </div>
+            <div class="console-alert">经营预警：本周 3 张低毛利报价、2 个库存不足订单、1 个超信用额度客户需跟进。</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section answer" id="answer">
+        <div class="section-head">
+          <span>流程总览</span>
+          <h2>AI 数字员工进入业务流程的执行路径</h2>
+          <p>默认先出草稿、待办和预警，关键动作由授权人员确认。</p>
+        </div>
+        <div class="answer-map" aria-label="AI数字员工业务闭环图">
+          <div><b>01</b><strong>接任务</strong><span>业务指令 / 文件 / 群消息</span></div>
+          <i></i>
+          <div><b>02</b><strong>读资料</strong><span>客户 / 商品 / 数量 / 交期</span></div>
+          <i></i>
+          <div><b>03</b><strong>调业务</strong><span>价格 / 库存 / 信用 / 流程</span></div>
+          <i></i>
+          <div class="is-result"><b>04</b><strong>出结果</strong><span>草稿 / 待办 / 预警</span></div>
+        </div>
+        <div class="answer-example">
+          <strong>典型示例：</strong>
+          客户发来采购单，AI 先读出客户、商品、数量和交期，再查价格、库存和信用，最后生成销售订单草稿，交给授权人员确认。
+        </div>
+        <div class="answer-grid">
+          <article>
+            <h3>不是聊天框</h3>
+            <p>是业务执行助手。</p>
+          </article>
+          <article>
+            <h3>不是自动生效</h3>
+            <p>先出草稿，人工确认。</p>
+          </article>
+          <article>
+            <h3>业务连接负责动作</h3>
+            <p>查数据、建草稿、推待办。</p>
+          </article>
+          <article>
+            <h3>智能问数负责分析</h3>
+            <p>解释指标，主动预警。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section chain" id="chain">
+        <div class="section-head compact">
+          <span>受控执行路径</span>
+          <h2>从业务指令到系统结果的 7 个关键节点</h2>
+          <p>把复杂流程拆成可验证节点，默认不直接生效。</p>
+        </div>
+        <div class="chain-grid">
+          <article><b>01</b><h3>输入</h3><p>业务指令 / 附件</p></article>
+          <article><b>02</b><h3>读取</h3><p>字段识别</p></article>
+          <article><b>03</b><h3>匹配</h3><p>客户 / 物料</p></article>
+          <article><b>04</b><h3>测算</h3><p>价格 / 库存 / 毛利</p></article>
+          <article><b>05</b><h3>调用</h3><p>业务接口</p></article>
+          <article><b>06</b><h3>草稿</h3><p>单据 / 待办</p></article>
+          <article><b>07</b><h3>预警</h3><p>智能问数</p></article>
+        </div>
+        <div class="chain-example">
+          <strong>例：</strong>
+          “把这份采购单生成销售订单，库存不足的行先标红。”
+          <span>AI 输出的是草稿和异常提示，不直接替代审批。</span>
+        </div>
+      </section>
+
+      <section class="section architecture" id="architecture">
+        <div class="arch-copy">
+          <span>四层能力架构</span>
+          <h2>数字员工接任务，业务接口调流程，智能问数看经营，企业系统沉淀结果</h2>
+          <p>四层各司其职，避免把 AI 说成万能自动化。</p>
+        </div>
+        <div class="architecture-grid" aria-label="AI数字员工能力架构">
+          <article>
+            <b>AI数字员工</b>
+            <h3>接任务</h3>
+            <p>自然语言 / Excel / PDF / 图片 / 群消息</p>
+          </article>
+          <article>
+            <b>业务系统连接 / MCP</b>
+            <h3>调业务</h3>
+            <p>客户 / 物料 / 库存 / 价格 / 单据</p>
+          </article>
+          <article>
+            <b>智能问数 / BI</b>
+            <h3>问数据</h3>
+            <p>指标解释 / 异常归因 / 风险推送</p>
+          </article>
+          <article>
+            <b>ERP / OA / CRM / 业务系统</b>
+            <h3>落流程</h3>
+            <p>主数据 / 审批 / 库存 / 财务 / 留痕</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section scenarios" id="scenarios">
+        <div class="section-head compact">
+          <span>明星样板场景</span>
+          <h2>先从简单、重复、低风险的动作开始，让业务人员快速感受到 AI 价值</h2>
+          <p>默认看流程和结果，完整说明可展开。</p>
+        </div>
+        <div class="scenario-layout">
+          <div class="scenario-tabs" role="tablist" aria-label="AI数字员工样板场景">
+            <button class="active" type="button" data-scenario="quote">AI 快速报价</button>
+            <button type="button" data-scenario="order">AI 读单建单</button>
+            <button type="button" data-scenario="package">AI 包装箱规测算</button>
+            <button type="button" data-scenario="retail">AI 门店补货</button>
+            <button type="button" data-scenario="service">AI 服务派工</button>
+            <button type="button" data-scenario="expense">AI 费用预审</button>
+            <button type="button" data-scenario="bi">AI 经营问数</button>
+          </div>
+          <article class="scenario-detail" aria-live="polite">
+            <div class="scenario-topline">
+              <div class="scenario-kicker">SAMPLE 01</div>
+              <h3>AI 快速报价数字员工</h3>
+              <p class="scenario-tagline">让销售从手工查价、问库存、算毛利、填报价，转向一次输入生成可审批的报价单。</p>
+            </div>
+            <div class="scenario-context">
+              <div><strong>什么时候用</strong><span>客户询价多，销售反复查价、问库存、算毛利。</span></div>
+              <div><strong>用户怎么开始</strong><span>上传询价单，输入交付要求和毛利底线。</span></div>
+            </div>
+            <div class="scenario-badges" aria-label="关键结果">
+              <span>查价</span>
+              <span>算毛利</span>
+              <span>报价草稿</span>
+            </div>
+            <div class="scenario-mini-flow" aria-label="场景流程">
+              <div><b>01</b><span>询价单</span></div>
+              <div><b>02</b><span>价格/库存/毛利</span></div>
+              <div><b>03</b><span>报价草稿</span></div>
+              <div class="is-result"><b>04</b><span>低毛利预警</span></div>
+            </div>
+            <details class="scenario-more">
+              <summary>展开完整场景说明</summary>
+              <div class="scenario-columns">
+                <div><strong>适合企业</strong><span>制造、消费品、包装、日化、食品、医药、B2B 经销、跨境电商等需要频繁报价的企业。</span></div>
+                <div><strong>业务痛点</strong><span>客户发来询价单后，销售要反复查价、问库存、算毛利、估运费、找历史报价、填报价单。</span></div>
+                <div><strong>业务闭环</strong><span>通过业务系统接口查询客户、物料、价格、库存和信用信息，生成报价单草稿。</span></div>
+                <div><strong>智能预警</strong><span>主动推送低毛利报价、报价超期未跟进、库存不足影响交期、客户超信用额度等预警。</span></div>
+              </div>
+            </details>
+          </article>
+        </div>
+      </section>
+
+      <section class="section industries" id="industries">
+        <div class="section-head">
+          <span>行业试点路径</span>
+          <h2>不同行业先从不同的简单业务动作开始</h2>
+          <p>避免一上来讲复杂大模型工程，先把客户最熟悉、最高频、最容易验证的业务动作做成样板。</p>
+        </div>
+        <div class="industry-layout">
+          <div class="industry-tabs" role="tablist" aria-label="行业场景">
+            <button class="active" type="button" data-industry="manufacturing">制造业</button>
+            <button type="button" data-industry="consumer">消费品</button>
+            <button type="button" data-industry="medical">医药医疗</button>
+            <button type="button" data-industry="retail">连锁零售</button>
+            <button type="button" data-industry="crossborder">跨境电商</button>
+            <button type="button" data-industry="service">现代服务</button>
+            <button type="button" data-industry="finance">集团 / 财务共享</button>
+          </div>
+          <article class="industry-detail" aria-live="polite">
+            <span>制造业</span>
+            <h3>优先试点场景</h3>
+            <div class="industry-chips">
+              <em>BOM 校验</em>
+              <em>采购齐套</em>
+              <em>生产异常</em>
+              <em>质量追溯</em>
+              <em>交期预警</em>
+            </div>
+            <p>围绕订单、BOM、物料、采购、生产、质量和成本数据，优先让 AI 协助识别交付风险、齐套缺口、异常工单和项目毛利变化。</p>
+            <details class="industry-more">
+              <summary>查看行业说明与关键词</summary>
+              <p>制造业试点更关注研产供销协同、订单交付、BOM 版本、采购齐套、车间异常、质量追溯和成本归集，适合从典型订单或事业部先跑通。</p>
+              <b>制造业 AI · BOM 校验 · 采购齐套 · 生产异常预警 · 质量追溯 · 项目成本问数</b>
+            </details>
+          </article>
+        </div>
+      </section>
+
+      <section class="section governance" id="governance">
+        <div class="governance-panel">
+          <div>
+            <span>治理边界与风险控制</span>
+            <h2>AI 可以做很多事，但关键动作必须可控</h2>
+            <p>泊冉建议第一批 AI 数字员工试点遵循：先简单，后复杂；先读文档，后写系统；先生成草稿，后自动执行；先人工确认，后流程闭环。</p>
+          </div>
+          <div class="governance-grid">
+            <article><strong>草稿优先</strong><p>先生成草稿、建议、测算、报告和预警，降低试点风险。</p></article>
+            <article><strong>授权确认</strong><p>涉及审批、生效、财务口径、权限体系和高风险写回的动作，由授权人员确认。</p></article>
+            <article><strong>权限继承</strong><p>AI 调用系统能力时遵循企业现有组织、岗位、角色和数据权限。</p></article>
+            <article><strong>证据留痕</strong><p>输入、识别、测算、调用、确认与结果进入流程，关键节点可追溯。</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section faq" id="faq">
+        <div class="section-head compact">
+          <span>FAQ</span>
+          <h2>企业评估 AI 数字员工时，通常先问这些问题</h2>
+        </div>
+        <div class="faq-list">
+          <article class="faq-item">
+            <button type="button" aria-expanded="false">
+              <span>AI数字员工和普通AI问答有什么区别？</span>
+              <b></b>
+            </button>
+            <p>普通 AI 问答主要回答问题和生成文字。AI 数字员工更强调业务执行：能读客户采购单、识别字段、匹配客户和物料、计算价格和库存、生成单据草稿，并将结果传递到企业现有业务流程中。</p>
+          </article>
+          <article class="faq-item">
+            <button type="button" aria-expanded="false"><span>业务系统连接 / MCP 是什么？</span><b></b></button>
+            <p>MCP/API 是让 AI 在授权范围内调用业务系统能力的一类连接方式。员工用自然语言描述目标后，AI 可以调用客户、物料、库存、价格、信用、报价、销售订单、采购申请、审批等业务工具。</p>
+          </article>
+          <article class="faq-item">
+            <button type="button" aria-expanded="false"><span>智能问数能解决什么问题？</span><b></b></button>
+            <p>智能问数主要解决指标解释、经营归因和异常预警。管理层、财务、销售、运营可以直接问销售、库存、毛利、费用、现金流、采购履约、项目毛利等数据，也可以接收系统主动推送的风险提醒。</p>
+          </article>
+          <article class="faq-item">
+            <button type="button" aria-expanded="false"><span>企业一定要先做复杂算法吗？</span><b></b></button>
+            <p>不需要。第一批 AI 场景建议从简单重复工作开始，例如客户采购单转销售订单、询价单快速报价、发票报销预审、门店要货转调拨、客户邮件转工单、经营指标问数和库存预警。</p>
+          </article>
+          <article class="faq-item">
+            <button type="button" aria-expanded="false"><span>可以接企业微信、飞书和钉钉吗？</span><b></b></button>
+            <p>可以作为协同入口进行设计。员工可以在企业微信、飞书、钉钉中发起任务、接收待办、查看预警和确认结果。具体接入方式需要根据企业当前协同工具、权限体系和业务系统集成条件确认。</p>
+          </article>
+          <article class="faq-item">
+            <button type="button" aria-expanded="false"><span>AI 可以直接生成销售订单吗？</span><b></b></button>
+            <p>建议第一阶段先生成销售订单草稿。AI 读取客户采购单后，可以识别客户、商品、数量、价格和交期，并做库存、信用、价格等校验。校验通过后生成订单草稿，关键动作由授权人员确认后提交审批。</p>
+          </article>
+          <article class="faq-item">
+            <button type="button" aria-expanded="false"><span>哪些企业适合先做 AI 数字员工？</span><b></b></button>
+            <p>适合有大量重复录入、查价、核库存、填单、审批、催办、报表和预警工作的企业，尤其是制造、消费品、医药、连锁零售、跨境电商、现代服务和集团财务共享类企业。</p>
+          </article>
+          <article class="faq-item">
+            <button type="button" aria-expanded="false"><span>泊冉的 AI 共创怎么开始？</span><b></b></button>
+            <p>建议先做一次 AI 业务场景诊断。泊冉会结合企业行业、现有系统、协同工具、数据基础和业务痛点，筛选 1–3 个高频、低风险、可验证的 AI 数字员工样板，先跑通一个小场景，再逐步扩展。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section diagnosis" id="diagnosis">
+        <div class="diagnosis-copy">
+          <span>AI Co-Creation Lab</span>
+          <h2>你的企业，第一位 AI 数字员工适合放在哪个岗位？</h2>
+          <p>可以先从一个简单、重复、低风险的场景开始：客户采购单转销售订单、询价单快速报价、包装箱规测算、门店要货转调拨、发票报销预审、客户邮件转工单、经营指标智能问数、库存 / 毛利 / 费用异常预警。</p>
+          <div class="diagnosis-checks">
+            <div><strong>高频吗？</strong><span>每天或每周反复发生</span></div>
+            <div><strong>可取数吗？</strong><span>客户、物料、价格、库存有系统数据</span></div>
+            <div><strong>能闭环吗？</strong><span>草稿、确认、审批、预警路径清晰</span></div>
+          </div>
+        </div>
+        <form class="lead-form" novalidate>
+          <h3>预约 AI 业务场景诊断</h3>
+          <div class="field-grid">
+            <label><span>姓名 <b>*</b></span><input name="name" type="text" autocomplete="name" required /></label>
+            <label><span>公司 <b>*</b></span><input name="company" type="text" autocomplete="organization" required /></label>
+          </div>
+          <label><span>手机号 <b>*</b></span><input name="phone" type="tel" autocomplete="tel" required /></label>
+          <div class="field-grid">
+            <label>
+              <span>行业</span>
+              <select name="industry">
+                <option value="">请选择</option>
+                <option>制造业</option>
+                <option>消费品</option>
+                <option>医药医疗</option>
+                <option>连锁零售</option>
+                <option>跨境电商</option>
+                <option>现代服务</option>
+                <option>集团 / 财务共享</option>
+              </select>
+            </label>
+            <label>
+              <span>当前使用系统</span>
+              <input name="system" type="text" placeholder="ERP / OA / CRM / MES / 其他" />
+            </label>
+          </div>
+          <label>
+            <span>当前协同工具</span>
+            <select name="collaboration">
+              <option value="">请选择</option>
+              <option>企业微信</option>
+              <option>飞书</option>
+              <option>钉钉</option>
+              <option>其他</option>
+            </select>
+          </label>
+          <label>
+            <span>最想解决的业务问题</span>
+            <textarea name="problem" rows="4" placeholder="例如：客户采购单录入太慢、销售报价要反复查价、门店补货靠人工判断"></textarea>
+          </label>
+          <p class="form-hint" role="status" aria-live="polite">提交后，泊冉顾问将优先判断：场景是否高频、数据是否可取、流程是否能闭环、是否适合作为第一批 AI 数字员工试点。</p>
+          <button class="modal-submit" type="submit">
+            提交诊断需求
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12.2l-5.1-5.1L14 5l8 8-8 8-1.9-1.9 5.1-5.1H5v-2Z" /></svg>
+          </button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-main">
+          <section class="footer-brand" aria-label="泊冉软件联系方式">
+            <div class="footer-logo">
+              <img src="../assets/boran-logo.png" alt="泊冉软件 Logo" />
+              <strong>泊冉软件</strong>
+              <span>用友合作伙伴</span>
+            </div>
+            <p>
+              致力为高成长型企业提供全面的数智化解决方案。作为用友网络合作伙伴，我们专注于通过技术创新推动企业数字化转型。
+            </p>
+            <div class="footer-contact">
+              <div>
+                <span class="footer-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M12 21s7-5.3 7-11a7 7 0 0 0-14 0c0 5.7 7 11 7 11Zm0-8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" /></svg>
+                </span>
+                <span>上海总部：上海市普陀区曹杨路1888号星光耀广场1号楼1005室<br />南京研发中心：南京市雨花台区大周路（软件科创城）D2南 707 室</span>
+              </div>
+              <a href="tel:400-9955-161">
+                <span class="footer-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7A2 2 0 0 1 22 16.9Z" /></svg>
+                </span>
+                <strong>400-9955-161</strong>
+              </a>
+            </div>
+            <div class="footer-mobile-links" aria-label="移动端快捷链接">
+              <a href="https://www.iboran.com/products">产品中心</a>
+              <a href="https://www.iboran.com/cases">客户案例</a>
+              <a href="https://www.iboran.com/contact">联系我们</a>
+            </div>
+          </section>
+
+          <nav class="footer-column" aria-label="产品中心">
+            <h2>产品中心</h2>
+            <a href="https://www.iboran.com/products/yonsuite">成长型企业云服务</a>
+            <a href="https://www.iboran.com/products/collaborative-office">协同办公</a>
+            <a href="https://www.iboran.com/solution/business/digital-modeling">数字化建模</a>
+            <a href="https://www.iboran.com/solution/business/aip-intelligent-apps">AI 智能应用</a>
+          </nav>
+
+          <nav class="footer-column" aria-label="关于我们">
+            <h2>关于我们</h2>
+            <a href="https://www.iboran.com/about">公司简介</a>
+            <a href="https://www.iboran.com/posts">新闻动态</a>
+            <a href="https://www.iboran.com/about#join">加入我们</a>
+            <a href="https://www.iboran.com/contact">联系我们</a>
+            <a href="https://www.iboran.com/ai-co-creation">AI业务共创计划</a>
+          </nav>
+
+          <nav class="footer-column" aria-label="核心领域">
+            <h2>核心领域</h2>
+            <a href="https://www.iboran.com/solution/business/finance-cloud">智能财务</a>
+            <a href="https://www.iboran.com/solution/business/s2p">供应链管理</a>
+            <a href="https://www.iboran.com/solution/business/mes">智能制造</a>
+            <a href="https://www.iboran.com/solution/business/hrm">人力资源</a>
+            <a href="https://www.iboran.com/solution/business/p2c-project-to-cost">项目管理</a>
+            <a href="https://www.iboran.com/solution/business/revenue-cloud">营销增长</a>
+            <a href="https://www.iboran.com/solution/business/eam">资产管理</a>
+          </nav>
+        </div>
+
+        <div class="footer-bottom">
+          <div>
+            <p>© 2026 上海泊冉软件有限公司 版权所有</p>
+            <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">沪ICP备13039056号</a>
+          </div>
+          <div class="footer-policies">
+            <a href="https://www.iboran.com/privacy">隐私政策</a>
+            <span>|</span>
+            <a href="https://www.iboran.com/terms">服务条款</a>
+            <span>|</span>
+            <a href="https://www.iboran.com/sitemap">网站地图</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <nav class="mobile-cta" aria-label="移动端快捷操作">
+      <a href="tel:400-9955-161" data-track="phone_click_ai_page">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7A2 2 0 0 1 22 16.9Z" /></svg>
+        电话
+      </a>
+      <a href="#diagnosis" data-modal-open data-modal-title="预约 AI 业务场景诊断" data-track="cta_click_ai_diagnosis" aria-haspopup="dialog">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4V5Zm3 3v2h10V8H7Zm0 4v2h7v-2H7Zm0 4v1h4v-1H7Z" /></svg>
+        诊断
+      </a>
+      <a href="#scenarios" data-scroll-target>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v4H3V5Zm0 6h8v8H3v-8Zm10 0h8v8h-8v-8Z" /></svg>
+        场景
+      </a>
+    </nav>
+
+    <div class="appointment-modal" id="appointment-modal" aria-hidden="true">
+      <div class="modal-backdrop" data-modal-close></div>
+      <section
+        class="modal-card"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="appointment-title"
+        aria-describedby="appointment-desc"
+      >
+        <div class="modal-head">
+          <div>
+            <h2 id="appointment-title">预约 AI 业务场景诊断</h2>
+            <p id="appointment-desc">我们的顾问将在 1 个工作日内与您联系</p>
+          </div>
+          <button class="modal-close" type="button" data-modal-close aria-label="关闭预约弹窗">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <line x1="6" x2="18" y1="6" y2="18"></line>
+              <line x1="18" x2="6" y1="6" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+        <form class="modal-body lead-form" novalidate>
+          <div class="field-grid">
+            <label><span>姓名 <b>*</b></span><input name="name" type="text" autocomplete="name" required /></label>
+            <label><span>公司名称 <b>*</b></span><input name="company" type="text" autocomplete="organization" required /></label>
+          </div>
+          <label><span>手机号 <b>*</b></span><input name="phone" type="tel" autocomplete="tel" required /></label>
+          <label>
+            <span>最想解决的业务问题</span>
+            <textarea name="problem" rows="3" placeholder="例如：AI 快速报价、读单建单、费用预审、经营问数"></textarea>
+          </label>
+          <p class="form-hint" role="status" aria-live="polite"></p>
+          <button class="modal-submit" type="submit">
+            下一步
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12.2l-5.1-5.1L14 5l8 8-8 8-1.9-1.9 5.1-5.1H5v-2Z" /></svg>
+          </button>
+        </form>
+      </section>
+    </div>
+
+    <script src="./script.js"></script>
+    <script src="../shared/lead-modal.js"></script>
+  </body>
+</html>
