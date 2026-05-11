@@ -340,7 +340,7 @@ const InlineNavbar = React.memo(function InlineNavbar({ menuItems, contactData }
           onClick={handleOpenDemo}
           className="hidden lg:inline-flex items-center justify-center px-6 py-2.5 text-base font-bold text-white bg-[#E60012] border-2 border-transparent hover:bg-red-700 rounded-md shadow-sm transition-all hover:shadow-md active:scale-95"
         >
-          预约专家评估
+          预约系统诊断
         </button>
 
         {/* Mobile Menu Button */}
@@ -385,8 +385,8 @@ const NavbarMegaMenus = React.memo(function NavbarMegaMenus({
       const isOutsideIndustry = industryRef.current && !industryRef.current.contains(event.target as Node)
 
       if (
-        (activeDropdown === '核心产品' && isOutsideProducts) ||
-        (activeDropdown === '业务方案' && isOutsideBusiness) ||
+        (activeDropdown === '产品' && isOutsideProducts) ||
+        (activeDropdown === '领域方案' && isOutsideBusiness) ||
         (activeDropdown === '行业方案' && isOutsideIndustry)
       ) {
         setActiveDropdown(null)
@@ -428,7 +428,7 @@ const NavbarMegaMenus = React.memo(function NavbarMegaMenus({
 
   return createPortal(
     <>
-      {activeDropdown === '核心产品' && (
+      {activeDropdown === '产品' && (
           <motion.div
             key="mega-menu-products"
             initial={{ opacity: 0, y: 10 }}
@@ -436,7 +436,7 @@ const NavbarMegaMenus = React.memo(function NavbarMegaMenus({
             transition={{ duration: 0.2, ease: 'easeOut' }}
             ref={productsRef}
             className="hidden lg:block fixed top-20 inset-x-0 mx-auto w-full lg:max-w-6xl bg-white backdrop-blur-md rounded-b-2xl border-x border-b border-gray-100 shadow-xl z-[100] max-h-[calc(100vh-6rem)] overflow-y-auto custom-scrollbar"
-            onMouseEnter={() => handleMenuEnter('核心产品')}
+            onMouseEnter={() => handleMenuEnter('产品')}
             onMouseLeave={handleMenuLeave}
           >
             <div className="container mx-auto px-6 py-6">
@@ -512,8 +512,8 @@ const NavbarMegaMenus = React.memo(function NavbarMegaMenus({
           </motion.div>
       )}
 
-      {/* Mega Menu Dropdown - 业务方案 */}
-      {activeDropdown === '业务方案' && (
+      {/* Mega Menu Dropdown - 领域方案 */}
+      {activeDropdown === '领域方案' && (
           <motion.div
             key="mega-menu-business"
             initial={{ opacity: 0, y: 10 }}
@@ -521,7 +521,7 @@ const NavbarMegaMenus = React.memo(function NavbarMegaMenus({
             transition={{ duration: 0.2, ease: 'easeOut' }}
             ref={businessRef}
             className="hidden lg:block fixed top-20 inset-x-0 mx-auto w-full lg:max-w-6xl bg-white backdrop-blur-md rounded-b-2xl border-x border-b border-gray-100 shadow-xl z-[100] max-h-[calc(100vh-6rem)] overflow-y-auto custom-scrollbar"
-            onMouseEnter={() => handleMenuEnter('业务方案')}
+            onMouseEnter={() => handleMenuEnter('领域方案')}
             onMouseLeave={handleMenuLeave}
           >
             <div className="container mx-auto px-6 py-5">
@@ -660,15 +660,15 @@ const NavbarMegaMenus = React.memo(function NavbarMegaMenus({
           </motion.div>
       )}
 
-      {/* Mega Menu Dropdown - 交付服务 */}
-      {activeDropdown === '交付服务' && (
+      {/* Mega Menu Dropdown - 实施服务 */}
+      {activeDropdown === '实施服务' && (
           <motion.div
             key="mega-menu-services"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.2, ease: 'easeOut' }}
             className="hidden lg:block fixed top-20 inset-x-0 mx-auto w-full lg:max-w-3xl bg-white backdrop-blur-md rounded-b-2xl border-x border-b border-gray-100 shadow-xl z-[100]"
-            onMouseEnter={() => handleMenuEnter('交付服务')}
+            onMouseEnter={() => handleMenuEnter('实施服务')}
             onMouseLeave={handleMenuLeave}
           >
             <div className="container mx-auto px-6 py-5">
@@ -1029,7 +1029,7 @@ const NavbarMobileMenu = React.memo(function NavbarMobileMenu({
               onClick={handleOpenDemo}
               className="w-full min-h-[48px] py-3 text-sm font-bold text-white bg-[#E60012] hover:bg-red-700 active:bg-red-800 rounded-md shadow-sm transition-all touch-manipulation"
             >
-              预约专家评估
+              预约系统诊断
             </button>
           </div>
         </div>

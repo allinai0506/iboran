@@ -5,11 +5,17 @@ import type { Contact } from '@/payload-types'
 
 // 主菜单项 - static data, no client-side interactivity needed
 const menuItems = [
+  { label: '首页', href: '/' },
   {
-    label: '业务方案',
-    href: '/solution',
+    label: '产品',
+    href: '/products',
     hasDropdown: true,
     isMegaMenu: true,
+  },
+  {
+    label: '实施服务',
+    href: '/services',
+    hasDropdown: true,
   },
   {
     label: '行业方案',
@@ -18,15 +24,10 @@ const menuItems = [
     isMegaMenu: true,
   },
   {
-    label: '核心产品',
-    href: '/products',
+    label: '领域方案',
+    href: '/solution',
     hasDropdown: true,
     isMegaMenu: true,
-  },
-  {
-    label: '交付服务',
-    href: '/services',
-    hasDropdown: true,
   },
   { label: '客户案例', href: '/cases' },
   { label: '泊冉观察', href: '/posts' },
