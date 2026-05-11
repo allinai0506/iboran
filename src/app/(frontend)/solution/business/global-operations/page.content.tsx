@@ -7,7 +7,7 @@ import {
   ShieldCheck, BarChart3, Activity, CheckCircle, 
   ArrowRight, CreditCard, Ship, Search
 } from 'lucide-react'
-import styles from '../../industry/manufacturing/solution.module.css'
+import styles from '../../industry/solution.module.css'
 import { DemoRequestModal } from '@/components/DemoRequestModal'
 
 export const GlobalOperationsContent: React.FC = () => {

@@ -7,7 +7,7 @@ import {
   Layers, Database, Activity, CheckCircle, ArrowRight,
   ShieldCheck, Zap, Monitor
 } from 'lucide-react'
-import styles from '../manufacturing/solution.module.css'
+import styles from '../solution.module.css'
 import { DemoRequestModal } from '@/components/DemoRequestModal'
 
 export const ManufacturingBIPContent: React.FC = () => {

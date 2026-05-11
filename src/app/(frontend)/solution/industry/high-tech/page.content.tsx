@@ -6,7 +6,7 @@ import {
   Cpu, Zap, BarChart3, Settings2, ShieldCheck, 
   Layers, Database, Activity, CheckCircle, ArrowRight
 } from 'lucide-react'
-import styles from '../manufacturing/solution.module.css'
+import styles from '../solution.module.css'
 import { DemoRequestModal } from '@/components/DemoRequestModal'
 
 export const HighTechSolutionContent: React.FC = () => {

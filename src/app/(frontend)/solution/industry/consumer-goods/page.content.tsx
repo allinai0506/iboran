@@ -7,7 +7,7 @@ import {
   Settings2, Activity, CheckCircle, ArrowRight,
   Store, ClipboardCheck, Tag, Zap
 } from 'lucide-react'
-import styles from '../manufacturing/solution.module.css'
+import styles from '../solution.module.css'
 import { DemoRequestModal } from '@/components/DemoRequestModal'
 
 export const ConsumerGoodsContent: React.FC = () => {

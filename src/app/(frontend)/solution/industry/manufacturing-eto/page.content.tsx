@@ -7,7 +7,7 @@ import {
   Layers, Database, Activity, CheckCircle, ArrowRight,
   ClipboardList, GitBranch, Briefcase
 } from 'lucide-react'
-import styles from '../manufacturing/solution.module.css'
+import styles from '../solution.module.css'
 import { DemoRequestModal } from '@/components/DemoRequestModal'
 
 export const ETOManufacturingContent: React.FC = () => {

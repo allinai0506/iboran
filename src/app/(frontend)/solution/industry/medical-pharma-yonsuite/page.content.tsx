@@ -7,7 +7,7 @@ import {
   Settings2, Activity, CheckCircle, ArrowRight,
   ClipboardCheck, ScanBarcode, FileCheck
 } from 'lucide-react'
-import styles from '../manufacturing/solution.module.css'
+import styles from '../solution.module.css'
 import { DemoRequestModal } from '@/components/DemoRequestModal'
 
 export const MedicalPharmaYonSuiteContent: React.FC = () => {
