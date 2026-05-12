@@ -7,6 +7,11 @@ declare global {
       VERCEL_PROJECT_PRODUCTION_URL: string
     }
   }
+
+  interface Window {
+    uetq?: Array<unknown>
+    _agl?: Array<unknown>
+  }
 }
 
 // If this file has no import/export statements (i.e. is a script)
