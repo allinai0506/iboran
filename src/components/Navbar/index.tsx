@@ -24,7 +24,7 @@ const menuItems = [
     isMegaMenu: true,
   },
   {
-    label: '领域方案',
+    label: '解决方案',
     href: '/solution',
     hasDropdown: true,
     isMegaMenu: true,

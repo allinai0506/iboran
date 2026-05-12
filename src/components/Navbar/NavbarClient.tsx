@@ -386,7 +386,7 @@ const NavbarMegaMenus = React.memo(function NavbarMegaMenus({
 
       if (
         (activeDropdown === '产品' && isOutsideProducts) ||
-        (activeDropdown === '领域方案' && isOutsideBusiness) ||
+        (activeDropdown === '解决方案' && isOutsideBusiness) ||
         (activeDropdown === '行业方案' && isOutsideIndustry)
       ) {
         setActiveDropdown(null)
@@ -512,8 +512,8 @@ const NavbarMegaMenus = React.memo(function NavbarMegaMenus({
           </motion.div>
       )}
 
-      {/* Mega Menu Dropdown - 领域方案 */}
-      {activeDropdown === '领域方案' && (
+      {/* Mega Menu Dropdown - 解决方案 */}
+      {activeDropdown === '解决方案' && (
           <motion.div
             key="mega-menu-business"
             initial={{ opacity: 0, y: 10 }}
@@ -521,7 +521,7 @@ const NavbarMegaMenus = React.memo(function NavbarMegaMenus({
             transition={{ duration: 0.2, ease: 'easeOut' }}
             ref={businessRef}
             className="hidden lg:block fixed top-20 inset-x-0 mx-auto w-full lg:max-w-6xl bg-white backdrop-blur-md rounded-b-2xl border-x border-b border-gray-100 shadow-xl z-[100] max-h-[calc(100vh-6rem)] overflow-y-auto custom-scrollbar"
-            onMouseEnter={() => handleMenuEnter('领域方案')}
+            onMouseEnter={() => handleMenuEnter('解决方案')}
             onMouseLeave={handleMenuLeave}
           >
             <div className="container mx-auto px-6 py-5">
