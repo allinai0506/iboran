@@ -119,6 +119,9 @@ export const ExitIntentModal: React.FC = React.memo(() => {
       if (window._agl) {
         window._agl.push(['track', ['success', { t: 3 }]])
       }
+      if (window.uetq) {
+        window.uetq.push('event', 'submit_lead_form', { revenue_value: 1, currency: 'CNY' })
+      }
       setIsSubmitted(true)
     } catch (err) {
       setError(err instanceof Error ? err.message : '提交失败，请稍后重试')
