@@ -5,15 +5,27 @@ import type { Contact } from '@/payload-types'
 
 // 主菜单项 - static data, no client-side interactivity needed
 const menuItems = [
+  { label: '首页', href: '/' },
   {
-    label: '解决方案',
+    label: '产品',
+    href: '/products',
+    hasDropdown: true,
+    isMegaMenu: true,
+  },
+  {
+    label: '实施服务',
+    href: '/services',
+    hasDropdown: true,
+  },
+  {
+    label: '行业方案',
     href: '/solution',
     hasDropdown: true,
     isMegaMenu: true,
   },
   {
-    label: '核心产品',
-    href: '/products',
+    label: '领域方案',
+    href: '/solution',
     hasDropdown: true,
     isMegaMenu: true,
   },

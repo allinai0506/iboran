@@ -340,7 +340,7 @@ const InlineNavbar = React.memo(function InlineNavbar({ menuItems, contactData }
           onClick={handleOpenDemo}
           className="hidden lg:inline-flex items-center justify-center px-6 py-2.5 text-base font-bold text-white bg-[#E60012] border-2 border-transparent hover:bg-red-700 rounded-md shadow-sm transition-all hover:shadow-md active:scale-95"
         >
-          预约专家诊断
+          预约系统诊断
         </button>
 
         {/* Mobile Menu Button */}
@@ -370,21 +370,24 @@ const NavbarMegaMenus = React.memo(function NavbarMegaMenus({
   handleMenuLeave: () => void
   handleOpenDemo: () => void
 }) {
-  const { activeDropdown, setActiveDropdown, megaMenuTab, setMegaMenuTab } = useNavbarState()
+  const { activeDropdown, setActiveDropdown } = useNavbarState()
   const productsRef = useRef<HTMLDivElement>(null)
-  const solutionsRef = useRef<HTMLDivElement>(null)
+  const businessRef = useRef<HTMLDivElement>(null)
+  const industryRef = useRef<HTMLDivElement>(null)
 
-  // Handle click outside for both menus
+  // Handle click outside for all menus
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (!activeDropdown) return
 
       const isOutsideProducts = productsRef.current && !productsRef.current.contains(event.target as Node)
-      const isOutsideSolutions = solutionsRef.current && !solutionsRef.current.contains(event.target as Node)
+      const isOutsideBusiness = businessRef.current && !businessRef.current.contains(event.target as Node)
+      const isOutsideIndustry = industryRef.current && !industryRef.current.contains(event.target as Node)
 
       if (
-        (activeDropdown === '核心产品' && isOutsideProducts) ||
-        (activeDropdown === '解决方案' && isOutsideSolutions)
+        (activeDropdown === '产品' && isOutsideProducts) ||
+        (activeDropdown === '领域方案' && isOutsideBusiness) ||
+        (activeDropdown === '行业方案' && isOutsideIndustry)
       ) {
         setActiveDropdown(null)
       }
@@ -425,7 +428,7 @@ const NavbarMegaMenus = React.memo(function NavbarMegaMenus({
 
   return createPortal(
     <>
-      {activeDropdown === '核心产品' && (
+      {activeDropdown === '产品' && (
           <motion.div
             key="mega-menu-products"
             initial={{ opacity: 0, y: 10 }}
@@ -433,7 +436,7 @@ const NavbarMegaMenus = React.memo(function NavbarMegaMenus({
             transition={{ duration: 0.2, ease: 'easeOut' }}
             ref={productsRef}
             className="hidden lg:block fixed top-20 inset-x-0 mx-auto w-full lg:max-w-6xl bg-white backdrop-blur-md rounded-b-2xl border-x border-b border-gray-100 shadow-xl z-[100] max-h-[calc(100vh-6rem)] overflow-y-auto custom-scrollbar"
-            onMouseEnter={() => handleMenuEnter('核心产品')}
+            onMouseEnter={() => handleMenuEnter('产品')}
             onMouseLeave={handleMenuLeave}
           >
             <div className="container mx-auto px-6 py-6">
@@ -509,163 +512,72 @@ const NavbarMegaMenus = React.memo(function NavbarMegaMenus({
           </motion.div>
       )}
 
-      {/* Mega Menu Dropdown - Solutions */}
-      {activeDropdown === '解决方案' && (
+      {/* Mega Menu Dropdown - 领域方案 */}
+      {activeDropdown === '领域方案' && (
           <motion.div
-            key="mega-menu-solutions"
+            key="mega-menu-business"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.2, ease: 'easeOut' }}
-            ref={solutionsRef}
+            ref={businessRef}
             className="hidden lg:block fixed top-20 inset-x-0 mx-auto w-full lg:max-w-6xl bg-white backdrop-blur-md rounded-b-2xl border-x border-b border-gray-100 shadow-xl z-[100] max-h-[calc(100vh-6rem)] overflow-y-auto custom-scrollbar"
-            onMouseEnter={() => handleMenuEnter('解决方案')}
+            onMouseEnter={() => handleMenuEnter('领域方案')}
             onMouseLeave={handleMenuLeave}
           >
             <div className="container mx-auto px-6 py-5">
-              {/* Header with Tab Switcher and Close Button */}
-              <div className="flex items-center justify-between mb-5">
-                {/* Tab Switcher */}
-                <div className="flex items-center gap-1 p-1 bg-slate-50 border border-slate-200 rounded-xl w-fit">
-                  <button
-                    type="button"
-                    onClick={(e) => { e.stopPropagation(); setMegaMenuTab('business'); }}
-                    className={`relative px-8 py-2.5 rounded-lg text-xs font-mono font-black transition-colors duration-200 uppercase tracking-tighter ${
-                      megaMenuTab === 'business' ? 'text-white' : 'text-slate-500 hover:text-slate-700'
-                    }`}
-                  >
-                    {megaMenuTab === 'business' && (
-                      <motion.div
-                        layoutId="activeTab"
-                        className="absolute inset-0 bg-[#0052D9] rounded-lg shadow-lg"
-                        transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
-                      />
-                    )}
-                    <span className="relative z-10">按业务</span>
-                  </button>
-                  <button
-                    type="button"
-                    onClick={(e) => { e.stopPropagation(); setMegaMenuTab('industry'); }}
-                    className={`relative px-8 py-2.5 rounded-lg text-xs font-mono font-black transition-colors duration-200 uppercase tracking-tighter ${
-                      megaMenuTab === 'industry' ? 'text-white' : 'text-slate-500 hover:text-slate-700'
-                    }`}
-                  >
-                    {megaMenuTab === 'industry' && (
-                      <motion.div
-                        layoutId="activeTab"
-                        className="absolute inset-0 bg-[#0052D9] rounded-lg shadow-lg"
-                        transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
-                      />
-                    )}
-                    <span className="relative z-10">按行业</span>
-                  </button>
+              <div className="grid grid-cols-12 gap-x-6 items-start">
+                <div className="col-span-9 grid grid-cols-3 gap-x-6 pr-6 border-r border-slate-100">
+                  <div className="space-y-1">
+                    <h3 className="text-sm font-heading font-black text-[#1F2329] mb-4 flex items-center gap-2">
+                      <span className="w-1 h-3 bg-[#0052D9] rounded-full"></span>
+                      财务管控
+                    </h3>
+                    <div className="space-y-0.5">
+                      {solutionByBusiness
+                        .find((c) => c.name === '财务管控')
+                        ?.items.map((item) => (
+                          <SolutionItem key={item.href} item={item} onClick={() => setActiveDropdown(null)} />
+                        ))}
+                    </div>
+                  </div>
+
+                  <div className="col-span-2 space-y-1">
+                    <h3 className="text-sm font-heading font-black text-[#1F2329] mb-4 flex items-center gap-2">
+                      <span className="w-1 h-3 bg-[#0052D9] rounded-full"></span>
+                      业务管控
+                    </h3>
+                    <div className="grid grid-cols-2 gap-x-6 gap-y-0.5">
+                      {solutionByBusiness
+                        .find((c) => c.name === '业务管控')
+                        ?.items.map((item) => (
+                          <SolutionItem key={item.href} item={item} onClick={() => setActiveDropdown(null)} />
+                        ))}
+                    </div>
+                  </div>
                 </div>
-                
-                {/* Close Button */}
-                <button
-                  type="button"
-                  onClick={(e) => { e.stopPropagation(); setActiveDropdown(null); }}
-                  className="p-2 rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-colors"
-                  aria-label="关闭菜单"
-                >
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
 
-              <div className="pr-2 -mr-2">
-                {/* Business Categories Grid */}
-                {megaMenuTab === 'business' && (
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.3 }}
-                    className="grid grid-cols-12 gap-x-6 items-start"
-                  >
-                    <div className="col-span-9 grid grid-cols-3 gap-x-6 pr-6 border-r border-slate-100">
-                      <div className="space-y-1">
-                        <h3 className="text-sm font-heading font-black text-[#1F2329] mb-4 flex items-center gap-2">
-                          <span className="w-1 h-3 bg-[#0052D9] rounded-full"></span>
-                          财务管控
-                        </h3>
-                        <div className="space-y-0.5">
-                          {solutionByBusiness
-                            .find((c) => c.name === '财务管控')
-                            ?.items.map((item) => (
-                              <SolutionItem key={item.href} item={item} onClick={() => setActiveDropdown(null)} />
-                            ))}
-                        </div>
-                      </div>
+                <div className="col-span-3 pl-4">
+                  <div className="bg-slate-50/50 border border-slate-100/50 rounded-2xl p-5">
+                    <h3 className="text-sm font-heading font-black text-[#1F2329] mb-6 flex items-center gap-2">
+                      <span className="w-1 h-3 bg-[#0052D9] rounded-full"></span>
+                      数智底座与基础平台
+                    </h3>
 
-                      <div className="col-span-2 space-y-1">
-                        <h3 className="text-sm font-heading font-black text-[#1F2329] mb-4 flex items-center gap-2">
-                          <span className="w-1 h-3 bg-[#0052D9] rounded-full"></span>
-                          业务管控
-                        </h3>
-                        <div className="grid grid-cols-2 gap-x-6 gap-y-0.5">
-                          {solutionByBusiness
-                            .find((c) => c.name === '业务管控')
-                            ?.items.map((item) => (
-                              <SolutionItem key={item.href} item={item} onClick={() => setActiveDropdown(null)} />
-                            ))}
-                        </div>
-                      </div>
+                    <div className="space-y-0.5">
+                      {solutionByBusiness
+                        .find((c) => c.name === '平台')
+                        ?.items.map((item) => (
+                          <SolutionItem key={item.href} item={item} onClick={() => setActiveDropdown(null)} />
+                        ))}
                     </div>
 
-                    <div className="col-span-3 pl-4">
-                      <div className="bg-slate-50/50 border border-slate-100/50 rounded-2xl p-5">
-                        <h3 className="text-sm font-heading font-black text-[#1F2329] mb-6 flex items-center gap-2">
-                          <span className="w-1 h-3 bg-[#0052D9] rounded-full"></span>
-                          数智底座与基础平台
-                        </h3>
-
-                        <div className="space-y-0.5">
-                          {solutionByBusiness
-                            .find((c) => c.name === '平台')
-                            ?.items.map((item) => (
-                              <SolutionItem key={item.href} item={item} onClick={() => setActiveDropdown(null)} />
-                            ))}
-                        </div>
-
-                        <div className="mt-6 pt-4 border-t border-slate-200">
-                          <p className="text-[10px] text-slate-400 leading-relaxed">
-                            基于微服务架构的共享服务平台，支撑企业业务模式创新与持续敏捷迭代。
-                          </p>
-                        </div>
-                      </div>
+                    <div className="mt-6 pt-4 border-t border-slate-200">
+                      <p className="text-[10px] text-slate-400 leading-relaxed">
+                        基于微服务架构的共享服务平台，支撑企业业务模式创新与持续敏捷迭代。
+                      </p>
                     </div>
-                  </motion.div>
-                )}
-
-                {/* Industry Categories Grid */}
-                {megaMenuTab === 'industry' && (
-                  <motion.div
-                    key="industry-tab"
-                    initial={{ opacity: 0, x: 10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="grid grid-cols-4 gap-x-8 gap-y-12 pr-4 pt-1 items-start max-h-[60vh] overflow-y-auto"
-                  >
-                    {[0, 1, 2, 3].map((colIdx) => (
-                      <div key={colIdx} className="space-y-10">
-                        {[colIdx, colIdx + 4]
-                          .map((idx) => solutionByIndustryCategory[idx])
-                          .filter(Boolean)
-                          .map((category) => (
-                            <div key={category.name} className="space-y-4">
-                              <h3 className="text-sm font-heading font-black text-[#1F2329] mb-4 flex items-center gap-2">
-                                <span className="w-1 h-3 bg-[#0052D9] rounded-full"></span>
-                                {category.name}
-                              </h3>
-                              <div className="space-y-1">
-                                {category.items.map((item) => (
-                                  <SolutionItem key={item.href} item={item} onClick={() => setActiveDropdown(null)} />
-                                ))}
-                              </div>
-                            </div>
-                          ))}
-                      </div>
-                    ))}
-                  </motion.div>
-                )}
+                  </div>
+                </div>
               </div>
 
               {/* Bottom CTA Bar */}
@@ -684,6 +596,177 @@ const NavbarMegaMenus = React.memo(function NavbarMegaMenus({
                   className="inline-flex items-center justify-center px-5 py-2.5 text-sm font-bold text-white bg-[#E60012] hover:bg-red-700 rounded-md shadow-sm transition-all hover:shadow-md active:scale-95"
                 >
                   预约专家演示
+                </button>
+              </div>
+            </div>
+          </motion.div>
+      )}
+
+      {/* Mega Menu Dropdown - 行业方案 */}
+      {activeDropdown === '行业方案' && (
+          <motion.div
+            key="mega-menu-industry"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.2, ease: 'easeOut' }}
+            ref={industryRef}
+            className="hidden lg:block fixed top-20 inset-x-0 mx-auto w-full lg:max-w-6xl bg-white backdrop-blur-md rounded-b-2xl border-x border-b border-gray-100 shadow-xl z-[100] max-h-[calc(100vh-6rem)] overflow-y-auto custom-scrollbar"
+            onMouseEnter={() => handleMenuEnter('行业方案')}
+            onMouseLeave={handleMenuLeave}
+          >
+            <div className="container mx-auto px-6 py-5">
+              <div className="grid grid-cols-4 gap-x-8 gap-y-12 pr-4 pt-1 items-start max-h-[60vh] overflow-y-auto">
+                {[0, 1, 2, 3].map((colIdx) => (
+                  <div key={colIdx} className="space-y-10">
+                    {[colIdx, colIdx + 4]
+                      .map((idx) => solutionByIndustryCategory[idx])
+                      .filter(Boolean)
+                      .map((category) => (
+                        <div key={category.name} className="space-y-4">
+                          <h3 className="text-sm font-heading font-black text-[#1F2329] mb-4 flex items-center gap-2">
+                            <span className="w-1 h-3 bg-[#0052D9] rounded-full"></span>
+                            {category.name}
+                          </h3>
+                          <div className="space-y-1">
+                            {category.items.map((item) => (
+                              <SolutionItem key={item.href} item={item} onClick={() => setActiveDropdown(null)} />
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                  </div>
+                ))}
+              </div>
+
+              {/* Bottom CTA Bar */}
+              <div className="flex items-center justify-between mt-6 pt-4 border-t border-slate-100">
+                <Link
+                  href="/solution"
+                  onClick={() => setActiveDropdown(null)}
+                  className="inline-flex items-center gap-2 text-sm font-medium text-[#0052D9] hover:text-blue-700 transition-colors group"
+                >
+                  查看全部解决方案
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <button
+                  type="button"
+                  onClick={handleOpenDemo}
+                  className="inline-flex items-center justify-center px-5 py-2.5 text-sm font-bold text-white bg-[#E60012] hover:bg-red-700 rounded-md shadow-sm transition-all hover:shadow-md active:scale-95"
+                >
+                  预约专家演示
+                </button>
+              </div>
+            </div>
+          </motion.div>
+      )}
+
+      {/* Mega Menu Dropdown - 实施服务 */}
+      {activeDropdown === '实施服务' && (
+          <motion.div
+            key="mega-menu-services"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.2, ease: 'easeOut' }}
+            className="hidden lg:block fixed top-20 inset-x-0 mx-auto w-full lg:max-w-3xl bg-white backdrop-blur-md rounded-b-2xl border-x border-b border-gray-100 shadow-xl z-[100]"
+            onMouseEnter={() => handleMenuEnter('实施服务')}
+            onMouseLeave={handleMenuLeave}
+          >
+            <div className="container mx-auto px-6 py-5">
+              <div className="grid grid-cols-2 gap-6">
+                <div className="space-y-1">
+                  <h3 className="text-sm font-heading font-black text-[#1F2329] mb-4 flex items-center gap-2">
+                    <span className="w-1 h-3 bg-[#0052D9] rounded-full"></span>
+                    交付服务体系
+                  </h3>
+                  <Link
+                    href="/services"
+                    onClick={() => setActiveDropdown(null)}
+                    className="group flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 transition-all duration-200"
+                  >
+                    <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-blue-50 group-hover:bg-[#0052D9] flex items-center justify-center transition-all">
+                      <span className="text-xs font-black text-[#0052D9] group-hover:text-white">总</span>
+                    </div>
+                    <div className="flex-1 min-w-0 pt-0.5">
+                      <div className="font-medium text-[#1F2329] text-sm group-hover:text-[#0052D9] transition-colors">服务总览</div>
+                      <div className="text-xs text-slate-500 mt-1">四大服务线闭环，全生命周期服务体系</div>
+                    </div>
+                  </Link>
+                  <Link
+                    href="/services/implementation"
+                    onClick={() => setActiveDropdown(null)}
+                    className="group flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 transition-all duration-200"
+                  >
+                    <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-blue-50 group-hover:bg-[#0052D9] flex items-center justify-center transition-all">
+                      <span className="text-xs font-black text-[#0052D9] group-hover:text-white">01</span>
+                    </div>
+                    <div className="flex-1 min-w-0 pt-0.5">
+                      <div className="font-medium text-[#1F2329] text-sm group-hover:text-[#0052D9] transition-colors">系统实施</div>
+                      <div className="text-xs text-slate-500 mt-1">YonSuite / BIP 交付与上线</div>
+                    </div>
+                  </Link>
+                  <Link
+                    href="/services/integration-development"
+                    onClick={() => setActiveDropdown(null)}
+                    className="group flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 transition-all duration-200"
+                  >
+                    <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-blue-50 group-hover:bg-[#0052D9] flex items-center justify-center transition-all">
+                      <span className="text-xs font-black text-[#0052D9] group-hover:text-white">02</span>
+                    </div>
+                    <div className="flex-1 min-w-0 pt-0.5">
+                      <div className="font-medium text-[#1F2329] text-sm group-hover:text-[#0052D9] transition-colors">集成与开发</div>
+                      <div className="text-xs text-slate-500 mt-1">API 对接、数据集成、低代码扩展</div>
+                    </div>
+                  </Link>
+                </div>
+                <div className="space-y-1">
+                  <h3 className="text-sm font-heading font-black text-[#1F2329] mb-4 flex items-center gap-2">
+                    <span className="w-1 h-3 bg-[#0052D9] rounded-full"></span>
+                    运维与迁移
+                  </h3>
+                  <Link
+                    href="/services/operations"
+                    onClick={() => setActiveDropdown(null)}
+                    className="group flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 transition-all duration-200"
+                  >
+                    <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-blue-50 group-hover:bg-[#0052D9] flex items-center justify-center transition-all">
+                      <span className="text-xs font-black text-[#0052D9] group-hover:text-white">03</span>
+                    </div>
+                    <div className="flex-1 min-w-0 pt-0.5">
+                      <div className="font-medium text-[#1F2329] text-sm group-hover:text-[#0052D9] transition-colors">系统运维</div>
+                      <div className="text-xs text-slate-500 mt-1">工单支持、巡检、月结保障、版本升级</div>
+                    </div>
+                  </Link>
+                  <Link
+                    href="/services/migration-tools"
+                    onClick={() => setActiveDropdown(null)}
+                    className="group flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 transition-all duration-200"
+                  >
+                    <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-blue-50 group-hover:bg-[#0052D9] flex items-center justify-center transition-all">
+                      <span className="text-xs font-black text-[#0052D9] group-hover:text-white">04</span>
+                    </div>
+                    <div className="flex-1 min-w-0 pt-0.5">
+                      <div className="font-medium text-[#1F2329] text-sm group-hover:text-[#0052D9] transition-colors">迁移与工具</div>
+                      <div className="text-xs text-slate-500 mt-1">数据同步、BIP升迁、数据脱敏</div>
+                    </div>
+                  </Link>
+                </div>
+              </div>
+              {/* Bottom CTA Bar */}
+              <div className="flex items-center justify-between mt-6 pt-4 border-t border-slate-100">
+                <Link
+                  href="/services"
+                  onClick={() => setActiveDropdown(null)}
+                  className="inline-flex items-center gap-2 text-sm font-medium text-[#0052D9] hover:text-blue-700 transition-colors group"
+                >
+                  查看服务总览
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <button
+                  type="button"
+                  onClick={handleOpenDemo}
+                  className="inline-flex items-center justify-center px-5 py-2.5 text-sm font-bold text-white bg-[#E60012] hover:bg-red-700 rounded-md shadow-sm transition-all hover:shadow-md active:scale-95"
+                >
+                  预约服务评估
                 </button>
               </div>
             </div>
@@ -776,103 +859,75 @@ const NavbarMobileMenu = React.memo(function NavbarMobileMenu({
                     <div className="bg-slate-50 pb-2">
                       {mobileActiveDropdown.includes(item.label) && (
                         <>
-                          {item.label === '解决方案' && (
-                            <>
-                              <div className="flex items-center gap-2 px-4 py-3 border-b border-slate-200">
-                                <button
-                                  onClick={() => setMobileSolutionTab('industry')}
-                                  className={`flex-1 px-3 py-2 rounded-lg text-sm font-medium transition-all ${
-                                    mobileSolutionTab === 'industry'
-                                      ? 'bg-[#0052D9] text-white shadow-sm'
-                                      : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'
-                                  }`}
-                                >
-                                  按行业
-                                </button>
-                                <button
-                                  onClick={() => setMobileSolutionTab('business')}
-                                  className={`flex-1 px-3 py-2 rounded-lg text-sm font-medium transition-all ${
-                                    mobileSolutionTab === 'business'
-                                      ? 'bg-[#0052D9] text-white shadow-sm'
-                                      : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'
-                                  }`}
-                                >
-                                  按业务
-                                </button>
-                              </div>
-
-                              {mobileSolutionTab === 'industry' && (
-                                <div className="max-h-[min(60vh,calc(100dvh-14rem))] overflow-y-auto overscroll-y-contain touch-pan-y">
-                                  {solutionByIndustryCategory.map((category) => (
-                                    <div key={category.name} className="pt-3 first:pt-2">
-                                      <div className="px-6 py-1 text-xs font-semibold text-slate-400 uppercase tracking-wider flex items-center gap-2">
-                                        <span className="w-1 h-3 bg-[#E60012] rounded-full"></span>
-                                        {category.name}
-                                      </div>
-                                      {category.items.map((item) => {
-                                        const IconComponent = item.icon
-                                        return (
-                                          <Link
-                                            key={item.href}
-                                            href={item.href}
-                                            onClick={() => setIsMobileMenuOpen(false)}
-                                            className="flex items-center gap-3 px-5 py-3.5 min-h-[48px] hover:bg-slate-100 active:bg-slate-200/80 transition-colors touch-manipulation"
-                                          >
-                                            <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0">
-                                              <IconComponent className="w-4 h-4 text-[#0052D9]" />
-                                            </div>
-                                            <div className="flex-1 min-w-0">
-                                              <div className="font-medium text-[#1F2329] text-sm">
-                                                {item.label}
-                                              </div>
-                                              <div className="text-xs text-slate-500 mt-0.5 line-clamp-2">
-                                                {item.desc}
-                                              </div>
-                                            </div>
-                                          </Link>
-                                        )
-                                      })}
-                                    </div>
-                                  ))}
+                          {item.label === '业务方案' && (
+                            <div className="max-h-[min(60vh,calc(100dvh-14rem))] overflow-y-auto overscroll-y-contain touch-pan-y">
+                              {solutionByBusiness.map((category) => (
+                                <div key={category.name} className="pt-3 first:pt-2">
+                                  <div className="px-6 py-1 text-xs font-semibold text-slate-400 uppercase tracking-wider flex items-center gap-2">
+                                    <span className="w-1 h-3 bg-[#E60012] rounded-full"></span>
+                                    {category.name}
+                                  </div>
+                                  {category.items.map((dropItem) => {
+                                    const IconComponent = dropItem.icon
+                                    return (
+                                      <Link
+                                        key={dropItem.href}
+                                        href={dropItem.href}
+                                        onClick={() => setIsMobileMenuOpen(false)}
+                                        className="flex items-center gap-3 px-5 py-3.5 min-h-[48px] hover:bg-slate-100 active:bg-slate-200/80 transition-colors touch-manipulation"
+                                      >
+                                        <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0">
+                                          <IconComponent className="w-4 h-4 text-[#0052D9]" />
+                                        </div>
+                                        <div className="flex-1 min-w-0">
+                                          <div className="font-medium text-[#1F2329] text-sm">
+                                            {dropItem.label}
+                                          </div>
+                                          <div className="text-xs text-slate-500 mt-0.5 line-clamp-2">
+                                            {dropItem.desc}
+                                          </div>
+                                        </div>
+                                      </Link>
+                                    )
+                                  })}
                                 </div>
-                              )}
-
-                              {mobileSolutionTab === 'business' && (
-                                <div className="max-h-[min(60vh,calc(100dvh-14rem))] overflow-y-auto overscroll-y-contain touch-pan-y">
-                                  {solutionByBusiness.map((category) => (
-                                    <div key={category.name} className="pt-3 first:pt-2">
-                                      <div className="px-6 py-1 text-xs font-semibold text-slate-400 uppercase tracking-wider flex items-center gap-2">
-                                        <span className="w-1 h-3 bg-[#E60012] rounded-full"></span>
-                                        {category.name}
-                                      </div>
-                                      {category.items.map((dropItem) => {
-                                        const IconComponent = dropItem.icon
-                                        return (
-                                          <Link
-                                            key={dropItem.href}
-                                            href={dropItem.href}
-                                            onClick={() => setIsMobileMenuOpen(false)}
-                                            className="flex items-center gap-3 px-5 py-3.5 min-h-[48px] hover:bg-slate-100 active:bg-slate-200/80 transition-colors touch-manipulation"
-                                          >
-                                            <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0">
-                                              <IconComponent className="w-4 h-4 text-[#0052D9]" />
-                                            </div>
-                                            <div className="flex-1 min-w-0">
-                                              <div className="font-medium text-[#1F2329] text-sm">
-                                                {dropItem.label}
-                                              </div>
-                                              <div className="text-xs text-slate-500 mt-0.5 line-clamp-2">
-                                                {dropItem.desc}
-                                              </div>
-                                            </div>
-                                          </Link>
-                                        )
-                                      })}
-                                    </div>
-                                  ))}
+                              ))}
+                            </div>
+                          )}
+                          {item.label === '行业方案' && (
+                            <div className="max-h-[min(60vh,calc(100dvh-14rem))] overflow-y-auto overscroll-y-contain touch-pan-y">
+                              {solutionByIndustryCategory.map((category) => (
+                                <div key={category.name} className="pt-3 first:pt-2">
+                                  <div className="px-6 py-1 text-xs font-semibold text-slate-400 uppercase tracking-wider flex items-center gap-2">
+                                    <span className="w-1 h-3 bg-[#E60012] rounded-full"></span>
+                                    {category.name}
+                                  </div>
+                                  {category.items.map((indItem) => {
+                                    const IconComponent = indItem.icon
+                                    return (
+                                      <Link
+                                        key={indItem.href}
+                                        href={indItem.href}
+                                        onClick={() => setIsMobileMenuOpen(false)}
+                                        className="flex items-center gap-3 px-5 py-3.5 min-h-[48px] hover:bg-slate-100 active:bg-slate-200/80 transition-colors touch-manipulation"
+                                      >
+                                        <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0">
+                                          <IconComponent className="w-4 h-4 text-[#0052D9]" />
+                                        </div>
+                                        <div className="flex-1 min-w-0">
+                                          <div className="font-medium text-[#1F2329] text-sm">
+                                            {indItem.label}
+                                          </div>
+                                          <div className="text-xs text-slate-500 mt-0.5 line-clamp-2">
+                                            {indItem.desc}
+                                          </div>
+                                        </div>
+                                      </Link>
+                                    )
+                                  })}
                                 </div>
-                              )}
-                            </>
+                              ))}
+                            </div>
                           )}
                           {item.label === '核心产品' && (
                             <div className="max-h-[min(60vh,calc(100dvh-14rem))] overflow-y-auto overscroll-y-contain touch-pan-y">
@@ -906,6 +961,32 @@ const NavbarMobileMenu = React.memo(function NavbarMobileMenu({
                                     )
                                   })}
                                 </div>
+                              ))}
+                            </div>
+                          )}
+                          {item.label === '交付服务' && (
+                            <div className="max-h-[min(60vh,calc(100dvh-14rem))] overflow-y-auto overscroll-y-contain touch-pan-y">
+                              {[
+                                { label: '服务总览', href: '/services', desc: '四大服务线闭环' },
+                                { label: '系统实施', href: '/services/implementation', desc: 'YonSuite / BIP 交付与上线' },
+                                { label: '集成与开发', href: '/services/integration-development', desc: 'API 对接、数据集成' },
+                                { label: '系统运维', href: '/services/operations', desc: '工单支持、巡检、月结保障' },
+                                { label: '迁移与工具', href: '/services/migration-tools', desc: '数据同步、BIP升迁、脱敏' },
+                              ].map((serviceItem) => (
+                                <Link
+                                  key={serviceItem.href}
+                                  href={serviceItem.href}
+                                  onClick={() => setIsMobileMenuOpen(false)}
+                                  className="flex items-center gap-3 px-5 py-3.5 min-h-[48px] hover:bg-slate-100 active:bg-slate-200/80 transition-colors touch-manipulation"
+                                >
+                                  <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0">
+                                    <span className="text-xs font-black text-[#0052D9]">S</span>
+                                  </div>
+                                  <div className="flex-1 min-w-0">
+                                    <div className="font-medium text-[#1F2329] text-sm">{serviceItem.label}</div>
+                                    <div className="text-xs text-slate-500 mt-0.5">{serviceItem.desc}</div>
+                                  </div>
+                                </Link>
                               ))}
                             </div>
                           )}
@@ -948,7 +1029,7 @@ const NavbarMobileMenu = React.memo(function NavbarMobileMenu({
               onClick={handleOpenDemo}
               className="w-full min-h-[48px] py-3 text-sm font-bold text-white bg-[#E60012] hover:bg-red-700 active:bg-red-800 rounded-md shadow-sm transition-all touch-manipulation"
             >
-              预约专家评估
+              预约系统诊断
             </button>
           </div>
         </div>
