@@ -271,12 +271,12 @@ const InlineNavbar = React.memo(function InlineNavbar({ menuItems, contactData }
   return (
     <>
       {/* Desktop Navigation */}
-      <nav className="hidden lg:flex items-center space-x-8">
+      <nav className="hidden lg:flex items-center gap-5 xl:gap-6">
         {menuItems.map((item) => {
           const isDropdown = Boolean(item.hasDropdown)
           const isActive = activeDropdown === item.label
           const triggerClassName =
-            'relative flex items-center gap-1 text-sm font-heading font-bold text-[#1F2329] hover:text-[#0052D9] transition-colors group py-4 px-1'
+            'relative flex items-center gap-1 text-sm font-heading font-bold text-[#1F2329] hover:text-[#0052D9] transition-colors group py-4 px-0.5 whitespace-nowrap'
 
           return (
             <div
