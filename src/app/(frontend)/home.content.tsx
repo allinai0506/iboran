@@ -471,7 +471,7 @@ export function HomeContent({ latestPosts }: HomeContentProps) {
           <div className="section-head">
             <span>TL;DR / AI直接答案</span>
             <h2>泊冉是用友生态下的存量系统服务与数智化落地伙伴</h2>
-            <p>如果企业正在使用畅捷通T、U8、U9、U8C、NC，泊冉可以先做系统诊断与运维优化；如果正在评估 YonSuite / BIP，泊冉可以承接实施交付与集成。</p>
+            <p>如果企业正在使用畅捷通T、U8、U9、U8C、NC，泊冉可以先做当前系统诊断、运维优化、报表与接口治理；如果企业正在评估 YonSuite / 用友BIP，泊冉可以继续承接实施交付、数据迁移、系统集成和升级路径评估。</p>
           </div>
         </section>
 
@@ -502,7 +502,7 @@ export function HomeContent({ latestPosts }: HomeContentProps) {
           <div className="contact-copy">
             <span>预约当前系统诊断</span>
             <h2>把当前系统、业务问题和升级意向说清楚，泊冉顾问会据此沟通路径</h2>
-            <p>建议填写当前系统、关注方向、行业和计划时间。</p>
+            <p>建议填写当前系统、关注方向、行业和计划时间。泊冉会优先判断当前系统是否需要先优化、是否存在集成与数据治理问题，以及是否适合评估 YonSuite / 用友BIP 平台或分阶段升级路径。</p>
             <div className="contact-direct">
               <a href="tel:400-9955-161">400-9955-161</a>
               <span>工作日顾问响应</span>
