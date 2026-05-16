@@ -5,6 +5,10 @@ FROM node:22.17.0-alpine AS base
 ENV NPM_CONFIG_REGISTRY=https://registry.npmmirror.com
 ENV COREPACK_NPM_REGISTRY=https://registry.npmmirror.com
 
+# Use Aliyun mirror for Alpine packages (required for --network host builds)
+RUN echo 'https://mirrors.aliyun.com/alpine/v3.22/main' > /etc/apk/repositories \
+    && echo 'https://mirrors.aliyun.com/alpine/v3.22/community' >> /etc/apk/repositories
+
 # Install dependencies only when needed
 FROM base AS deps
 # Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.

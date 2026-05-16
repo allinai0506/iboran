@@ -59,8 +59,11 @@ jobs:
 
       - name: Build and restart on server
         run: |
-          ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no \
-            "${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}" <<'ENDSSH'
+          ssh -i ~/.ssh/deploy_key \
+              -o StrictHostKeyChecking=no \
+              -o ServerAliveInterval=30 \
+              -o ServerAliveCountMax=60 \
+              "${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}" <<'ENDSSH'
           set -euo pipefail
           cd /opt/iboran
           docker build --network host \
