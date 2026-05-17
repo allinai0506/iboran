@@ -251,7 +251,7 @@ export function HomeContent({ latestPosts, homeData }: HomeContentProps) {
               <strong className="group-card-title">{entry.services?.groupTitle || '看交付落地'}</strong>
               <p className="group-desc">{entry.services?.groupDesc || '了解泊冉如何围绕存量系统服务、实施交付、数据迁移、系统集成和上线运营提供服务。'}</p>
               <Link href="/services/implementation"><strong>实施服务</strong><em>YonSuite / 用友BIP 交付与上线</em></Link>
-              <a href="#legacy" onClick={(e) => { e.preventDefault(); document.getElementById('legacy')?.scrollIntoView({ behavior: 'smooth' }); setHiddenInterest('当前系统诊断'); }}>
+              <a href="#legacy" onClick={(e) => { e.preventDefault(); document.getElementById('legacy')?.scrollIntoView({ behavior: 'smooth' }); }}>
                 <strong>当前系统诊断</strong><em>运行状态、权限流程、报表接口与数据口径梳理</em>
               </a>
               <a href="#legacy" onClick={(e) => { e.preventDefault(); document.getElementById('legacy')?.scrollIntoView({ behavior: 'smooth' }); }}>
@@ -263,10 +263,10 @@ export function HomeContent({ latestPosts, homeData }: HomeContentProps) {
               <div className="group-title"><span>Industries</span><h3>典型行业</h3></div>
               <strong className="group-card-title">{entry.industries?.groupTitle || '看行业方案'}</strong>
               <p className="group-desc">{entry.industries?.groupDesc || '按企业所在行业或组织形态，查看更贴近真实业务场景的解决方案。'}</p>
-              <Link href="/solution/industry/state-owned"><strong>多组织集团</strong><em>集团管控、多组织协同、合并与主数据治理</em></Link>
+              <Link href="/solution/industry/yonyou-bip"><strong>多组织集团</strong><em>集团管控、多组织协同、合并与主数据治理</em></Link>
               <Link href="/solution/industry/consumer-goods"><strong>消费品</strong><em>渠道订单、价格政策、库存周转与毛利</em></Link>
-              <Link href="/solution/industry/manufacturing-eto"><strong>个性化制造</strong><em>订单、BOM、计划、生产、质量与成本</em></Link>
-              <Link href="/solution/industry/medical-pharma"><strong>医药医疗器械</strong><em>合规、追溯、渠道协同与经营分析</em></Link>
+              <Link href="/solution/industry/manufacturing-yonsuite"><strong>个性化制造</strong><em>订单、BOM、计划、生产、质量与成本</em></Link>
+              <Link href="/solution/industry/medical-pharma-yonsuite"><strong>医药医疗器械</strong><em>合规、追溯、渠道协同与经营分析</em></Link>
               <Link href="/solution/industry/modern-service"><strong>现代服务业</strong><em>项目、合同、交付、核算与经营分析</em></Link>
             </article>
             <article className="entry-group" id="domain-entry">
