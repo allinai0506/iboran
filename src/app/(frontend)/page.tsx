@@ -64,11 +64,14 @@ const jsonLd = {
 export default async function Page() {
     const payload = await getPayload({ config: configPromise })
 
-    const latestPosts = await payload.find({
-      collection: 'posts',
-      limit: 3,
-      sort: '-publishedAt',
-    }) as PaginatedDocs<Post>
+    const [latestPosts, homeData] = await Promise.all([
+      payload.find({
+        collection: 'posts',
+        limit: 3,
+        sort: '-publishedAt',
+      }),
+      payload.findGlobal({ slug: 'home-config' }),
+    ])
 
     return (
         <>
@@ -76,7 +79,7 @@ export default async function Page() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
-            <HomeContent latestPosts={latestPosts.docs} />
+            <HomeContent latestPosts={latestPosts.docs} homeData={homeData} />
         </>
     )
 }

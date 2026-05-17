@@ -125,11 +125,13 @@ export interface Config {
     header: Header;
     footer: Footer;
     contact: Contact;
+    'home-config': HomeConfig;
   };
   globalsSelect: {
     header: HeaderSelect<false> | HeaderSelect<true>;
     footer: FooterSelect<false> | FooterSelect<true>;
     contact: ContactSelect<false> | ContactSelect<true>;
+    'home-config': HomeConfigSelect<false> | HomeConfigSelect<true>;
   };
   locale: null;
   user: User & {
@@ -2606,6 +2608,173 @@ export interface Contact {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "home-config".
+ */
+export interface HomeConfig {
+  id: string;
+  hero?: {
+    eyebrow?: string | null;
+    title?: string | null;
+    subtitle?: string | null;
+    description?: string | null;
+    primaryCtaText?: string | null;
+    secondaryCtaText?: string | null;
+  };
+  entry?: {
+    sectionLabel?: string | null;
+    sectionTitle?: string | null;
+    sectionDescription?: string | null;
+    products?: {
+      groupTitle?: string | null;
+      groupDesc?: string | null;
+    };
+    services?: {
+      groupTitle?: string | null;
+      groupDesc?: string | null;
+    };
+    industries?: {
+      groupTitle?: string | null;
+      groupDesc?: string | null;
+    };
+    domains?: {
+      groupTitle?: string | null;
+      groupDesc?: string | null;
+    };
+  };
+  legacy?: {
+    sectionLabel?: string | null;
+    sectionTitle?: string | null;
+    sectionDescription?: string | null;
+    card1?: {
+      title?: string | null;
+      description?: string | null;
+      ctaText?: string | null;
+    };
+    card2?: {
+      title?: string | null;
+      description?: string | null;
+      ctaText?: string | null;
+    };
+    card3?: {
+      title?: string | null;
+      description?: string | null;
+      ctaText?: string | null;
+    };
+  };
+  pathway?: {
+    sectionLabel?: string | null;
+    sectionTitle?: string | null;
+    sectionDescription?: string | null;
+    step1?: {
+      title?: string | null;
+      description?: string | null;
+    };
+    step2?: {
+      title?: string | null;
+      description?: string | null;
+    };
+    step3?: {
+      title?: string | null;
+      description?: string | null;
+    };
+    step4?: {
+      title?: string | null;
+      description?: string | null;
+    };
+  };
+  services?: {
+    sectionLabel?: string | null;
+    sectionTitle?: string | null;
+    sectionDescription?: string | null;
+    service1?: {
+      title?: string | null;
+      description?: string | null;
+    };
+    service2?: {
+      title?: string | null;
+      description?: string | null;
+    };
+    service3?: {
+      title?: string | null;
+      description?: string | null;
+    };
+    service4?: {
+      title?: string | null;
+      description?: string | null;
+    };
+    scopeHead?: {
+      label?: string | null;
+      description?: string | null;
+    };
+  };
+  platform?: {
+    sectionLabel?: string | null;
+    sectionTitle?: string | null;
+    sectionDescription?: string | null;
+    yonsuite?: {
+      description?: string | null;
+    };
+    bip?: {
+      description?: string | null;
+    };
+  };
+  industrySolutions?: {
+    sectionLabel?: string | null;
+    sectionTitle?: string | null;
+  };
+  domainSolutions?: {
+    sectionLabel?: string | null;
+    sectionTitle?: string | null;
+  };
+  methodology?: {
+    sectionLabel?: string | null;
+    sectionTitle?: string | null;
+    step1?: {
+      title?: string | null;
+      description?: string | null;
+    };
+    step2?: {
+      title?: string | null;
+      description?: string | null;
+    };
+    step3?: {
+      title?: string | null;
+      description?: string | null;
+    };
+  };
+  aiAnswer?: {
+    sectionLabel?: string | null;
+    sectionTitle?: string | null;
+    sectionDescription?: string | null;
+  };
+  faq?: {
+    sectionLabel?: string | null;
+    sectionTitle?: string | null;
+    faq1?: {
+      question?: string | null;
+      answer?: string | null;
+    };
+    faq2?: {
+      question?: string | null;
+      answer?: string | null;
+    };
+    faq3?: {
+      question?: string | null;
+      answer?: string | null;
+    };
+  };
+  contact?: {
+    sectionLabel?: string | null;
+    sectionTitle?: string | null;
+    sectionDescription?: string | null;
+    phone?: string | null;
+    phoneLabel?: string | null;
+  };
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "header_select".
  */
 export interface HeaderSelect<T extends boolean = true> {
@@ -2733,6 +2902,245 @@ export interface ContactSelect<T extends boolean = true> {
   phone?: T;
   wechatId?: T;
   wechatQR?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "home-config_select".
+ */
+export interface HomeConfigSelect<T extends boolean = true> {
+  hero?:
+    | T
+    | {
+        eyebrow?: T;
+        title?: T;
+        subtitle?: T;
+        description?: T;
+        primaryCtaText?: T;
+        secondaryCtaText?: T;
+      };
+  entry?:
+    | T
+    | {
+        sectionLabel?: T;
+        sectionTitle?: T;
+        sectionDescription?: T;
+        products?:
+          | T
+          | {
+              groupTitle?: T;
+              groupDesc?: T;
+            };
+        services?:
+          | T
+          | {
+              groupTitle?: T;
+              groupDesc?: T;
+            };
+        industries?:
+          | T
+          | {
+              groupTitle?: T;
+              groupDesc?: T;
+            };
+        domains?:
+          | T
+          | {
+              groupTitle?: T;
+              groupDesc?: T;
+            };
+      };
+  legacy?:
+    | T
+    | {
+        sectionLabel?: T;
+        sectionTitle?: T;
+        sectionDescription?: T;
+        card1?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              ctaText?: T;
+            };
+        card2?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              ctaText?: T;
+            };
+        card3?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              ctaText?: T;
+            };
+      };
+  pathway?:
+    | T
+    | {
+        sectionLabel?: T;
+        sectionTitle?: T;
+        sectionDescription?: T;
+        step1?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+            };
+        step2?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+            };
+        step3?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+            };
+        step4?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+            };
+      };
+  services?:
+    | T
+    | {
+        sectionLabel?: T;
+        sectionTitle?: T;
+        sectionDescription?: T;
+        service1?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+            };
+        service2?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+            };
+        service3?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+            };
+        service4?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+            };
+        scopeHead?:
+          | T
+          | {
+              label?: T;
+              description?: T;
+            };
+      };
+  platform?:
+    | T
+    | {
+        sectionLabel?: T;
+        sectionTitle?: T;
+        sectionDescription?: T;
+        yonsuite?:
+          | T
+          | {
+              description?: T;
+            };
+        bip?:
+          | T
+          | {
+              description?: T;
+            };
+      };
+  industrySolutions?:
+    | T
+    | {
+        sectionLabel?: T;
+        sectionTitle?: T;
+      };
+  domainSolutions?:
+    | T
+    | {
+        sectionLabel?: T;
+        sectionTitle?: T;
+      };
+  methodology?:
+    | T
+    | {
+        sectionLabel?: T;
+        sectionTitle?: T;
+        step1?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+            };
+        step2?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+            };
+        step3?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+            };
+      };
+  aiAnswer?:
+    | T
+    | {
+        sectionLabel?: T;
+        sectionTitle?: T;
+        sectionDescription?: T;
+      };
+  faq?:
+    | T
+    | {
+        sectionLabel?: T;
+        sectionTitle?: T;
+        faq1?:
+          | T
+          | {
+              question?: T;
+              answer?: T;
+            };
+        faq2?:
+          | T
+          | {
+              question?: T;
+              answer?: T;
+            };
+        faq3?:
+          | T
+          | {
+              question?: T;
+              answer?: T;
+            };
+      };
+  contact?:
+    | T
+    | {
+        sectionLabel?: T;
+        sectionTitle?: T;
+        sectionDescription?: T;
+        phone?: T;
+        phoneLabel?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

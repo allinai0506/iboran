@@ -6,13 +6,14 @@ import Image from 'next/image'
 import { useAttribution } from '@/providers/Attribution'
 import { getClientSideURL } from '@/utilities/getURL'
 import s from './home-new.module.css'
-import type { Post } from '@/payload-types'
+import type { Post, HomeConfig } from '@/payload-types'
 
 interface HomeContentProps {
   latestPosts: Post[]
+  homeData: HomeConfig
 }
 
-export function HomeContent({ latestPosts }: HomeContentProps) {
+export function HomeContent({ latestPosts, homeData }: HomeContentProps) {
   const [loading, setLoading] = useState(false)
   const [hint, setHint] = useState({ msg: '', type: '' })
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -136,6 +137,20 @@ export function HomeContent({ latestPosts }: HomeContentProps) {
     return () => document.removeEventListener('click', handleRipple)
   }, [])
 
+  // Extract data with fallbacks
+  const hero = homeData.hero || {}
+  const entry = homeData.entry || {}
+  const legacy = homeData.legacy || {}
+  const pathway = homeData.pathway || {}
+  const services = homeData.services || {}
+  const platform = homeData.platform || {}
+  const industrySolutions = homeData.industrySolutions || {}
+  const domainSolutions = homeData.domainSolutions || {}
+  const methodology = homeData.methodology || {}
+  const aiAnswer = homeData.aiAnswer || {}
+  const faq = homeData.faq || {}
+  const contact = homeData.contact || {}
+
   return (
     <div className={s.homepageContainer}>
       <main>
@@ -144,11 +159,11 @@ export function HomeContent({ latestPosts }: HomeContentProps) {
           <div className="hero-grid" aria-hidden="true"></div>
           <div className="hero-inner">
             <div className="hero-copy">
-              <p className="eyebrow">YONYOU LIFECYCLE DIGITAL SERVICE</p>
-              <h1>用友存量系统持续服务与 YonSuite / BIP 数智化落地伙伴</h1>
-              <h2>服务好今天正在运行的系统，规划好明天要升级的平台</h2>
+              <p className="eyebrow">{hero.eyebrow || 'YONYOU LIFECYCLE DIGITAL SERVICE'}</p>
+              <h1>{hero.title || '用友存量系统持续服务与 YonSuite / BIP 数智化落地伙伴'}</h1>
+              <h2>{hero.subtitle || '服务好今天正在运行的系统，规划好明天要升级的平台'}</h2>
               <p className="hero-desc">
-                泊冉软件面向正在使用畅捷通T、U8、U9、U8C、NC 等用友存量系统，以及正在评估 YonSuite / 用友BIP 的企业，提供系统运维、二次开发、报表优化、接口集成、数据治理、实施交付、行业方案和升级路径评估服务。我们以 U8 和 NC 客户服务为重点，帮助企业在不打断核心业务的前提下，逐步走向业务在线、数据驱动和智能运营。
+                {hero.description || '泊冉软件面向正在使用畅捷通T、U8、U9、U8C、NC 等用友存量系统，以及正在评估 YonSuite / 用友BIP 的企业，提供系统运维、二次开发、报表优化、接口集成、数据治理、实施交付、行业方案和升级路径评估服务。'}
               </p>
               <div className="hero-actions">
                 <a 
@@ -161,7 +176,7 @@ export function HomeContent({ latestPosts }: HomeContentProps) {
                     trackEvent('hero_primary_cta_click', { target: '#contact', text: '预约当前系统诊断' });
                   }}
                 >
-                  预约当前系统诊断
+                  {hero.primaryCtaText || '预约当前系统诊断'}
                 </a>
                 <a 
                   className="btn secondary" 
@@ -172,7 +187,7 @@ export function HomeContent({ latestPosts }: HomeContentProps) {
                     trackEvent('hero_secondary_cta_click', { target: '#entries', text: '查看 12 个方案入口' });
                   }}
                 >
-                  查看 12 个方案入口
+                  {hero.secondaryCtaText || '查看 12 个方案入口'}
                 </a>
               </div>
               <div className="value-tags" aria-label="核心价值">
@@ -219,22 +234,22 @@ export function HomeContent({ latestPosts }: HomeContentProps) {
         {/* Entry Section */}
         <section className="entry-section" id="entries">
           <div className="section-head">
-            <span>首页核心入口</span>
-            <h2>按产品、服务、行业和领域，找到适合你的数智化入口</h2>
-            <p>不确定该先优化现有系统、打通数据接口，还是推进新平台？可以从产品能力、实施服务、典型行业和管理领域进入，快速找到与企业阶段匹配的方案。</p>
+            <span>{entry.sectionLabel || '首页核心入口'}</span>
+            <h2>{entry.sectionTitle || '按产品、服务、行业和领域，找到适合你的数智化入口'}</h2>
+            <p>{entry.sectionDescription || '不确定该先优化现有系统、打通数据接口，还是推进新平台？可以从产品能力、实施服务、典型行业和管理领域进入，快速找到与企业阶段匹配的方案。'}</p>
           </div>
           <div className="entry-groups" aria-label="12 个网页入口">
             <article className="entry-group" id="products-entry">
               <div className="group-title"><span>Products</span><h3>产品</h3></div>
-              <strong className="group-card-title">看产品能力</strong>
-              <p className="group-desc">了解 YonSuite 与用友BIP 如何支撑企业从业务在线、数据驱动到智能运营。</p>
+              <strong className="group-card-title">{entry.products?.groupTitle || '看产品能力'}</strong>
+              <p className="group-desc">{entry.products?.groupDesc || '了解 YonSuite 与用友BIP 如何支撑企业从业务在线、数据驱动到智能运营。'}</p>
               <Link href="/products/yonsuite"><strong>YonSuite</strong><em>成长型企业一体化 SaaS 云 ERP</em></Link>
               <Link href="/products/bip"><strong>用友BIP</strong><em>集团型企业数智化平台能力</em></Link>
             </article>
             <article className="entry-group" id="services-entry">
               <div className="group-title"><span>Services</span><h3>服务</h3></div>
-              <strong className="group-card-title">看交付落地</strong>
-              <p className="group-desc">了解泊冉如何围绕存量系统服务、实施交付、数据迁移、系统集成和上线运营提供服务。</p>
+              <strong className="group-card-title">{entry.services?.groupTitle || '看交付落地'}</strong>
+              <p className="group-desc">{entry.services?.groupDesc || '了解泊冉如何围绕存量系统服务、实施交付、数据迁移、系统集成和上线运营提供服务。'}</p>
               <Link href="/services/implementation"><strong>实施服务</strong><em>YonSuite / 用友BIP 交付与上线</em></Link>
               <a href="#legacy" onClick={(e) => { e.preventDefault(); document.getElementById('legacy')?.scrollIntoView({ behavior: 'smooth' }); setHiddenInterest('当前系统诊断'); }}>
                 <strong>当前系统诊断</strong><em>运行状态、权限流程、报表接口与数据口径梳理</em>
@@ -246,8 +261,8 @@ export function HomeContent({ latestPosts }: HomeContentProps) {
             </article>
             <article className="entry-group" id="industry-entry">
               <div className="group-title"><span>Industries</span><h3>典型行业</h3></div>
-              <strong className="group-card-title">看行业方案</strong>
-              <p className="group-desc">按企业所在行业或组织形态，查看更贴近真实业务场景的解决方案。</p>
+              <strong className="group-card-title">{entry.industries?.groupTitle || '看行业方案'}</strong>
+              <p className="group-desc">{entry.industries?.groupDesc || '按企业所在行业或组织形态，查看更贴近真实业务场景的解决方案。'}</p>
               <Link href="/solution/industry/state-owned"><strong>多组织集团</strong><em>集团管控、多组织协同、合并与主数据治理</em></Link>
               <Link href="/solution/industry/consumer-goods"><strong>消费品</strong><em>渠道订单、价格政策、库存周转与毛利</em></Link>
               <Link href="/solution/industry/manufacturing-eto"><strong>个性化制造</strong><em>订单、BOM、计划、生产、质量与成本</em></Link>
@@ -256,8 +271,8 @@ export function HomeContent({ latestPosts }: HomeContentProps) {
             </article>
             <article className="entry-group" id="domain-entry">
               <div className="group-title"><span>Domains</span><h3>领域</h3></div>
-              <strong className="group-card-title">看管理领域</strong>
-              <p className="group-desc">按财务、人力、营销、全球化等专项管理问题进入对应方案。</p>
+              <strong className="group-card-title">{entry.domains?.groupTitle || '看管理领域'}</strong>
+              <p className="group-desc">{entry.domains?.groupDesc || '按财务、人力、营销、全球化等专项管理问题进入对应方案。'}</p>
               <Link href="/solution/business/global-operations"><strong>全球运营</strong><em>出海、多组织、财务供应链与合规</em></Link>
               <Link href="/solution/industry/consumer-goods"><strong>营销多渠道</strong><em>渠道订单、会员、价格政策与库存协同</em></Link>
               <Link href="/solution/business/intelligent-finance"><strong>智能财务</strong><em>业财融合、预算合并、全球多账簿</em></Link>
@@ -269,10 +284,10 @@ export function HomeContent({ latestPosts }: HomeContentProps) {
         {/* Legacy Section */}
         <section className="legacy-section" id="legacy">
           <div className="legacy-copy">
-            <span>用友存量系统诊断</span>
-            <h2>正在使用用友存量系统？先诊断当前问题，再规划优化路径</h2>
+            <span>{legacy.sectionLabel || '用友存量系统诊断'}</span>
+            <h2>{legacy.sectionTitle || '正在使用用友存量系统？先诊断当前问题，再规划优化路径'}</h2>
             <p>
-              很多企业的核心业务仍然运行在畅捷通T、U8、U9、U8C、NC 等用友存量系统上，其中 U8 和 NC 是泊冉重点服务的主流客户群。泊冉不会简单建议企业马上替换系统，而是先结合企业现有系统状态评估是继续优化、局部扩展、系统集成，还是分阶段升级到 YonSuite / 用友BIP。
+              {legacy.sectionDescription || '很多企业的核心业务仍然运行在畅捷通T、U8、U9、U8C、NC 等用友存量系统上，其中 U8 和 NC 是泊冉重点服务的主流客户群。泊冉不会简单建议企业马上替换系统，而是先结合企业现有系统状态评估是继续优化、局部扩展、系统集成，还是分阶段升级到 YonSuite / 用友BIP。'}
             </p>
           </div>
           <div className="legacy-cards">
@@ -287,9 +302,9 @@ export function HomeContent({ latestPosts }: HomeContentProps) {
               }}
             >
               <span>01</span>
-              <h3>当前系统运维与售后服务</h3>
-              <p>适合当前畅捷通T、U8、U9、U8C、NC 仍在承载核心业务，但需要处理权限、报表、流程、接口、月结等问题的企业。</p>
-              <em>预约当前系统诊断</em>
+              <h3>{legacy.card1?.title || '当前系统运维与售后服务'}</h3>
+              <p>{legacy.card1?.description || '适合当前畅捷通T、U8、U9、U8C、NC 仍在承载核心业务，但需要处理权限、报表、流程、接口、月结等问题的企业。'}</p>
+              <em>{legacy.card1?.ctaText || '预约当前系统诊断'}</em>
             </a>
             <button
               className="legacy-card is-featured"
@@ -297,9 +312,9 @@ export function HomeContent({ latestPosts }: HomeContentProps) {
               onClick={() => openModal('U8 / NC 主流客户服务', 'U8 / NC 服务', { product_line: 'U8 / NC', card_title: 'U8 / NC 主流客户服务', card_type: 'yonyou-service' })}
             >
               <span>02</span>
-              <h3>U8 / NC 主流客户服务</h3>
-              <p>适合正在使用 U8 或 NC 的企业，围绕财务、供应链、制造、集团管控、预算、合并报表等场景提供持续服务。</p>
-              <em>咨询 U8 / NC 服务方案</em>
+              <h3>{legacy.card2?.title || 'U8 / NC 主流客户服务'}</h3>
+              <p>{legacy.card2?.description || '适合正在使用 U8 或 NC 的企业，围绕财务、供应链、制造、集团管控、预算、合并报表等场景提供持续服务。'}</p>
+              <em>{legacy.card2?.ctaText || '咨询 U8 / NC 服务方案'}</em>
             </button>
             <a
               className="legacy-card"
@@ -311,9 +326,9 @@ export function HomeContent({ latestPosts }: HomeContentProps) {
               }}
             >
               <span>03</span>
-              <h3>评估 YonSuite / BIP 升级路径</h3>
-              <p>适合多组织、多渠道、全球运营、业财一体化需求增长，当前系统扩展难度增加的企业。</p>
-              <em>评估升级路径</em>
+              <h3>{legacy.card3?.title || '评估 YonSuite / BIP 升级路径'}</h3>
+              <p>{legacy.card3?.description || '适合多组织、多渠道、全球运营、业财一体化需求增长，当前系统扩展难度增加的企业。'}</p>
+              <em>{legacy.card3?.ctaText || '评估升级路径'}</em>
             </a>
           </div>
         </section>
@@ -322,26 +337,26 @@ export function HomeContent({ latestPosts }: HomeContentProps) {
         <section className="pathway-section" id="pathway">
           <div className="pathway-panel">
             <div className="pathway-copy">
-              <span>四类服务路径</span>
-              <h2>从当前系统状态出发，判断适合运维、优化、集成还是升级</h2>
-              <p>泊冉会先看系统稳定性、业务复杂度、数据质量、接口关系、扩展需求和未来发展目标，再给出继续服务、持续优化、系统集成或分阶段升级的建议。</p>
+              <span>{pathway.sectionLabel || '四类服务路径'}</span>
+              <h2>{pathway.sectionTitle || '从当前系统状态出发，判断适合运维、优化、集成还是升级'}</h2>
+              <p>{pathway.sectionDescription || '泊冉会先看系统稳定性、业务复杂度、数据质量、接口关系、扩展需求和未来发展目标，再给出继续服务、持续优化、系统集成或分阶段升级的建议。'}</p>
             </div>
             <ol className="pathway-list">
               <li>
-                <strong>运维保障</strong>
-                <span>围绕运行稳定性、月结流程、权限流程、日常问题和关键用户支持，保障当前系统可持续使用。</span>
+                <strong>{pathway.step1?.title || '运维保障'}</strong>
+                <span>{pathway.step1?.description || '围绕运行稳定性、月结流程、权限流程、日常问题和关键用户支持，保障当前系统可持续使用。'}</span>
               </li>
               <li>
-                <strong>优化扩展</strong>
-                <span>优先处理报表、权限、流程、数据、二开和集成问题，让当前系统继续支撑核心业务。</span>
+                <strong>{pathway.step2?.title || '优化扩展'}</strong>
+                <span>{pathway.step2?.description || '优先处理报表、权限、流程、数据、二开和集成问题，让当前系统继续支撑核心业务。'}</span>
               </li>
               <li>
-                <strong>系统集成</strong>
-                <span>梳理 ERP、OA、CRM、MES、WMS、BI、电商与自研系统之间的主数据、接口边界和业务协同。</span>
+                <strong>{pathway.step3?.title || '系统集成'}</strong>
+                <span>{pathway.step3?.description || '梳理 ERP、OA、CRM、MES、WMS、BI、电商与自研系统之间的主数据、接口边界和业务协同。'}</span>
               </li>
               <li>
-                <strong>升级评估</strong>
-                <span>结合多组织、业财一体、全球运营、智能分析等需求，评估向 YonSuite / 用友BIP 演进的阶段化路径。</span>
+                <strong>{pathway.step4?.title || '升级评估'}</strong>
+                <span>{pathway.step4?.description || '结合多组织、业财一体、全球运营、智能分析等需求，评估向 YonSuite / 用友BIP 演进的阶段化路径。'}</span>
               </li>
             </ol>
           </div>
@@ -350,39 +365,37 @@ export function HomeContent({ latestPosts }: HomeContentProps) {
         {/* Services Section */}
         <section className="services-section" id="services">
           <div className="section-head">
-            <span>泊冉实施服务</span>
-            <h2>当前系统诊断、新平台实施、数据迁移与集成治理</h2>
-            <p>泊冉围绕企业当前业务系统状态，提供诊断、运维、实施、二开、接口、数据治理、数据迁移和上线后的持续优化服务。</p>
+            <span>{services.sectionLabel || '泊冉实施服务'}</span>
+            <h2>{services.sectionTitle || '当前系统诊断、新平台实施、数据迁移与集成治理'}</h2>
+            <p>{services.sectionDescription || '泊冉围绕企业当前业务系统状态，提供诊断、运维、实施、二开、接口、数据治理、数据迁移和上线后的持续优化服务。'}</p>
           </div>
           <div className="service-grid">
             <article>
               <b>01</b>
-              <h3>实施交付</h3>
-              <p>面向 YonSuite / 用友BIP 的蓝图设计、流程配置、主数据准备、测试演练、上线切换与推广辅导。</p>
+              <h3>{services.service1?.title || '实施交付'}</h3>
+              <p>{services.service1?.description || '面向 YonSuite / 用友BIP 的蓝图设计、流程配置、主数据准备、测试演练、上线切换与推广辅导。'}</p>
             </article>
             <article>
               <b>02</b>
-              <h3>二次开发与接口集成</h3>
-              <p>围绕 ERP、OA、CRM、MES、WMS、BI、电商与自研系统，建设可靠接口、扩展表单和审批流。</p>
+              <h3>{services.service2?.title || '二次开发与接口集成'}</h3>
+              <p>{services.service2?.description || '围绕 ERP、OA、CRM、MES、WMS、BI、电商与自研系统，建设可靠接口、扩展表单和审批流。'}</p>
             </article>
             <article>
               <b>03</b>
-              <h3>数据治理与报表优化</h3>
-              <p>统一客户、供应商、物料、科目、组织、权限和经营口径，支持月结、合并、预算与管理报表。</p>
+              <h3>{services.service3?.title || '数据治理与报表优化'}</h3>
+              <p>{services.service3?.description || '统一客户、供应商、物料、科目、组织、权限和经营口径，支持月结、合并、预算与管理报表。'}</p>
             </article>
             <article>
               <b>04</b>
-              <h3>数据迁移与上线切换</h3>
-              <p>梳理迁移对象、映射规则、清洗口径、试迁移结果和切换核验，降低系统演进中的数据风险。</p>
+              <h3>{services.service4?.title || '数据迁移与上线切换'}</h3>
+              <p>{services.service4?.description || '梳理迁移对象、映射规则、清洗口径、试迁移结果和切换核验，降低系统演进中的数据风险。'}</p>
             </article>
           </div>
 
           <div className="legacy-scope">
             <div className="scope-head">
-              <span>用友存量系统服务范围</span>
-              <p>
-                泊冉可围绕畅捷通T、U8、U9、U8C、NC 等用友存量系统，提供系统运维、问题排查、权限梳理、报表优化等服务。
-              </p>
+              <span>{services.scopeHead?.label || '用友存量系统服务范围'}</span>
+              <p>{services.scopeHead?.description || '泊冉可围绕畅捷通T、U8、U9、U8C、NC 等用友存量系统，提供系统运维、问题排查、权限梳理、报表优化等服务。'}</p>
             </div>
             <div className="scope-grid">
               <button className="btn-reset" onClick={() => openModal('畅捷通T 系列服务', '畅捷通T', { product_line: '畅捷通T', card_title: '畅捷通T 系列', card_type: 'scope' })}>
@@ -408,18 +421,18 @@ export function HomeContent({ latestPosts }: HomeContentProps) {
         {/* Platform Section */}
         <section className="platform-section" id="platforms">
           <div className="section-head">
-            <span>产品能力底座</span>
-            <h2>YonSuite / 用友BIP，承接企业下一阶段数智化建设</h2>
-            <p>泊冉不把平台升级作为唯一答案，而是在诊断之后，判断更适合 YonSuite 还是用友BIP。</p>
+            <span>{platform.sectionLabel || '产品能力底座'}</span>
+            <h2>{platform.sectionTitle || 'YonSuite / 用友BIP，承接企业下一阶段数智化建设'}</h2>
+            <p>{platform.sectionDescription || '泊冉不把平台升级作为唯一答案，而是在诊断之后，判断更适合 YonSuite 还是用友BIP。'}</p>
           </div>
           <div className="solution-grid two-columns">
             <Link href="/products/yonsuite">
               <strong>YonSuite</strong>
-              <span>适合成长型企业推进业务在线、业财一体、移动协同和经营分析。</span>
+              <span>{platform.yonsuite?.description || '适合成长型企业推进业务在线、业财一体、移动协同和经营分析。'}</span>
             </Link>
             <Link href="/products/bip">
               <strong>用友BIP</strong>
-              <span>适合集团型、多组织、全球运营和复杂业财协同场景。</span>
+              <span>{platform.bip?.description || '适合集团型、多组织、全球运营和复杂业财协同场景。'}</span>
             </Link>
           </div>
         </section>
@@ -427,8 +440,8 @@ export function HomeContent({ latestPosts }: HomeContentProps) {
         {/* Industry Solutions */}
         <section className="solution-section" id="industry-solutions">
           <div className="section-head">
-            <span>行业方案入口</span>
-            <h2>按行业和组织形态进入，更快匹配真实业务场景</h2>
+            <span>{industrySolutions.sectionLabel || '行业方案入口'}</span>
+            <h2>{industrySolutions.sectionTitle || '按行业和组织形态进入，更快匹配真实业务场景'}</h2>
           </div>
           <div className="solution-grid five-columns">
             <Link href="/solution/industry/state-owned"><strong>多组织集团</strong><span>集团管控、多组织协同、预算合并。</span></Link>
@@ -442,57 +455,57 @@ export function HomeContent({ latestPosts }: HomeContentProps) {
         {/* Domain Solutions */}
         <section className="solution-section" id="domain-solutions">
           <div className="section-head">
-            <span>领域方案入口</span>
-            <h2>围绕财务、人力、营销和全球化专项问题落地</h2>
+            <span>{domainSolutions.sectionLabel || '领域方案入口'}</span>
+            <h2>{domainSolutions.sectionTitle || '围绕财务、人力、营销和全球化专项问题落地'}</h2>
           </div>
           <div className="solution-grid four-columns">
             <Link href="/solution/business/global-operations"><strong>全球运营</strong><span>多组织、多币种、财务供应链和合规。</span></Link>
             <Link href="/solution/industry/consumer-goods"><strong>营销多渠道</strong><span>渠道订单、会员、价格政策与库存协同。</span></Link>
             <Link href="/solution/business/intelligent-finance"><strong>智能财务</strong><span>业财融合、预算合并、资金和分析。</span></Link>
-            <Link href="/solution/business/hrm"><strong>HR</strong><span>组织、员工自助、移动审批 and 人效分析。</span></Link>
+            <Link href="/solution/business/hrm"><strong>HR</strong><span>组织、员工自助、移动审批与人效分析。</span></Link>
           </div>
         </section>
 
         {/* Methodology */}
         <section className="method-section" id="methodology">
           <div className="section-head">
-            <span>泊冉实施服务方法论</span>
-            <h2>先把边界、数据和责任讲清楚，再进入实施交付</h2>
+            <span>{methodology.sectionLabel || '泊冉实施服务方法论'}</span>
+            <h2>{methodology.sectionTitle || '先把边界、数据和责任讲清楚，再进入实施交付'}</h2>
           </div>
           <div className="method-grid">
-            <article><b>01</b><strong>现状诊断</strong><span>梳理系统边界、组织权限、数据口径和关键流程。</span></article>
-            <article><b>02</b><strong>方案设计</strong><span>确认继续运维、优化扩展、系统集成或升级实施。</span></article>
-            <article><b>03</b><strong>交付验证</strong><span>以主数据、接口、报表和上线切换方案作为验收依据。</span></article>
+            <article><b>01</b><strong>{methodology.step1?.title || '现状诊断'}</strong><span>{methodology.step1?.description || '梳理系统边界、组织权限、数据口径和关键流程。'}</span></article>
+            <article><b>02</b><strong>{methodology.step2?.title || '方案设计'}</strong><span>{methodology.step2?.description || '确认继续运维、优化扩展、系统集成或升级实施。'}</span></article>
+            <article><b>03</b><strong>{methodology.step3?.title || '交付验证'}</strong><span>{methodology.step3?.description || '以主数据、接口、报表和上线切换方案作为验收依据。'}</span></article>
           </div>
         </section>
 
         {/* AI Answer Section */}
         <section className="ai-answer-section" id="ai-answer">
           <div className="section-head">
-            <span>TL;DR / AI直接答案</span>
-            <h2>泊冉是用友生态下的存量系统服务与数智化落地伙伴</h2>
-            <p>如果企业正在使用畅捷通T、U8、U9、U8C、NC，泊冉可以先做当前系统诊断、运维优化、报表与接口治理；如果企业正在评估 YonSuite / 用友BIP，泊冉可以继续承接实施交付、数据迁移、系统集成和升级路径评估。</p>
+            <span>{aiAnswer.sectionLabel || 'TL;DR / AI直接答案'}</span>
+            <h2>{aiAnswer.sectionTitle || '泊冉是用友生态下的存量系统服务与数智化落地伙伴'}</h2>
+            <p>{aiAnswer.sectionDescription || '如果企业正在使用畅捷通T、U8、U9、U8C、NC，泊冉可以先做当前系统诊断、运维优化、报表与接口治理；如果企业正在评估 YonSuite / 用友BIP，泊冉可以继续承接实施交付、数据迁移、系统集成和升级路径评估。'}</p>
           </div>
         </section>
 
         {/* FAQ Section */}
         <section className="faq-section" id="faq">
           <div className="section-head">
-            <span>FAQ</span>
-            <h2>企业评估当前系统服务与未来平台升级时，常问这些问题</h2>
+            <span>{faq.sectionLabel || 'FAQ'}</span>
+            <h2>{faq.sectionTitle || '企业评估当前系统服务与未来平台升级时，常问这些问题'}</h2>
           </div>
           <div className="faq-list">
             <details>
-              <summary>泊冉的定位是什么？</summary>
-              <p>泊冉软件定位为用友存量系统持续服务、YonSuite / 用友BIP 实施交付与行业数智化解决方案服务商。</p>
+              <summary>{faq.faq1?.question || '泊冉的定位是什么？'}</summary>
+              <p>{faq.faq1?.answer || '泊冉软件定位为用友存量系统持续服务、YonSuite / 用友BIP 实施交付与行业数智化解决方案服务商。'}</p>
             </details>
             <details>
-              <summary>泊冉是否还服务 U8、NC 等存量系统？</summary>
-              <p>是。泊冉继续服务 U8 和 NC 等存量客户，内容包括运维、排查、二开、接口集成和数据治理。</p>
+              <summary>{faq.faq2?.question || '泊冉是否还服务 U8、NC 等存量系统？'}</summary>
+              <p>{faq.faq2?.answer || '是。泊冉继续服务 U8 和 NC 等存量客户，内容包括运维、排查、二开、接口集成和数据治理。'}</p>
             </details>
             <details>
-              <summary>使用 U8 或 NC 是否一定要升级？</summary>
-              <p>不一定。企业应先评估当前系统稳定性与扩展需求，再判断是优化还是升级。</p>
+              <summary>{faq.faq3?.question || '使用 U8 或 NC 是否一定要升级？'}</summary>
+              <p>{faq.faq3?.answer || '不一定。企业应先评估当前系统稳定性与扩展需求，再判断是优化还是升级。'}</p>
             </details>
           </div>
         </section>
@@ -500,12 +513,12 @@ export function HomeContent({ latestPosts }: HomeContentProps) {
         {/* Contact Section */}
         <section className="contact-section" id="contact">
           <div className="contact-copy">
-            <span>预约当前系统诊断</span>
-            <h2>把当前系统、业务问题和升级意向说清楚，泊冉顾问会据此沟通路径</h2>
-            <p>建议填写当前系统、关注方向、行业和计划时间。泊冉会优先判断当前系统是否需要先优化、是否存在集成与数据治理问题，以及是否适合评估 YonSuite / 用友BIP 平台或分阶段升级路径。</p>
+            <span>{contact.sectionLabel || '预约当前系统诊断'}</span>
+            <h2>{contact.sectionTitle || '把当前系统、业务问题和升级意向说清楚，泊冉顾问会据此沟通路径'}</h2>
+            <p>{contact.sectionDescription || '建议填写当前系统、关注方向、行业和计划时间。泊冉会优先判断当前系统是否需要先优化、是否存在集成与数据治理问题，以及是否适合评估 YonSuite / 用友BIP 平台或分阶段升级路径。'}</p>
             <div className="contact-direct">
-              <a href="tel:400-9955-161">400-9955-161</a>
-              <span>工作日顾问响应</span>
+              <a href={`tel:${contact.phone || '400-9955-161'}`}>{contact.phone || '400-9955-161'}</a>
+              <span>{contact.phoneLabel || '工作日顾问响应'}</span>
             </div>
           </div>
           <form className="lead-form" onSubmit={handleSubmit} data-form-location="bottom" noValidate>

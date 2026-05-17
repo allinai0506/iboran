@@ -19,6 +19,7 @@ import { Messages } from './collections/Messages'
 import { Footer } from './Footer/config'
 import { Header } from './Header/config'
 import { Contact } from './globals/Contact'
+import { Home } from './globals/Home/config'
 import { plugins } from './plugins'
 import { defaultLexical } from '@/fields/defaultLexical'
 import { getServerSideURL } from './utilities/getURL'
@@ -94,7 +95,7 @@ export default buildConfig({
     Messages,
   ],
   cors: [getServerSideURL()].filter(Boolean),
-  globals: [Header, Footer, Contact],
+  globals: [Header, Footer, Contact, Home],
   plugins,
   email: nodemailerAdapter({
     defaultFromAddress: process.env.SMTP_FROM || 'info@boran.cn',
