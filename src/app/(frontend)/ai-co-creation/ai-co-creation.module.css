@@ -2,6 +2,7 @@
 
 /* ── Brand tokens ── */
 .page {
+  font-family: Inter, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", Arial, sans-serif;
   --boran-blue: #0052d9;
   --cta-red: #d73324;
   --ink: #101828;

@@ -14,7 +14,7 @@
   
   color: var(--ink);
   background: var(--paper);
-  font-family: Inter, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif;
+  font-family: Inter, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", Arial, sans-serif;
 }
 
 .hero {

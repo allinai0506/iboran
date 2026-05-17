@@ -1,4 +1,7 @@
-.main { min-height: 100vh; }
+.main {
+  min-height: 100vh;
+  font-family: Inter, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", Arial, sans-serif;
+}
 
 /* Hero */
 .hero { position: relative; color: #fff; background: linear-gradient(135deg, rgba(0, 82, 217, 0.18), transparent 42%), linear-gradient(120deg, #0a1020 0%, #0e1c35 58%, #17243c 100%); overflow: hidden; padding-top: 80px; }

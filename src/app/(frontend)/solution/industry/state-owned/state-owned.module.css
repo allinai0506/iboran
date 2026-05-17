@@ -1,5 +1,6 @@
 /* State-Owned Enterprise Solution Styles */
 .page {
+  font-family: Inter, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", Arial, sans-serif;
   --boran-blue: #0052d9;
   --boran-sky: #1b80c1;
   --cta-red: #d73324;
