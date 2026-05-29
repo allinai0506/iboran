@@ -79,6 +79,17 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <script
           dangerouslySetInnerHTML={{
             __html: `
+              function uet_report_conversion() {
+                window.uetq = window.uetq || [];
+                window.uetq.push('event', 'submit_lead_form', {});
+              }
+              window.uet_report_conversion = uet_report_conversion;
+            `,
+          }}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
               var __productionHosts = ['iboran.com', 'www.iboran.com'];
               if (__productionHosts.indexOf(window.location.hostname) !== -1) {
                 (function(w, d, t, u, o) {w[u] = w[u] || [], o.ts = (new Date).getTime();var n = d.createElement(t);n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""),n.async = 1, n.onload = n.onreadystatechange = function() {var s = this.readyState;s && "loaded" !== s && "complete" !== s ||(o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"),n.onload = n.onreadystatechange = null)};var i = d.getElementsByTagName(t)[0];i.parentNode.insertBefore(n, i);})(window, document, "script", "uetq", {ti: "187250773",enableAutoSpaTracking: true});

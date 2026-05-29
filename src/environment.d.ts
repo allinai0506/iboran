@@ -11,6 +11,7 @@ declare global {
   interface Window {
     uetq?: Array<unknown>
     _agl?: Array<unknown>
+    uet_report_conversion?: () => void
   }
 }
 
