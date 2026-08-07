@@ -4,7 +4,7 @@ import { openAifafanChat } from '@/utilities/openAifafanChat'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { DemoRequestModal } from '@/components/DemoRequestModal'
-import { ArrowRight, Download } from 'lucide-react'
+import { ArrowRight, Download, ExternalLink } from 'lucide-react'
 
 export default function CTASection() {
   const [isDemoOpen, setIsDemoOpen] = useState(false)
@@ -47,6 +47,15 @@ export default function CTASection() {
                 下载管理白皮书
                 <Download size={20} />
               </button>
+              <a
+                href="https://www.digivoucher.cn/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group px-10 py-5 bg-white/10 text-white font-bold rounded-2xl border border-white/20 flex items-center justify-center gap-2 hover:bg-white/20 transition-all text-lg backdrop-blur-sm"
+              >
+                访问数智凭证平台
+                <ExternalLink size={20} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </a>
             </div>
             
             <p className="mt-10 text-slate-500 text-sm">

@@ -123,6 +123,8 @@ export const Footer = () => {
               <Link href="/terms" className="hover:text-slate-900 dark:hover:text-slate-300 transition-colors">服务条款</Link>
               <span className="text-slate-300 dark:text-slate-700">|</span>
               <Link href="/sitemap" className="hover:text-slate-900 dark:hover:text-slate-300 transition-colors">网站地图</Link>
+              <span className="text-slate-300 dark:text-slate-700">|</span>
+              <a href="https://www.digivoucher.cn/" target="_blank" rel="noopener noreferrer" className="hover:text-slate-900 dark:hover:text-slate-300 transition-colors">电子会计档案</a>
             </div>
           </div>
         </div>
