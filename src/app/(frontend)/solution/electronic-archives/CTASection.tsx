@@ -38,12 +38,12 @@ export default function CTASection() {
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <button
                 onClick={() => setIsDemoOpen(true)}
-                className="group px-10 py-5 bg-[#E60012] text-white font-bold rounded-2xl flex items-center justify-center gap-2 hover:bg-red-700 transition-all text-lg shadow-xl shadow-red-900/40"
+                className="group whitespace-nowrap px-10 py-5 bg-[#E60012] text-white font-bold rounded-2xl flex items-center justify-center gap-2 hover:bg-red-700 transition-all text-lg shadow-xl shadow-red-900/40"
               >
                 免费预约产品演示
                 <ArrowRight className="group-hover:translate-x-1 transition-transform" />
               </button>
-              <button onClick={handleOpenConsult} className="px-10 py-5 bg-white/10 text-white font-bold rounded-2xl border border-white/20 flex items-center justify-center gap-2 hover:bg-white/20 transition-all text-lg backdrop-blur-sm">
+              <button onClick={handleOpenConsult} className="whitespace-nowrap px-10 py-5 bg-white/10 text-white font-bold rounded-2xl border border-white/20 flex items-center justify-center gap-2 hover:bg-white/20 transition-all text-lg backdrop-blur-sm">
                 下载管理白皮书
                 <Download size={20} />
               </button>
@@ -51,7 +51,7 @@ export default function CTASection() {
                 href="https://www.digivoucher.cn/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group px-10 py-5 bg-white/10 text-white font-bold rounded-2xl border border-white/20 flex items-center justify-center gap-2 hover:bg-white/20 transition-all text-lg backdrop-blur-sm"
+                className="group whitespace-nowrap px-10 py-5 bg-white/10 text-white font-bold rounded-2xl border border-white/20 flex items-center justify-center gap-2 hover:bg-white/20 transition-all text-lg backdrop-blur-sm"
               >
                 访问数智凭证平台
                 <ExternalLink size={20} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
