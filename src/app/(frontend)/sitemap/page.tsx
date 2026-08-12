@@ -35,7 +35,7 @@ export default function SitemapPage() {
                 <li><Link href="/products/yonsuite" className="text-gray-600 hover:text-blue-600 transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-gray-400 rounded-full"></span>YonSuite 成长型云服务</Link></li>
                 <li><Link href="/products/collaborative-office" className="text-gray-600 hover:text-blue-600 transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-gray-400 rounded-full"></span>协同办公</Link></li>
                 <li><Link href="/solution/business/digital-modeling" className="text-gray-600 hover:text-blue-600 transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-gray-400 rounded-full"></span>数字化建模</Link></li>
-                <li><Link href="/solution/business/aip-intelligent-apps" className="text-gray-600 hover:text-blue-600 transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-gray-400 rounded-full"></span>AI 智能应用</Link></li>
+                <li><Link href="/solution/business/yonwork" className="text-gray-600 hover:text-blue-600 transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-gray-400 rounded-full"></span>YonWork 智能体</Link></li>
               </ul>
             </section>
 

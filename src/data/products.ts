@@ -119,9 +119,9 @@ export const productCategories: ProductCategory[] = [
     description: '数据驱动 · 连接与智能 · 敏捷创新',
     items: [
       { 
-        label: 'AI智能平台', 
-        href: '/solution/business/aip-intelligent-apps', 
-        desc: '想用AI但不知从何下手？YonGPT 智能体快速落地', 
+        label: 'YonWork 智能体', 
+        href: '/solution/business/yonwork', 
+        desc: '企业级 AI 执行智能体，开口即执行，跨系统完成复杂业务', 
         icon: Bot 
       },
       { 

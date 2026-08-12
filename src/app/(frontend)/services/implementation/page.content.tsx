@@ -14,13 +14,20 @@ export const ImplementationContent: React.FC = () => {
     e.preventDefault()
     const formData = new FormData(e.currentTarget)
 
+    const phone = String(formData.get('phone') || '').replace(/[\s-]/g, '').replace(/^\+?86/, '')
+    if (!/^1[3-9]\d{9}$/.test(phone)) {
+      alert('请输入有效的手机号码')
+      return
+    }
+
     const data = {
       name: formData.get('name'),
-      phone: formData.get('phone'),
+      phone,
       company: formData.get('company'),
       customer_type: formData.get('customer_type'),
       current_system: formData.get('current_system'),
-      message: `${formData.get('remark') || ''}\n\n关注服务: ${Array.from(formData.getAll('interest')).join(', ')}`,
+      remark: formData.get('remark') || '',
+      interest: Array.from(formData.getAll('interest')),
       source: '系统实施服务',
       sourcePageUrl: typeof window !== 'undefined' ? window.location.href : '',
       utmData: attribution ? {
@@ -42,7 +49,12 @@ export const ImplementationContent: React.FC = () => {
         alert('预约成功！我们的服务顾问将尽快与您联系。')
         ;(e.target as HTMLFormElement).reset()
       } else {
-        alert('提交失败，请重试')
+        try {
+          const err = await res.json()
+          alert(err?.error || '提交失败，请重试')
+        } catch {
+          alert('提交失败，请重试')
+        }
       }
     } catch (_err) {
       alert('网络错误')

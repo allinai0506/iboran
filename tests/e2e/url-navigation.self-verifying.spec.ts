@@ -76,7 +76,7 @@ const siteManifest: URLManifest = {
     { path: '/solution/business/dmp', description: 'DMP Solution', critical: false },
     { path: '/solution/business/dev', description: 'Dev Solution', critical: false },
     { path: '/solution/business/digital-modeling', description: 'Digital Modeling', critical: false },
-    { path: '/solution/business/aip-intelligent-apps', description: 'AIP Intelligent Apps', critical: false },
+    { path: '/solution/business/yonwork', description: 'YonWork AI Agent', critical: false },
     { path: '/solution/business/finance-cloud', description: 'Finance Cloud', critical: false },
     { path: '/solution/business/p2c-project-to-cost', description: 'P2C Project to Cost', critical: false },
     { path: '/solution/business/revenue-cloud', description: 'Revenue Cloud', critical: false },

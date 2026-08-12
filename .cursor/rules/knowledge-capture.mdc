@@ -1,0 +1,126 @@
+---
+name: knowledge-capture
+description: >
+  把本次 session 的开发/改 bug/架构确认/产品需求确认的筛选结果，按类型沉淀到 docs/ 下对应目录。
+  触发场景：用户说"沉淀一下"、"沉淀"、"归档本次知识"、"把刚才的结论记下来"、"/沉淀"、"/knowledge-capture"。
+  原则：知识沉淀到 docs/（原始文档层），不写 .wiki/（合成层由 wiki:ingest 编译生成）；
+  严格遵循现有格式、每条知识有明确归属。
+---
+
+# 知识沉淀工作流（knowledge-capture）
+
+把每次 session 产生的隐性知识，按类型沉淀到 `docs/` 下对应目录，让团队积累的工程记忆不散落在聊天记录里。
+
+## 🚨 不可妥协的护栏
+
+- 🚫 **skill 只写 docs/，不写 .wiki/**：`docs/` 是人工维护的原始文档层；`.wiki/pages/` 是基于 docs 编译合成的知识图谱层（由 `npm run wiki:ingest` 等命令生成）。skill 直接写 wiki 会污染编译产物、与编译流程冲突。
+- 🚫 **禁止 Mock 知识**：每条知识必须有 session 中的真实证据——代码路径、对话片段、issue 链接、命令输出。无证据不沉淀。
+- ✅ **格式一致性**：写入前 MUST Read 一个同类现有文件作为格式参照，照葫芦画瓢。
+- ✅ **原子写入**：一条知识一次 Edit/Write，失败不影响其他条目。
+- ✅ **不重复沉淀**：写入前 Grep 目标文件，确认无重复主题。
+
+## 目录分层（来自 docs/specs/WIKI.md）
+
+```
+docs/          = 原始文档层（人工维护的 source of truth）
+  ├─ lessons/       = session 经验沉淀（根因、教训、陷阱、集成经验、决策）← 本 skill 主战场
+  ├─ references/    = 外部 SDK / 框架知识内部化（不归本 skill 管）
+  ├─ specs/         = 产品需求规格、设计规范
+  └─ exec-plans/    = 执行计划、技术债台账
+.wiki/pages/   = 合成知识图谱（wiki:ingest 编译生成，skill 不碰）
+```
+
+## 知识类型路由表（核心）
+
+> 完整路由细节见 [`references/routing-table.md`](./references/routing-table.md)，含每类的格式模板和写入锚点。
+
+| 知识类型 | 识别信号 | 落点 | 格式参照 | 写入方式 |
+|---|---|---|---|---|
+| **Bug 根因分析** | 排查了 bug、定位了零号病人、写了 diff 修复 | `docs/lessons/root-cause-analysis-<slug>.md` | `docs/lessons/root-cause-analysis-*.md` | 新建文件 |
+| **通用工程教训/复盘** | 多个问题归纳出规范、事故复盘、流程改进 | `docs/lessons/lessons-learned.md` | 现有章节 | 追加 `## N. 章节` |
+| **技术陷阱（gotcha）** | 单点技术坑、bad/good 代码对比、框架盲区 | `docs/lessons/<tech>-gotchas.md` | 现有 gotchas 文件 | 追加 `## N. 章节`，无则新建 |
+| **架构/设计决策** | 选型、取舍、拍板了某方案 | `docs/lessons/decisions.md` | decisions 现有条目 | 追加决策条目 |
+| **技术债** | 发现遗留代码、mock 泄漏、文档失同步 | `docs/exec-plans/tech-debt-tracker.md` | tech-debt-tracker YAML | 追加到对应分类 |
+| **产品需求确认** | 和用户确认了需求口径、业务规则 | `docs/specs/<topic>.md` | 现有 specs 格式 | 新建或追加 |
+| **外部集成经验** | 对接外部系统（CRM/OA/飞书）踩坑 | `docs/lessons/<system>-integration-lessons.md` | `docs/lessons/crm-integration-lessons.md` | 追加 `## N. 章节`，无则新建 |
+
+**落点选择逻辑**：
+- 经验类知识（根因、教训、陷阱、集成经验、决策）→ `docs/lessons/`
+- 结构化台账（技术债）→ `docs/exec-plans/tech-debt-tracker.md`（保持原位，它是供 agent 扫描的清单）
+- 产品需求规格 → `docs/specs/`（保持原位，它是原始规范文档）
+
+## 四步工作流
+
+### 第 1 步：扫描 session —— 识别可沉淀知识
+
+回顾本次对话，扫描以下"可沉淀信号"：
+
+- 🐛 **bug 排查**：定位了根因、写了修复 diff、设计了防复发测试
+- 🎯 **决策拍板**：选型、取舍、方案确认、否决了某个备选
+- ⚠️ **踩坑**：框架盲区、配置陷阱、API 误用
+- 📋 **需求澄清**：和用户确认了业务规则、口径、边界
+- 🏗️ **架构确认**：分层、契约、约束
+- 🗑️ **发现技术债**：遗留代码、mock 泄漏、文档失同步
+- 🔌 **外部对接**：CRM/OA/飞书等三方系统踩坑
+
+对每个信号，按路由表判定 **类型** 和 **落点**，输出候选清单：
+
+```
+| # | 知识摘要 | 类型 | 拟落点 | 新建/追加 |
+|---|---------|------|--------|----------|
+| 1 | 立项上传 bug：el-upload 缺 :disabled | Bug 根因分析 | docs/lessons/root-cause-analysis-initiation-upload.md | 新建 |
+| 2 | CRM 匹配策略需 Feature Flag | 外部集成经验 | docs/lessons/crm-integration-lessons.md | 追加 |
+```
+
+判定不清的，归到"通用工程教训"或问用户。
+
+### 第 2 步：用户确认 —— 防止噪音
+
+用 AskUserQuestion（multiSelect: true）让用户勾选要沉淀的条目：
+
+- 用户可拒绝条目（不勾选）
+- 用户可选 "Other" 编辑摘要或改类型
+- 用户可全部拒绝（本次 session 无值得沉淀的内容）
+
+**没有候选清单时**：直接告诉用户"本次 session 未识别到值得沉淀的知识"，不要硬凑。
+
+### 第 3 步：按格式写入 —— 严格遵循现有模板
+
+对每个确认条目，按类型执行：
+
+1. **Read 格式参照文件**（路由表"格式参照"列指明的文件）
+2. **Read 对应 template**（`templates/<type>.md`）
+3. **Read 目标文件**（追加类必须先读，确定锚点；新建类跳过）
+4. **Grep 目标文件确认无重复主题**
+5. **填充内容**：从 session 中提取真实证据填入模板
+6. **写入**：
+   - 追加类 → Edit 工具在正确锚点处插入（见路由表"写入锚点"列）
+   - 新建类 → Write 工具创建文件
+
+写入后不再重复 Read 验证（Edit/Write 失败会报错）。
+
+### 第 4 步：维护 docs/lessons/ 索引
+
+| 动作 | 触发条件 | 操作 |
+|---|---|---|
+| 更新 lessons 索引 | 新建 `docs/lessons/` 文件 | 在 `docs/lessons/README.md` 目录结构表加一行 |
+| 更新 updated 时间 | 追加到现有文件 | 更新文件头的更新日期（若有） |
+| 技术债 | 追加到 tech-debt-tracker | 无需额外索引（tracker 自身即索引） |
+
+**注意**：不需要更新 `.wiki/pages/_index.md`——wiki 索引由 `npm run wiki:ingest` 编译生成，skill 不维护。
+
+## slug 命名约定
+
+- `docs/lessons/` 新建文件：`root-cause-analysis-<issue-id-小写>.md`、`<tech>-gotchas.md`、`<system>-integration-lessons.md`
+- `docs/specs/` 新建文件：`<TOPIC>.md`（大写，参照 `DESIGN.md`、`WIKI.md`）
+
+## 何时拒绝沉淀
+
+- ❌ 本次 session 只做了简单问答、查询、读代码，无沉淀价值
+- ❌ 知识已在现有文档中存在（Grep 命中），不要重复
+- ❌ 知识过于具体、不可复用（如"某次重启了服务"）
+- ❌ 没有真实证据支撑的推测
+
+## 自举
+
+本 skill 的设计决策本身应作为第一条沉淀：落点到 `docs/lessons/decisions.md`，作为 dogfood 验证。

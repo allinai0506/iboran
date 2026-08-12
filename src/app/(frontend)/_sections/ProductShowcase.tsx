@@ -44,7 +44,7 @@ const collabItems = [
 ];
 
 const dataItems = [
-  { icon: Cloud, label: 'AI智能平台', href: '/solution/business/aip-intelligent-apps' },
+  { icon: Cloud, label: 'YonWork 智能体', href: '/solution/business/yonwork' },
   { icon: Layers, label: '主数据治理', href: '/products/mdm' },
   { icon: Code, label: 'Link集成平台', href: '/products/ipaas' },
   { icon: ShieldCheck, label: 'BI数据中台', href: '/products/bi-data' }

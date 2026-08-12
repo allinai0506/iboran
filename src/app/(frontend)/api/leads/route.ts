@@ -15,6 +15,10 @@ export interface LeadRequestData {
   role?: string
   currentSystem?: string
   message?: string
+  customer_type?: string
+  current_system?: string
+  remark?: string
+  interest?: string | string[]
   // UTM 归因数据
   utmData?: {
     utm_source?: string
@@ -32,6 +36,11 @@ export async function POST(req: Request) {
   try {
     const body: LeadRequestData = await req.json()
 
+    // Normalize phone: strip spaces, dashes, and country code prefix (+86 / 86)
+    if (typeof body.phone === 'string') {
+      body.phone = body.phone.replace(/[\s-]/g, '').replace(/^\+?86/, '')
+    }
+
     // Validate required fields
     if (!body.name || !body.company || !body.phone) {
       return NextResponse.json(
@@ -40,7 +49,7 @@ export async function POST(req: Request) {
       )
     }
 
-    // Validate phone format (Chinese mobile number)
+    // Validate phone format (Chinese mobile number, 11 digits starting with 1)
     const phoneRegex = /^1[3-9]\d{9}$/
     if (!phoneRegex.test(body.phone)) {
       return NextResponse.json(
@@ -98,34 +107,56 @@ export async function POST(req: Request) {
       }
     }
 
+    // Build notes text from ad-hoc form fields that don't map to Leads schema columns
+    const notesParts: string[] = []
+    if (body.customer_type) notesParts.push(`客户类型: ${body.customer_type}`)
+    const system = body.currentSystem || body.current_system
+    if (system) notesParts.push(`当前系统: ${system}`)
+
+    const interests = Array.isArray(body.interest)
+      ? body.interest
+      : body.interest
+        ? [body.interest]
+        : []
+    if (interests.length) notesParts.push(`关注服务: ${interests.join(', ')}`)
+
+    const remark = body.remark || body.message || ''
+    if (remark) notesParts.push(`补充说明: ${remark}`)
+
+    const notes = notesParts.length ? notesParts.join('\n') : undefined
+
     // Create the lead with UTM data
+    const createData: Record<string, unknown> = {
+      name: body.name,
+      company: body.company,
+      phone: body.phone,
+      source: body.source || 'unknown',
+      sourcePath,
+      sourcePageUrl,
+      resourceTitle: body.resourceTitle || '',
+      pageSlug: body.pageSlug || '',
+      utmData: body.utmData ? {
+        ...body.utmData,
+        pageHistory: Array.isArray(body.utmData.pageHistory)
+          ? JSON.stringify(body.utmData.pageHistory)
+          : body.utmData.pageHistory || '',
+      } : {
+        utm_source: '',
+        utm_medium: '',
+        utm_campaign: '',
+        utm_content: '',
+        utm_term: '',
+        referrer: '',
+        landingPage: '',
+        pageHistory: '',
+      },
+    }
+
+    if (notes) createData.notes = notes
+
     await payload.create({
       collection: 'leads',
-      data: {
-        name: body.name,
-        company: body.company,
-        phone: body.phone,
-        source: body.source || 'unknown',
-        sourcePath,
-        sourcePageUrl,
-        resourceTitle: body.resourceTitle || '',
-        pageSlug: body.pageSlug || '',
-        utmData: body.utmData ? {
-          ...body.utmData,
-          pageHistory: Array.isArray(body.utmData.pageHistory)
-            ? JSON.stringify(body.utmData.pageHistory)
-            : body.utmData.pageHistory || '',
-        } : {
-          utm_source: '',
-          utm_medium: '',
-          utm_campaign: '',
-          utm_content: '',
-          utm_term: '',
-          referrer: '',
-          landingPage: '',
-          pageHistory: '',
-        },
-      },
+      data: createData as any,
     })
 
     return NextResponse.json({

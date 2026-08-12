@@ -1,0 +1,74 @@
+---
+name: code-review
+version: 1.0.0
+description: "按西域投标平台项目规范审查 PR 改动：架构边界（ArchUnit）、安全配置、Design Token 一致性、Mock 残留检查、迁移合规性。当用户要求代码审查或 PR 审查时使用。"
+---
+
+# code-review
+
+按项目规范审查代码改动。适用于 PR 审查或提交前的自审。
+
+## 审查清单
+
+执行前先获取改动范围：
+
+```bash
+# 当前分支 vs main
+git log origin/main..HEAD --oneline
+git diff origin/main..HEAD --stat
+```
+
+### □ 1. 架构边界（后端）
+
+- 纯核心（`domain/`、`policy/`）是否依赖了框架类（`@Service`、`@Repository`、`@Controller`）？
+- 纯核心是否使用 `System.*`、时间、随机数等隐式输入？
+- `config/` 包是否被 `service/` 反向依赖？（ArchitectureTest RULE 9）
+- Checkstyle / PMD / SpotBugs 能否通过？
+
+验证：`mvn test -Dtest=ArchitectureTest -q`
+
+### □ 2. 安全配置
+
+- `SecurityConfig` 是否扩大了放行范围（`/api/auth/sessions`、`/actuator/info`、`/h2-console/**`）？
+- 是否有新端点忘了加权限注解？
+- JWT Secret 是否硬编码在生产代码中？
+- CORS 配置是否兼容生产源地址？
+- 通用安全检查（密钥泄露、输入校验、XSS、CSRF、SQL注入等）参考 `security-review` 技能
+
+### □ 3. Design Token 一致性（前端）
+
+- CSS 中是否出现了硬编码颜色（`#rgb`、`#rrggbb`）而未使用 CSS 变量（`var(--xxx)`）？
+- CSS 变量是否来自 `variables.css` 定义的 token 集合？
+- 是否可以跑通 VRT guard？`node scripts/vrt-guard.mjs`
+
+### □ 4. Mock / 遗留代码残留
+
+- 是否有 `import` 已删除的 `mock.js`、`mock-adapters/` 模块？
+- 是否有 `isMockMode`、`demoPersistence`、`frontendDemo` 等过期表述？
+- 是否引用了 `.env.mock` 或已删除的配置？
+
+验证：`npm run check:front-data-boundaries`
+
+### □ 5. 数据库迁移（如有）
+
+- 版本号是否递增（大于当前最大版本）？
+- SQL 是否兼容 MySQL 8.0（无 H2 特有语法）？特别检查 H2 保留关键字如 `value`、`key`、`user` 等作为列名（CI 会跑 H2 测试）
+- 是否存在对应的回滚脚本 `U{version}__{description}.sql`？
+- 是否在 migration-mysql 目录下（不是废弃的 migration/）？
+- **是否修改了已合入 main 的迁移文件**？已应用的迁移文件 checksum 不能变。如需修改 schema，应创建新版本迁移（V+1）。验证：`git diff origin/main -- backend/src/main/resources/db/migration-mysql/` 中不应出现非新增文件
+- **是否在 entity 中新增了 `@Version` 但迁移中没有 version 列**？应确保 V${next} 迁移中包含 `ALTER TABLE ... ADD COLUMN version BIGINT NOT NULL DEFAULT 0`
+- **是否存在多个 VARCHAR(大长度) 列导致 MySQL row size 超限**？utf8mb4 下 6×VARCHAR(5000)=120KB > 65KB 行上限。多行文本字段应使用 `TEXT`
+
+### □ 6. 代码质量
+
+- 单文件行数是否超过 200 行（软上限）/ 300 行（硬上限）？
+- 业务逻辑是否写在了 Controller / Application Service 中（应下沉到 domain policy）？
+- 是否有 `void` 方法隐藏了业务状态变化（纯核心应返回值）？
+- 是否通过了 line-budget 检查？`npm run check:line-budgets`
+- 是否通过了 doc-governance？`npm run check:doc-governance`
+
+### □ 7. 构建验证
+
+- 前端：`npm run build` 通过
+- 后端：`mvn test` 通过
+- 受影响 E2E：`npx playwright test e2e/xxx.spec.js`

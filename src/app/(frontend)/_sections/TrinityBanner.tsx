@@ -26,7 +26,7 @@ const trinityItems = [
     title: 'AI全程护航（智能助手）',
     desc: '从线索到回款全链路提醒、分析与建议，提升执行效率。',
     icon: Bot,
-    href: '/solution/business/aip-intelligent-apps',
+    href: '/solution/business/yonwork',
     accent: 'text-indigo-700',
     dot: 'bg-indigo-500',
   },

@@ -164,7 +164,9 @@ const sendLeadEmail = [
 
       console.log(`✅ Lead email sent to ${adminEmail} for ${lead.name} from ${lead.company}`)
     } catch (error) {
-      console.error('❌ Failed to send lead email:', error)
+      // Email delivery failure MUST NOT break the submission.
+      // The lead is already persisted in DB; email is a best-effort notification.
+      console.error('⚠️ Lead email failed to send (lead saved to DB):', error instanceof Error ? error.message : error)
     }
   },
 ]
