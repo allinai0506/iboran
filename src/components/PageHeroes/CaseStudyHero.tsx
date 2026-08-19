@@ -7,7 +7,7 @@ import { BarChart3, Globe, Users } from 'lucide-react'
 export const CaseStudyHero = () => {
   const highlights = ['半导体', '智能制造', '新零售', '国资/央企', '医疗健康']
   const stats = [
-    { icon: Users, label: '服务客户', value: '500+' },
+    { icon: Users, label: '服务客户', value: '5500+' },
     { icon: Globe, label: '覆盖行业', value: '15+' },
     { icon: BarChart3, label: '平均效率提升', value: '40%' },
   ]
@@ -41,7 +41,7 @@ export const CaseStudyHero = () => {
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl text-slate-400 mb-6 sm:mb-8 md:mb-10 max-w-2xl lg:mx-0 mx-auto leading-relaxed">
-              探索我们如何助力全球 500+ 企业重塑业务流程，
+              探索我们如何助力 5500+ 企业重塑业务流程，
               通过数据驱动决策实现指数级增长。
             </p>
 
