@@ -308,6 +308,9 @@ document.querySelectorAll(".lead-form").forEach((form) => {
       const data = await res.json().catch(() => ({}));
 
       if (res.ok && data.success) {
+        if (window._agl && Array.isArray(window._agl)) {
+          window._agl.push(["track", ["success", { t: 3 }]]);
+        }
         setFormHint(form, "已收到诊断需求，泊冉顾问会根据渠道结构、DMS/SFA现状、产销链路、质量追溯、费用规则、主数据质量和业财口径与您沟通。", "success");
         form.reset();
       } else {

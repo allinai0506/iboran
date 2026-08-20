@@ -216,6 +216,9 @@
 
       if (res.ok && data.success) {
         trackEvent(submitEventName("success"), { ...getPayload(), source: "modal" });
+        if (window._agl && Array.isArray(window._agl)) {
+          window._agl.push(["track", ["success", { t: 3 }]]);
+        }
         setHint("已收到需求，泊冉顾问会尽快与您沟通。", "success");
         modalForm.reset();
       } else {
