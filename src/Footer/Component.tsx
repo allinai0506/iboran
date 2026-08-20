@@ -26,6 +26,13 @@ export async function Footer() {
             {navItems.map((item, i) => {
               return <CMSLink className="text-white" key={i} {...item.link} />
             })}
+            <CMSLink
+              className="text-white"
+              type="custom"
+              url="https://www.digivoucher.cn/"
+              label="电子会计档案"
+              newTab
+            />
           </nav>
         </div>
       </div>
