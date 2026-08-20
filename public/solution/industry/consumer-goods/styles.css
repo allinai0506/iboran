@@ -1454,6 +1454,10 @@ button {
   font-weight: 700;
 }
 
+.footer-contact a {
+  align-items: center;
+}
+
 .footer-icon {
   width: 34px;
   height: 34px;
