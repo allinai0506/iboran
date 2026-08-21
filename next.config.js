@@ -28,16 +28,6 @@ const nextConfig = {
   },
   reactStrictMode: true,
   redirects,
-  rewrites: async () => [
-    {
-      source: '/solution/industry/consumer-goods',
-      destination: '/solution/industry/consumer-goods/index.html',
-    },
-    {
-      source: '/solution/industry/consumer-goods/',
-      destination: '/solution/industry/consumer-goods/index.html',
-    },
-  ],  
   outputFileTracingExcludes: {
     '*': [
       'node_modules/typescript/**/*',
