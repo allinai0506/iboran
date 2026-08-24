@@ -277,7 +277,7 @@
   z-index: 1;
   width: min(1180px, calc(100% - 40px));
   margin: 0 auto;
-  padding: 32px 0 76px;
+  padding: 82px 0 76px;
   display: grid;
   grid-template-columns: minmax(0, 0.98fr) minmax(430px, 1.02fr);
   gap: 42px;
@@ -1270,7 +1270,7 @@
     grid-template-columns: 1fr;
   }
 .go-scope .hero-inner {
-    padding-top: 24px;
+    padding-top: 62px;
   }
 .go-scope .hero h1 {
     font-size: 40px;
@@ -1309,7 +1309,7 @@
     width: min(100% - 32px, 1180px);
   }
 .go-scope .hero-inner {
-    padding: 24px 0 54px;
+    padding: 48px 0 54px;
     gap: 28px;
   }
 .go-scope .hero h1 {
