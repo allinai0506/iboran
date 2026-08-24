@@ -25,6 +25,7 @@ type GeoSectionProps = {
   identityDescription?: string
   breadcrumbs?: BreadcrumbItem[]
   variant?: GeoVariant
+  visible?: boolean
 }
 
 const defaultDecisionFramework: DecisionItem[] = [
@@ -210,6 +211,7 @@ export const GeoSection = ({
   identityDescription,
   breadcrumbs,
   variant = 'solution',
+  visible = true,
 }: GeoSectionProps) => {
   const resolvedTldr = tldr || getDefaultTldr(variant, title, description, keywords)
   const resolvedFaqs =
@@ -225,6 +227,21 @@ export const GeoSection = ({
         ? defaultDecisionFramework
         : []
   const articleBody = buildArticleBody(resolvedTldr, resolvedFaqs, resolvedBoundaries, resolvedDecisionItems)
+
+  if (!visible) {
+    return (
+      <>
+        {breadcrumbs && <BreadcrumbJsonLd items={breadcrumbs} />}
+        <GEOJsonLd
+          title={title}
+          description={description}
+          faqs={resolvedFaqs}
+          url={url}
+          articleBody={articleBody}
+        />
+      </>
+    )
+  }
 
   return (
     <>

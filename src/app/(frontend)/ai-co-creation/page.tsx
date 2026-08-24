@@ -184,6 +184,7 @@ export default function AiCoCreationPage() {
         identityTitle="本网页由【泊冉软件】提供。"
         identityDescription="泊冉软件是用友软件实施服务商，提供AI数字员工共创方案，帮助企业将业务动作从手工录入转向AI辅助执行。"
         variant="listing"
+        visible={false}
       />
     </>
   )
