@@ -1,0 +1,850 @@
+'use client'
+
+import React, { useEffect, useRef, useState } from 'react'
+import './global-operations.css'
+
+/* ---------------- 角色视角数据 ---------------- */
+type RoleKey = 'owner' | 'finance' | 'it' | 'business' | 'supply' | 'hr'
+
+type RoleData = {
+  kicker: string
+  title: string
+  desc: string
+  items: string[]
+}
+
+const roleData: Record<RoleKey, RoleData> = {
+  owner: {
+    kicker: '老板',
+    title: '看清全球业务在哪里增长，风险在哪里聚集',
+    desc: '从区域收入、毛利、现金流、库存占用、组织效率和合规预警看全球运营整体状态，支持战略复盘和资源投入判断。',
+    items: ['全球经营看板与区域对比', '重点国家或地区风险预警', '海外业务投入与回报分析'],
+  },
+  finance: {
+    kicker: '财务负责人',
+    title: '把跨境对账、合并报表与资金计划从人工拼表变成可追踪',
+    desc: '聚焦多币种核算、跨境对账差异、费用归集、合并报表准备、税务资料与资金计划，让财务先看到风险再进入正式流程。',
+    items: ['跨境对账差异复核清单', '多币种核算与合并准备', '全球资金计划与税务资料'],
+  },
+  it: {
+    kicker: '信息化负责人',
+    title: '先理清系统边界，再谈全球一体化',
+    desc: '围绕现有业务系统、表格台账、接口与权限，规划业务系统集成、主数据治理和多区域部署，避免推倒重建。',
+    items: ['业务系统集成与主数据治理', '接口、权限与数据同步边界', '多区域部署与运维方案'],
+  },
+  business: {
+    kicker: '海外业务负责人',
+    title: '海外渠道、库存与本地经营，总部看得清',
+    desc: '关注经销商、代理商、区域业绩、海外库存与本地经营数据，在区域灵活与总部管控之间找到平衡。',
+    items: ['海外渠道业绩与信用', '海外库存与本地经营看板', '区域合规与授权流程'],
+  },
+  supply: {
+    kicker: '供应链负责人',
+    title: '需求、采购、库存与物流在同一条链上',
+    desc: '围绕需求计划、采购协同、库存可视、物流跟踪与供应风险，建立全球供应链预警，减少缺货与积压并存。',
+    items: ['全球库存可视与补货建议', '采购与生产协同', '物流跟踪与供应风险预警'],
+  },
+  hr: {
+    kicker: '人力负责人',
+    title: '海外人员、派遣与薪酬，地区规则内合规',
+    desc: '覆盖员工档案、派遣、假勤、福利、薪酬计算草稿与人力成本，在地区劳工法差异下保持总部管控。',
+    items: ['海外人员档案与派遣', '薪酬计算草稿与人力成本', '地区假勤福利与合规'],
+  },
+}
+
+const roleTabs: { key: RoleKey; label: string }[] = [
+  { key: 'owner', label: '老板' },
+  { key: 'finance', label: '财务负责人' },
+  { key: 'it', label: '信息化负责人' },
+  { key: 'business', label: '海外业务负责人' },
+  { key: 'supply', label: '供应链负责人' },
+  { key: 'hr', label: '人力负责人' },
+]
+
+/* ---------------- FAQ 数据 ---------------- */
+const faqItems: { q: string; a: string }[] = [
+  {
+    q: '这是不是一个跨境电商解决方案？',
+    a: '不是。跨境电商只是企业出海中的一个业务场景。本方案主轴是企业出海、全球运营、全球财务、全球供应链、全球人力、全球合规、数据分析与多区域部署。',
+  },
+  {
+    q: '企业应该从哪个出海阶段开始规划？',
+    a: '企业可以先识别自身处于出口贸易、海外营销、海外运营还是全球化运营阶段，再明确当前最迫切要解决的是跨境对账、海外渠道、全球财务、全球供应链、全球人力还是数据合规与多区域部署问题。',
+  },
+  {
+    q: '是否需要推倒现有业务系统重建？',
+    a: '通常不建议先推倒重建。泊冉软件解决方案会先评估现有系统、表格台账、接口和数据口径，再通过业务系统集成、主数据治理、流程优化和数据分析逐步改善。',
+  },
+  {
+    q: '全球财务场景包含哪些重点？',
+    a: '重点包括多币种核算、跨境对账、收入与成本口径、合并报表准备、资金计划、税务资料准备和经营分析。涉及凭证生效、资金支付和税务申报时，只生成建议、草稿或预警，由授权人员确认后进入正式流程。',
+  },
+  {
+    q: '数据跨境和隐私合规如何处理？',
+    a: '建议先梳理数据分类、使用目的、存储区域、访问权限、传输链路和日志留痕。涉及数据跨境时，系统只生成建议、草稿或预警，由授权人员确认后进入正式流程。',
+  },
+  {
+    q: '全球人力是否可以覆盖海外薪酬和派遣？',
+    a: '可以按地区差异规划员工档案、派遣、假勤、福利、薪酬计算和人力分析。涉及薪酬发放、个税申报、社保缴纳等高风险动作时，只生成建议、草稿或预警，由授权人员确认后进入正式流程。',
+  },
+  {
+    q: '多区域部署需要提前考虑什么？',
+    a: '需要结合业务所在国家或地区、访问体验、数据分类、隐私要求、系统集成、运维能力和安全策略，选择集中、分布或混合部署方式，并预留后续扩展空间。',
+  },
+]
+
+/* ---------------- 工具函数 ---------------- */
+function trackEvent(name: string, payload: Record<string, unknown> = {}) {
+  if (!name) return
+  const w = window as unknown as { dataLayer?: unknown[] }
+  w.dataLayer = w.dataLayer || []
+  w.dataLayer.push({ event: name, ...payload })
+}
+
+/* ---------------- 主组件 ---------------- */
+const DEFAULT_HINT =
+  '提交后由泊冉顾问联系，结合出海阶段、涉及国家或地区、当前系统现状和重点场景，梳理全球运营数智化推进路径。不做无效打扰。'
+
+export default function GlobalOperations() {
+  const [activeRole, setActiveRole] = useState<RoleKey>('owner')
+  const [openFaqs, setOpenFaqs] = useState<Set<number>>(new Set())
+  const [hint, setHint] = useState<{ msg: string; type: '' | 'error' | 'success' }>({
+    msg: DEFAULT_HINT,
+    type: '',
+  })
+  const [invalidFields, setInvalidFields] = useState<string[]>([])
+  const [submitting, setSubmitting] = useState(false)
+  const formRef = useRef<HTMLFormElement>(null)
+
+  useEffect(() => {
+    const root = document.querySelector('.go-scope')
+    if (!root) return
+    const handleClick = (e: Event) => {
+      const target = e.target as HTMLElement
+      const trackEl = target.closest<HTMLElement>('[data-track]')
+      if (trackEl) {
+        trackEvent(trackEl.dataset.track || '', { label: (trackEl.textContent || '').trim() })
+      }
+    }
+    root.addEventListener('click', handleClick)
+    return () => root.removeEventListener('click', handleClick)
+  }, [])
+
+  useEffect(() => {
+    let s50 = false
+    let s90 = false
+    const onScroll = () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop
+      const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight)
+      const progress = scrollTop / maxScroll
+      if (!s50 && progress >= 0.5) {
+        s50 = true
+        trackEvent('scroll_50')
+      }
+      if (!s90 && progress >= 0.9) {
+        s90 = true
+        trackEvent('scroll_90')
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  const scrollToAnchor = (href: string) => {
+    if (!href.startsWith('#')) return
+    const target = document.querySelector(href)
+    if (!target) return
+    target.classList.remove('target-highlight')
+    window.requestAnimationFrame(() => target.classList.add('target-highlight'))
+  }
+
+  const toggleFaq = (index: number) => {
+    setOpenFaqs((prev) => {
+      const next = new Set(prev)
+      if (next.has(index)) next.delete(index)
+      else next.add(index)
+      return next
+    })
+  }
+
+  const handleRoleTab = (key: RoleKey) => {
+    setActiveRole(key)
+    trackEvent('role_tab_click', { role: key })
+  }
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const form = formRef.current
+    if (!form) return
+
+    const get = (name: string) => {
+      const el = form.elements.namedItem(name) as HTMLInputElement | HTMLSelectElement | null
+      return el ? el.value.trim() : ''
+    }
+
+    const invalid: string[] = []
+    if (!get('name')) invalid.push('name')
+    if (!get('company')) invalid.push('company')
+    const phone = get('phone')
+    if (!phone) {
+      invalid.push('phone')
+    } else if (!/^1[3-9]\d{9}$/.test(phone)) {
+      invalid.push('phone')
+    }
+    if (!get('stage')) invalid.push('stage')
+    if (!get('scene')) invalid.push('scene')
+    const privacy = form.elements.namedItem('privacy') as HTMLInputElement | null
+    if (!privacy || !privacy.checked) invalid.push('privacy')
+
+    setInvalidFields(invalid)
+    if (invalid.length) {
+      setHint({ msg: '请补充姓名、公司名称、有效手机号、企业所处阶段、关注场景，并勾选隐私授权。', type: 'error' })
+      const first = form.elements.namedItem(invalid[0]) as HTMLElement | null
+      first?.focus()
+      return
+    }
+
+    trackEvent('form_submit_global_operations_diagnosis', {
+      stage: get('stage'),
+      scene: get('scene'),
+      system_status: get('system_status'),
+    })
+
+    const remarkParts = [
+      get('stage') && `企业所处阶段: ${get('stage')}`,
+      get('regions') && `涉及国家或地区: ${get('regions')}`,
+      get('start_time') && `预计启动时间: ${get('start_time')}`,
+      get('remark') && `补充说明: ${get('remark')}`,
+    ]
+      .filter(Boolean)
+      .join('\n')
+
+    setSubmitting(true)
+    try {
+      const res = await fetch('/api/leads', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: get('name'),
+          company: get('company'),
+          phone: get('phone'),
+          role: get('title'),
+          source: 'business-global-operations',
+          sourcePath: '/solution/business/global-operations',
+          sourcePageUrl: window.location.href,
+          currentSystem: get('system_status'),
+          interest: get('scene'),
+          remark: remarkParts,
+        }),
+      })
+      const data = (await res.json().catch(() => ({}))) as {
+        success?: boolean
+        error?: string
+        message?: string
+      }
+
+      if (res.ok && data.success) {
+        const agl = (window as unknown as { _agl?: unknown[][] })._agl
+        if (Array.isArray(agl)) {
+          agl.push(['track', ['success', { t: 3 }]])
+        }
+        setHint({
+          msg: '已收到诊断需求，泊冉顾问会根据您的出海阶段、涉及国家或地区和重点场景与您沟通。',
+          type: 'success',
+        })
+        form.reset()
+        setInvalidFields([])
+      } else {
+        setHint({ msg: data.error || data.message || '提交失败，请稍后重试。', type: 'error' })
+      }
+    } catch {
+      setHint({ msg: '提交失败，请稍后重试。', type: 'error' })
+    } finally {
+      setSubmitting(false)
+    }
+  }
+
+  const fieldClass = (name: string) => (invalidFields.includes(name) ? 'is-invalid' : undefined)
+  const role = roleData[activeRole]
+
+  return (
+    <main>
+      {/* ---------- Hero ---------- */}
+      <section className="hero" id="top">
+        <div className="grid-bg" aria-hidden="true" />
+        <div className="hero-inner">
+          <div className="hero-copy">
+            <div className="eyebrow">
+              <span />
+              Global Operations Digital Solution
+            </div>
+            <h1>
+              <span>企业出海与全球运营</span>
+              <span>数智化解决方案</span>
+            </h1>
+            <p className="hero-lead">
+              从单点出海到全球一体化运营，把财务、供应链、人力、合规和数据分析放进同一套管理框架。
+            </p>
+            <p>
+              泊冉软件解决方案围绕全球运营数智化底座、业务系统集成、数据分析与预警、合规治理和多区域部署，帮助企业把出口贸易、海外营销、本地经营和全球化运营逐步串成可管理、可追踪、可复盘的运营闭环。
+            </p>
+            <div className="value-tags" aria-label="核心关键词">
+              <span>企业出海</span>
+              <span>全球运营</span>
+              <span>全球财务</span>
+              <span>全球供应链</span>
+              <span>全球人力</span>
+              <span>全球合规</span>
+            </div>
+            <div className="hero-actions">
+              <a
+                className="btn primary"
+                href="#diagnosis"
+                onClick={() => scrollToAnchor('#diagnosis')}
+                data-track="hero_primary_cta_click"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 5h16v14H4V5Zm3 3v2h10V8H7Zm0 4v2h7v-2H7Zm0 4v1h4v-1H7Z" />
+                </svg>
+                预约全球运营诊断
+              </a>
+              <a
+                className="btn secondary"
+                href="#diagnosis"
+                onClick={() => scrollToAnchor('#diagnosis')}
+                data-track="hero_secondary_cta_click"
+                data-extra-track="download_checklist_click"
+                data-prefill-scene="出海自查清单"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 3v10.2l3.4-3.4 1.8 1.8L12 16.8l-5.2-5.2 1.8-1.8 3.4 3.4V3h2Zm-7 14h14v4H5v-4Z" />
+                </svg>
+                获取出海自查清单
+              </a>
+            </div>
+          </div>
+
+          <aside className="hero-console" aria-label="全球运营驾驶舱示意">
+            <img
+              className="hero-banner"
+              src="/solution/business/global-operations/global-operations-og.png"
+              alt="企业出海与全球运营数智化解决方案示意"
+              width={1200}
+              height={630}
+              fetchPriority="high"
+            />
+            <div className="console-panel">
+              <div className="panel-title">
+                <span>Global Operations Console</span>
+                <strong>预警与建议</strong>
+              </div>
+              <div className="alert-row warn">
+                <span>财务</span>
+                <b>跨境对账差异已生成复核清单</b>
+                <em>待确认</em>
+              </div>
+              <div className="alert-row ok">
+                <span>供应链</span>
+                <b>海外库存与销售预测已同步分析</b>
+                <em>可查看</em>
+              </div>
+              <div className="alert-row danger">
+                <span>合规</span>
+                <b>数据跨境生成预警待授权确认</b>
+                <em>预警</em>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      {/* ---------- 核心痛点 ---------- */}
+      <section className="section pains" id="pains">
+        <div className="section-head compact">
+          <span>核心痛点</span>
+          <h2>
+            <span className="title-line">出海进入经营深水区后，</span>
+            <span className="title-line">管理难点从单点业务转向全球协同</span>
+          </h2>
+          <p>
+            成长型企业通常不是缺少某个单点工具，而是总部、海外区域、财务、供应链、人力和合规之间缺少统一口径、清晰责任和可追踪的数据链路。
+          </p>
+        </div>
+        <div className="pain-grid">
+          <article>
+            <h3>总部看不清海外经营</h3>
+            <p>区域收入、费用、库存、回款、毛利和现金流分散在不同报表里，经营复盘依赖人工汇总。</p>
+          </article>
+          <article>
+            <h3>跨境对账压力持续增加</h3>
+            <p>多币种、汇率、平台费用、退款、物流、税费和结算周期交织，月底对账容易变成集中补账。</p>
+          </article>
+          <article>
+            <h3>全球供应链协同不足</h3>
+            <p>海外库存、采购履约、在途物流、本地仓配和总部计划口径不一致，影响交付与库存周转判断。</p>
+          </article>
+          <article>
+            <h3>海外组织与人力规则复杂</h3>
+            <p>员工档案、派遣、假勤、福利、薪酬计算和人力成本受地区规则影响，需要在本地差异和总部管控之间平衡。</p>
+          </article>
+          <article>
+            <h3>财税、隐私和数据合规风险上升</h3>
+            <p>税务资料、审批放行、资金支付、薪酬发放和数据跨境等事项，需要明确授权确认和流程留痕。</p>
+          </article>
+          <article>
+            <h3>多区域部署与系统集成难规划</h3>
+            <p>总部系统、海外业务系统、表格台账和本地服务并存，接口、权限、数据同步和运维边界需要统一设计。</p>
+          </article>
+        </div>
+      </section>
+
+      {/* ---------- 出海阶段 ---------- */}
+      <section className="section stages" id="stages">
+        <div className="section-head compact">
+          <span>出海阶段</span>
+          <h2>
+            <span className="title-line">不同出海阶段，</span>
+            <span className="title-line">管理重点与数智化路径不同</span>
+          </h2>
+          <p>
+            企业所处阶段不同，管理重点会从跨境对账、海外渠道逐步扩展到全球财务、全球供应链、全球人力、全球合规和多区域部署。
+          </p>
+        </div>
+        <div className="stage-grid">
+          <article>
+            <b>01</b>
+            <h3>出口贸易</h3>
+            <p>以国内交付与海外贸易伙伴为主，重点是订单、出货、收款、费用、汇率和跨境对账。</p>
+            <span>常见诉求：对清订单、单证、费用、收款与利润</span>
+          </article>
+          <article>
+            <b>02</b>
+            <h3>海外营销</h3>
+            <p>开始建设海外销售与营销团队，重点是渠道、价格、客户、促销费用和市场反馈。</p>
+            <span>常见诉求：管好渠道、价格、客户、库存与业绩</span>
+          </article>
+          <article>
+            <b>03</b>
+            <h3>海外运营</h3>
+            <p>海外本地采购、仓储、工厂、人员和财税开始成形，重点是本地流程与总部管控协同。</p>
+            <span>常见诉求：打通海外供应链、工厂与人员管理</span>
+          </article>
+          <article>
+            <b>04</b>
+            <h3>全球化运营</h3>
+            <p>多个区域联动运营，重点是全球模板、区域差异、数据治理、合规边界和多区域部署。</p>
+            <span>常见诉求：统一全球模板、数据口径与合规边界</span>
+          </article>
+        </div>
+      </section>
+
+      {/* ---------- 核心能力架构 ---------- */}
+      <section className="section architecture" id="architecture">
+        <div className="section-head">
+          <span>核心能力架构</span>
+          <h2>
+            <span className="title-line">以全球运营数智化底座</span>
+            <span className="title-line">连接业务、数据和治理边界</span>
+          </h2>
+          <p>
+            泊冉软件解决方案不以单一系统为中心，而是围绕全球业务模型、数据口径、集成链路和合规边界构建可扩展的运营架构。
+          </p>
+        </div>
+        <div className="architecture-board" aria-label="全球运营核心能力架构">
+          <div className="arch-layer foundation">
+            <strong>全球运营数智化底座</strong>
+            <span>多组织 · 多语言 · 多时区 · 多币种 · 多格式 · 多区域部署 · 统一权限</span>
+          </div>
+          <div className="arch-middle">
+            <article>
+              <h3>业务系统集成</h3>
+              <p>连接订单、库存、财务、人力、渠道、工厂、物流和表格台账，沉淀统一主数据与接口链路。</p>
+            </article>
+            <article>
+              <h3>全球财务与供应链</h3>
+              <p>覆盖跨境对账、费用归集、库存协同、采购协同、生产协同和经营分析口径。</p>
+            </article>
+            <article>
+              <h3>全球人力与本地经营</h3>
+              <p>支撑海外人员档案、派遣、假勤、薪酬计算草稿、区域组织和本地经营数据汇总。</p>
+            </article>
+          </div>
+          <div className="arch-layer governance">
+            <strong>数据分析与预警 · 合规治理</strong>
+            <span>经营问数 · 风险预警 · 审批留痕 · 数据分类 · 隐私与数据跨境评估 · 授权确认</span>
+          </div>
+        </div>
+      </section>
+
+      {/* ---------- 业务场景 ---------- */}
+      <section className="section scenarios" id="scenarios">
+        <div className="section-head compact">
+          <span>业务场景</span>
+          <h2>
+            <span className="title-line">跨境电商只是其中一个场景，</span>
+            <span className="title-line">全球运营要覆盖更多关键链路</span>
+          </h2>
+          <p>每个场景都可以独立试点，也可以并入全球运营数智化底座，逐步形成总部与海外区域的一体化运营视图。</p>
+        </div>
+        <div className="scenario-grid">
+          <article className="scenario-card" tabIndex={0} data-track="scenario_card_click" data-scenario="跨境对账">
+            <div className="scenario-icon">01</div>
+            <h3>跨境对账</h3>
+            <p>汇总订单、收款、退款、物流、费用和汇率数据，生成差异清单、核对建议和财务处理草稿。</p>
+            <span>授权确认后进入正式财务流程</span>
+          </article>
+          <article className="scenario-card" tabIndex={0} data-track="scenario_card_click" data-scenario="海外渠道">
+            <div className="scenario-icon">02</div>
+            <h3>海外渠道</h3>
+            <p>管理经销商、代理商、价格政策、信用额度、促销费用、渠道库存和区域业绩。</p>
+            <span>适合海外营销和本地经营阶段</span>
+          </article>
+          <article className="scenario-card" tabIndex={0} data-track="scenario_card_click" data-scenario="海外零售">
+            <div className="scenario-icon">03</div>
+            <h3>海外零售</h3>
+            <p>连接门店、电商、会员、库存、促销、收款和发货，形成线上线下一体化经营看板。</p>
+            <span>跨境电商纳入零售经营场景</span>
+          </article>
+          <article className="scenario-card" tabIndex={0} data-track="scenario_card_click" data-scenario="全球财务">
+            <div className="scenario-icon">04</div>
+            <h3>全球财务</h3>
+            <p>支持多币种、跨境对账、费用归集、合并准备、税务资料和资金计划分析。</p>
+            <span>生成建议、草稿或预警，由授权人员确认后进入正式流程</span>
+          </article>
+          <article className="scenario-card" tabIndex={0} data-track="scenario_card_click" data-scenario="全球供应链">
+            <div className="scenario-icon">05</div>
+            <h3>全球供应链</h3>
+            <p>围绕需求计划、采购协同、库存可视、物流跟踪、供应风险和履约异常建立预警。</p>
+            <span>支撑多区域供应链协同</span>
+          </article>
+          <article className="scenario-card" tabIndex={0} data-track="scenario_card_click" data-scenario="海外工厂">
+            <div className="scenario-icon">06</div>
+            <h3>海外工厂</h3>
+            <p>梳理海外本地采购、生产计划、质量记录、库存成本、设备资产和总部协同口径。</p>
+            <span>适合本地生产和海外运营阶段</span>
+          </article>
+          <article className="scenario-card" tabIndex={0} data-track="scenario_card_click" data-scenario="全球人力">
+            <div className="scenario-icon">07</div>
+            <h3>全球人力</h3>
+            <p>覆盖海外人员档案、派遣、假勤、福利、薪酬计算草稿、人力成本和组织效能分析。</p>
+            <span>生成建议、草稿或预警，由授权人员确认后进入正式流程</span>
+          </article>
+          <article className="scenario-card" tabIndex={0} data-track="scenario_card_click" data-scenario="数据合规">
+            <div className="scenario-icon">08</div>
+            <h3>数据合规</h3>
+            <p>梳理数据分类、存储区域、访问权限、脱敏策略、传输日志和数据跨境评估建议。</p>
+            <span>生成建议、草稿或预警，由授权人员确认后进入正式流程</span>
+          </article>
+        </div>
+      </section>
+
+      {/* ---------- 数据分析与预警 ---------- */}
+      <section className="section ai-answer" id="ai-answer">
+        <div className="section-head compact">
+          <span>数据分析与预警</span>
+          <h2>
+            <span className="title-line">统一经营口径、数据来源与风险预警，</span>
+            <span className="title-line">支撑全球运营复盘</span>
+          </h2>
+          <p>
+            在全球财务、全球供应链、海外渠道、全球人力和合规治理数据逐步沉淀后，可按需建设智能检索与经营直答能力。涉及高风险动作时，只生成建议、草稿或预警，由授权人员确认后进入正式流程。
+          </p>
+        </div>
+        <div className="answer-shell">
+          <div className="search-bar" role="search">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m21 21-4.3-4.3M10.8 18a7.2 7.2 0 1 1 0-14.4 7.2 7.2 0 0 1 0 14.4Z" />
+            </svg>
+            <span>本月东南亚区域毛利异常的主要影响因素是什么？</span>
+          </div>
+          <div className="answer-grid">
+            <article>
+              <b>分析摘要</b>
+              <p>汇总销售、库存、费用和汇率数据，识别主要差异来源与受影响组织，辅助负责人定位复核范围。</p>
+            </article>
+            <article>
+              <b>数据口径</b>
+              <p>展示数据来源、统计周期、币种口径、组织范围和更新时间，减少跨区域报表口径不一致。</p>
+            </article>
+            <article>
+              <b>风险预警</b>
+              <p>对跨境对账、税务资料、资金计划、薪酬计算、审批放行和数据跨境事项，统一生成建议、草稿或预警，由授权人员确认后进入正式流程。</p>
+            </article>
+          </div>
+          <div className="answer-tags" aria-label="常见分析主题">
+            <span>全球现金流</span>
+            <span>跨境对账</span>
+            <span>海外库存</span>
+            <span>渠道毛利</span>
+            <span>人力成本</span>
+            <span>合规风险</span>
+          </div>
+        </div>
+      </section>
+
+      {/* ---------- 角色视角 ---------- */}
+      <section className="section roles" id="roles">
+        <div className="section-head compact">
+          <span>按角色展示</span>
+          <h2>
+            <span className="title-line">同一套全球运营数据，</span>
+            <span className="title-line">不同角色关注不同决策问题</span>
+          </h2>
+        </div>
+        <div className="role-tabs" role="tablist" aria-label="角色视角">
+          {roleTabs.map((tab) => (
+            <button
+              key={tab.key}
+              type="button"
+              className={tab.key === activeRole ? 'is-active' : undefined}
+              role="tab"
+              aria-selected={tab.key === activeRole}
+              data-role={tab.key}
+              onClick={() => handleRoleTab(tab.key)}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
+        <div className="role-panel" aria-live="polite">
+          <div>
+            <span className="role-kicker">{role.kicker}</span>
+            <h3>{role.title}</h3>
+            <p>{role.desc}</p>
+          </div>
+          <ul>
+            {role.items.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* ---------- 治理边界 ---------- */}
+      <section className="section governance" id="governance">
+        <div className="section-head compact">
+          <span>治理边界</span>
+          <h2>
+            <span className="title-line">越是全球化运营，</span>
+            <span className="title-line">越要把自动建议和正式流程边界说清楚</span>
+          </h2>
+          <p>
+            泊冉软件解决方案坚持“可分析、可预警、可生成草稿，但高风险动作由授权人员确认”的治理原则，不使用绝对承诺式表达。
+          </p>
+        </div>
+        <div className="boundary-grid">
+          <article>
+            <h3>凭证生效</h3>
+            <p>系统只生成建议、草稿或预警，由授权人员确认后进入正式流程。</p>
+          </article>
+          <article>
+            <h3>资金支付</h3>
+            <p>系统只生成建议、草稿或预警，由授权人员确认后进入正式流程。</p>
+          </article>
+          <article>
+            <h3>税务申报</h3>
+            <p>系统只生成建议、草稿或预警，由授权人员确认后进入正式流程。</p>
+          </article>
+          <article>
+            <h3>薪酬发放</h3>
+            <p>系统只生成建议、草稿或预警，由授权人员确认后进入正式流程。</p>
+          </article>
+          <article>
+            <h3>审批放行</h3>
+            <p>系统只生成建议、草稿或预警，由授权人员确认后进入正式流程。</p>
+          </article>
+          <article>
+            <h3>数据跨境</h3>
+            <p>系统只生成建议、草稿或预警，由授权人员确认后进入正式流程。</p>
+          </article>
+        </div>
+      </section>
+
+      {/* ---------- FAQ ---------- */}
+      <section className="section faq" id="faq">
+        <div className="section-head compact">
+          <span>FAQ</span>
+          <h2>
+            <span className="title-line">企业评估出海与全球运营数智化方案时，</span>
+            <span className="title-line">通常先问这些问题</span>
+          </h2>
+        </div>
+        <div className="faq-list">
+          {faqItems.map((item, index) => {
+            const open = openFaqs.has(index)
+            return (
+              <article key={item.q} className={open ? 'faq-item is-open' : 'faq-item'}>
+                <button type="button" aria-expanded={open} onClick={() => toggleFaq(index)}>
+                  <span>{item.q}</span>
+                  <b />
+                </button>
+                <p>{item.a}</p>
+              </article>
+            )
+          })}
+        </div>
+      </section>
+
+      {/* ---------- 诊断表单 ---------- */}
+      <section className="section diagnosis" id="diagnosis">
+        <div className="diagnosis-copy">
+          <span>Global Operations Diagnosis</span>
+          <h2>
+            <span className="title-line">先做一次全球运营诊断，</span>
+            <span className="title-line">把阶段、场景和治理边界讲清楚</span>
+          </h2>
+          <p>
+            泊冉顾问会结合企业所处出海阶段、涉及国家或地区、当前系统现状和重点场景，梳理全球运营数智化底座、业务系统集成、数据分析与预警、合规治理和多区域部署的推进路径。
+          </p>
+          <div className="diagnosis-checks">
+            <div>
+              <strong>看阶段</strong>
+              <span>出口贸易、海外营销、海外运营或全球化运营。</span>
+            </div>
+            <div>
+              <strong>看场景</strong>
+              <span>跨境对账、全球财务、供应链、人力、合规或本地经营。</span>
+            </div>
+            <div>
+              <strong>看边界</strong>
+              <span>高风险动作生成建议、草稿或预警，由授权人员确认。</span>
+            </div>
+          </div>
+          <div className="contact-strip">
+            <a href="tel:400-9955-161" data-track="phone_click">
+              电话咨询：400-9955-161
+            </a>
+            <a href="#diagnosis" data-track="wechat_click">
+              微信咨询
+            </a>
+          </div>
+        </div>
+        <form className="lead-form" noValidate ref={formRef} onSubmit={handleSubmit}>
+          <h3>预约全球运营数智化诊断</h3>
+          <div className="field-grid">
+            <label>
+              <span>
+                姓名 <b>*</b>
+              </span>
+              <input name="name" type="text" autoComplete="name" required className={fieldClass('name')} />
+            </label>
+            <label>
+              <span>
+                公司名称 <b>*</b>
+              </span>
+              <input
+                name="company"
+                type="text"
+                autoComplete="organization"
+                required
+                className={fieldClass('company')}
+              />
+            </label>
+          </div>
+          <div className="field-grid">
+            <label>
+              <span>
+                手机号 <b>*</b>
+              </span>
+              <input
+                name="phone"
+                type="tel"
+                autoComplete="tel"
+                required
+                className={fieldClass('phone')}
+              />
+            </label>
+            <label>
+              <span>职位</span>
+              <input name="title" type="text" autoComplete="organization-title" />
+            </label>
+          </div>
+          <div className="field-grid">
+            <label>
+              <span>
+                企业所处阶段 <b>*</b>
+              </span>
+              <select name="stage" required className={fieldClass('stage')}>
+                <option value="">请选择</option>
+                <option>出口贸易</option>
+                <option>海外营销</option>
+                <option>海外运营</option>
+                <option>全球化运营</option>
+                <option>暂不确定</option>
+              </select>
+            </label>
+            <label>
+              <span>涉及国家或地区</span>
+              <input name="regions" type="text" placeholder="例如：东南亚 / 欧洲 / 北美 / 中东" />
+            </label>
+          </div>
+          <div className="field-grid">
+            <label>
+              <span>当前系统现状</span>
+              <select name="system_status">
+                <option value="">请选择</option>
+                <option>多套业务系统并行</option>
+                <option>总部与海外系统割裂</option>
+                <option>主要依赖表格台账</option>
+                <option>正在规划新系统</option>
+                <option>需要先做现状评估</option>
+              </select>
+            </label>
+            <label>
+              <span>
+                关注场景 <b>*</b>
+              </span>
+              <select name="scene" required className={fieldClass('scene')}>
+                <option value="">请选择</option>
+                <option>跨境对账</option>
+                <option>海外渠道</option>
+                <option>海外零售</option>
+                <option>全球财务</option>
+                <option>全球供应链</option>
+                <option>海外工厂</option>
+                <option>全球人力</option>
+                <option>数据合规</option>
+                <option>多区域部署</option>
+                <option>出海自查清单</option>
+              </select>
+            </label>
+          </div>
+          <label>
+            <span>预计启动时间</span>
+            <select name="start_time">
+              <option value="">请选择</option>
+              <option>1个月内</option>
+              <option>1-3个月</option>
+              <option>3-6个月</option>
+              <option>6个月以后</option>
+              <option>仍在调研</option>
+            </select>
+          </label>
+          <label>
+            <span>备注</span>
+            <textarea
+              name="remark"
+              rows={4}
+              placeholder="例如：目前总部和海外区域系统割裂，想先评估跨境对账、全球财务、海外库存或数据合规。"
+            />
+          </label>
+          <label className="privacy-check">
+            <input name="privacy" type="checkbox" required className={fieldClass('privacy')} />
+            <span>
+              我已阅读并同意隐私授权，允许泊冉软件基于本次咨询需求联系我。 <b>*</b>
+            </span>
+          </label>
+          <p className={`form-hint ${hint.type ? `is-${hint.type}` : ''}`} role="status" aria-live="polite">
+            {hint.msg}
+          </p>
+          <button className="modal-submit" type="submit" disabled={submitting} data-track="form_submit_click">
+            提交诊断需求
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h12.2l-5.1-5.1L14 5l8 8-8 8-1.9-1.9 5.1-5.1H5v-2Z" />
+            </svg>
+          </button>
+        </form>
+      </section>
+    </main>
+  )
+}
