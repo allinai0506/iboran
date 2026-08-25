@@ -33,10 +33,19 @@ COPY . .
 ARG NEXT_PUBLIC_SERVER_URL=https://www.iboran.com
 ENV NEXT_PUBLIC_SERVER_URL=$NEXT_PUBLIC_SERVER_URL
 
+# Set larger heap to avoid OOM during build (bypasses cross-env in package.json
+# which would override NODE_OPTIONS with only --no-deprecation)
+ENV NODE_OPTIONS="--no-deprecation --max-old-space-size=4096"
+
+# Run next build + next-sitemap directly via pnpm exec (bypasses cross-env
+# to preserve --max-old-space-size in NODE_OPTIONS)
 RUN \
-  if [ -f yarn.lock ]; then yarn run build; \
+  if [ -f pnpm-lock.yaml ]; then \
+    corepack enable pnpm && pnpm config set registry "$NPM_CONFIG_REGISTRY" && \
+    pnpm exec next build && \
+    pnpm exec next-sitemap; \
+  elif [ -f yarn.lock ]; then yarn run build; \
   elif [ -f package-lock.json ]; then npm run build; \
-  elif [ -f pnpm-lock.yaml ]; then corepack enable pnpm && pnpm config set registry "$NPM_CONFIG_REGISTRY" && pnpm run build; \
   else echo "Lockfile not found." && exit 1; \
   fi
 
