@@ -13,8 +13,6 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  output: 'standalone',
-  outputFileTracing: false,
   images: {
     unoptimized: true,
   },
@@ -29,16 +27,10 @@ const nextConfig = {
   },
   reactStrictMode: true,
   redirects,
+  // 非 standalone 全量部署：排除所有 node_modules，nft 只扫描源码，
+  // 避免 "Collecting build traces" 阶段 OOM（服务器内存受限）
   outputFileTracingExcludes: {
-    '*': [
-      'node_modules/typescript/**/*',
-      'node_modules/@types/**/*',
-      'node_modules/esbuild/**/*',
-      'node_modules/sass/**/*',
-      'node_modules/terser/**/*',
-      'node_modules/webpack/**/*',
-      'node_modules/@swc/core/**/*',
-    ],
+    '*': ['node_modules/**/*'],
   },
 }
 
