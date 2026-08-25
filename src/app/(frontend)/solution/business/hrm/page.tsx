@@ -1,43 +1,61 @@
-import { Metadata } from 'next'
-import Hero from './Hero'
-import PainPoints from './PainPoints'
-import Features from './Features'
-import HowItWorks from './HowItWorks'
-import ValueSection from './ValueSection'
-import CustomerSuccess from './CustomerSuccess'
-import CTASection from './CTASection'
-import { GeoSection } from '@/components/GeoSection'
-import { SeoH1 } from '@/components/SeoH1'
+import type { Metadata } from 'next'
+import { HrContent } from './page.content'
+import { hrJsonLd } from './structured-data'
+
+const URL = 'https://www.iboran.com/solution/business/hrm'
 
 export const metadata: Metadata = {
-  title: 'HRM 人力资源全生命周期管理 | 泊冉软件',
-  description: '用友BIP HRM人力资源解决方案，覆盖从招聘入职、培训发展到薪酬绩效的全流程。数智化人才管理，激活组织活力，赋能业务增长。',
-  keywords: ['HRM', '人力资源', '人才管理', 'YonBIP', 'YonSuite', '薪酬', '绩效', '招聘', '泊冉软件'],
+  title: '成长型企业人力资源数智化管理方案_员工自助_移动审批_智能减负_人效分析 | 泊冉软件',
+  description:
+    '泊冉软件成长型企业人力资源数智化管理方案，从员工自助、移动审批、入转调离、考勤假勤、薪酬核对、绩效反馈和人效分析等高频场景切入，帮助成长型企业减少HR重复事务，提升主管参与度，让人力管理更易用、更智能、更可视化。',
+  keywords: [
+    '人力资源数智化',
+    'HR数字化',
+    '成长型企业人力管理',
+    '员工自助服务',
+    '移动审批',
+    '考勤假勤管理',
+    '薪酬核对',
+    '入转调离流程',
+    '绩效反馈',
+    '人效分析',
+    'HR智能化',
+    '人力资源管理方案',
+  ],
+  alternates: { canonical: URL },
+  robots: { index: true, follow: true },
   openGraph: {
-    title: 'HRM 人力资源全生命周期管理 - 激活组织活力',
-    description: '数智化人才管理，从招聘到离职全流程数字化，激活组织活力。',
+    type: 'website',
+    locale: 'zh_CN',
+    url: URL,
+    siteName: '泊冉软件',
+    title: '成长型企业人力资源数智化管理方案 - 员工自助、移动审批、智能减负与人效分析',
+    description: '员工自助办理，主管移动参与，HR智能减负，管理层实时看人效。',
+    images: [
+      {
+        url: '/solution/business/hrm/hr-digital-management-og.svg',
+        width: 1200,
+        height: 630,
+        alt: '成长型企业人力资源数智化管理方案',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '成长型企业人力资源数智化管理方案 - 员工自助、移动审批、智能减负与人效分析',
+    description: '员工自助办理，主管移动参与，HR智能减负，管理层实时看人效。',
+    images: ['/solution/business/hrm/hr-digital-management-og.svg'],
   },
 }
 
-export default function HRMPage() {
+export default function Page() {
   return (
     <>
-      <SeoH1 title={metadata.title as string} />
-      <Hero />
-      <PainPoints />
-      <Features />
-      <HowItWorks />
-      <ValueSection />
-      <CustomerSuccess />
-      <GeoSection
-        title={metadata.title as string}
-        description={metadata.description as string}
-        keywords={metadata.keywords}
-        url="https://www.iboran.com/solution/business/hrm"
-        variant="solution"
-        showDecisionFramework
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(hrJsonLd) }}
       />
-      <CTASection />
+      <HrContent />
     </>
   )
 }
