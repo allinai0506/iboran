@@ -14,6 +14,7 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   output: 'standalone',
+  outputFileTracing: false,
   images: {
     unoptimized: true,
   },
