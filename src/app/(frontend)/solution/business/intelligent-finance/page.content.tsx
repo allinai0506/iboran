@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState, useEffect, Fragment } from 'react'
+import { createPortal } from 'react-dom'
 import './intelligent-finance.css'
 import './lead-modal.css'
 import { useAttribution } from '@/providers/Attribution'
