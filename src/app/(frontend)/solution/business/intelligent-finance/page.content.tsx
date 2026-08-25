@@ -420,7 +420,7 @@ export const IntelligentFinanceContent: React.FC = () => {
           </div>
         </div>
 
-        <form className="lead-form" data-form-name="intelligent-finance-diagnosis" novalidate onSubmit={handleLeadFormSubmit}>
+        <form className="lead-form" data-form-name="intelligent-finance-diagnosis" noValidate onSubmit={handleLeadFormSubmit}>
           <h3>预约智能财务场景诊断</h3>
           <div className="field-grid">
             <label><span>姓名 <b>*</b></span><input name="name" type="text" autoComplete="name" required /></label>
@@ -539,7 +539,7 @@ export const IntelligentFinanceContent: React.FC = () => {
                       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" fill="none" /></svg>
                     </button>
                   </div>
-                  <form className="boran-lead-modal__form" novalidate onSubmit={handleModalSubmit}>
+                  <form className="boran-lead-modal__form" noValidate onSubmit={handleModalSubmit}>
                     <div className="boran-lead-modal__row">
                       <label>企业名称 <b>*</b><input name="company" type="text" autoComplete="organization" required /></label>
                       <label>联系人 <b>*</b><input name="contact" type="text" autoComplete="name" required /></label>
