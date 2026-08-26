@@ -432,7 +432,7 @@ export const YonsuiteContent: React.FC = () => {
             ))}
           </div>
         </div>
-
+      </section>
 
       <section className="section implementation" id="implementation">
         <div className="section-head compact">
