@@ -1,76 +1,59 @@
-import { Metadata } from 'next'
-import Hero from './Hero'
-import FlywheelSection from './FlywheelSection'
-import InnovationBuilder from './InnovationBuilder'
-import Capabilities from './Capabilities'
-import TargetAudience from './TargetAudience'
-import IndustrySolutions from './IndustrySolutions'
-import DeliveryMethodology from './DeliveryMethodology'
-import DeliveryScope from './DeliveryScope'
-import TechSpecs from './TechSpecs'
-import TrustProof from './TrustProof'
-import FAQ from './FAQ'
-import CTASection from './CTASection'
-import { GEOJsonLd } from '@/components/GEOJsonLd'
-import { GeoSection } from '@/components/GeoSection'
-import { SeoH1 } from '@/components/SeoH1'
+import type { Metadata } from 'next'
+import { YonsuiteContent } from './page.content'
+import { yonsuiteJsonLd } from './structured-data'
+
+const URL = 'https://www.iboran.com/products/yonsuite'
 
 export const metadata: Metadata = {
-  title: '用友 YonSuite 成长型企业 SaaS 云 ERP | 业财税费一体化',
-  description: '用友 YonSuite 为成长型企业提供一站式全场景 SaaS 服务，助力实现业财税费票一体化、全球化经营。数智飞轮驱动持续增长，创新企业卓越选择。',
-  keywords: 'YonSuite, 用友, SaaS, 业财一体, 驱动创新, 成长型企业, 数智飞轮, 商业创新',
+  title: '用友YonSuite产品专题_AI时代成长型企业一体化SaaS云ERP_业财税费一体化 | 泊冉软件',
+  description:
+    '泊冉软件用友YonSuite产品专题：面向成长型企业的一体化SaaS云ERP，覆盖财务、人力、供应链、营销、采购、制造、研发、项目、资产、协同一体化，融合企业AI、ChatBI、智能体与全球化能力，助力业财税费票一体化与数智飞轮增长。',
+  keywords: [
+    '用友YonSuite',
+    'YonSuite',
+    '成长型企业SaaS',
+    '云ERP',
+    '业财一体化',
+    '数智飞轮',
+    '企业AI',
+    'ChatBI',
+    '一体化SaaS',
+    '商业创新',
+  ],
+  alternates: { canonical: URL },
+  robots: { index: true, follow: true },
   openGraph: {
-    title: '用友 YonSuite 成长型企业 SaaS 云 ERP',
-    description: '一站式全场景 SaaS 服务，助力成长型企业实现业财税费票一体化与数智飞轮增长。',
     type: 'website',
+    locale: 'zh_CN',
+    url: URL,
+    siteName: '泊冉软件',
+    title: '用友YonSuite产品专题 - AI时代成长型企业一体化SaaS云ERP',
+    description: '一体化全场景SaaS服务，融合企业AI、ChatBI与智能体，助力成长型企业业财税费票一体化与数智飞轮增长。',
+    images: [
+      {
+        url: '/products/yonsuite/yonsuite-og.svg',
+        width: 1200,
+        height: 630,
+        alt: '用友YonSuite产品专题',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '用友YonSuite产品专题 - AI时代成长型企业一体化SaaS云ERP',
+    description: '一体化全场景SaaS服务，融合企业AI、ChatBI与智能体，助力成长型企业业财税费票一体化。',
+    images: ['/products/yonsuite/yonsuite-og.svg'],
   },
 }
 
-export default function ProductPage() {
-  const faqs = [
-    {
-      question: '用友 YonSuite 适合什么样的企业？',
-      answer: 'YonSuite 专为创新型和高成长型企业设计，特别是那些需要快速响应市场变化、追求全球化经营、以及希望通过单一平台实现业财税费票一体化管理的企业。'
-    },
-    {
-      question: 'YonSuite 支持哪些业务场景？',
-      answer: 'YonSuite 覆盖财务会计、供应链管理、人力资源、协同办公、营销管理、项目管理等全场景业务，并支持通过低代码平台进行个性化扩展。'
-    },
-    {
-      question: 'YonSuite 是纯 SaaS 软件吗？',
-      answer: '是的，YonSuite 是基于云原生架构的公有云 SaaS 服务，企业无需购买服务器和维护IT基础设施，即可享受实时更新的企业级服务。'
-    }
-  ]
-
+export default function Page() {
   return (
-    <div className="min-h-screen bg-white">
-      <GEOJsonLd
-        title="用友 YonSuite - 创新企业选 YonSuite | 成长型企业商业创新平台"
-        description="用友 YonSuite 为成长型企业提供一站式全场景 SaaS 服务，助力实现业财税费票一体化、全球化经营。数智飞轮驱动持续增长，创新企业卓越选择。"
-        url="https://www.iboran.com/products/yonsuite"
-        faqs={faqs}
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(yonsuiteJsonLd) }}
       />
-      <SeoH1 title={metadata.title as string} />
-      <Hero />
-      <FlywheelSection />
-      <InnovationBuilder />
-      <Capabilities />
-      <IndustrySolutions />
-      <TargetAudience />
-      <DeliveryMethodology />
-      <DeliveryScope />
-      <TechSpecs />
-      <TrustProof />
-      <FAQ />
-      <GeoSection
-        title={metadata.title as string}
-        description={metadata.description as string}
-        keywords={metadata.keywords}
-        url="https://www.iboran.com/products/yonsuite"
-        variant="product"
-        showDecisionFramework
-      />
-      <CTASection />
-    </div>
+      <YonsuiteContent />
+    </>
   )
 }
