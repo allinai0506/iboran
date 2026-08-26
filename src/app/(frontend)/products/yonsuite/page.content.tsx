@@ -202,34 +202,34 @@ export const YonsuiteContent: React.FC = () => {
           <p>从财务到制造，从营销到协同，YonSuite的价值不在单个模块，而在业务链路连续流转。</p>
         </div>
         <div className="matrix-grid">
-          <article tabIndex="0" data-track="yonsuite_product_matrix_click" data-product="智能财税">
+          <article tabIndex={0} data-track="yonsuite_product_matrix_click" data-product="智能财税">
             <b>01</b><h3>智能财税</h3><p>让会计核算、资金管理、税务费控、预算控制和财务分析衔接业务事实。</p><div><span>财务会计</span><span>管理会计</span><span>资金管理</span><span>税务费控</span><span>财务分析</span></div>
           </article>
-          <article tabIndex="0" data-track="yonsuite_product_matrix_click" data-product="数智人力">
+          <article tabIndex={0} data-track="yonsuite_product_matrix_click" data-product="数智人力">
             <b>02</b><h3>数智人力</h3><p>覆盖组织、员工、招聘、绩效、薪酬与人才发展。</p><div><span>组织员工</span><span>招聘</span><span>绩效</span><span>薪酬</span><span>人才</span></div>
           </article>
-          <article tabIndex="0" data-track="yonsuite_product_matrix_click" data-product="数字营销">
+          <article tabIndex={0} data-track="yonsuite_product_matrix_click" data-product="数字营销">
             <b>03</b><h3>数字营销</h3><p>支持客户、商机、渠道、订单和全渠道营销增长。</p><div><span>CRM</span><span>全渠道</span><span>价格政策</span><span>订单</span><span>客户经营</span></div>
           </article>
-          <article tabIndex="0" data-track="yonsuite_product_matrix_click" data-product="智慧采购">
+          <article tabIndex={0} data-track="yonsuite_product_matrix_click" data-product="智慧采购">
             <b>04</b><h3>智慧采购</h3><p>打通寻源、供应商、采购订单、到货、对账与应付。</p><div><span>寻源</span><span>供应商</span><span>合同</span><span>到货</span><span>对账</span></div>
           </article>
-          <article tabIndex="0" data-track="yonsuite_product_matrix_click" data-product="敏捷供应链">
+          <article tabIndex={0} data-track="yonsuite_product_matrix_click" data-product="敏捷供应链">
             <b>05</b><h3>敏捷供应链</h3><p>围绕订单、库存、仓配和履约构建供应链控制塔。</p><div><span>销售</span><span>库存</span><span>仓储</span><span>履约</span><span>控制塔</span></div>
           </article>
-          <article tabIndex="0" data-track="yonsuite_product_matrix_click" data-product="智能制造">
+          <article tabIndex={0} data-track="yonsuite_product_matrix_click" data-product="智能制造">
             <b>06</b><h3>智能制造</h3><p>支撑计划、生产、质量、委外、设备与制造成本管理。</p><div><span>计划</span><span>生产订单</span><span>质量</span><span>委外</span><span>成本</span></div>
           </article>
-          <article tabIndex="0" data-track="yonsuite_product_matrix_click" data-product="数智研发">
+          <article tabIndex={0} data-track="yonsuite_product_matrix_click" data-product="数智研发">
             <b>07</b><h3>数智研发</h3><p>连接产品数据、研发过程、BOM变更和研产协同。</p><div><span>PDM</span><span>BOM</span><span>研发项目</span><span>变更</span><span>研制协同</span></div>
           </article>
-          <article tabIndex="0" data-track="yonsuite_product_matrix_click" data-product="数智项目">
+          <article tabIndex={0} data-track="yonsuite_product_matrix_click" data-product="数智项目">
             <b>08</b><h3>数智项目</h3><p>管理项目预算、工时、费用、收入、成本和项目毛利。</p><div><span>立项</span><span>预算</span><span>工时</span><span>成本</span><span>毛利</span></div>
           </article>
-          <article tabIndex="0" data-track="yonsuite_product_matrix_click" data-product="数智资产">
+          <article tabIndex={0} data-track="yonsuite_product_matrix_click" data-product="数智资产">
             <b>09</b><h3>数智资产</h3><p>覆盖资产台账、使用、维修、折旧、盘点和资产经营。</p><div><span>台账</span><span>维修</span><span>折旧</span><span>盘点</span><span>经营</span></div>
           </article>
-          <article tabIndex="0" data-track="yonsuite_product_matrix_click" data-product="智慧协同">
+          <article tabIndex={0} data-track="yonsuite_product_matrix_click" data-product="智慧协同">
             <b>10</b><h3>智慧协同</h3><p>统一工作入口、待办、流程、文档和跨组织协作体验。</p><div><span>工作台</span><span>待办</span><span>审批</span><span>文档</span><span>移动办公</span></div>
           </article>
         </div>
@@ -258,15 +258,15 @@ export const YonsuiteContent: React.FC = () => {
         </div>
         <div className="ai-layout">
           <div className="ai-grid">
-            <article tabIndex="0" data-track="yonsuite_ai_section_click" data-ai="智友"><strong>智友</strong><span>作为统一智能入口，帮助员工发起查询、待办、草稿和经营提醒。</span></article>
-            <article tabIndex="0" data-track="yonsuite_ai_section_click" data-ai="ChatBI"><strong>ChatBI</strong><span>用自然语言查询销售、库存、毛利、费用、现金流和项目经营指标。</span></article>
-            <article tabIndex="0" data-track="yonsuite_ai_section_click" data-ai="智能体构建"><strong>智能体构建</strong><span>围绕报价、读单、补货、预审、预警等场景共创行业智能体。</span></article>
-            <article tabIndex="0" data-track="yonsuite_ai_section_click" data-ai="AI+财务"><strong>AI+财务</strong><span>生成凭证建议、费用预审、预算预警和经营分析草稿，由财务人员确认。</span></article>
-            <article tabIndex="0" data-track="yonsuite_ai_section_click" data-ai="AI+供应链"><strong>AI+供应链</strong><span>识别库存异常、交付风险、低周转和齐套缺口，形成预警和跟进建议。</span></article>
-            <article tabIndex="0" data-track="yonsuite_ai_section_click" data-ai="AI+采购"><strong>AI+采购</strong><span>辅助供应商比选、寻源建议、采购异常和到货风险分析。</span></article>
-            <article tabIndex="0" data-track="yonsuite_ai_section_click" data-ai="AI+制造"><strong>AI+制造</strong><span>围绕BOM、计划、工单、质量和设备异常生成分析建议和预警。</span></article>
-            <article tabIndex="0" data-track="yonsuite_ai_section_click" data-ai="AI+营销"><strong>AI+营销</strong><span>支持客户画像、报价草稿、渠道动销、促销费用和低毛利预警。</span></article>
-            <article tabIndex="0" data-track="yonsuite_ai_section_click" data-ai="AI+协同"><strong>AI+协同</strong><span>把会议纪要、待办、审批摘要和跨部门任务提醒推入协同流程。</span></article>
+            <article tabIndex={0} data-track="yonsuite_ai_section_click" data-ai="智友"><strong>智友</strong><span>作为统一智能入口，帮助员工发起查询、待办、草稿和经营提醒。</span></article>
+            <article tabIndex={0} data-track="yonsuite_ai_section_click" data-ai="ChatBI"><strong>ChatBI</strong><span>用自然语言查询销售、库存、毛利、费用、现金流和项目经营指标。</span></article>
+            <article tabIndex={0} data-track="yonsuite_ai_section_click" data-ai="智能体构建"><strong>智能体构建</strong><span>围绕报价、读单、补货、预审、预警等场景共创行业智能体。</span></article>
+            <article tabIndex={0} data-track="yonsuite_ai_section_click" data-ai="AI+财务"><strong>AI+财务</strong><span>生成凭证建议、费用预审、预算预警和经营分析草稿，由财务人员确认。</span></article>
+            <article tabIndex={0} data-track="yonsuite_ai_section_click" data-ai="AI+供应链"><strong>AI+供应链</strong><span>识别库存异常、交付风险、低周转和齐套缺口，形成预警和跟进建议。</span></article>
+            <article tabIndex={0} data-track="yonsuite_ai_section_click" data-ai="AI+采购"><strong>AI+采购</strong><span>辅助供应商比选、寻源建议、采购异常和到货风险分析。</span></article>
+            <article tabIndex={0} data-track="yonsuite_ai_section_click" data-ai="AI+制造"><strong>AI+制造</strong><span>围绕BOM、计划、工单、质量和设备异常生成分析建议和预警。</span></article>
+            <article tabIndex={0} data-track="yonsuite_ai_section_click" data-ai="AI+营销"><strong>AI+营销</strong><span>支持客户画像、报价草稿、渠道动销、促销费用和低毛利预警。</span></article>
+            <article tabIndex={0} data-track="yonsuite_ai_section_click" data-ai="AI+协同"><strong>AI+协同</strong><span>把会议纪要、待办、审批摘要和跨部门任务提醒推入协同流程。</span></article>
           </div>
           <aside className="ai-boundary">
             <h3>让智能能力产生业务成效</h3>
@@ -283,7 +283,7 @@ export const YonsuiteContent: React.FC = () => {
           <p>以下10个场景可从单部门试点，也可组合成跨部门、跨组织的YonSuite一体化落地路径。</p>
         </div>
         <div className="scenario-grid">
-          <article tabIndex="0" data-track="yonsuite_scenario_card_click" data-scenario="业财税一体化">
+          <article tabIndex={0} data-track="yonsuite_scenario_card_click" data-scenario="业财税一体化">
             <h3>业财税一体化</h3>
             <dl>
               <dt>适合企业</dt><dd>财务与业务台账割裂、月底对账压力大的成长型企业。</dd>
@@ -294,7 +294,7 @@ export const YonsuiteContent: React.FC = () => {
               <dt>适配主题</dt><dd>业财一体化、财税一体化、YonSuite财务、AI财务</dd>
             </dl>
           </article>
-          <article tabIndex="0" data-track="yonsuite_scenario_card_click" data-scenario="产供销一体化">
+          <article tabIndex={0} data-track="yonsuite_scenario_card_click" data-scenario="产供销一体化">
             <h3>产供销一体化</h3>
             <dl>
               <dt>适合企业</dt><dd>订单交付、采购齐套、生产计划和库存管理复杂的制造企业。</dd>
@@ -305,7 +305,7 @@ export const YonsuiteContent: React.FC = () => {
               <dt>适配主题</dt><dd>产供销一体化、制造业YonSuite、供应链ERP、智能制造</dd>
             </dl>
           </article>
-          <article tabIndex="0" data-track="yonsuite_scenario_card_click" data-scenario="采购寻源">
+          <article tabIndex={0} data-track="yonsuite_scenario_card_click" data-scenario="采购寻源">
             <h3>采购寻源</h3>
             <dl>
               <dt>适合企业</dt><dd>供应商多、采购价格波动大、询比价和合同管理不规范的企业。</dd>
@@ -316,7 +316,7 @@ export const YonsuiteContent: React.FC = () => {
               <dt>适配主题</dt><dd>采购寻源、智慧采购、供应商管理、YonSuite采购</dd>
             </dl>
           </article>
-          <article tabIndex="0" data-track="yonsuite_scenario_card_click" data-scenario="全渠道营销">
+          <article tabIndex={0} data-track="yonsuite_scenario_card_click" data-scenario="全渠道营销">
             <h3>全渠道营销</h3>
             <dl>
               <dt>适合企业</dt><dd>多渠道销售、经销商、门店、电商和B2B客户并存的消费品企业。</dd>
@@ -327,7 +327,7 @@ export const YonsuiteContent: React.FC = () => {
               <dt>适配主题</dt><dd>全渠道营销、消费品YonSuite、经销商管理、渠道ERP</dd>
             </dl>
           </article>
-          <article tabIndex="0" data-track="yonsuite_scenario_card_click" data-scenario="智能制造">
+          <article tabIndex={0} data-track="yonsuite_scenario_card_click" data-scenario="智能制造">
             <h3>智能制造</h3>
             <dl>
               <dt>适合企业</dt><dd>多品种、小批量、项目制造或需要质量追溯的制造企业。</dd>
@@ -338,7 +338,7 @@ export const YonsuiteContent: React.FC = () => {
               <dt>适配主题</dt><dd>智能制造、制造ERP、BOM管理、生产成本</dd>
             </dl>
           </article>
-          <article tabIndex="0" data-track="yonsuite_scenario_card_click" data-scenario="项目型企业管理">
+          <article tabIndex={0} data-track="yonsuite_scenario_card_click" data-scenario="项目型企业管理">
             <h3>项目型企业管理</h3>
             <dl>
               <dt>适合企业</dt><dd>IT服务、咨询、工程服务、检测认证和专业服务企业。</dd>
@@ -349,7 +349,7 @@ export const YonsuiteContent: React.FC = () => {
               <dt>适配主题</dt><dd>项目型企业ERP、项目核算、项目毛利、现代服务业ERP</dd>
             </dl>
           </article>
-          <article tabIndex="0" data-track="yonsuite_scenario_card_click" data-scenario="医药合规">
+          <article tabIndex={0} data-track="yonsuite_scenario_card_click" data-scenario="医药合规">
             <h3>医药合规</h3>
             <dl>
               <dt>适合企业</dt><dd>医药流通、制药、医疗器械、耗材和医疗服务相关企业。</dd>
@@ -360,7 +360,7 @@ export const YonsuiteContent: React.FC = () => {
               <dt>适配主题</dt><dd>医药行业ERP、GSP管理、UDI管理、医药YonSuite</dd>
             </dl>
           </article>
-          <article tabIndex="0" data-track="yonsuite_scenario_card_click" data-scenario="跨境全球化">
+          <article tabIndex={0} data-track="yonsuite_scenario_card_click" data-scenario="跨境全球化">
             <h3>跨境全球化</h3>
             <dl>
               <dt>适合企业</dt><dd>跨境电商、出海品牌、多国家经营和海外仓企业。</dd>
@@ -371,7 +371,7 @@ export const YonsuiteContent: React.FC = () => {
               <dt>适配主题</dt><dd>跨境企业ERP、全球化ERP、跨境YonSuite、多币种ERP</dd>
             </dl>
           </article>
-          <article tabIndex="0" data-track="yonsuite_scenario_card_click" data-scenario="ChatBI经营问数">
+          <article tabIndex={0} data-track="yonsuite_scenario_card_click" data-scenario="ChatBI经营问数">
             <h3>ChatBI经营问数</h3>
             <dl>
               <dt>适合企业</dt><dd>管理层、CFO、销售负责人、供应链负责人和事业部负责人。</dd>
@@ -382,7 +382,7 @@ export const YonsuiteContent: React.FC = () => {
               <dt>适配主题</dt><dd>ChatBI、经营问数、智能BI、企业AI</dd>
             </dl>
           </article>
-          <article tabIndex="0" data-track="yonsuite_scenario_card_click" data-scenario="AI智能体共创">
+          <article tabIndex={0} data-track="yonsuite_scenario_card_click" data-scenario="AI智能体共创">
             <h3>AI智能体共创</h3>
             <dl>
               <dt>适合企业</dt><dd>希望把重复业务动作变成AI辅助流程的企业。</dd>
@@ -565,7 +565,7 @@ export const YonsuiteContent: React.FC = () => {
           </label>
           <label>
             <span>需要解决的问题</span>
-            <textarea name="problem" rows="4" placeholder="例如：业财对账慢、库存不准、采购寻源不规范、项目毛利看不清、希望试点ChatBI或AI智能体"></textarea>
+            <textarea name="problem" rows={4} placeholder="例如：业财对账慢、库存不准、采购寻源不规范、项目毛利看不清、希望试点ChatBI或AI智能体"></textarea>
           </label>
           <p className="form-hint" role="status" aria-live="polite">提交后，泊冉顾问将结合行业、企业规模、当前系统和关注场景，与您沟通YonSuite试点和实施路径。</p>
           <button className="modal-submit" type="submit">
