@@ -64,7 +64,7 @@ export const ModernServiceContent: React.FC = () => {
         if (trackEl.dataset.scenario) payload.scenario = trackEl.dataset.scenario
         if (trackEl.dataset.case) payload.case = trackEl.dataset.case
         if (trackEl.dataset.ctaMode) payload.cta_mode = trackEl.dataset.ctaMode
-        trackEvent(trackEl.dataset.track, payload)
+        trackEvent(trackEl.dataset.track ?? '', payload)
       }
 
       // 锚点滚动（data-scroll-target）
