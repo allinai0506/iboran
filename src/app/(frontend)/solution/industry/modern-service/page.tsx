@@ -1,32 +1,62 @@
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
 import { ModernServiceContent } from './page.content'
-import { GEOJsonLd } from '@/components/GEOJsonLd'
+import { modernServiceStructuredData } from './structured-data'
+
+const PAGE_URL = 'https://www.iboran.com/solution/industry/modern-service'
+const PAGE_TITLE = '现代服务业ERP_项目核算与项目毛利分析方案｜泊冉软件'
+const PAGE_DESCRIPTION =
+  '泊冉软件面向IT服务、咨询服务、工程服务、检测认证、广告传媒等项目型服务企业，提供现代服务业ERP、项目核算系统、项目成本管理、工时管理、费用归集、收入确认、开票回款与项目毛利分析一体化方案。'
 
 export const metadata: Metadata = {
-  title: '现代服务业ERP | 项目核算与项目毛利分析方案 | 泊冉软件',
-  description: '泊冉软件面向IT服务、咨询、工程、检测等项目型服务企业，提供现代服务业ERP、项目核算、成本管理、工时费用归集与项目毛利分析一体化方案。',
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
   keywords: [
     '现代服务业ERP',
     '服务业业财一体化',
     '项目核算系统',
-    '项目成本管理',
+    '项目成本管理系统',
+    '项目预算管理系统',
     '项目型企业ERP',
-    '工时管理系统',
+    '合同收入管理系统',
+    '费用归集系统',
     '项目毛利分析',
-    '泊冉软件'
+    '工时管理系统',
+    '项目交付管理',
+    '服务工单管理',
+    '泊冉软件',
   ],
-  alternates: {
-    canonical: 'https://www.iboran.com/solution/industry/modern-service',
+  alternates: { canonical: PAGE_URL },
+  robots: { index: true, follow: true },
+  openGraph: {
+    type: 'website',
+    locale: 'zh_CN',
+    url: PAGE_URL,
+    siteName: '泊冉软件',
+    title: '现代服务业ERP｜项目核算与项目毛利分析方案',
+    description: '项目多、费用乱、毛利看不清？泊冉帮助项目型服务企业打通商机、合同、项目、工时、费用、收入、开票、回款与毛利分析。',
+    images: [
+      {
+        url: '/solution/industry/modern-service/modern-service-og.jpg',
+        width: 1200,
+        height: 630,
+        alt: '现代服务业项目核算与经营分析方案',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '现代服务业ERP｜项目核算与项目毛利分析方案',
+    description: '项目多、费用乱、毛利看不清？先做一次现代服务业项目核算诊断。',
+    images: ['/solution/industry/modern-service/modern-service-og.jpg'],
   },
 }
 
-export default function Page() {
+export default function ModernServicePage() {
   return (
     <>
-      <GEOJsonLd 
-        title="现代服务业项目核算与经营分析方案"
-        description="打通商机、合同、项目、工时、费用、收入确认与毛利分析，构建项目型服务企业业财一体化管理闭环。"
-        url="https://www.iboran.com/solution/industry/modern-service"
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(modernServiceStructuredData) }}
       />
       <ModernServiceContent />
     </>
