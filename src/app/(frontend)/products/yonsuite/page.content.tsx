@@ -499,8 +499,8 @@ export const YonsuiteContent: React.FC = () => {
         <form className="lead-form" noValidate data-form-name="yonsuite-consultation" onSubmit={handleLeadFormSubmit}>
           <h3>提交咨询需求</h3>
           <div className="field-grid">
-            <label><span>公司名称 <b>*</b></span><input name="company" type="text" autoComplete="organization" required / /></label>
-            <label><span>所在城市 <b>*</b></span><input name="city" type="text" autoComplete="address-level2" required / /></label>
+            <label><span>公司名称 <b>*</b></span><input name="company" type="text" autoComplete="organization" required /></label>
+            <label><span>所在城市 <b>*</b></span><input name="city" type="text" autoComplete="address-level2" required /></label>
           </div>
           <div className="field-grid">
             <label>
@@ -519,11 +519,11 @@ export const YonsuiteContent: React.FC = () => {
                 <option>其他</option>
               </select>
             </label>
-            <label><span>联系人 <b>*</b></span><input name="contact" type="text" autoComplete="name" required / /></label>
+            <label><span>联系人 <b>*</b></span><input name="contact" type="text" autoComplete="name" required /></label>
           </div>
           <div className="field-grid">
-            <label><span>职位</span><input name="title" type="text" autoComplete="organization-title" / /></label>
-            <label><span>手机 <b>*</b></span><input name="phone" type="tel" autoComplete="tel" required / /></label>
+            <label><span>职位</span><input name="title" type="text" autoComplete="organization-title" /></label>
+            <label><span>手机 <b>*</b></span><input name="phone" type="tel" autoComplete="tel" required /></label>
           </div>
           <div className="field-grid">
             <label>
@@ -537,10 +537,10 @@ export const YonsuiteContent: React.FC = () => {
                 <option>1000人以上</option>
               </select>
             </label>
-            <label><span>当前系统</span><input name="current_system" type="text" placeholder="ERP / OA / CRM / MES / WMS / 多套系统" / /></label>
+            <label><span>当前系统</span><input name="current_system" type="text" placeholder="ERP / OA / CRM / MES / WMS / 多套系统" /></label>
           </div>
           <div className="field-grid">
-            <label><span>关注场景</span><input name="focus_scene" type="text" placeholder="业财一体化 / 制造 / 采购 / ChatBI / AI智能体" / /></label>
+            <label><span>关注场景</span><input name="focus_scene" type="text" placeholder="业财一体化 / 制造 / 采购 / ChatBI / AI智能体" /></label>
             <label>
               <span>是否已有用友产品</span>
               <select name="has_yonyou">
