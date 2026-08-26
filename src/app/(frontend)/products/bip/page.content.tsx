@@ -54,11 +54,6 @@ export const BipContent: React.FC = () => {
     const form = e.currentTarget
     const formData = new FormData(form)
 
-    if (!formData.get('privacyConsent')) {
-      alert('请先阅读并同意隐私政策')
-      return
-    }
-
     const contact = (formData.get('contact') || '').toString().trim()
     const rawPhone = (formData.get('phone_wechat') || '').toString().trim()
     const company = (formData.get('company') || '').toString().trim()
@@ -621,10 +616,6 @@ export const BipContent: React.FC = () => {
             </div>
             <label><span>期望沟通时间</span><input name="contact_time" type="text" placeholder="例如：本周工作日 / 月底前 / 先电话沟通" /></label>
           </details>
-          <label className="privacy-row">
-            <input name="privacyConsent" type="checkbox" required />
-            <span>我已阅读并同意 <a href="https://www.iboran.com/privacy" target="_blank" rel="noopener">隐私政策</a>，同意泊冉顾问围绕本次建设需求联系我。<b>*</b></span>
-          </label>
           <p className="form-hint" role="status" aria-live="polite">提交后，泊冉顾问将根据您的系统现状和业务场景，初步判断适合新建、迁移、集成、并行切换还是分阶段替换。</p>
           <button className="modal-submit" type="submit">
             提交BIP建设需求
