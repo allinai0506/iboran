@@ -306,9 +306,9 @@ select,
   align-items: center;
 }
 
-.eyebrow,
-.section-head > span,
-.diagnosis-copy > span,
+.yonsuite-scope .eyebrow,
+.yonsuite-scope .section-head > span,
+.yonsuite-scope .diagnosis-copy > span,
 .yonsuite-scope .governance-panel > div > span{
   display: inline-flex;
   align-items: center;
@@ -371,16 +371,16 @@ select,
   text-wrap: balance;
 }
 
-.value-tags,
-.hero-actions,
-.scenario-grid,
-.matrix-grid,
-.answer-cards,
-.ai-grid,
-.service-grid,
-.boundary-grid,
-.diagnosis-checks,
-.footer-logo,
+.yonsuite-scope .value-tags,
+.yonsuite-scope .hero-actions,
+.yonsuite-scope .scenario-grid,
+.yonsuite-scope .matrix-grid,
+.yonsuite-scope .answer-cards,
+.yonsuite-scope .ai-grid,
+.yonsuite-scope .service-grid,
+.yonsuite-scope .boundary-grid,
+.yonsuite-scope .diagnosis-checks,
+.yonsuite-scope .footer-logo,
 .yonsuite-scope .footer-contact{
   min-width: 0;
 }
@@ -1306,7 +1306,7 @@ select,
     #0f172a;
 }
 
-.diagnosis-copy h2,
+.yonsuite-scope .diagnosis-copy h2,
 .yonsuite-scope .diagnosis-copy p{
   color: #fff;
 }
@@ -1798,17 +1798,17 @@ select,
     padding: 0 16px;
   }
 
-  .hero-proof,
-  .suite-map,
-  .console-flow,
-  .answer-cards,
-  .matrix-grid,
-  .ai-grid,
-  .scenario-grid,
-  .industry-fields,
-  .service-grid,
-  .boundary-grid,
-  .diagnosis-checks,
+  .yonsuite-scope .hero-proof,
+  .yonsuite-scope .suite-map,
+  .yonsuite-scope .console-flow,
+  .yonsuite-scope .answer-cards,
+  .yonsuite-scope .matrix-grid,
+  .yonsuite-scope .ai-grid,
+  .yonsuite-scope .scenario-grid,
+  .yonsuite-scope .industry-fields,
+  .yonsuite-scope .service-grid,
+  .yonsuite-scope .boundary-grid,
+  .yonsuite-scope .diagnosis-checks,
 .yonsuite-scope .field-grid{
     grid-template-columns: 1fr;
   }
@@ -1932,8 +1932,8 @@ select,
     font-size: 31px;
   }
 
-  .section-head h2,
-  .diagnosis-copy h2,
+  .yonsuite-scope .section-head h2,
+  .yonsuite-scope .diagnosis-copy h2,
 .yonsuite-scope .governance-panel h2{
     font-size: 26px;
   }
