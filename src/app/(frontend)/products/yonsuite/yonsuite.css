@@ -651,9 +651,8 @@ select,
   max-width: 960px;
 }
 
-.section-head h2,
-.diagnosis-copy h2,
-.yonsuite-scope .governance-panel h2{
+.yonsuite-scope .section-head h2,
+.yonsuite-scope .diagnosis-copy h2{
   margin: 16px 0 12px;
   color: var(--ink);
   font-size: 40px;
@@ -662,9 +661,8 @@ select,
   text-wrap: balance;
 }
 
-.section-head p,
-.diagnosis-copy p,
-.yonsuite-scope .governance-panel p{
+.yonsuite-scope .section-head p,
+.yonsuite-scope .diagnosis-copy p{
   margin: 0;
   color: var(--muted);
   font-size: 17px;
@@ -1171,7 +1169,7 @@ select,
   box-shadow: 0 28px 90px rgba(7, 13, 28, 0.18);
 }
 
-.governance-panel h2,
+.yonsuite-scope .governance-panel h2,
 .yonsuite-scope .governance-panel p{
   color: #fff;
 }
@@ -1781,10 +1779,10 @@ select,
     font-size: 21px;
   }
 
-  .hero-desc,
-  .hero p,
-  .section-head p,
-  .diagnosis-copy p,
+  .yonsuite-scope .hero-desc,
+  .yonsuite-scope .hero p,
+  .yonsuite-scope .section-head p,
+  .yonsuite-scope .diagnosis-copy p,
 .yonsuite-scope .governance-panel p{
     font-size: 15px;
   }
@@ -1833,9 +1831,9 @@ select,
     padding-bottom: 62px;
   }
 
-  .section-head h2,
-  .diagnosis-copy h2,
-.yonsuite-scope .governance-panel h2{
+  .yonsuite-scope .section-head h2,
+  .yonsuite-scope .diagnosis-copy h2,
+  .yonsuite-scope .governance-panel h2{
     font-size: 28px;
   }
 
