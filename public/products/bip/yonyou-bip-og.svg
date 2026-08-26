@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0B1F3A"/>
+      <stop offset="1" stop-color="#123A6B"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="900" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2F8FFF"/>
+      <stop offset="1" stop-color="#39D0C8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="64" y="64" width="6" height="502" rx="3" fill="url(#line)"/>
+  <text x="104" y="150" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="30" fill="#9FC2E8" letter-spacing="2">YONYOU BIP · BUSINESS INNOVATION PLATFORM</text>
+  <text x="104" y="248" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="78" font-weight="700" fill="#FFFFFF">用友BIP商业创新平台</text>
+  <text x="104" y="320" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="34" fill="#CFE2F7">集团ERP升级 · 异构系统迁移集成 · 企业AI落地</text>
+  <rect x="104" y="372" width="520" height="3" fill="url(#line)"/>
+  <text x="104" y="436" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="28" fill="#9FC2E8">NC / NCC / U8 / U9 / 金蝶 / SAP / Oracle 升级与集成</text>
+  <text x="104" y="486" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="28" fill="#9FC2E8">YonGPT · 智友 · DataAgent · 企业智能体</text>
+  <text x="104" y="568" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="30" font-weight="700" fill="#FFFFFF">泊冉软件 <tspan fill="#39D0C8" font-size="24" font-weight="400">BORAN SOFTWARE</tspan></text>
+  <text x="1136" y="568" text-anchor="end" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="24" fill="#7FA8D4">400-9955-161</text>
+</svg>
