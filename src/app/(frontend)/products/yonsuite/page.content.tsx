@@ -427,6 +427,7 @@ export const YonsuiteContent: React.FC = () => {
                 role="tabpanel"
                 data-panel={ind.key}
                 key={ind.key}
+                hidden={activeIndustry !== ind.key}
                 dangerouslySetInnerHTML={{ __html: ind.html }}
               />
             ))}
