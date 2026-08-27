@@ -80,11 +80,11 @@ export const ServicesContent: React.FC = () => {
             </div>
             <div className={styles.heroActions}>
               <a href="#diagnosis" className={`${styles.btn} ${styles.btnPrimary}`} data-track="hero_cta_click">
-                <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><path d="M4 5h16v14H4V5Zm3 3v2h10V8H7Zm0 4v2h7v-2H7Zm0 4v1h4v-1H7Z" fill="currentColor" /></svg>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4V5Zm3 3v2h10V8H7Zm0 4v2h7v-2H7Zm0 4v1h4v-1H7Z" /></svg>
                 预约服务评估
               </a>
               <a href="#service-lines" className={`${styles.btn} ${styles.btnSecondary}`} data-track="secondary_cta_click">
-                <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><path d="M4 5h16v4H4V5Zm0 6h7v8H4v-8Zm9 0h7v8h-7v-8Z" fill="currentColor" /></svg>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v4H4V5Zm0 6h7v8H4v-8Zm9 0h7v8h-7v-8Z" /></svg>
                 查看四大服务能力
               </a>
             </div>
@@ -561,7 +561,7 @@ export const ServicesContent: React.FC = () => {
           <p className={styles.formHint}>提交后由泊冉顾问联系，不做无效打扰。</p>
           <button type="submit" className={styles.modalSubmit} data-track="form_submit">
             提交服务评估需求
-            <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><path d="M5 12h12.2l-5.1-5.1L14 5l8 8-8 8-1.9-1.9 5.1-5.1H5v-2Z" fill="currentColor" /></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12.2l-5.1-5.1L14 5l8 8-8 8-1.9-1.9 5.1-5.1H5v-2Z" /></svg>
           </button>
         </form>
       </section>
