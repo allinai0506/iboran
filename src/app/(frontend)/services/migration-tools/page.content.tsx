@@ -202,6 +202,28 @@ export const MigrationContent: React.FC = () => {
           <article className={styles.toolCard}><span className={styles.cardIconSmall}>06</span><h3>移动审批集成服务</h3><dl><div><dt>适用场景</dt><dd>NC、NC Cloud、YonBIP 审批待办进入钉钉、企业微信、泛微、致远OA等入口。</dd></div><div><dt>执行动作</dt><dd>配置审批对象、消息模板、接口转发、附件预览、审批动作、状态回写和审计记录。</dd></div><div><dt>交付物</dt><dd>审批对象清单、字段映射表、消息推送配置、联调记录、上线确认单。</dd></div><div><dt>验证口径</dt><dd>发起、待办、同意、驳回、撤回、回写、消息提醒和审批轨迹完整性。</dd></div></dl></article>
           <article className={styles.toolCard}><span className={styles.cardIconSmall}>07</span><h3>数据脱敏与安全共享服务</h3><dl><div><dt>适用场景</dt><dd>开发测试、外包分析、培训演示、跨系统共享需要使用真实结构数据。</dd></div><div><dt>执行动作</dt><dd>识别身份、地址、手机号、银行卡、薪资等敏感字段，配置替换、掩码、扰动和保留格式规则。</dd></div><div><dt>交付物</dt><dd>敏感字段清单、脱敏规则表、脱敏数据集、可用性验证记录、安全说明。</dd></div><div><dt>验证口径</dt><dd>敏感字段不可逆、字段格式可用、业务链路可测、测试数据可复用。</dd></div></dl></article>
           <article className={styles.toolCard}><span className={styles.cardIconSmall}>08</span><h3>数据卸载与系统瘦身服务</h3><dl><div><dt>适用场景</dt><dd>历史年度数据量过大、数据库性能下降、查询缓慢或主系统需要减负。</dd></div><div><dt>执行动作</dt><dd>确认保留期间、卸载历史年度、生成归档库或查询环境，保留必要审计与联查路径。</dd></div><div><dt>交付物</dt><dd>卸载方案、保留清单、归档数据包、性能对比、历史查询说明。</dd></div><div><dt>验证口径</dt><dd>主库容量、关键查询耗时、历史期间可查、数据条数和金额一致性。</dd></div></dl></article>
+          <article className={styles.toolCard}><span className={styles.cardIconSmall}>09</span><h3>业务数据初始化服务</h3><dl><div><dt>适用场景</dt><dd>系统重建、试点重启、测试环境刷新或正式环境需要保留基础资料后清理业务数据。</dd></div><div><dt>执行动作</dt><dd>确认保留基础资料、流程和权限，清理总账、固定资产、应收应付、供应链等业务数据。</dd></div><div><dt>交付物</dt><dd>初始化范围清单、保留对象说明、清理日志、重启检查表、验证报告。</dd></div><div><dt>验证口径</dt><dd>基础资料可用、业务数据清理完整、流程可启动、权限和参数未丢失。</dd></div></dl></article>
+          <article className={styles.toolCard}><span className={styles.cardIconSmall}>10</span><h3>数据库转换与兼容性服务</h3><dl><div><dt>适用场景</dt><dd>SQL Server 与 Oracle 等数据库切换、数据库版本调整、历史库迁移和性能优化。</dd></div><div><dt>执行动作</dt><dd>评估兼容性、转换表结构、迁移数据、修复异常、检查字符集、索引和关键查询。</dd></div><div><dt>交付物</dt><dd>转换评估、转换脚本、异常清单、性能对比、数据库切换建议。</dd></div><div><dt>验证口径</dt><dd>对象数量、数据条数、查询结果、关键报表、接口任务和性能指标。</dd></div></dl></article>
+          <article className={styles.toolCard}><span className={styles.cardIconSmall}>11</span><h3>数据备份与回滚保障服务</h3><dl><div><dt>适用场景</dt><dd>迁移切换、升级窗口、重大补丁、生产库变更和异地灾备要求。</dd></div><div><dt>执行动作</dt><dd>制定备份策略、确认备份点、执行恢复演练、设计回滚条件、同步附件和脚本。</dd></div><div><dt>交付物</dt><dd>备份确认单、恢复验证记录、回滚预案、切换检查表、问题升级清单。</dd></div><div><dt>验证口径</dt><dd>备份完整性、恢复可用性、恢复时长、回滚触发条件和责任人确认。</dd></div></dl></article>
+          <article className={styles.toolCard}><span className={styles.cardIconSmall}>12</span><h3>云巡检与补丁安全服务</h3><dl><div><dt>适用场景</dt><dd>上线前体检、月结保障、补丁检查、漏洞排查、系统稳定性检查。</dd></div><div><dt>执行动作</dt><dd>覆盖技术环境体检、应用指标体检、安全检测和补丁管理，输出风险等级和整改建议。</dd></div><div><dt>交付物</dt><dd>巡检报告、风险清单、补丁建议、整改跟踪表、复检记录。</dd></div><div><dt>验证口径</dt><dd>CPU、内存、磁盘、数据库表空间、网络响应、补丁状态和业务异常闭环率。</dd></div></dl></article>
+        </div>
+      </section>
+
+      {/* Migration Deliverables */}
+      <section className={styles.sectionFluid}>
+        <div className={styles.sectionInner}>
+          <div className={styles.sectionHead}>
+            <div><span className={styles.sectionKicker}>Deliverables</span><h2>迁移交付物与核对清单</h2></div>
+            <p>真正能降低迁移风险的，是这些可检查、可签收、可复用的材料，而不只是一次工具执行。</p>
+          </div>
+          <div className={styles.packageGrid}>
+            <article className={styles.packageCard}><h3>范围确认清单</h3><p>明确源系统、目标系统、组织、账套、模块、期间、数据对象、附件、接口和冻结窗口。</p></article>
+            <article className={styles.packageCard}><h3>字段映射与转换规则</h3><p>记录字段来源、目标字段、转换规则、默认值、异常值、枚举值、主外键关系和负责人。</p></article>
+            <article className={styles.packageCard}><h3>试迁移报告</h3><p>记录样本批次、迁移耗时、成功数量、失败数量、失败原因、修复建议和下一轮动作。</p></article>
+            <article className={styles.packageCard}><h3>数据对账报告</h3><p>核对数量、金额、余额、状态、期间、凭证、单据链路、附件和抽样业务场景。</p></article>
+            <article className={styles.packageCard}><h3>切换与回滚方案</h3><p>明确正式迁移窗口、停机影响、备份点、回滚条件、联系人、验收动作和问题升级路径。</p></article>
+            <article className={styles.packageCard}><h3>运维交接材料</h3><p>交接工具脚本、运行参数、异常处理方法、补偿机制、巡检项、权限说明和后续优化建议。</p></article>
+          </div>
         </div>
       </section>
 

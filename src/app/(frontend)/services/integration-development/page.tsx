@@ -3,9 +3,9 @@ import { IntegrationContent } from './page.content'
 import { GEOJsonLd } from '@/components/GEOJsonLd'
 
 export const metadata: Metadata = {
-  title: '集成与开发服务｜API对接、数据集成、低代码扩展 | 泊冉软件',
+  title: '集成与开发服务｜API对接、数据集成、低代码扩展、客户化开发 | 泊冉软件',
   description: '提供系统集成、API治理、数据集成、移动审批、低代码扩展和客户化开发服务，帮助企业打通业务流、数据流和管理流。',
-  keywords: ['系统集成', 'API对接', '数据集成', '低代码开发', '客户化开发'],
+  keywords: ['系统集成', 'API对接', '数据集成', '低代码开发', '客户化开发', '集成总线'],
   openGraph: {
     title: '集成与开发服务 - 泊冉软件',
     description: '专业的系统集成与个性化扩展开发服务。',
