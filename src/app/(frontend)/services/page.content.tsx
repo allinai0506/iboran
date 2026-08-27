@@ -320,22 +320,22 @@ export const ServicesContent: React.FC = () => {
           <p className={styles.localNote}>面向上海及长三角区域企业客户，提供项目启动、业务调研、方案评审、系统联调、上线切换、运维巡检、数据迁移和重大问题处理等本地化服务支持。</p>
           <div className={styles.localGrid}>
             <article className={styles.infoCard}>
-              <div className={styles.cardIconSmall}>01</div>
+              <div className={styles.cardIcon}>01</div>
               <h3>智能协同</h3>
               <p>通过在线会议、工单、知识库和智能服务工具提升日常问题响应效率。</p>
             </article>
             <article className={styles.infoCard}>
-              <div className={styles.cardIconSmall}>02</div>
+              <div className={styles.cardIcon}>02</div>
               <h3>本地响应</h3>
               <p>关键项目节点和重要问题可安排本地顾问协同支持。</p>
             </article>
             <article className={styles.infoCard}>
-              <div className={styles.cardIconSmall}>03</div>
+              <div className={styles.cardIcon}>03</div>
               <h3>现场保障</h3>
               <p>上线切换、迁移割接、接口联调、月结保障等场景提供现场服务。</p>
             </article>
             <article className={styles.infoCard}>
-              <div className={styles.cardIconSmall}>04</div>
+              <div className={styles.cardIcon}>04</div>
               <h3>专项服务</h3>
               <p>面向中大型客户提供驻场、巡检、升级护航和专项保障。</p>
             </article>
@@ -358,22 +358,22 @@ export const ServicesContent: React.FC = () => {
           </div>
           <div className={styles.localScenarios}>
             <article className={styles.infoCard}>
-              <div className={styles.cardIconSmall}>01</div>
+              <div className={styles.cardIcon}>01</div>
               <h3>系统实施</h3>
               <p>项目启动、关键用户培训、上线切换现场保障。</p>
             </article>
             <article className={styles.infoCard}>
-              <div className={styles.cardIconSmall}>02</div>
+              <div className={styles.cardIcon}>02</div>
               <h3>集成与开发</h3>
               <p>接口联调、第三方系统协调、上线窗口支持。</p>
             </article>
             <article className={styles.infoCard}>
-              <div className={styles.cardIconSmall}>03</div>
+              <div className={styles.cardIcon}>03</div>
               <h3>系统运维</h3>
               <p>重大问题响应、月结保障、巡检、升级护航。</p>
             </article>
             <article className={styles.infoCard}>
-              <div className={styles.cardIconSmall}>04</div>
+              <div className={styles.cardIcon}>04</div>
               <h3>迁移与工具</h3>
               <p>试迁移、正式迁移、数据核对、切换保障。</p>
             </article>
