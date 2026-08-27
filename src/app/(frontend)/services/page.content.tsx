@@ -5,13 +5,6 @@ import Link from 'next/link'
 import styles from './services.module.css'
 import { useAttribution } from '@/providers/Attribution'
 
-const SERVICE_LINKS = [
-  { href: '/services/implementation', label: '系统实施服务', desc: '让系统建起来、用起来、跑起来', index: '01' },
-  { href: '/services/integration-development', label: '集成与开发服务', desc: '让系统连起来、扩起来', index: '02' },
-  { href: '/services/operations', label: '系统运维服务', desc: '让系统稳下来、持续创造价值', index: '03' },
-  { href: '/services/migration-tools', label: '迁移与工具服务', desc: '让数据迁得动、风险控得住', index: '04' },
-]
-
 export const ServicesContent: React.FC = () => {
   const attribution = useAttribution()
   const [activeTab, setActiveTab] = useState<'growth' | 'enterprise'>('growth')
@@ -86,19 +79,14 @@ export const ServicesContent: React.FC = () => {
               <span>客户成功</span>
             </div>
             <div className={styles.heroActions}>
-              <Link href="#diagnosis" className={`${styles.btn} ${styles.btnPrimary}`}>
+              <a href="#diagnosis" className={`${styles.btn} ${styles.btnPrimary}`} data-track="hero_cta_click">
                 <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><path d="M4 5h16v14H4V5Zm3 3v2h10V8H7Zm0 4v2h7v-2H7Zm0 4v1h4v-1H7Z" fill="currentColor" /></svg>
                 预约服务评估
-              </Link>
-            </div>
-            <div className={styles.heroServiceEntry}>
-              {SERVICE_LINKS.map(s => (
-                <Link key={s.href} href={s.href} className={styles.heroServiceCard}>
-                  <span className={styles.heroServiceIndex}>{s.index}</span>
-                  <span className={styles.heroServiceLabel}>{s.label}</span>
-                  <span className={styles.heroServiceDesc}>{s.desc}</span>
-                </Link>
-              ))}
+              </a>
+              <a href="#service-lines" className={`${styles.btn} ${styles.btnSecondary}`} data-track="secondary_cta_click">
+                <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><path d="M4 5h16v4H4V5Zm0 6h7v8H4v-8Zm9 0h7v8h-7v-8Z" fill="currentColor" /></svg>
+                查看四大服务能力
+              </a>
             </div>
           </div>
 
@@ -403,12 +391,12 @@ export const ServicesContent: React.FC = () => {
           <p>用标准方法控制项目边界，用工具化资产提升交付效率。</p>
         </div>
         <div className={styles.packageGrid}>
-          <Link href="/services/implementation#saas-fast-path" className={`${styles.infoCard} ${styles.methodCard}`}>
+          <Link href="/services/implementation#saas-fast-path" className={`${styles.infoCard} ${styles.methodCard}`} data-track="methodology_card_click">
             <h3>SaaS 快速实施方法</h3>
             <p>围绕成功规划、构建上线、培训上线和持续运营，把标准产品优先、远程交付、关键用户培训、上线确认和 CSM 移交拆成可执行节点。</p>
             <span className={styles.cardLink}>查看 SaaS 实施路径</span>
           </Link>
-          <Link href="/services/implementation#bip-delivery-path" className={`${styles.infoCard} ${styles.methodCard}`}>
+          <Link href="/services/implementation#bip-delivery-path" className={`${styles.infoCard} ${styles.methodCard}`} data-track="methodology_card_click">
             <h3>BIP 敏捷交付方法</h3>
             <p>从售前评估、筹建准备、蓝图设计、系统建设到上线切换，按工作量、风险、配置、开发、集成、迁移和客成交接进行项目治理。</p>
             <span className={styles.cardLink}>查看 BIP 交付路径</span>
@@ -510,7 +498,7 @@ export const ServicesContent: React.FC = () => {
             <h2>不确定该选哪类服务？先做一次服务评估。</h2>
             <p>我们将根据您的产品形态、企业规模、系统复杂度、数据范围、集成需求和上线目标，给出适合的服务路径建议。</p>
           </div>
-          <Link href="#diagnosis" className={`${styles.btn} ${styles.btnPrimary}`}>预约服务评估</Link>
+          <a href="#diagnosis" className={`${styles.btn} ${styles.btnPrimary}`} data-track="bottom_cta_click">预约服务评估</a>
         </div>
       </section>
 
@@ -526,8 +514,8 @@ export const ServicesContent: React.FC = () => {
             <div><strong>规划路径</strong><span>输出智能协同、本地响应、现场保障或专项服务组合。</span></div>
           </div>
           <div className={styles.contactActions}>
-            <a href="tel:400-9955-161">电话咨询 400-9955-161</a>
-            <a href="/contact">在线咨询</a>
+            <a href="tel:400-9955-161" data-track="phone_click">电话咨询 400-9955-161</a>
+            <a href="/contact" data-track="chat_click">在线咨询</a>
           </div>
         </div>
 
@@ -571,7 +559,7 @@ export const ServicesContent: React.FC = () => {
           </fieldset>
           <label><span>补充说明</span><textarea name="remark" rows={4} placeholder="例如：计划 8 月上线 YonSuite，需要评估实施周期、接口范围和上海现场支持" /></label>
           <p className={styles.formHint}>提交后由泊冉顾问联系，不做无效打扰。</p>
-          <button type="submit" className={styles.modalSubmit}>
+          <button type="submit" className={styles.modalSubmit} data-track="form_submit">
             提交服务评估需求
             <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><path d="M5 12h12.2l-5.1-5.1L14 5l8 8-8 8-1.9-1.9 5.1-5.1H5v-2Z" fill="currentColor" /></svg>
           </button>
