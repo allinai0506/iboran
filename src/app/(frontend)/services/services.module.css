@@ -12,7 +12,6 @@
     linear-gradient(135deg, rgba(0, 82, 217, 0.18), transparent 42%),
     linear-gradient(120deg, #0a1020 0%, #0e1c35 58%, #17243c 100%);
   overflow: hidden;
-  padding-top: 64px;
 }
 
 .hero::before {
