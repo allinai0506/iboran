@@ -130,22 +130,17 @@ export const MigrationContent: React.FC = () => {
               <button className={`${styles.segmentTab} ${activeTab === 'growth' ? styles.segmentTabActive : ''}`} onClick={() => setActiveTab('growth')}>中小型 / 成长型客户</button>
               <button className={`${styles.segmentTab} ${activeTab === 'enterprise' ? styles.segmentTabActive : ''}`} onClick={() => setActiveTab('enterprise')}>大中型 / 集团型客户</button>
             </div>
-            <div className={`${styles.segmentPanel} ${styles.segmentPanelActive}`}>
-              {activeTab === 'growth' ? (
-                <>
-                  <h3>轻量化数据初始化与工具服务</h3>
-                  <p>围绕基础资料、期初数据、历史凭证、常用业务数据和移动审批等高频场景，用标准工具加顾问校验的方式，保障系统快速启用和业务平稳承接。</p>
-                  <ul className={styles.chipList}><li>快速</li><li>标准</li><li>轻量</li><li>低成本</li><li>可验证</li><li>按需现场</li></ul>
-                  <ul className={styles.checkList}><li>基础资料整理</li><li>期初数据导入</li><li>历史凭证迁移</li><li>轻量数据同步</li><li>移动审批集成</li><li>脱敏与培训数据</li></ul>
-                </>
-              ) : (
-                <>
-                  <h3>完整迁移治理与工具化保障</h3>
-                  <p>覆盖系统升迁、历史数据迁移、集团数据抽取、多系统同步、业务数据转凭证、数据脱敏、数据库转换、云巡检和备份灾备。</p>
-                  <ul className={styles.chipList}><li>稳定</li><li>可控</li><li>治理</li><li>合规</li><li>可追溯</li><li>可运维</li></ul>
-                  <ul className={styles.checkList}><li>BIP 升迁</li><li>历史数据迁移</li><li>集团拆分与数据抽取</li><li>数据同步</li><li>数据脱敏</li><li>数据备份与灾备</li><li>云巡检</li><li>数据库转换</li></ul>
-                </>
-              )}
+            <div className={`${styles.segmentPanel} ${activeTab === 'growth' ? styles.segmentPanelActive : ''}`}>
+              <h3>轻量化数据初始化与工具服务</h3>
+              <p>围绕基础资料、期初数据、历史凭证、常用业务数据和移动审批等高频场景，用标准工具加顾问校验的方式，保障系统快速启用和业务平稳承接。</p>
+              <ul className={styles.chipList}><li>快速</li><li>标准</li><li>轻量</li><li>低成本</li><li>可验证</li><li>按需现场</li></ul>
+              <ul className={styles.checkList}><li>基础资料整理</li><li>期初数据导入</li><li>历史凭证迁移</li><li>轻量数据同步</li><li>移动审批集成</li><li>脱敏与培训数据</li></ul>
+            </div>
+            <div className={`${styles.segmentPanel} ${activeTab === 'enterprise' ? styles.segmentPanelActive : ''}`}>
+              <h3>完整迁移治理与工具化保障</h3>
+              <p>覆盖系统升迁、历史数据迁移、集团数据抽取、多系统同步、业务数据转凭证、数据脱敏、数据库转换、云巡检和备份灾备。</p>
+              <ul className={styles.chipList}><li>稳定</li><li>可控</li><li>治理</li><li>合规</li><li>可追溯</li><li>可运维</li></ul>
+              <ul className={styles.checkList}><li>BIP 升迁</li><li>历史数据迁移</li><li>集团拆分与数据抽取</li><li>数据同步</li><li>数据脱敏</li><li>数据备份与灾备</li><li>云巡检</li><li>数据库转换</li></ul>
             </div>
           </div>
         </div>
