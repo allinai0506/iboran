@@ -192,7 +192,7 @@ export const IntegrationContent: React.FC = () => {
                 大中型 / 集团型客户
               </button>
             </div>
-            <div className={styles.segmentPanel}>
+            <div className={`${styles.segmentPanel} ${styles.segmentPanelActive}`}>
               {activeTab === 'growth' ? (
                 <>
                   <h3>标准连接 + 轻量扩展</h3>
@@ -418,12 +418,12 @@ export const IntegrationContent: React.FC = () => {
             <h2>AI 赋能服务全过程</h2>
             <p>AI 是资料助理、初稿顾问和风险检查员，负责初加工；人负责判断、确认、承诺和最终交付。</p>
           </div>
-          <ul className={styles.aiScenarioList}>
-            <li><strong>接口清单整理</strong><span>自动整理接口清单、字段映射表、数据转换规则</span></li>
-            <li><strong>方案初稿生成</strong><span>辅助生成开发方案初稿、测试用例和联调计划</span></li>
-            <li><strong>风险缺口识别</strong><span>识别接口缺失字段、数据口径冲突和异常处理缺口</span></li>
-            <li><strong>问题归因分析</strong><span>根据联调问题记录进行归因、分级和闭环跟踪</span></li>
-            <li><strong>知识沉淀</strong><span>将已解决问题沉淀为接口 FAQ、运维 SOP 和知识库</span></li>
+          <ul className={styles.aiList}>
+            <li>自动整理接口清单、字段映射表、数据转换规则</li>
+            <li>辅助生成开发方案初稿、测试用例和联调计划</li>
+            <li>识别接口缺失字段、数据口径冲突和异常处理缺口</li>
+            <li>根据联调问题记录进行归因、分级和闭环跟踪</li>
+            <li>将已解决问题沉淀为接口 FAQ、运维 SOP 和知识库</li>
           </ul>
         </div>
       </section>

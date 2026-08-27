@@ -80,11 +80,11 @@ export const OperationsContent: React.FC = () => {
             </div>
             <div className={styles.heroActions}>
               <Link href="#diagnosis" className={`${styles.btn} ${styles.btnPrimary}`}>
-                <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><path d="M4 5h16v14H4V5Zm3 3v2h10V8H7Zm0 4v2h7v-2H7Zm0 4v1h4v-1H7Z" fill="currentColor" /></svg>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4V5Zm3 3v2h10V8H7Zm0 4v2h7v-2H7Zm0 4v1h4v-1H7Z" /></svg>
                 预约运维评估
               </Link>
               <Link href="#service-path" className={`${styles.btn} ${styles.btnSecondary}`}>
-                <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><path d="M4 5h16v4H4V5Zm0 6h7v8H4v-8Zm9 0h7v8h-7v-8Z" fill="currentColor" /></svg>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v4H4V5Zm0 6h7v8H4v-8Zm9 0h7v8h-7v-8Z" /></svg>
                 查看服务内容
               </Link>
             </div>
@@ -212,7 +212,7 @@ export const OperationsContent: React.FC = () => {
         </div>
         <div className={styles.packageGrid}>
           <article className={styles.packageCard}>
-            <span className={styles.cardIconSmall}>01</span>
+            <span className={styles.cardIcon}>01</span>
             <h3>配置调整类</h3>
             <dl>
               <div><dt>典型内容</dt><dd>审批流、权限、组织架构、科目表、业务流、打印模板、UI 模板和公式调整</dd></div>
@@ -220,7 +220,7 @@ export const OperationsContent: React.FC = () => {
             </dl>
           </article>
           <article className={styles.packageCard}>
-            <span className={styles.cardIconSmall}>02</span>
+            <span className={styles.cardIcon}>02</span>
             <h3>专项业务类</h3>
             <dl>
               <div><dt>典型内容</dt><dd>合并报表、生产计划培训、业财对账、业务加速器、财务健康诊断、报表服务、月结服务</dd></div>
@@ -228,7 +228,7 @@ export const OperationsContent: React.FC = () => {
             </dl>
           </article>
           <article className={styles.packageCard}>
-            <span className={styles.cardIconSmall}>03</span>
+            <span className={styles.cardIcon}>03</span>
             <h3>交付支持类</h3>
             <dl>
               <div><dt>典型内容</dt><dd>安装服务、定制培训、客开运维、历史凭证迁移、专属现场和驻场支持</dd></div>
@@ -263,7 +263,7 @@ export const OperationsContent: React.FC = () => {
                 大中型 / 集团型客户
               </button>
             </div>
-            <div className={styles.segmentPanel}>
+            <div className={`${styles.segmentPanel} ${styles.segmentPanelActive}`}>
               {activeTab === 'growth' ? (
                 <>
                   <h3>在线化、轻量化、持续化运维</h3>
@@ -378,9 +378,9 @@ export const OperationsContent: React.FC = () => {
           </div>
           <p>针对不同客户对象、关键业务窗口和现场保障要求，组合不同强度的服务；重点客户可共同协商驻场方式、响应机制和服务内容。</p>
         </div>
-        <div className={styles.packageGrid4}>
+        <div className={styles.packageGrid}>
           <article className={styles.packageCard}>
-            <span className={styles.cardIconSmall}>01</span>
+            <span className={styles.cardIcon}>01</span>
             <h3>标准支持服务</h3>
             <dl>
               <div><dt>适用对象</dt><dd>中小型 / 成长型客户</dd></div>
@@ -388,7 +388,7 @@ export const OperationsContent: React.FC = () => {
             </dl>
           </article>
           <article className={styles.packageCard}>
-            <span className={styles.cardIconSmall}>02</span>
+            <span className={styles.cardIcon}>02</span>
             <h3>OMS 运营维护服务</h3>
             <dl>
               <div><dt>适用对象</dt><dd>成长型客户</dd></div>
@@ -396,7 +396,7 @@ export const OperationsContent: React.FC = () => {
             </dl>
           </article>
           <article className={styles.packageCard}>
-            <span className={styles.cardIconSmall}>03</span>
+            <span className={styles.cardIcon}>03</span>
             <h3>核心系统保障服务</h3>
             <dl>
               <div><dt>适用对象</dt><dd>大中型客户</dd></div>
@@ -404,7 +404,7 @@ export const OperationsContent: React.FC = () => {
             </dl>
           </article>
           <article className={styles.packageCard}>
-            <span className={styles.cardIconSmall}>04</span>
+            <span className={styles.cardIcon}>04</span>
             <h3>月结保障服务</h3>
             <dl>
               <div><dt>适用对象</dt><dd>财务、供应链、制造客户</dd></div>
@@ -412,7 +412,7 @@ export const OperationsContent: React.FC = () => {
             </dl>
           </article>
           <article className={styles.packageCard}>
-            <span className={styles.cardIconSmall}>05</span>
+            <span className={styles.cardIcon}>05</span>
             <h3>升级护航服务</h3>
             <dl>
               <div><dt>适用对象</dt><dd>BIP / NC / NCC 客户</dd></div>
@@ -420,7 +420,7 @@ export const OperationsContent: React.FC = () => {
             </dl>
           </article>
           <article className={styles.packageCard}>
-            <span className={styles.cardIconSmall}>06</span>
+            <span className={styles.cardIcon}>06</span>
             <h3>客户成功运营服务</h3>
             <dl>
               <div><dt>适用对象</dt><dd>重点客户</dd></div>
@@ -428,7 +428,7 @@ export const OperationsContent: React.FC = () => {
             </dl>
           </article>
           <article className={styles.packageCard}>
-            <span className={styles.cardIconSmall}>07</span>
+            <span className={styles.cardIcon}>07</span>
             <h3>驻场保障服务</h3>
             <dl>
               <div><dt>适用对象</dt><dd>大中型 / 集团型客户</dd></div>
@@ -437,7 +437,7 @@ export const OperationsContent: React.FC = () => {
             </dl>
           </article>
           <article className={styles.packageCard}>
-            <span className={styles.cardIconSmall}>08</span>
+            <span className={styles.cardIcon}>08</span>
             <h3>个性化定制服务</h3>
             <dl>
               <div><dt>适用对象</dt><dd>集团型 / 重点客户</dd></div>
@@ -482,14 +482,14 @@ export const OperationsContent: React.FC = () => {
             </article>
           </div>
           <div className={styles.localSegments}>
-            <article className={styles.segmentCard}>
+            <article className={styles.infoCard}>
               <h3>成长型客户</h3>
               <p>以智能交付工具和标准化服务包为支撑，帮助快速上线、及时响应、持续运营；关键节点可按需本地支持。</p>
               <ul className={styles.chipList}>
                 <li>智能交付</li><li>在线支持</li><li>标准服务包</li><li>按需现场</li>
               </ul>
             </article>
-            <article className={styles.segmentCard}>
+            <article className={styles.infoCard}>
               <h3>中大型客户</h3>
               <p>在蓝图设计、集成联调、迁移切换、月结保障和重大问题处理等关键阶段提供本地化项目保障。</p>
               <ul className={styles.chipList}>
@@ -530,7 +530,7 @@ export const OperationsContent: React.FC = () => {
             <h2>AI 赋能服务全过程</h2>
             <p>AI 是资料助理、初稿顾问和风险检查员，负责初加工；人负责判断、确认、承诺和最终交付。</p>
           </div>
-          <ul className={styles.aiScenarioList}>
+          <ul className={styles.aiList}>
             <li>工单分诊</li>
             <li>问题诊断</li>
             <li>客户上下文</li>
@@ -604,8 +604,7 @@ export const OperationsContent: React.FC = () => {
 
       {/* Diagnosis Section */}
       <section className={styles.sectionDiagnosis} id="diagnosis">
-        <div className={styles.diagnosisContainer}>
-          <div className={styles.diagnosisCopy}>
+        <div className={styles.diagnosisCopy}>
             <span className={styles.sectionKicker}>Service Assessment</span>
             <h2>先做一次服务评估，把系统阶段、风险和服务路径讲清楚</h2>
             <p>泊冉顾问将结合您的产品形态、组织规模、系统复杂度、数据范围、集成需求和上线目标，给出适合的服务组合建议。</p>
@@ -662,10 +661,9 @@ export const OperationsContent: React.FC = () => {
             <p className={styles.formHint}>提交后由泊冉顾问联系，不做无效打扰。</p>
             <button type="submit" className={styles.modalSubmit}>
               提交服务评估需求
-              <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><path d="M5 12h12.2l-5.1-5.1L14 5l8 8-8 8-1.9-1.9 5.1-5.1H5v-2Z" fill="currentColor" /></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12.2l-5.1-5.1L14 5l8 8-8 8-1.9-1.9 5.1-5.1H5v-2Z" /></svg>
             </button>
           </form>
-        </div>
       </section>
     </main>
   )
