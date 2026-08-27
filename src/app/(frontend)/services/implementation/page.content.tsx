@@ -469,26 +469,11 @@ export const ImplementationContent: React.FC = () => {
             <p>AI 是资料助理、初稿顾问和风险检查员，负责初加工；人负责判断、确认、承诺和最终交付。</p>
           </div>
           <ul className={styles.aiScenarioList}>
-            <li>
-              <strong>启动会</strong>
-              <span>生成议程、RACI、风险预案</span>
-            </li>
-            <li>
-              <strong>调研阶段</strong>
-              <span>生成问卷、访谈提纲、需求池、待澄清清单</span>
-            </li>
-            <li>
-              <strong>方案阶段</strong>
-              <span>生成方案初稿、POC 计划、测试用例</span>
-            </li>
-            <li>
-              <strong>培训阶段</strong>
-              <span>将操作视频转成操作手册、FAQ 和练习任务</span>
-            </li>
-            <li>
-              <strong>数据阶段</strong>
-              <span>生成数据清洗规则、导入计划、校验清单和回滚预案</span>
-            </li>
+            <li>启动会：生成议程、RACI、风险预案</li>
+            <li>调研阶段：生成问卷、访谈提纲、需求池、待澄清清单</li>
+            <li>方案阶段：生成方案初稿、POC 计划、测试用例</li>
+            <li>培训阶段：将操作视频转成操作手册、FAQ 和练习任务</li>
+            <li>数据阶段：生成数据清洗规则、导入计划、校验清单和回滚预案</li>
           </ul>
         </div>
       </section>
