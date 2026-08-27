@@ -318,7 +318,7 @@ export const MigrationContent: React.FC = () => {
           ].map((faq, idx) => (
             <article key={idx} className={styles.faqItem}>
               <button type="button" onClick={() => setOpenFaq(openFaq === idx ? null : idx)} aria-expanded={openFaq === idx}><span>{faq.q}</span><b /></button>
-              {openFaq === idx && <p>{faq.a}</p>}
+              <p>{faq.a}</p>
             </article>
           ))}
         </div>

@@ -585,7 +585,7 @@ export const OperationsContent: React.FC = () => {
                 <span>{faq.q}</span>
                 <b />
               </button>
-              {openFaq === idx && <p>{faq.a}</p>}
+              <p>{faq.a}</p>
             </article>
           ))}
         </div>

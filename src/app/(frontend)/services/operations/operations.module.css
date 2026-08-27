@@ -1019,11 +1019,16 @@
 }
 
 .faqItem p {
+  display: none;
   padding: 0 24px 20px;
   font-size: 14px;
   color: #5f6b82;
   line-height: 1.8;
   margin: 0;
+}
+
+.faqItem button[aria-expanded="true"] + p {
+  display: block;
 }
 
 /* Diagnosis Section */

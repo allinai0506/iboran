@@ -543,10 +543,15 @@
 }
 
 .segmentPanel {
+  display: none;
   padding: 32px;
   background: #fff;
   border: 1px solid #dfe6f1;
   border-radius: 8px;
+}
+
+.segmentPanelActive {
+  display: block;
 }
 
 .segmentPanel h3 { font-size: 20px; margin-bottom: 12px; color: #101828; }
@@ -795,11 +800,16 @@
 }
 
 .faqItem p {
+  display: none;
   padding: 0 24px 20px;
   font-size: 14px;
   color: #5f6b82;
   line-height: 1.8;
   margin: 0;
+}
+
+.faqItem button[aria-expanded="true"] + p {
+  display: block;
 }
 
 /* Diagnosis Section */

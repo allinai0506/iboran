@@ -228,52 +228,49 @@ export const ServicesContent: React.FC = () => {
             <p>成长型客户重视上线速度与轻量运营，集团型客户更看重治理、集成、迁移和长期保障。</p>
           </div>
           <div className={styles.segmentShell}>
-            <div className={styles.segmentTabs}>
+            <div className={styles.segmentTabs} role="tablist" aria-label="客户分层">
               <button
                 className={`${styles.segmentTab} ${activeTab === 'growth' ? styles.segmentTabActive : ''}`}
                 onClick={() => setActiveTab('growth')}
+                aria-selected={activeTab === 'growth'}
               >
                 中小型 / 成长型客户
               </button>
               <button
                 className={`${styles.segmentTab} ${activeTab === 'enterprise' ? styles.segmentTabActive : ''}`}
                 onClick={() => setActiveTab('enterprise')}
+                aria-selected={activeTab === 'enterprise'}
               >
                 大中型 / 集团型客户
               </button>
             </div>
-            <div className={styles.segmentPanel}>
-              {activeTab === 'growth' ? (
-                <>
-                  <h3>中小型 / 成长型客户服务组合</h3>
-                  <p>适合正在使用或计划使用公有云 SaaS、标准产品和轻量集成方案的客户。</p>
-                  <ul className={styles.chipList}>
-                    <li>快速</li><li>标准</li><li>轻量</li><li>低成本</li><li>在线化</li><li>持续迭代</li>
-                  </ul>
-                  <ul className={styles.checkList}>
-                    <li>YonSuite SaaS 快速实施服务</li>
-                    <li>标准连接与轻量集成服务</li>
-                    <li>低代码扩展服务</li>
-                    <li>基础数据初始化服务</li>
-                    <li>在线运维与客户成功服务</li>
-                  </ul>
-                </>
-              ) : (
-                <>
-                  <h3>大中型 / 集团型客户服务组合</h3>
-                  <p>适合多组织、多系统、多账套、多接口、多客开、多数据迁移的集团客户。</p>
-                  <ul className={styles.chipList}>
-                    <li>稳定</li><li>可控</li><li>治理</li><li>合规</li><li>可追溯</li><li>可运维</li>
-                  </ul>
-                  <ul className={styles.checkList}>
-                    <li>YonBIP 敏捷交付服务</li>
-                    <li>企业级连接集成治理服务</li>
-                    <li>客户化开发治理服务</li>
-                    <li>数据迁移与升迁服务</li>
-                    <li>核心系统运维保障服务</li>
-                  </ul>
-                </>
-              )}
+            <div className={`${styles.segmentPanel} ${activeTab === 'growth' ? styles.segmentPanelActive : ''}`} data-segment-panel="growth">
+              <h3>中小型 / 成长型客户服务组合</h3>
+              <p>适合正在使用或计划使用公有云 SaaS、标准产品和轻量集成方案的客户。</p>
+              <ul className={styles.chipList}>
+                <li>快速</li><li>标准</li><li>轻量</li><li>低成本</li><li>在线化</li><li>持续迭代</li>
+              </ul>
+              <ul className={styles.checkList}>
+                <li>YonSuite SaaS 快速实施服务</li>
+                <li>标准连接与轻量集成服务</li>
+                <li>低代码扩展服务</li>
+                <li>基础数据初始化服务</li>
+                <li>在线运维与客户成功服务</li>
+              </ul>
+            </div>
+            <div className={`${styles.segmentPanel} ${activeTab === 'enterprise' ? styles.segmentPanelActive : ''}`} data-segment-panel="enterprise">
+              <h3>大中型 / 集团型客户服务组合</h3>
+              <p>适合多组织、多系统、多账套、多接口、多客开、多数据迁移的集团客户。</p>
+              <ul className={styles.chipList}>
+                <li>稳定</li><li>可控</li><li>治理</li><li>合规</li><li>可追溯</li><li>可运维</li>
+              </ul>
+              <ul className={styles.checkList}>
+                <li>YonBIP 敏捷交付服务</li>
+                <li>企业级连接集成治理服务</li>
+                <li>客户化开发治理服务</li>
+                <li>数据迁移与升迁服务</li>
+                <li>核心系统运维保障服务</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -500,7 +497,7 @@ export const ServicesContent: React.FC = () => {
                 <span>{faq.q}</span>
                 <b />
               </button>
-              {openFaq === idx && <p>{faq.a}</p>}
+              <p>{faq.a}</p>
             </article>
           ))}
         </div>
