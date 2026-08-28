@@ -211,7 +211,7 @@ export const ETOManufacturingYonSuiteContent: React.FC = () => {
                 <div><small>回款节点</small><b>2个</b><em>验收后触发跟进</em></div>
               </div>
               <div className={`${styles.alertRow} ${styles.warn}`}><span>需求</span><b>AI提取待澄清条款，建议销售与研发复核</b><em>建议</em></div>
-              <div className={`${styles.alertRow} ${styles.ok}`}><span>外协</span><b>供应商到货摘要已生成，项目经理确认后跟进</b><em>摘要</em></div>
+              <div className={styles.alertRow}><span>外协</span><b>供应商到货摘要已生成，项目经理确认后跟进</b><em>摘要</em></div>
               <div className={`${styles.alertRow} ${styles.danger}`}><span>毛利</span><b>预算消耗高于项目进度，建议授权人员确认</b><em>预警</em></div>
               <div className={styles.consoleNote}>AI只生成草稿、建议、摘要、预警和问数结果；报价、合同、预算、BOM生效、采购审批、派工、开票、回款和财务处理均由授权人员确认后进入流程。</div>
             </div>
@@ -424,7 +424,7 @@ export const ETOManufacturingYonSuiteContent: React.FC = () => {
       </section>
 
       {/* 治理 */}
-      <section className={`${styles.section} ${styles.governance}`} id="governance">
+      <section className={styles.section} id="governance">
         <div className={`${styles.sectionHead} ${styles.compact}`}>
           <span>治理边界/实施边界</span>
           <h2>先把可验证场景做扎实，再逐步扩展系统与AI能力</h2>
