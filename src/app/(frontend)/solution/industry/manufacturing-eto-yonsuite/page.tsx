@@ -1,32 +1,51 @@
-import { Metadata } from 'next'
-import { ETOManufacturingContent } from '../manufacturing-eto/page.content'
-import { GEOJsonLd } from '@/components/GEOJsonLd'
+import type { Metadata } from 'next'
+import { ETOManufacturingYonSuiteContent } from './page.content'
+import { etoYonsuiteJsonLd } from './structured-data'
+
+const URL = 'https://www.iboran.com/solution/industry/manufacturing-eto-yonsuite'
 
 export const metadata: Metadata = {
-  title: '研发型定制 YonSuite 解决方案 | ETO/MTO 模式数智化 | 泊冉软件',
-  description: '基于用友 YonSuite 提供研发型定制制造解决方案。支持 SaaS 模式下的项目计划、特征选配、订单 BOM、项目成本核算与外协协同。',
+  title: '研发型定制制造与专用设备数智化解决方案 | AI项目协同 | 泊冉软件',
+  description:
+    '泊冉软件面向科研仪器、检测设备、专用设备、机器人与自动化、医疗设备、非标设备和系统集成类企业，提供AI增强的研发型定制制造数智化协同方案，围绕LTC线索到回款，打通商机、技术方案、报价、合同、项目计划、研发BOM、外协采购、供应商协同、安装验收、售后服务、开票回款和项目毛利分析。',
   keywords: [
-    'ETO制造SaaS',
-    'MTO生产管理',
-    'YonSuite制造',
-    '非标定制ERP',
-    '订单BOM管理',
-    '泊冉软件'
+    '研发型定制制造',
+    '专用设备ERP',
+    '科研仪器ERP',
+    '检测设备ERP',
+    'AI项目协同',
+    'LTC线索到回款',
+    '外协采购协同',
+    '研发BOM管理',
+    '项目毛利分析',
+    '非标设备ERP',
+    '泊冉软件',
   ],
-  alternates: {
-    canonical: 'https://www.iboran.com/solution/industry/manufacturing-eto-yonsuite',
+  alternates: { canonical: URL },
+  robots: { index: true, follow: true },
+  openGraph: {
+    type: 'website',
+    locale: 'zh_CN',
+    url: URL,
+    siteName: '泊冉软件',
+    title: '研发型定制制造与专用设备数智化解决方案 | AI项目协同 | 泊冉软件',
+    description: '面向科研仪器、检测设备、专用设备、机器人与自动化、医疗设备、非标设备和系统集成类企业，围绕LTC线索到回款，打通方案报价、研发BOM、外协采购、供应商协同、安装验收、售后和项目毛利分析。',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '研发型定制制造与专用设备数智化解决方案 | AI项目协同 | 泊冉软件',
+    description: '围绕LTC线索到回款，打通商机、方案、报价、项目、研发BOM、外协采购、供应商协同、安装验收、售后和项目毛利分析。',
   },
 }
 
 export default function Page() {
   return (
     <>
-      <GEOJsonLd 
-        title="研发型定制 YonSuite 解决方案"
-        description="面向中小型非标定制企业，提供基于 YonSuite 的 ETO/MTO 研产供销财一体化方案。"
-        url="https://www.iboran.com/solution/industry/manufacturing-eto-yonsuite"
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(etoYonsuiteJsonLd) }}
       />
-      <ETOManufacturingContent />
+      <ETOManufacturingYonSuiteContent />
     </>
   )
 }
