@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import Image from 'next/image'
 import styles from './manufacturing-eto-yonsuite.module.css'
 import { useAttribution } from '@/providers/Attribution'
 
@@ -166,12 +167,12 @@ export const ETOManufacturingYonSuiteContent: React.FC = () => {
               <span>项目成本、回款节点、项目毛利可追踪</span>
             </div>
             <div className={styles.heroActions}>
-              <a className={`${styles.btn} ${styles.btnPrimary}`} href="#diagnosis" data-scroll-target data-track="hero_primary_cta_click" data-button-source="hero_primary">
+              <a className={`${styles.btn} ${styles.primary}`} href="#diagnosis" data-scroll-target data-track="hero_primary_cta_click" data-button-source="hero_primary">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4V5Zm3 3v2h10V8H7Zm0 4v2h7v-2H7Zm0 4v1h4v-1H7Z" /></svg>
                 预约定制制造顾问评估
               </a>
               <a
-                className={`${styles.btn} ${styles.btnSecondary}`}
+                className={`${styles.btn} ${styles.secondary}`}
                 href="#diagnosis"
                 data-scroll-target
                 data-track="hero_secondary_cta_click"
@@ -187,6 +188,14 @@ export const ETOManufacturingYonSuiteContent: React.FC = () => {
           </div>
 
           <aside className={styles.heroConsole} aria-label="AI增强定制制造项目协同驾驶舱示意">
+            <Image
+              className={styles.heroBanner}
+              src="/images/solutions/eto-mto-manufacturing-og.jpg"
+              alt="研发型定制制造与专用设备AI项目协同解决方案示意图"
+              width={1200}
+              height={630}
+              priority
+            />
             <div className={styles.consolePanel}>
               <div className={styles.panelTitle}>
                 <span>AI Collaboration Command Center</span>
