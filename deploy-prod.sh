@@ -62,6 +62,12 @@ if [ "$(docker inspect -f '{{ index .Config.Labels "com.docker.compose.project" 
 fi
 
 docker compose -f docker-compose.prod.yml up -d --no-build app
+
+# Retagging iboran-app:latest orphans the previous image's layers, which
+# filled the disk (2026-08-30) and crashed MongoDB. Dangling-only prune
+# keeps base images and build cache for fast rebuilds.
+docker image prune -f
+
 sleep 8
 docker ps --filter "name=$IMAGE_NAME" --format "table {{.Names}}\t{{.Image}}\t{{.Status}}"
 ENDSSH
