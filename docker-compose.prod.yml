@@ -6,6 +6,12 @@ services:
     image: iboran-app:latest
     container_name: iboran-app
     restart: unless-stopped
+    logging:
+      # Bound container logs so they can never fill the root disk
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
     ports:
       - "3000:3000"
     env_file:
@@ -26,6 +32,12 @@ services:
     image: mongo:7
     container_name: iboran-mongo-1
     restart: unless-stopped
+    logging:
+      # Bound container logs so they can never fill the root disk
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
     ports:
       - "127.0.0.1:27018:27017"
     volumes:
