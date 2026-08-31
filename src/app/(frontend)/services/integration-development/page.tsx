@@ -11,6 +11,9 @@ export const metadata: Metadata = {
     description: '专业的系统集成与个性化扩展开发服务。',
     url: 'https://www.iboran.com/services/integration-development',
   },
+  alternates: {
+    canonical: 'https://www.iboran.com/services/integration-development',
+  },
 }
 
 const FAQS = [

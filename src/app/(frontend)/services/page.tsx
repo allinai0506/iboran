@@ -10,6 +10,9 @@ export const metadata: Metadata = {
     title: '企业数智化全生命周期服务体系 - 泊冉软件',
     description: '提供系统实施、集成与开发、系统运维、迁移与工具四大服务能力。',
   },
+  alternates: {
+    canonical: 'https://www.iboran.com/services',
+  },
 }
 
 const FAQS = [

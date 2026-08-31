@@ -11,6 +11,9 @@ export const metadata: Metadata = {
     description: '专业的系统稳定运行与持续价值保障服务。',
     url: 'https://www.iboran.com/services/operations',
   },
+  alternates: {
+    canonical: 'https://www.iboran.com/services/operations',
+  },
 }
 
 const FAQS = [

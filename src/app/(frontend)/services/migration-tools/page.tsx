@@ -11,6 +11,9 @@ export const metadata: Metadata = {
     description: '提供数据抽取、数据同步、BIP升迁、历史数据迁移、业务数据转凭证、数据脱敏、云巡检、数据库转换和数据备份等工具化服务，保障数据完整和系统平滑切换。',
     url: 'https://www.iboran.com/services/migration-tools',
   },
+  alternates: {
+    canonical: 'https://www.iboran.com/services/migration-tools',
+  },
 }
 
 const FAQS = [
