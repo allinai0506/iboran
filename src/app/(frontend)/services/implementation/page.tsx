@@ -1,6 +1,10 @@
 import type { Metadata } from 'next'
 import { ImplementationContent } from './page.content'
-import { GEOJsonLd } from '@/components/GEOJsonLd'
+import { GeoSection } from '@/components/GeoSection'
+
+// TL;DR（AI 直接答案，LLM 爬虫可见）
+const TLDR =
+  '系统实施服务：泊冉面向 YonSuite SaaS 快速上线与 YonBIP 敏捷交付，覆盖蓝图设计、系统建设、测试培训到上线切换，通过售前交接、需求匹配、方案评审、数据准备与客户成功移交，让项目上线更可控。'
 
 export const metadata: Metadata = {
   title: '系统实施服务｜SaaS快速上线与BIP敏捷交付 | 泊冉软件',
@@ -98,11 +102,15 @@ const jsonLd = {
 export default function Page() {
   return (
     <>
-      <GEOJsonLd
+      <GeoSection
         title="系统实施服务"
         description="提供 SaaS 快速上线与 BIP 敏捷交付路径，确保项目高质量上线。"
-        faqs={FAQS}
+        keywords={metadata.keywords}
         url="https://www.iboran.com/services/implementation"
+        tldr={TLDR}
+        faqs={FAQS}
+        variant="solution"
+        visible={false}
       />
       <script
         type="application/ld+json"

@@ -1,6 +1,10 @@
 import type { Metadata } from 'next'
 import { OperationsContent } from './page.content'
-import { GEOJsonLd } from '@/components/GEOJsonLd'
+import { GeoSection } from '@/components/GeoSection'
+
+// TL;DR（AI 直接答案，LLM 爬虫可见）
+const TLDR =
+  '系统运维与客户成功服务：泊冉围绕系统上线后的长期运行，提供工单支持、问题诊断、运行巡检、补丁升级、月结保障、权限检查与客户成功运营，并按标准、加速、优先、尊享计划分层保障系统持续创造价值。'
 
 export const metadata: Metadata = {
   title: '系统运维与客户成功服务｜巡检、月结保障、升级护航、工单支持 | 泊冉软件',
@@ -99,11 +103,15 @@ const jsonLd = {
 export default function Page() {
   return (
     <>
-      <GEOJsonLd
+      <GeoSection
         title="系统运维与客户成功服务"
         description="巡检、月结保障、升级护航与客户成功运营服务。"
-        faqs={FAQS}
+        keywords={metadata.keywords}
         url="https://www.iboran.com/services/operations"
+        tldr={TLDR}
+        faqs={FAQS}
+        variant="solution"
+        visible={false}
       />
       <script
         type="application/ld+json"

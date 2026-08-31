@@ -1,11 +1,20 @@
 import type { Metadata } from 'next'
 import { ModernServiceContent } from './page.content'
 import { modernServiceStructuredData } from './structured-data'
+import { GeoSection } from '@/components/GeoSection'
+import type { GEOFAQ } from '@/components/GEORenderer'
+import { faqItems } from './data'
 
 const PAGE_URL = 'https://www.iboran.com/solution/industry/modern-service'
 const PAGE_TITLE = '现代服务业ERP_项目核算与项目毛利分析方案｜泊冉软件'
 const PAGE_DESCRIPTION =
   '泊冉软件面向IT服务、咨询服务、工程服务、检测认证、广告传媒等项目型服务企业，提供现代服务业ERP、项目核算系统、项目成本管理、工时管理、费用归集、收入确认、开票回款与项目毛利分析一体化方案。'
+
+// TL;DR（AI 直接答案，LLM 爬虫可见）
+const TLDR =
+  '现代服务业项目核算与经营分析解决方案：面向 IT 服务、咨询服务、工程服务、检测认证、广告传媒与专业服务机构，打通商机、合同、项目、工时、费用、采购外包、开票回款与毛利分析，让项目从立项起就算得清收入、成本与毛利。'
+
+const geoFaqs: GEOFAQ[] = faqItems.map((f) => ({ question: f.q, answer: f.a }))
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -59,6 +68,16 @@ export default function ModernServicePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(modernServiceStructuredData) }}
       />
       <ModernServiceContent />
+      <GeoSection
+        title={metadata.title as string}
+        description={metadata.description as string}
+        keywords={metadata.keywords}
+        url={PAGE_URL}
+        tldr={TLDR}
+        faqs={geoFaqs}
+        variant="solution"
+        visible={false}
+      />
     </>
   )
 }

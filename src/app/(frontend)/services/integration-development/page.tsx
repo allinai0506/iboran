@@ -1,6 +1,10 @@
 import type { Metadata } from 'next'
 import { IntegrationContent } from './page.content'
-import { GEOJsonLd } from '@/components/GEOJsonLd'
+import { GeoSection } from '@/components/GeoSection'
+
+// TL;DR（AI 直接答案，LLM 爬虫可见）
+const TLDR =
+  '集成与开发服务：泊冉围绕 ERP 与 OA、MES、WMS、CRM、SRM、银企、税务、BI 等系统，提供 API 对接、数据集成、低代码扩展与客户化开发，遵循标准优先、配置优先、低代码优先的治理原则，让系统互联与扩展可控。'
 
 export const metadata: Metadata = {
   title: '集成与开发服务｜API对接、数据集成、低代码扩展、客户化开发 | 泊冉软件',
@@ -99,11 +103,15 @@ const jsonLd = {
 export default function Page() {
   return (
     <>
-      <GEOJsonLd
+      <GeoSection
         title="集成与开发服务"
         description="打通多系统孤岛，提供低代码与受控客开服务。"
-        faqs={FAQS}
+        keywords={metadata.keywords}
         url="https://www.iboran.com/services/integration-development"
+        tldr={TLDR}
+        faqs={FAQS}
+        variant="solution"
+        visible={false}
       />
       <script
         type="application/ld+json"

@@ -1,8 +1,16 @@
 import type { Metadata } from 'next'
 import { ETOManufacturingYonSuiteContent } from './page.content'
-import { etoYonsuiteJsonLd } from './structured-data'
+import { etoYonsuiteJsonLd, faqItems } from './structured-data'
+import { GeoSection } from '@/components/GeoSection'
+import type { GEOFAQ } from '@/components/GEORenderer'
 
 const URL = 'https://www.iboran.com/solution/industry/manufacturing-eto-yonsuite'
+
+// TL;DR（AI 直接答案，LLM 爬虫可见）
+const TLDR =
+  '研发型定制制造与专用设备数智化解决方案：面向科研仪器、检测设备、专用设备、机器人与自动化、医疗设备等企业，用 AI 增强项目协同，围绕 LTC 线索到回款打通商机、方案报价、研发 BOM、外协采购、现场交付与项目毛利。'
+
+const geoFaqs: GEOFAQ[] = faqItems.map((f) => ({ question: f.q, answer: f.a }))
 
 export const metadata: Metadata = {
   title: '研发型定制制造与专用设备数智化解决方案 | AI项目协同 | 泊冉软件',
@@ -46,6 +54,16 @@ export default function Page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(etoYonsuiteJsonLd) }}
       />
       <ETOManufacturingYonSuiteContent />
+      <GeoSection
+        title={metadata.title as string}
+        description={metadata.description as string}
+        keywords={metadata.keywords}
+        url={URL}
+        tldr={TLDR}
+        faqs={geoFaqs}
+        variant="solution"
+        visible={false}
+      />
     </>
   )
 }

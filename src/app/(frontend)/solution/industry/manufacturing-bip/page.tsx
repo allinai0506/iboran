@@ -1,6 +1,10 @@
 import { Metadata } from 'next'
 import { ManufacturingBIPContent } from './page.content'
-import { GEOJsonLd } from '@/components/GEOJsonLd'
+import { GeoSection } from '@/components/GeoSection'
+
+// TL;DR（AI 直接答案，LLM 爬虫可见）
+const TLDR =
+  '制造业数智化转型解决方案（YonBIP）：面向大中型制造企业，打通研产供销财全链路，覆盖智能计划与产销协同、精益生产、数字化质量追溯、委外协同与业财成本治理，支撑向智能工厂跨越。'
 
 export const metadata: Metadata = {
   title: '制造业数智化转型解决方案 | YonBIP 工业一体化 | 泊冉软件',
@@ -21,10 +25,14 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <GEOJsonLd 
+      <GeoSection
         title="制造业数智化转型解决方案"
         description="面向大中型制造企业，提供智能工厂、精益制造与产销一体化方案，驱动制造业高质量发展。"
+        keywords={metadata.keywords}
         url="https://www.iboran.com/solution/industry/manufacturing-bip"
+        tldr={TLDR}
+        variant="solution"
+        visible={false}
       />
       <ManufacturingBIPContent />
     </>

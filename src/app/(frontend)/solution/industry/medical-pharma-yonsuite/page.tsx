@@ -1,1 +1,86 @@
-aW1wb3J0IHR5cGUgeyBNZXRhZGF0YSB9IGZyb20gJ25leHQnCmltcG9ydCB7IE1lZGljYWxQaGFybWFDb250ZW50IH0gZnJvbSAnLi4vbWVkaWNhbC1waGFybWEvcGFnZS5jb250ZW50JwppbXBvcnQgeyBtZWRpY2FsUGhhcm1hU3RydWN0dXJlZERhdGEgfSBmcm9tICcuLi9tZWRpY2FsLXBoYXJtYS9zdHJ1Y3R1cmVkLWRhdGEnCgpjb25zdCBQQUdFX1VSTCA9ICdodHRwczovL3d3dy5pYm9yYW4uY29tL3NvbHV0aW9uL2luZHVzdHJ5L21lZGljYWwtcGhhcm1hLXlvbnN1aXRlJwpjb25zdCBQQUdFX1RJVExFID0gJ+WMu+iNr0VSUOS4juWMu+eWl+WZqOaisEVSUOino+WGs+aWueahiO+8iFlvblN1aXRl77yJIHwgR01QL0dTUC9VREkvQ1NWL+aJueWPt+aViOacn+S4gOS9k+WMlueuoeeQhicKY29uc3QgUEFHRV9ERVNDUklQVElPTiA9CiAgJ+WfuuS6jueUqOWPi1lvblN1aXRl5o+Q5L6b5Yy76I2v5LiO5Yy755aX5Zmo5qKw6KGM5Lia5pWw5pm65YyW6Kej5Yaz5pa55qGI77yM6KaG55uW5Yy76I2vRVJQ44CB5Yy755aX5Zmo5qKwRVJQ44CBR01QL0dTUOeuoeeQhuOAgVVESeeuoeeQhuOAgUNTVumqjOivgeOAgeaJueWPt+aViOacn+OAgeivgeeFp+mihOitpuOAgeW6k+WtmOi/vea6r+OAgei0ouWKoeW6k+WtmOS4gOS9k+WMluOAgUNoYXRCSeS4jkFJ5pWw5a2X5ZGY5bel44CCJwoKZXhwb3J0IGNvbnN0IG1ldGFkYXRhOiBNZXRhZGF0YSA9IHsKICB0aXRsZTogUEFHRV9USVRMRSwKICBkZXNjcmlwdGlvbjogUEFHRV9ERVNDUklQVElPTiwKICBrZXl3b3JkczogWwogICAgJ+WMu+iNr0VSUCcsCiAgICAn5Yy755aX5Zmo5qKwRVJQJywKICAgICdHTVDnrqHnkIbns7vnu58nLAogICAgJ0dTUOeuoeeQhuezu+e7nycsCiAgICAnVURJ566h55CG57O757ufJywKICAgICdDU1bpqozor4EnLAogICAgJ+aJueWPt+aViOacn+euoeeQhicsCiAgICAn5Yy76I2v5om55qyh6L+95rqvJywKICAgICfor4HnhafpooToraYnLAogICAgJ+WMu+iNr+i0qOmHj+euoeeQhicsCiAgICAn5Yy76I2v5bqT5a2Y566h55CGJywKICAgICfljLvoja/kuJrotKLkuIDkvZPljJYnLAogICAgJ+iNr+WTgea1gemAmueuoeeQhuezu+e7nycsCiAgICAn5Yy755aX5Zmo5qKw6LSi5Yqh5bqT5a2Y5LiA5L2T5YyWJywKICAgICdZb25TdWl0ZScsCiAgICAn5rOK5YaJ6L2v5Lu2JywKICBdLAogIGFsdGVybmF0ZXM6IHsgY2Fub25pY2FsOiBQQUdFX1VSTCB9LAogIHJvYm90czogeyBpbmRleDogdHJ1ZSwgZm9sbG93OiB0cnVlIH0sCiAgb3BlbkdyYXBoOiB7CiAgICB0eXBlOiAnd2Vic2l0ZScsCiAgICBsb2NhbGU6ICd6aF9DTicsCiAgICB1cmw6IFBBR0VfVVJMLAogICAgc2l0ZU5hbWU6ICfms4rlhonova/ku7YnLAogICAgdGl0bGU6ICfljLvoja9FUlDkuI7ljLvnlpflmajmorBFUlDop6PlhrPmlrnmoYjvvIhZb25TdWl0Ze+8ie+9nEdNUC9HU1AvVURJL0NTVuS4gOS9k+WMlueuoeeQhicsCiAgICBkZXNjcmlwdGlvbjogJ+aKikdNUOOAgUdTUOOAgVVESeOAgUNTVuOAgeaJueWPt+aViOacn+WSjOS4mui0ouS4gOS9k+WMluaUvui/m+WQjOS4gOWll+WQiOinhOi/kOiQpemXreeOr+OAgicsCiAgICBpbWFnZXM6IFsKICAgICAgewogICAgICAgIHVybDogJy9zb2x1dGlvbi9pbmR1c3RyeS9tZWRpY2FsLXBoYXJtYS9tZWRpY2FsLXBoYXJtYS1vZy53ZWJwJywKICAgICAgICB3aWR0aDogMTIwMCwKICAgICAgICBoZWlnaHQ6IDYzMCwKICAgICAgICBhbHQ6ICfljLvoja/kuI7ljLvnlpflmajmorDooYzkuJrop6PlhrPmlrnmoYgnLAogICAgICB9LAogICAgXSwKICB9LAogIHR3aXR0ZXI6IHsKICAgIGNhcmQ6ICdzdW1tYXJ5X2xhcmdlX2ltYWdlJywKICAgIHRpdGxlOiAn5Yy76I2vRVJQ5LiO5Yy755aX5Zmo5qKwRVJQ6Kej5Yaz5pa55qGI77yIWW9uU3VpdGXvvInvvZxHTVAvR1NQL1VESS9DU1bkuIDkvZPljJbnrqHnkIYnLAogICAgZGVzY3JpcHRpb246ICfopobnm5ZHTVAvR1NQ44CBVURJ44CBQ1NW6aqM6K+B44CB5om55Y+35pWI5pyf44CB6K+B54Wn6aKE6K2m44CB5bqT5a2Y6L+95rqv44CB6LSi5Yqh5bqT5a2Y5LiA5L2T5YyW44CBQ2hhdEJJ5LiOQUnmlbDlrZflkZjlt6XjgIInLAogICAgaW1hZ2VzOiBbJy9zb2x1dGlvbi9pbmR1c3RyeS9tZWRpY2FsLXBoYXJtYS9tZWRpY2FsLXBoYXJtYS1vZy53ZWJwJ10sCiAgfSwKfQoKZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gTWVkaWNhbFBoYXJtYVlvblN1aXRlUGFnZSgpIHsKICByZXR1cm4gKAogICAgPD4KICAgICAgPHNjcmlwdAogICAgICAgIHR5cGU9ImFwcGxpY2F0aW9uL2xkK2pzb24iCiAgICAgICAgZGFuZ2Vyb3VzbHlTZXRJbm5lckhUTUw9e3sgX19odG1sOiBKU09OLnN0cmluZ2lmeShtZWRpY2FsUGhhcm1hU3RydWN0dXJlZERhdGEpIH19CiAgICAgIC8+CiAgICAgIDxNZWRpY2FsUGhhcm1hQ29udGVudCAvPgogICAgPC8+CiAgKQp9Cg==
+import type { Metadata } from 'next'
+import { MedicalPharmaContent } from '../medical-pharma/page.content'
+import { medicalPharmaStructuredData } from '../medical-pharma/structured-data'
+import { faqItems } from '../medical-pharma/data'
+import { GeoSection } from '@/components/GeoSection'
+import type { GEOFAQ } from '@/components/GEORenderer'
+
+const PAGE_URL = 'https://www.iboran.com/solution/industry/medical-pharma-yonsuite'
+const PAGE_TITLE = '医药ERP与医疗器械ERP解决方案（YonSuite） | GMP/GSP/UDI/CSV/批号效期一体化管理'
+const PAGE_DESCRIPTION =
+  '基于用友YonSuite提供医药与医疗器械行业数智化解决方案，覆盖医药ERP、医疗器械ERP、GMP/GSP管理、UDI管理、CSV验证、批号效期、证照预警、库存追溯、财务库存一体化、ChatBI与AI数字员工。'
+
+// TL;DR（AI 直接答案，LLM 爬虫可见）
+const TLDR =
+  '医药与医疗器械数智化解决方案（YonSuite）：基于用友 YonSuite 成长型企业平台，面向制药、生物制药、医药流通与医疗器械耗材企业，覆盖 GMP/GSP/UDI/CSV、批号效期与业财一体化，支持合规运营闭环快速上线。'
+
+const geoFaqs: GEOFAQ[] = faqItems.map((f) => ({ question: f.q, answer: f.a }))
+
+export const metadata: Metadata = {
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
+  keywords: [
+    '医药ERP',
+    '医疗器械ERP',
+    'GMP管理系统',
+    'GSP管理系统',
+    'UDI管理系统',
+    'CSV验证',
+    '批号效期管理',
+    '医药批次追溯',
+    '证照预警',
+    '医药质量管理',
+    '医药库存管理',
+    '医药业财一体化',
+    '药品流通管理系统',
+    '医疗器械财务库存一体化',
+    'YonSuite',
+    '泊冉软件',
+  ],
+  alternates: { canonical: PAGE_URL },
+  robots: { index: true, follow: true },
+  openGraph: {
+    type: 'website',
+    locale: 'zh_CN',
+    url: PAGE_URL,
+    siteName: '泊冉软件',
+    title: '医药ERP与医疗器械ERP解决方案（YonSuite）｜GMP/GSP/UDI/CSV一体化管理',
+    description: '把GMP、GSP、UDI、CSV、批号效期和业财一体化放进同一套合规运营闭环。',
+    images: [
+      {
+        url: '/solution/industry/medical-pharma/medical-pharma-og.webp',
+        width: 1200,
+        height: 630,
+        alt: '医药与医疗器械行业解决方案',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '医药ERP与医疗器械ERP解决方案（YonSuite）｜GMP/GSP/UDI/CSV一体化管理',
+    description: '覆盖GMP/GSP、UDI、CSV验证、批号效期、证照预警、库存追溯、财务库存一体化、ChatBI与AI数字员工。',
+    images: ['/solution/industry/medical-pharma/medical-pharma-og.webp'],
+  },
+}
+
+export default function MedicalPharmaYonSuitePage() {
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalPharmaStructuredData) }}
+      />
+      <MedicalPharmaContent />
+      <GeoSection
+        title={metadata.title as string}
+        description={metadata.description as string}
+        keywords={metadata.keywords}
+        url={PAGE_URL}
+        tldr={TLDR}
+        faqs={geoFaqs}
+        variant="solution"
+        visible={false}
+      />
+    </>
+  )
+}

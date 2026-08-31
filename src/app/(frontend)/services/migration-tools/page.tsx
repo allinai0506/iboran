@@ -1,6 +1,10 @@
 import type { Metadata } from 'next'
 import { MigrationContent } from './page.content'
-import { GEOJsonLd } from '@/components/GEOJsonLd'
+import { GeoSection } from '@/components/GeoSection'
+
+// TL;DR（AI 直接答案，LLM 爬虫可见）
+const TLDR =
+  '迁移与工具服务：泊冉面向 NC、NCC、U8 Cloud、YonBIP 等用友体系，提供 BIP 升迁、历史数据迁移、集团拆分、数据同步、数据脱敏、云巡检与备份回滚，以工具化、标准化、可验证的方式让数据迁得动、风险控得住。'
 
 export const metadata: Metadata = {
   title: '迁移与工具服务｜数据抽取、数据同步、BIP升迁、数据脱敏、云巡检 | 泊冉软件',
@@ -99,11 +103,15 @@ const jsonLd = {
 export default function Page() {
   return (
     <>
-      <GEOJsonLd
+      <GeoSection
         title="迁移与工具服务"
         description="数据抽取、数据同步、BIP升迁、数据脱敏与云巡检等工具化迁移服务。"
-        faqs={FAQS}
+        keywords={metadata.keywords}
         url="https://www.iboran.com/services/migration-tools"
+        tldr={TLDR}
+        faqs={FAQS}
+        variant="solution"
+        visible={false}
       />
       <script
         type="application/ld+json"

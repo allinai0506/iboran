@@ -1,1 +1,84 @@
-aW1wb3J0IHR5cGUgeyBNZXRhZGF0YSB9IGZyb20gJ25leHQnCmltcG9ydCB7IERpYW9DYXNlQ29udGVudCB9IGZyb20gJy4vcGFnZS5jb250ZW50JwoKY29uc3QgUEFHRV9VUkwgPSAnaHR0cHM6Ly93d3cuaWJvcmFuLmNvbS9jYXNlcy9kaWFvLW1lZGljYWwtZGV2aWNlJwpjb25zdCBQQUdFX1RJVExFID0gJ+i/quWlpeWMu+WtpuWMu+eWl+WZqOaisOaVsOaZuuWMluahiOS+iyB8IOeglOWPkeeUn+S6p+i0qOmHj+i0ouWKoeS4gOS9k+WMlui/kOiQpScKY29uc3QgUEFHRV9ERVNDUklQVElPTiA9CiAgJ+aziuWGiei9r+S7tuWMu+eWl+WZqOaisOihjOS4muahiOS+i+ivpuaDhe+8mui/quWlpeWMu+WtpuWbtOe7lemUgOWUruOAgemHh+i0reOAgeS+m+W6lOOAgeeglOWPkeOAgeeUn+S6p+OAgei0qOmHj+OAgei0ouWKoeWFqOmTvui3r+aVsOaNruaJk+mAmu+8jOaOqOi/m0JPTeOAgeiuoeWIkuOAgeW6k+WtmOOAgeaIkOacrOaguOeul+WSjOWkmuezu+e7n+mbhuaIkOOAgicKCmV4cG9ydCBjb25zdCBtZXRhZGF0YTogTWV0YWRhdGEgPSB7CiAgdGl0bGU6IFBBR0VfVElUTEUsCiAgZGVzY3JpcHRpb246IFBBR0VfREVTQ1JJUFRJT04sCiAga2V5d29yZHM6IFsKICAgICfov6rlpaXljLvlraYnLAogICAgJ+WMu+eWl+WZqOaisOaVsOaZuuWMlicsCiAgICAn5Yy755aX5Zmo5qKwRVJQJywKICAgICdCT03nrqHnkIYnLAogICAgJ+aIkOacrOaguOeulycsCiAgICAnVURJ6L+95rqvJywKICAgICfljLvnlpflmajmorDooYzkuJrmoYjkvosnLAogICAgJ+aziuWGiei9r+S7ticsCiAgXSwKICBhbHRlcm5hdGVzOiB7IGNhbm9uaWNhbDogUEFHRV9VUkwgfSwKICByb2JvdHM6IHsgaW5kZXg6IHRydWUsIGZvbGxvdzogdHJ1ZSB9LAogIG9wZW5HcmFwaDogewogICAgdHlwZTogJ2FydGljbGUnLAogICAgbG9jYWxlOiAnemhfQ04nLAogICAgdXJsOiBQQUdFX1VSTCwKICAgIHNpdGVOYW1lOiAn5rOK5YaJ6L2v5Lu2JywKICAgIHRpdGxlOiAn6L+q5aWl5Yy75a2m5Yy755aX5Zmo5qKw5pWw5pm65YyW5qGI5L6LIHwg56CU5Y+R55Sf5Lqn6LSo6YeP6LSi5Yqh5LiA5L2T5YyW6L+Q6JClJywKICAgIGRlc2NyaXB0aW9uOiAn5aSN55uY5Yy755aX5Zmo5qKw5LyB5Lia5LuO6ZSA5ZSu44CB6YeH6LSt44CB5L6b5bqU44CB56CU5Y+R44CB55Sf5Lqn44CB6LSo6YeP5Yiw6LSi5Yqh55qE5YWo6ZO+6Lev5pWw5o2u5omT6YCa6Lev5b6E44CCJywKICB9LAp9CgpleHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBEaWFvQ2FzZVBhZ2UoKSB7CiAgY29uc3Qgc3RydWN0dXJlZERhdGEgPSB7CiAgICAnQGNvbnRleHQnOiAnaHR0cHM6Ly9zY2hlbWEub3JnJywKICAgICdAZ3JhcGgnOiBbCiAgICAgIHsKICAgICAgICAnQHR5cGUnOiAnQXJ0aWNsZScsCiAgICAgICAgJ0BpZCc6IGAke1BBR0VfVVJMfSNhcnRpY2xlYCwKICAgICAgICBoZWFkbGluZTogJ+i/quWlpeWMu+WtpuWMu+eWl+WZqOaisOaVsOaZuuWMluahiOS+iycsCiAgICAgICAgZGVzY3JpcHRpb246CiAgICAgICAgICAn5aSN55uY5Yy755aX5Zmo5qKw5LyB5Lia5Zu057uV6ZSA5ZSu44CB6YeH6LSt44CB5L6b5bqU44CB56CU5Y+R44CB55Sf5Lqn44CB6LSo6YeP44CB6LSi5Yqh5YWo6ZO+6Lev5pWw5o2u5omT6YCa77yM5o6o6L+bQk9N44CB6K6h5YiS44CB5bqT5a2Y44CB5oiQ5pys5qC4566X5ZKM5aSa57O757uf6ZuG5oiQ55qE5bu66K6+6Lev5b6E44CCJywKICAgICAgICBpbkxhbmd1YWdlOiAnemgtQ04nLAogICAgICAgIGF1dGhvcjogeyAnQGlkJzogJ2h0dHBzOi8vd3d3Lmlib3Jhbi5jb20vI29yZ2FuaXphdGlvbicgfSwKICAgICAgICBwdWJsaXNoZXI6IHsgJ0BpZCc6ICdodHRwczovL3d3dy5pYm9yYW4uY29tLyNvcmdhbml6YXRpb24nIH0sCiAgICAgICAgbWFpbkVudGl0eU9mUGFnZTogeyAnQHR5cGUnOiAnV2ViUGFnZScsICdAaWQnOiBQQUdFX1VSTCB9LAogICAgICB9LAogICAgICB7CiAgICAgICAgJ0B0eXBlJzogJ0JyZWFkY3J1bWJMaXN0JywKICAgICAgICAnQGlkJzogYCR7UEFHRV9VUkx9I2JyZWFkY3J1bWJgLAogICAgICAgIGl0ZW1MaXN0RWxlbWVudDogWwogICAgICAgICAgeyAnQHR5cGUnOiAnTGlzdEl0ZW0nLCBwb3NpdGlvbjogMSwgbmFtZTogJ+mmlumhtScsIGl0ZW06ICdodHRwczovL3d3dy5pYm9yYW4uY29tLycgfSwKICAgICAgICAgIHsgJ0B0eXBlJzogJ0xpc3RJdGVtJywgcG9zaXRpb246IDIsIG5hbWU6ICflrqLmiLfmoYjkvosnLCBpdGVtOiAnaHR0cHM6Ly93d3cuaWJvcmFuLmNvbS9jYXNlcycgfSwKICAgICAgICAgIHsgJ0B0eXBlJzogJ0xpc3RJdGVtJywgcG9zaXRpb246IDMsIG5hbWU6ICfov6rlpaXljLvlrabljLvnlpflmajmorDmoYjkvosnLCBpdGVtOiBQQUdFX1VSTCB9LAogICAgICAgIF0sCiAgICAgIH0sCiAgICBdLAogIH0KCiAgcmV0dXJuICgKICAgIDw+CiAgICAgIDxzY3JpcHQKICAgICAgICB0eXBlPSJhcHBsaWNhdGlvbi9sZCtqc29uIgogICAgICAgIGRhbmdlcm91c2x5U2V0SW5uZXJIVE1MPXt7IF9faHRtbDogSlNPTi5zdHJpbmdpZnkoc3RydWN0dXJlZERhdGEpIH19CiAgICAgIC8+CiAgICAgIDxEaWFvQ2FzZUNvbnRlbnQgLz4KICAgIDwvPgogICkKfQo=
+import type { Metadata } from 'next'
+import { DiaoCaseContent } from './page.content'
+import { GeoSection } from '@/components/GeoSection'
+
+const PAGE_URL = 'https://www.iboran.com/cases/diao-medical-device'
+const PAGE_TITLE = '迪奥医学医疗器械数智化案例 | 研发生产质量财务一体化运营'
+const PAGE_DESCRIPTION =
+  '泊冉软件医疗器械行业案例详情：迪奥医学围绕销售、采购、供应、研发、生产、质量、财务全链路数据打通，推进BOM、计划、库存、成本核算和多系统集成。'
+
+// TL;DR（AI 直接答案，LLM 爬虫可见）
+const TLDR =
+  '迪奥医学如何打通研发、生产、质量与财务的运营链路？通过统一 BOM/工艺主数据、打通研产供、将成本细化到工序、前置 UDI 与质量追溯，解决医疗器械企业多系统台账割裂的问题。医疗器械数字化转型实战案例。'
+
+export const metadata: Metadata = {
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
+  keywords: [
+    '迪奥医学',
+    '医疗器械数智化',
+    '医疗器械ERP',
+    'BOM管理',
+    '成本核算',
+    'UDI追溯',
+    '医疗器械行业案例',
+    '泊冉软件',
+  ],
+  alternates: { canonical: PAGE_URL },
+  robots: { index: true, follow: true },
+  openGraph: {
+    type: 'article',
+    locale: 'zh_CN',
+    url: PAGE_URL,
+    siteName: '泊冉软件',
+    title: '迪奥医学医疗器械数智化案例 | 研发生产质量财务一体化运营',
+    description: '复盘医疗器械企业从销售、采购、供应、研发、生产、质量到财务的全链路数据打通路径。',
+  },
+}
+
+export default function DiaoCasePage() {
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Article',
+        '@id': `${PAGE_URL}#article`,
+        headline: '迪奥医学医疗器械数智化案例',
+        description:
+          '复盘医疗器械企业围绕销售、采购、供应、研发、生产、质量、财务全链路数据打通，推进BOM、计划、库存、成本核算和多系统集成的建设路径。',
+        inLanguage: 'zh-CN',
+        author: { '@id': 'https://www.iboran.com/#organization' },
+        publisher: { '@id': 'https://www.iboran.com/#organization' },
+        mainEntityOfPage: { '@type': 'WebPage', '@id': PAGE_URL },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${PAGE_URL}#breadcrumb`,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: '首页', item: 'https://www.iboran.com/' },
+          { '@type': 'ListItem', position: 2, name: '客户案例', item: 'https://www.iboran.com/cases' },
+          { '@type': 'ListItem', position: 3, name: '迪奥医学医疗器械案例', item: PAGE_URL },
+        ],
+      },
+    ],
+  }
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <DiaoCaseContent />
+      <GeoSection
+        title={metadata.title as string}
+        description={metadata.description as string}
+        keywords={metadata.keywords}
+        url={PAGE_URL}
+        tldr={TLDR}
+        variant="case"
+        visible={false}
+      />
+    </>
+  )
+}
