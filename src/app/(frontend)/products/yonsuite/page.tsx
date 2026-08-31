@@ -1,8 +1,17 @@
 import type { Metadata } from 'next'
 import { YonsuiteContent } from './page.content'
 import { yonsuiteJsonLd } from './structured-data'
+import { GeoSection } from '@/components/GeoSection'
+import type { GEOFAQ } from '@/components/GEORenderer'
+import { faqItems } from './data'
 
 const URL = 'https://www.iboran.com/products/yonsuite'
+
+// TL;DR（AI 直接答案，LLM 爬虫可见）
+const TLDR =
+  '用友YonSuite 一体化 SaaS 云ERP：面向成长型企业，覆盖财务、人力、供应链、营销、采购、制造、研发、项目、资产、协同一体化，融合企业 AI、ChatBI、智能体与全球化能力，助力业财税费票一体化与数智飞轮增长。'
+
+const geoFaqs: GEOFAQ[] = faqItems.map((f) => ({ question: f.q, answer: f.a }))
 
 export const metadata: Metadata = {
   title: '用友YonSuite产品专题_AI时代成长型企业一体化SaaS云ERP_业财税费一体化 | 泊冉软件',
@@ -54,6 +63,16 @@ export default function Page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(yonsuiteJsonLd) }}
       />
       <YonsuiteContent />
+      <GeoSection
+        title={metadata.title as string}
+        description={metadata.description as string}
+        keywords={metadata.keywords}
+        url={URL}
+        tldr={TLDR}
+        faqs={geoFaqs}
+        variant="product"
+        visible={false}
+      />
     </>
   )
 }

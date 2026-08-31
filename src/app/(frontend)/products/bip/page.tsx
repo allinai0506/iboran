@@ -1,8 +1,17 @@
 import type { Metadata } from 'next'
 import { BipContent } from './page.content'
 import { bipJsonLd } from './structured-data'
+import { GeoSection } from '@/components/GeoSection'
+import type { GEOFAQ } from '@/components/GEORenderer'
+import { faqItems } from './data'
 
 const URL = 'https://www.iboran.com/products/bip'
+
+// TL;DR（AI 直接答案，LLM 爬虫可见）
+const TLDR =
+  '用友BIP 产品与实施服务：泊冉提供 BIP 咨询、销售支持、实施、交付、迁移、集成、信创适配与企业 AI 落地服务，支持新建 BIP 以及 NC、NCC、U8、U9、金蝶、SAP、Oracle 等系统升级迁移与并行集成，覆盖财务、供应链、采购、制造、人力、资产、项目、协同与企业智能体场景。'
+
+const geoFaqs: GEOFAQ[] = faqItems.map((f) => ({ question: f.q, answer: f.a }))
 
 export const metadata: Metadata = {
   title: '用友BIP商业创新平台_集团ERP升级与企业AI方案｜泊冉软件',
@@ -64,6 +73,16 @@ export default function Page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(bipJsonLd) }}
       />
       <BipContent />
+      <GeoSection
+        title={metadata.title as string}
+        description={metadata.description as string}
+        keywords={metadata.keywords}
+        url={URL}
+        tldr={TLDR}
+        faqs={geoFaqs}
+        variant="product"
+        visible={false}
+      />
     </>
   )
 }
