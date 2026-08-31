@@ -1,1 +1,63 @@
-Ly8g5Yy76I2v5LiO5Yy755aX5Zmo5qKw5pWw5pm65YyW5pa55qGI6aG157uT5p6E5YyW5pWw5o2u77yIV2ViUGFnZSAvIFNlcnZpY2UgLyBCcmVhZGNydW1iTGlzdCAvIEZBUVBhZ2XvvIkKLy8gT3JnYW5pemF0aW9uIOiKgueCueeUseWFqOermSBPcmdhbml6YXRpb25Kc29uTGQg57uf5LiA6L6T5Ye677yM5q2k5aSE5LiN6YeN5aSNCmltcG9ydCB7IGZhcUl0ZW1zIH0gZnJvbSAnLi9kYXRhJwoKY29uc3QgQkFTRSA9ICdodHRwczovL3d3dy5pYm9yYW4uY29tJwpjb25zdCBVUkwgPSAnaHR0cHM6Ly93d3cuaWJvcmFuLmNvbS9zb2x1dGlvbi9pbmR1c3RyeS9tZWRpY2FsLXBoYXJtYScKCmV4cG9ydCBjb25zdCBtZWRpY2FsUGhhcm1hU3RydWN0dXJlZERhdGEgPSB7CiAgJ0Bjb250ZXh0JzogJ2h0dHBzOi8vc2NoZW1hLm9yZycsCiAgJ0BncmFwaCc6IFsKICAgIHsKICAgICAgJ0B0eXBlJzogJ1dlYlBhZ2UnLAogICAgICAnQGlkJzogYCR7VVJMfSN3ZWJwYWdlYCwKICAgICAgdXJsOiBVUkwsCiAgICAgIG5hbWU6ICfljLvoja9FUlDkuI7ljLvnlpflmajmorBFUlDop6PlhrPmlrnmoYggfCBHTVAvR1NQL1VESS9DU1Yv5om55Y+35pWI5pyf5LiA5L2T5YyW566h55CGJywKICAgICAgZGVzY3JpcHRpb246CiAgICAgICAgJ+aziuWGiei9r+S7tuaPkOS+m+WMu+iNr+S4juWMu+eWl+WZqOaisOihjOS4muaVsOaZuuWMluino+WGs+aWueahiO+8jOimhuebluWMu+iNr0VSUOOAgeWMu+eWl+WZqOaisEVSUOOAgUdNUC9HU1DnrqHnkIbjgIFVREnnrqHnkIbjgIFDU1bpqozor4HjgIHmibnlj7fmlYjmnJ/jgIHor4HnhafpooTorabjgIHlupPlrZjov73muq/jgIHotKLliqHlupPlrZjkuIDkvZPljJbjgIFDaGF0QknkuI5BSeaVsOWtl+WRmOW3peOAgicsCiAgICAgIGluTGFuZ3VhZ2U6ICd6aC1DTicsCiAgICAgIHByb3ZpZGVyOiB7ICdAaWQnOiBgJHtCQVNFfS8jb3JnYW5pemF0aW9uYCB9LAogICAgICBhYm91dDogeyAnQGlkJzogYCR7VVJMfSNzZXJ2aWNlYCB9LAogICAgICBicmVhZGNydW1iOiB7ICdAaWQnOiBgJHtVUkx9I2JyZWFkY3J1bWJgIH0sCiAgICAgIG1haW5FbnRpdHk6IHsgJ0BpZCc6IGAke1VSTH0jZmFxYCB9LAogICAgfSwKICAgIHsKICAgICAgJ0B0eXBlJzogJ1NlcnZpY2UnLAogICAgICAnQGlkJzogYCR7VVJMfSNzZXJ2aWNlYCwKICAgICAgbmFtZTogJ+WMu+iNr+S4juWMu+eWl+WZqOaisOaVsOaZuuWMluino+WGs+aWueahiCcsCiAgICAgIHNlcnZpY2VUeXBlOiAn5Yy76I2vRVJQ44CB5Yy755aX5Zmo5qKwRVJQ44CBR01QL0dTUOeuoeeQhuOAgVVESeeuoeeQhuOAgUNTVumqjOivgeS4juS4mui0ouS4gOS9k+WMluWunuaWveacjeWKoScsCiAgICAgIHByb3ZpZGVyOiB7ICdAaWQnOiBgJHtCQVNFfS8jb3JnYW5pemF0aW9uYCB9LAogICAgICBhcmVhU2VydmVkOiB7ICdAdHlwZSc6ICdDb3VudHJ5JywgbmFtZTogJ+S4reWbvScgfSwKICAgICAgYXVkaWVuY2U6IHsKICAgICAgICAnQHR5cGUnOiAnQnVzaW5lc3NBdWRpZW5jZScsCiAgICAgICAgYXVkaWVuY2VUeXBlOgogICAgICAgICAgJ+WMu+iNr+a1gemAmuS8geS4muOAgeiNr+WTgeaJueWPkeS8geS4muOAgeWMu+eWl+WZqOaisOS8geS4muOAgeWMu+eWl+iAl+adkOS8geS4muOAgeeUn+eJqeWItuiNr+S8geS4mu+8jOS7peWPikNGT+OAgUNJT+OAgei0qOmHj+i0n+i0o+S6uuOAgeS+m+W6lOmTvui0n+i0o+S6uuOAgei0ouWKoei0n+i0o+S6uuWSjOWQiOinhOi0n+i0o+S6uicsCiAgICAgIH0sCiAgICAgIGRlc2NyaXB0aW9uOgogICAgICAgICfpnaLlkJHljLvoja/kuI7ljLvnlpflmajmorDkvIHkuJrvvIzopobnm5bnoJTlj5HjgIHnlJ/kuqfjgIHph4fotK3jgIHplIDllK7jgIHlupPlrZjjgIFHTVAvR1NQ44CBVURJ44CBQ1NW6aqM6K+B44CB5om55Y+35pWI5pyf44CB6LSo6YeP566h55CG44CB6L+95rqv5LiO6LSi5Yqh5bqT5a2Y5LiA5L2T5YyW77yM5Y+v57uT5ZCI5LyB5Lia5a6e6ZmF5rWB56iL6L+b6KGM6K+V54K55ZKM5omp5bGV44CCJywKICAgIH0sCiAgICB7CiAgICAgICdAdHlwZSc6ICdCcmVhZGNydW1iTGlzdCcsCiAgICAgICdAaWQnOiBgJHtVUkx9I2JyZWFkY3J1bWJgLAogICAgICBpdGVtTGlzdEVsZW1lbnQ6IFsKICAgICAgICB7ICdAdHlwZSc6ICdMaXN0SXRlbScsIHBvc2l0aW9uOiAxLCBuYW1lOiAn6aaW6aG1JywgaXRlbTogYCR7QkFTRX0vYCB9LAogICAgICAgIHsgJ0B0eXBlJzogJ0xpc3RJdGVtJywgcG9zaXRpb246IDIsIG5hbWU6ICfop6PlhrPmlrnmoYgnLCBpdGVtOiBgJHtCQVNFfS9zb2x1dGlvbmAgfSwKICAgICAgICB7CiAgICAgICAgICAnQHR5cGUnOiAnTGlzdEl0ZW0nLAogICAgICAgICAgcG9zaXRpb246IDMsCiAgICAgICAgICBuYW1lOiAn5Yy76I2v5LiO5Yy755aX5Zmo5qKw5pWw5pm65YyW6Kej5Yaz5pa55qGIJywKICAgICAgICAgIGl0ZW06IFVSTCwKICAgICAgICB9LAogICAgICBdLAogICAgfSwKICAgIHsKICAgICAgJ0B0eXBlJzogJ0ZBUVBhZ2UnLAogICAgICAnQGlkJzogYCR7VVJMfSNmYXFgLAogICAgICBtYWluRW50aXR5OiBmYXFJdGVtcy5tYXAoKGYpID0+ICh7CiAgICAgICAgJ0B0eXBlJzogJ1F1ZXN0aW9uJywKICAgICAgICBuYW1lOiBmLnEsCiAgICAgICAgYWNjZXB0ZWRBbnN3ZXI6IHsgJ0B0eXBlJzogJ0Fuc3dlcicsIHRleHQ6IGYuYSB9LAogICAgICB9KSksCiAgICB9LAogIF0sCn0K
+// 医药与医疗器械数智化方案页结构化数据（WebPage / Service / BreadcrumbList / FAQPage）
+// Organization 节点由全站 OrganizationJsonLd 统一输出，此处不重复
+import { faqItems } from './data'
+
+const BASE = 'https://www.iboran.com'
+const URL = 'https://www.iboran.com/solution/industry/medical-pharma'
+
+export const medicalPharmaStructuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': `${URL}#webpage`,
+      url: URL,
+      name: '医药ERP与医疗器械ERP解决方案 | GMP/GSP/UDI/CSV/批号效期一体化管理',
+      description:
+        '泊冉软件提供医药与医疗器械行业数智化解决方案，覆盖医药ERP、医疗器械ERP、GMP/GSP管理、UDI管理、CSV验证、批号效期、证照预警、库存追溯、财务库存一体化、ChatBI与AI数字员工。',
+      inLanguage: 'zh-CN',
+      provider: { '@id': `${BASE}/#organization` },
+      about: { '@id': `${URL}#service` },
+      breadcrumb: { '@id': `${URL}#breadcrumb` },
+      mainEntity: { '@id': `${URL}#faq` },
+    },
+    {
+      '@type': 'Service',
+      '@id': `${URL}#service`,
+      name: '医药与医疗器械数智化解决方案',
+      serviceType: '医药ERP、医疗器械ERP、GMP/GSP管理、UDI管理、CSV验证与业财一体化实施服务',
+      provider: { '@id': `${BASE}/#organization` },
+      areaServed: { '@type': 'Country', name: '中国' },
+      audience: {
+        '@type': 'BusinessAudience',
+        audienceType:
+          '医药流通企业、药品批发企业、医疗器械企业、医疗耗材企业、生物制药企业，以及CFO、CIO、质量负责人、供应链负责人、财务负责人和合规负责人',
+      },
+      description:
+        '面向医药与医疗器械企业，覆盖研发、生产、采购、销售、库存、GMP/GSP、UDI、CSV验证、批号效期、质量管理、追溯与财务库存一体化，可结合企业实际流程进行试点和扩展。',
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${URL}#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: '首页', item: `${BASE}/` },
+        { '@type': 'ListItem', position: 2, name: '解决方案', item: `${BASE}/solution` },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: '医药与医疗器械数智化解决方案',
+          item: URL,
+        },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${URL}#faq`,
+      mainEntity: faqItems.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    },
+  ],
+}

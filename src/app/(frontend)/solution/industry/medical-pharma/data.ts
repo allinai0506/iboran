@@ -1,1 +1,74 @@
-Ly8g5Yy76I2v5LiO5Yy755aX5Zmo5qKw5pWw5pm65YyW5pa55qGI6aG1IC0g6aG16Z2i5pWw5o2uCi8vIOaVsOaNrua6kO+8muWumOe9kS3mjInkuLvpopjmlbTnkIYv5Yy76I2vL3NvbHV0aW9ucy9tZWRpY2FsLXBoYXJtYS9pbmRleC5odG1s77yI5LiOIG1lZGljYWwtcGhhcm1hLXlvbnN1aXRlIOWujOWFqOS4gOiHtO+8iQoKZXhwb3J0IGludGVyZmFjZSBGYXFJdGVtIHsKICBxOiBzdHJpbmcKICBhOiBzdHJpbmcKfQoKZXhwb3J0IGNvbnN0IGZhcUl0ZW1zOiBGYXFJdGVtW10gPSBbCiAgewogICAgcTogJ+WMu+iNr0VSUOWSjOaZrumAmkVSUOacieS7gOS5iOWMuuWIq++8nycsCiAgICBhOiAn5pmu6YCaRVJQ5pu05YWz5rOo6YCa55So5Lia5Yqh5ZKM6LSi5Yqh5rWB56iL77yb5Yy76I2vRVJQ6ZyA6KaB6L+b5LiA5q2l6KaG55uWR01Q44CBR1NQ44CBQ1NW44CBVURJ44CB6aaW6JCl6LWE5paZ44CB6K+B54Wn6LWE6LSo44CB5om55Y+35pWI5pyf44CB6LSo6YeP6K6w5b2V44CB6L+95rqv5ZKM5a6h6K6h6LWE5paZ562J6KGM5Lia5ZCI6KeE5Zy65pmv44CCJywKICB9LAogIHsKICAgIHE6ICfljLvnlpflmajmorDkvIHkuJrkuLrku4DkuYjpnIDopoFVREnnrqHnkIbns7vnu5/vvJ8nLAogICAgYTogJ1VESeeuoeeQhuezu+e7n+WPr+W4ruWKqeWMu+eWl+WZqOaisOS8geS4muaKiuS6p+WTgeWUr+S4gOagh+ivhuS4jui1i+eggeOAgeaJk+WNsOOAgeWFpeW6k+OAgeWHuuW6k+OAgeiwg+aLqOOAgemAgOi0p+OAgemUgOWUruWSjOi/vea6r+aVsOaNruWFs+iBlOi1t+adpe+8jOaUr+aMgeWkmue7tOW6puafpeivouS4juWuoeiuoei/vei4quOAgicsCiAgfSwKICB7CiAgICBxOiAn5Yy76I2v6KGM5Lia5pWw5pm65YyW5pa55qGI5piv5ZCm5pSv5oyBR1NQ566h55CG77yfJywKICAgIGE6ICfljLvoja/ooYzkuJrmlbDmmbrljJbmlrnmoYjlj6/lm7Tnu5VHU1DlnLrmma/orr7orqHmtYHnqIvvvIzopobnm5bpppbokKXnrqHnkIbjgIHotYTotKjmnInmlYjmgKflkoznu4/okKXojIPlm7TnrqHmjqfjgIHlhaXlupPpqozmlLbjgIHlh7rlupPlpI3moLjjgIHlnKjlupPlhbvmiqTjgIHkuI3lkIjmoLzlk4HlpITnkIbjgIHlgZzllK7jgIHlj6zlm57jgIHplIDmr4HnrYnmtYHnqIvjgIInLAogIH0sCiAgewogICAgcTogJ+WItuiNr+S8geS4muaYr+WQpumcgOimgeWNleeLrOinhOWIkkdNUOWcuuaZr++8nycsCiAgICBhOiAn6ZyA6KaB44CC5raJ5Y+K55Sf5Lqn44CB5aeU5aSW5Yqg5bel44CB6LSo6YeP5pS+6KGM44CB55S15a2Q5om56K6w5b2V44CB5YGP5beu5Y+Y5pu044CB5Z+56K6t44CB6K6+5aSH6aqM6K+B562J5Zy65pmv55qE5LyB5Lia77yM5bqU5oqKR01Q5L2c5Li654us56uL6JOd5Zu+5qKz55CG77yM5bm25LiO6YeH6LSt44CB5bqT5a2Y44CB6LSo6YeP5ZKM6LSi5Yqh6ZO+6Lev6KGU5o6l44CCJywKICB9LAogIHsKICAgIHE6ICdDU1bpqozor4HlupTor6XlnKjku4DkuYjml7blgJnogIPomZHvvJ8nLAogICAgYTogJ0NTVuS4jeW6lOetieezu+e7n+S4iue6v+WQjuWGjeihpeadkOaWmeOAguW7uuiuruWcqOiTneWbvuOAgemFjee9ruOAgea1i+ivleOAgeadg+mZkOOAgeWuoeiuoei/vei4quOAgeWPmOabtOeuoeeQhuWSjOmqjOivgeaKpeWRiumYtuauteWQjOatpeinhOWIku+8jOW9ouaIkOWPr+i/vea6r+eahOmqjOivgeivgeaNrumTvuOAgicsCiAgfSwKICB7CiAgICBxOiAn5piv5ZCm5pSv5oyB5om55Y+35pWI5pyf566h55CG77yfJywKICAgIGE6ICflj6/ku6Xlm7Tnu5Xph4fotK3jgIHlhaXlupPjgIHlupPlrZjjgIHplIDllK7jgIHlh7rlupPjgIHpgIDotKflkozov73muq/mtYHnqIvnrqHnkIbmibnlj7fjgIHnlJ/kuqfml6XmnJ/jgIHmnInmlYjmnJ/jgIHotKfkvY3lkozlupPlrZjnirbmgIHvvIzlubbnu5PlkIjop4TliJnphY3nva7ov5HmlYjmnJ/mj5DphpLjgIInLAogIH0sCiAgewogICAgcTogJ+aYr+WQpuaUr+aMgei/keaViOacn+mihOitpu+8nycsCiAgICBhOiAn5Y+v5oyJ5ZWG5ZOB44CB5om55Y+344CB5LuT5bqT44CB5a6i5oi344CB5pWI5pyf6ZiI5YC85ZKM5bqT5a2Y54q25oCB6K6+572u6L+R5pWI5pyf6aKE6K2m77yM5o+Q6YaS6ZSA5ZSu44CB6YeH6LSt44CB5LuT5YKo5ZKM6LSo6YeP5Lq65ZGY5aSE55CG44CC6aKE6K2m6KeE5YiZ6ZyA57uT5ZCI5LyB5Lia566h55CG5Yi25bqm6YWN572u44CCJywKICB9LAogIHsKICAgIHE6ICfmmK/lkKbmlK/mjIHlrqLmiLflkozkvpvlupTllYbotYTotKjnrqHnkIbvvJ8nLAogICAgYTogJ+WPr+S7peeuoeeQhuWuouaIt+OAgeS+m+W6lOWVhuOAgemmluiQpeS8geS4muOAgemmluiQpeWTgeenjeOAgeivgeeFp+acieaViOacn+OAgee7j+iQpeiMg+WbtOOAgeaOiOadg+aWh+S7tuWSjOWuoeaguOeKtuaAge+8jOW5tuWcqOmHh+i0reOAgemUgOWUruOAgeWHuuWFpeW6k+etieS4muWKoeeOr+iKgui/m+ihjOaPkOekuuaIluaOp+WItuOAgicsCiAgfSwKICB7CiAgICBxOiAn5piv5ZCm5pSv5oyB5Yy76I2v5om55qyh6L+95rqv77yfJywKICAgIGE6ICflj6/lm7Tnu5Xmibnlj7fov5vooYzmraPlkJHov73muq/lkozlj43lkJHov73muq/vvIzlhbPogZTph4fotK3mnaXmupDjgIHlhaXlupPpqozmlLbjgIHlupPlrZjkvY3nva7jgIHplIDllK7orqLljZXjgIHlh7rlupPmtYHlkJHjgIHpgIDotKflkozotKjph4/orrDlvZXvvIzkvr/kuo7mn6Xor6LlkozlrqHorqHlh4blpIfjgIInLAogIH0sCiAgewogICAgcTogJ+aYr+WQpuaUr+aMgei0ouWKoeW6k+WtmOS4gOS9k+WMlu+8nycsCiAgICBhOiAn5Y+v5Lul6K6p6YeH6LSt44CB5YWl5bqT44CB6LSo5qOA44CB5bqT5a2Y44CB6ZSA5ZSu44CB5Ye65bqT44CB5byA56Wo44CB5bqU5pS25bqU5LuY5ZKM6LSi5Yqh5qC4566X5Z+65LqO5ZCM5LiA5Lia5Yqh6ZO+6Lev5rWB6L2s77yM5YeP5bCR5Lia5Yqh5Y+w6LSm5LiO6LSi5Yqh5Y+j5b6E5Ymy6KOC44CCJywKICB9LAogIHsKICAgIHE6ICdBSeaVsOWtl+WRmOW3peiDveWQpuiHquWKqOWuoeaJue+8nycsCiAgICBhOiAn5LiN5bu66K6u6K6pQUnnm7TmjqXmm7/ku6PlrqHmibnjgIHmlL7ooYzmiJbpq5jpo47pmanotKLliqHnoa7orqTjgIJBSeabtOmAguWQiOeUn+aIkOW7uuiuruOAgeiNieeov+OAgemihOitpuWSjOi+heWKqeWIhuaekO+8jOWuoeaJueOAgeaUvuihjOWSjOi0ouWKoee7k+aenOW6lOeUseaOiOadg+S6uuWRmOehruiupOWQjui/m+WFpea1geeoi+OAgicsCiAgfSwKICB7CiAgICBxOiAn5LyB5Lia5bqU6K+l5LuO5ZOq5Liq5Zy65pmv5byA5aeL6K+V54K577yfJywKICAgIGE6ICflu7rorq7kvJjlhYjpgInmi6npq5jpopHjgIHpo47pmanmuIXmmbDjgIHmlbDmja7lj6/lj5blvpfnmoTlnLrmma/vvIzkvovlpoLor4HnhafliLDmnJ/mj5DphpLjgIHmibnlj7fmlYjmnJ/nrqHnkIbjgIFVREnmiavnoIHlh7rlhaXlupPjgIFHU1Dlh7rlhaXlupPotKjph4/orrDlvZXmiJbotKLliqHlupPlrZjkuIDkvZPljJblr7notKbjgIInLAogIH0sCl0KCi8qKiDor4rmlq3ooajljZUgLSDmiYDlsZ7ooYzkuJrpgInpobkgKi8KZXhwb3J0IGNvbnN0IGluZHVzdHJ5T3B0aW9ucyA9IFsn5Yy76I2v5rWB6YCaJywgJ+WMu+eWl+WZqOaisCcsICfogJfmnZAnLCAn55Sf54mp5Yi26I2vJywgJ+WFtuS7liddCgovKiog6K+K5pat6KGo5Y2VIC0g5YWz5rOo5Zy65pmv6YCJ6aG5ICovCmV4cG9ydCBjb25zdCBzY2VuZU9wdGlvbnMgPSBbCiAgJ0dNUCcsCiAgJ0dTUCcsCiAgJ1VESScsCiAgJ0NTVumqjOivgScsCiAgJ+aJueWPt+aViOacnycsCiAgJ+i0ouWKoeW6k+WtmOS4gOS9k+WMlicsCiAgJ0FJ5pWw5a2X5ZGY5belJywKICAn5qGI5L6L5p2Q5paZJywKICAn6I635Y+W5Yy76I2v5Yy755aX5Zmo5qKw6KGM5Lia5pa55qGIJywKXQo=
+// 医药与医疗器械数智化方案页 - 页面数据
+// 数据源：官网-按主题整理/医药/solutions/medical-pharma/index.html（与 medical-pharma-yonsuite 完全一致）
+
+export interface FaqItem {
+  q: string
+  a: string
+}
+
+export const faqItems: FaqItem[] = [
+  {
+    q: '医药ERP和普通ERP有什么区别？',
+    a: '普通ERP更关注通用业务和财务流程；医药ERP需要进一步覆盖GMP、GSP、CSV、UDI、首营资料、证照资质、批号效期、质量记录、追溯和审计资料等行业合规场景。',
+  },
+  {
+    q: '医疗器械企业为什么需要UDI管理系统？',
+    a: 'UDI管理系统可帮助医疗器械企业把产品唯一标识与赋码、打印、入库、出库、调拨、退货、销售和追溯数据关联起来，支持多维度查询与审计追踪。',
+  },
+  {
+    q: '医药行业数智化方案是否支持GSP管理？',
+    a: '医药行业数智化方案可围绕GSP场景设计流程，覆盖首营管理、资质有效性和经营范围管控、入库验收、出库复核、在库养护、不合格品处理、停售、召回、销毁等流程。',
+  },
+  {
+    q: '制药企业是否需要单独规划GMP场景？',
+    a: '需要。涉及生产、委外加工、质量放行、电子批记录、偏差变更、培训、设备验证等场景的企业，应把GMP作为独立蓝图梳理，并与采购、库存、质量和财务链路衔接。',
+  },
+  {
+    q: 'CSV验证应该在什么时候考虑？',
+    a: 'CSV不应等系统上线后再补材料。建议在蓝图、配置、测试、权限、审计追踪、变更管理和验证报告阶段同步规划，形成可追溯的验证证据链。',
+  },
+  {
+    q: '是否支持批号效期管理？',
+    a: '可以围绕采购、入库、库存、销售、出库、退货和追溯流程管理批号、生产日期、有效期、货位和库存状态，并结合规则配置近效期提醒。',
+  },
+  {
+    q: '是否支持近效期预警？',
+    a: '可按商品、批号、仓库、客户、效期阈值和库存状态设置近效期预警，提醒销售、采购、仓储和质量人员处理。预警规则需结合企业管理制度配置。',
+  },
+  {
+    q: '是否支持客户和供应商资质管理？',
+    a: '可以管理客户、供应商、首营企业、首营品种、证照有效期、经营范围、授权文件和审核状态，并在采购、销售、出入库等业务环节进行提示或控制。',
+  },
+  {
+    q: '是否支持医药批次追溯？',
+    a: '可围绕批号进行正向追溯和反向追溯，关联采购来源、入库验收、库存位置、销售订单、出库流向、退货和质量记录，便于查询和审计准备。',
+  },
+  {
+    q: '是否支持财务库存一体化？',
+    a: '可以让采购、入库、质检、库存、销售、出库、开票、应收应付和财务核算基于同一业务链路流转，减少业务台账与财务口径割裂。',
+  },
+  {
+    q: 'AI数字员工能否自动审批？',
+    a: '不建议让AI直接替代审批、放行或高风险财务确认。AI更适合生成建议、草稿、预警和辅助分析，审批、放行和财务结果应由授权人员确认后进入流程。',
+  },
+  {
+    q: '企业应该从哪个场景开始试点？',
+    a: '建议优先选择高频、风险清晰、数据可取得的场景，例如证照到期提醒、批号效期管理、UDI扫码出入库、GSP出入库质量记录或财务库存一体化对账。',
+  },
+]
+
+/** 诊断表单 - 所属行业选项 */
+export const industryOptions = ['医药流通', '医疗器械', '耗材', '生物制药', '其他']
+
+/** 诊断表单 - 关注场景选项 */
+export const sceneOptions = [
+  'GMP',
+  'GSP',
+  'UDI',
+  'CSV验证',
+  '批号效期',
+  '财务库存一体化',
+  'AI数字员工',
+  '案例材料',
+  '获取医药医疗器械行业方案',
+]

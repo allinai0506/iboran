@@ -1,1 +1,110 @@
-J3VzZSBjbGllbnQnCgppbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnCmltcG9ydCAnLi9jYXNlLWRldGFpbC5jc3MnCmltcG9ydCAnLi4vLi4vc29sdXRpb24vaW5kdXN0cnkvbWVkaWNhbC1waGFybWEvbWVkaWNhbC1waGFybWEuY3NzJwoKLyogLS0tLS0tLS0tLS0tLS0tLSDlt6Xlhbflh73mlbAgLS0tLS0tLS0tLS0tLS0tLSAqLwoKZnVuY3Rpb24gdHJhY2tFdmVudChuYW1lOiBzdHJpbmcsIHBheWxvYWQ6IFJlY29yZDxzdHJpbmcsIHVua25vd24+ID0ge30pIHsKICBpZiAoIW5hbWUpIHJldHVybgogIGNvbnN0IHcgPSB3aW5kb3cgYXMgdW5rbm93biBhcyB7IGRhdGFMYXllcj86IHVua25vd25bXSB9CiAgdy5kYXRhTGF5ZXIgPSB3LmRhdGFMYXllciB8fCBbXQogIHcuZGF0YUxheWVyLnB1c2goeyBldmVudDogbmFtZSwgLi4ucGF5bG9hZCB9KQogIGRvY3VtZW50LmRpc3BhdGNoRXZlbnQobmV3IEN1c3RvbUV2ZW50KCdib3Jhbjp0cmFjaycsIHsgZGV0YWlsOiB7IG5hbWUsIC4uLnBheWxvYWQgfSB9KSkKfQoKLyogLS0tLS0tLS0tLS0tLS0tLSDkuLvnu4Tku7YgLS0tLS0tLS0tLS0tLS0tLSAqLwoKZXhwb3J0IGNvbnN0IE1heW9seUNhc2VDb250ZW50OiBSZWFjdC5GQyA9ICgpID0+IHsKICByZXR1cm4gKAogICAgPGRpdiBjbGFzc05hbWU9Im1wLXNjb3BlIG1wLWNhc2UiPgogICAgICB7LyogQ2FzZSBIZXJvICovfQogICAgICA8c2VjdGlvbiBjbGFzc05hbWU9ImNhc2UtaGVybyI+CiAgICAgICAgPGRpdiBjbGFzc05hbWU9ImNhc2UtaGVyby1pbm5lciI+CiAgICAgICAgICA8ZGl2PgogICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9ImNhc2UtbGFiZWwiPlBoYXJtYSBDYXNlIFN0dWR5PC9zcGFuPgogICAgICAgICAgICA8aDE+TWF5b2x577ya5Lit5Zu95pys5Zyw5YyW6L+Q6JCl5LiO5ZCI6KeE6aqM6K+B5pSv5pKRPC9oMT4KICAgICAgICAgICAgPHA+5aSW6LWE5Yi26I2v5LyB5Lia5Zyo5Lit5Zu95o6o6L+b5pWw5pm65YyW5bu66K6+5pe277yM6YeN54K55LiN5Y+q5piv5pu/5o2i57O757uf77yM6ICM5piv5oqK5Lqn5L6b6ZSA5Y2P5ZCM44CB5Lia6LSi5omT6YCa44CB6aKE566X5LiO5oiQ5pys44CB6LWE5Lqn6K6+5aSH5ZKM5ZCI6KeE6aqM6K+B57qz5YWl5ZCM5LiA5p2h6L+Q6JCl6ZO+6Lev44CCPC9wPgogICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iY2FzZS1oZXJvLWFjdGlvbnMiPgogICAgICAgICAgICAgIDxhIGNsYXNzTmFtZT0iYnRuIHByaW1hcnkiIGhyZWY9Ii9zb2x1dGlvbi9pbmR1c3RyeS9tZWRpY2FsLXBoYXJtYSNkaWFnbm9zaXMiIGRhdGEtdHJhY2s9ImNhc2VfZGV0YWlsX2N0YV9jbGljayI+6aKE57qm5ZCM57G75qGI5L6L5aSN55uYPC9hPgogICAgICAgICAgICAgIDxhIGNsYXNzTmFtZT0iYnRuIHNlY29uZGFyeSIgaHJlZj0iL3NvbHV0aW9uL2luZHVzdHJ5L21lZGljYWwtcGhhcm1hIiBkYXRhLXRyYWNrPSJjYXNlX2RldGFpbF9iYWNrX2NsaWNrIj7ov5Tlm57ooYzkuJrmlrnmoYg8L2E+CiAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgPC9kaXY+CiAgICAgICAgICA8YXNpZGUgY2xhc3NOYW1lPSJjYXNlLXNuYXBzaG90IiBhcmlhLWxhYmVsPSJNYXlvbHnmoYjkvovov5DokKXpk77ot6/mpoLop4giPgogICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0ic25hcHNob3QtdG9wIj4KICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iY2FzZS1taW5pLWxvZ28iPjxzdHJvbmc+TWF5b2x5PC9zdHJvbmc+PHNwYW4+Q2hpbmEgT3BlcmF0aW9uczwvc3Bhbj48L2Rpdj4KICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9InNuYXBzaG90LXN0YXR1cyI+56uZ5YaF5qGI5L6LPC9zcGFuPgogICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9InNuYXBzaG90LWZsb3ciIGFyaWEtbGFiZWw9IuaguOW/g+mTvui3ryI+CiAgICAgICAgICAgICAgPGRpdj48Yj7kuqfkvpvplIA8L2I+PHNwYW4+6K6h5YiSL+WNj+WQjDwvc3Bhbj48L2Rpdj4KICAgICAgICAgICAgICA8aSBhcmlhLWhpZGRlbj0idHJ1ZSIgLz4KICAgICAgICAgICAgICA8ZGl2PjxiPuS4mui0ojwvYj48c3Bhbj7ljZXmja4v5qC4566XPC9zcGFuPjwvZGl2PgogICAgICAgICAgICAgIDxpIGFyaWEtaGlkZGVuPSJ0cnVlIiAvPgogICAgICAgICAgICAgIDxkaXY+PGI+6aKE566XPC9iPjxzcGFuPuaIkOacrC/otYTkuqc8L3NwYW4+PC9kaXY+CiAgICAgICAgICAgICAgPGkgYXJpYS1oaWRkZW49InRydWUiIC8+CiAgICAgICAgICAgICAgPGRpdj48Yj7pqozor4E8L2I+PHNwYW4+Q1NWL+ivgeaNrjwvc3Bhbj48L2Rpdj4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJzbmFwc2hvdC1tZXRyaWNzIj4KICAgICAgICAgICAgICA8ZGl2PjxzcGFuPuS4u+e6vzwvc3Bhbj48c3Ryb25nPuS4reWbveacrOWcsOWMlui/kOiQpeS4juWQiOinhOmqjOivgeaUr+aSkTwvc3Ryb25nPjwvZGl2PgogICAgICAgICAgICAgIDxkaXY+PHNwYW4+5YWz5rOoPC9zcGFuPjxzdHJvbmc+5Lqn5L6b6ZSA44CB5Lia6LSi44CB6aKE566X44CB5qCH5YeG5oiQ5pys5LiO6LWE5Lqn6K6+5aSHPC9zdHJvbmc+PC9kaXY+CiAgICAgICAgICAgICAgPGRpdj48c3Bhbj7pgILphY08L3NwYW4+PHN0cm9uZz7liLboja/kvIHkuJrlpJrlm6LpmJ/ljY/lkIzkuI7pqozor4Hor4Hmja7pk77nrqHnkIY8L3N0cm9uZz48L2Rpdj4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICA8L2FzaWRlPgogICAgICAgIDwvZGl2PgogICAgICA8L3NlY3Rpb24+CgogICAgICB7Lyog6aG555uu5YWz5rOo54K5ICovfQogICAgICA8c2VjdGlvbiBjbGFzc05hbWU9ImNhc2Utc2VjdGlvbiI+CiAgICAgICAgPGRpdiBjbGFzc05hbWU9ImNhc2Utc2VjdGlvbi1oZWFkIj4KICAgICAgICAgIDxzcGFuPumhueebruWFs+azqOeCuTwvc3Bhbj4KICAgICAgICAgIDxoMj7ku47pobnnm67lkK/liqjlvIDlp4vvvIzmiorkuJrliqHnm67moIflkozpqozor4HopoHmsYLlkIzmraXop4TliJI8L2gyPgogICAgICAgICAgPHA+6L+Z57G76aG555uu55qE5YWz6ZSu77yM5LiN5piv5Y2V54K55LiK57q/77yM6ICM5piv6K6p5Lia5Yqh5Zui6Zif44CB6LSi5Yqh5Zui6Zif44CB5bel5Y6C5Zui6Zif44CBSVTlm6LpmJ/lkozlrp7mlr3lm6LpmJ/lr7nnm67moIfjgIHmtYHnqIvjgIHmlbDmja7lkozpqozor4HovrnnlYzlvaLmiJDnu5/kuIDnkIbop6PjgII8L3A+CiAgICAgICAgPC9kaXY+CiAgICAgICAgPGRpdiBjbGFzc05hbWU9ImNhc2UtY2FyZC1ncmlkIj4KICAgICAgICAgIDxhcnRpY2xlIGNsYXNzTmFtZT0iY2FzZS1jYXJkIj48aDM+5pys5Zyw5YyW6L+Q6JClPC9oMz48cD7lm7Tnu5XkuK3lm73kuJrliqHnmoTnu4Tnu4fjgIHmtYHnqIvjgIHkuLvmlbDmja7lkozmnYPpmZDov5vooYzmorPnkIbvvIzmlK/mkpHot6jlm6LpmJ/ljY/lkIzlkozmnKzlnLDkuJrliqHnrqHnkIbopoHmsYLjgII8L3A+PC9hcnRpY2xlPgogICAgICAgICAgPGFydGljbGUgY2xhc3NOYW1lPSJjYXNlLWNhcmQiPjxoMz7kuqfkvpvplIDljY/lkIw8L2gzPjxwPuaKiumHh+i0reOAgeW6k+WtmOOAgemUgOWUruOAgeW3peWOguS4juS+m+W6lOmTvuiuoeWIkui/nuaOpei1t+adpe+8jOWHj+WwkeS4muWKoea1gei9rOS4reeahOS6uuW3peWPsOi0puWSjOS/oeaBr+a7nuWQjuOAgjwvcD48L2FydGljbGU+CiAgICAgICAgICA8YXJ0aWNsZSBjbGFzc05hbWU9ImNhc2UtY2FyZCI+PGgzPuS4mui0ouaJk+mAmjwvaDM+PHA+6K6p5Lia5Yqh5Y2V5o2u44CB6aKE566X44CB5oiQ5pys44CB6LWE5Lqn6K6+5aSH5ZKM6LSi5Yqh5qC4566X5Z+65LqO5ZCM5LiA5aWX5pWw5o2u5rWB6L2s77yM5Li657uP6JCl5YiG5p6Q5o+Q5L6b57uf5LiA5Y+j5b6E44CCPC9wPjwvYXJ0aWNsZT4KICAgICAgICA8L2Rpdj4KICAgICAgPC9zZWN0aW9uPgoKICAgICAgey8qIOW7uuiuvui3r+W+hCAqL30KICAgICAgPHNlY3Rpb24gY2xhc3NOYW1lPSJjYXNlLWJhbmQiPgogICAgICAgIDxkaXYgY2xhc3NOYW1lPSJjYXNlLXNlY3Rpb24taGVhZCI+CiAgICAgICAgICA8c3Bhbj7lu7rorr7ot6/lvoQ8L3NwYW4+CiAgICAgICAgICA8aDI+5Yy76I2v6aG555uu5LiN6IO95Y+q55yL5LiK57q/6IqC54K577yM6L+Y6KaB55yL6K+B5o2u6ZO+5piv5ZCm5a6M5pW0PC9oMj4KICAgICAgICA8L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iY2FzZS10aW1lbGluZSI+CiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iY2FzZS1zdGVwIj48Yj4wMTwvYj48ZGl2PjxoMz7morPnkIbkuJrliqHok53lm748L2gzPjxwPuaYjuehruS6p+S+m+mUgOOAgei0ouWKoeOAgemihOeul+OAgeagh+WHhuaIkOacrOOAgei1hOS6p+iuvuWkh+WSjOWkmuerr+aVsOaNrui0r+mAmueahOS4muWKoeiMg+WbtOOAgjwvcD48L2Rpdj48L2Rpdj4KICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJjYXNlLXN0ZXAiPjxiPjAyPC9iPjxkaXY+PGgzPuWQjOatpemqjOivgeimgeaxgjwvaDM+PHA+5oqK6ZyA5rGC44CB6YWN572u44CB5p2D6ZmQ44CB5rWL6K+V44CB5Y+Y5pu05ZKM5LiK57q/56Gu6K6k57qz5YWlQ1NW6aqM6K+B5oCd6Lev77yM5YeP5bCR5ZCO6KGl5p2Q5paZ5Y6L5Yqb44CCPC9wPjwvZGl2PjwvZGl2PgogICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImNhc2Utc3RlcCI+PGI+MDM8L2I+PGRpdj48aDM+5o6o5Yqo5YWz6ZSu55So5oi35Y2P5ZCMPC9oMz48cD7pgJrov4fkuJrliqHjgIHotKLliqHjgIHlt6XljoLjgIFJVOWSjOmhueebruWboumYn+WFseWQjOWPguS4ju+8jOehruS/neezu+e7n+mFjee9ruS4juecn+Wunua1geeoi+S4gOiHtOOAgjwvcD48L2Rpdj48L2Rpdj4KICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJjYXNlLXN0ZXAiPjxiPjA0PC9iPjxkaXY+PGgzPuW9ouaIkOWPr+aJqeWxleW6leW6pzwvaDM+PHA+5LiK57q/5ZCO57un57ut5Zu057uV57uP6JCl5YiG5p6Q44CB5rWB56iL5LyY5YyW5ZKM6LSo6YeP5ZCI6KeE6KaB5rGC6L+t5Luj77yM6YG/5YWN57O757uf5Y+q5YGc55WZ5Zyo5Y2V5qyh5Lqk5LuY44CCPC9wPjwvZGl2PjwvZGl2PgogICAgICAgIDwvZGl2PgogICAgICA8L3NlY3Rpb24+CgogICAgICB7Lyog5Y+v5YCf6Ym05Zy65pmvICovfQogICAgICA8c2VjdGlvbiBjbGFzc05hbWU9ImNhc2Utc2VjdGlvbiI+CiAgICAgICAgPGRpdiBjbGFzc05hbWU9ImNhc2Utc2VjdGlvbi1oZWFkIj4KICAgICAgICAgIDxzcGFuPuWPr+WAn+mJtOWcuuaZrzwvc3Bhbj4KICAgICAgICAgIDxoMj7lr7nliLboja/kvIHkuJrnmoTlkK/lj5E8L2gyPgogICAgICAgIDwvZGl2PgogICAgICAgIDxkaXYgY2xhc3NOYW1lPSJjYXNlLXJlc3VsdC1ncmlkIj4KICAgICAgICAgIDxhcnRpY2xlIGNsYXNzTmFtZT0iY2FzZS1yZXN1bHQiPjxoMz7lhYjlrprlkIjop4TovrnnlYw8L2gzPjxwPua2ieWPikdNUOOAgUNTVuOAgei0qOmHj+aUvuihjOaIluWuoeiuoei/vei4queahOS4muWKoe+8jOW6lOWcqOiTneWbvumYtuauteWQjOatpeinhOWIku+8jOS4jeetieS4iue6v+WQjuihpeivgeaNruOAgjwvcD48L2FydGljbGU+CiAgICAgICAgICA8YXJ0aWNsZSBjbGFzc05hbWU9ImNhc2UtcmVzdWx0Ij48aDM+5YaN5a6a5Lia5Yqh6Zet546vPC9oMz48cD7kuqfkvpvplIDjgIHkuJrotKLjgIHpooTnrpfjgIHmiJDmnKzlkozotYTkuqforr7lpIfkuI3opoHmi4bmiJDlraTnq4vpobnnm67vvIzlupTlm7Tnu5Xnu4/okKXpl63njq/ov5vooYzpm4bmiJDorr7orqHjgII8L3A+PC9hcnRpY2xlPgogICAgICAgICAgPGFydGljbGUgY2xhc3NOYW1lPSJjYXNlLXJlc3VsdCI+PGgzPuacgOWQjuinhOWIkuaJqeWxlTwvaDM+PHA+5Y+v5YWI5LuO5YWz6ZSu5rWB56iL5ZKM5qC45b+D5pWw5o2u5rK755CG5byA5aeL77yM5YaN5omp5bGV5YiwQ2hhdEJJ57uP6JCl6Zeu5pWw44CB6aKE6K2m5ZKMQUnovoXliqnliIbmnpDlnLrmma/jgII8L3A+PC9hcnRpY2xlPgogICAgICAgIDwvZGl2PgogICAgICA8L3NlY3Rpb24+CgogICAgICB7Lyog5bqV6YOoIENUQSAqL30KICAgICAgPHNlY3Rpb24gY2xhc3NOYW1lPSJjYXNlLWJvdHRvbS13cmFwIj4KICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iY2FzZS1ib3R0b20tY3RhIj4KICAgICAgICAgIDxkaXY+CiAgICAgICAgICAgIDxoMj7mg7PlpI3nm5jlkIznsbvljLvoja/pobnnm67ot6/lvoTvvJ88L2gyPgogICAgICAgICAgICA8cD7ms4rlhonpob7pl67lj6/ku6Xnu5PlkIjkvIHkuJrlvZPliY3ns7vnu5/jgIFHTVAvR1NQL0NTVuimgeaxguWSjOS4mui0oumXreeOr+aDheWGte+8jOW4ruWKqeais+eQhuS8mOWFiOivleeCueWcuuaZr+OAgjwvcD4KICAgICAgICAgIDwvZGl2PgogICAgICAgICAgPGEgY2xhc3NOYW1lPSJidG4gcHJpbWFyeSIgaHJlZj0iL3NvbHV0aW9uL2luZHVzdHJ5L21lZGljYWwtcGhhcm1hI2RpYWdub3NpcyIgZGF0YS10cmFjaz0iY2FzZV9kZXRhaWxfY3RhX2NsaWNrIj7pooTnuqbmoYjkvovlpI3nm5jor4rmlq08L2E+CiAgICAgICAgPC9kaXY+CiAgICAgIDwvc2VjdGlvbj4KICAgIDwvZGl2PgogICkKfQo=
+'use client'
+
+import React from 'react'
+import './case-detail.css'
+import '../../solution/industry/medical-pharma/medical-pharma.css'
+
+/* ---------------- 工具函数 ---------------- */
+
+function trackEvent(name: string, payload: Record<string, unknown> = {}) {
+  if (!name) return
+  const w = window as unknown as { dataLayer?: unknown[] }
+  w.dataLayer = w.dataLayer || []
+  w.dataLayer.push({ event: name, ...payload })
+  document.dispatchEvent(new CustomEvent('boran:track', { detail: { name, ...payload } }))
+}
+
+/* ---------------- 主组件 ---------------- */
+
+export const MayolyCaseContent: React.FC = () => {
+  return (
+    <div className="mp-scope mp-case">
+      {/* Case Hero */}
+      <section className="case-hero">
+        <div className="case-hero-inner">
+          <div>
+            <span className="case-label">Pharma Case Study</span>
+            <h1>Mayoly：中国本地化运营与合规验证支撑</h1>
+            <p>外资制药企业在中国推进数智化建设时，重点不只是替换系统，而是把产供销协同、业财打通、预算与成本、资产设备和合规验证纳入同一条运营链路。</p>
+            <div className="case-hero-actions">
+              <a className="btn primary" href="/solution/industry/medical-pharma#diagnosis" data-track="case_detail_cta_click">预约同类案例复盘</a>
+              <a className="btn secondary" href="/solution/industry/medical-pharma" data-track="case_detail_back_click">返回行业方案</a>
+            </div>
+          </div>
+          <aside className="case-snapshot" aria-label="Mayoly案例运营链路概览">
+            <div className="snapshot-top">
+              <div className="case-mini-logo"><strong>Mayoly</strong><span>China Operations</span></div>
+              <span className="snapshot-status">站内案例</span>
+            </div>
+            <div className="snapshot-flow" aria-label="核心链路">
+              <div><b>产供销</b><span>计划/协同</span></div>
+              <i aria-hidden="true" />
+              <div><b>业财</b><span>单据/核算</span></div>
+              <i aria-hidden="true" />
+              <div><b>预算</b><span>成本/资产</span></div>
+              <i aria-hidden="true" />
+              <div><b>验证</b><span>CSV/证据</span></div>
+            </div>
+            <div className="snapshot-metrics">
+              <div><span>主线</span><strong>中国本地化运营与合规验证支撑</strong></div>
+              <div><span>关注</span><strong>产供销、业财、预算、标准成本与资产设备</strong></div>
+              <div><span>适配</span><strong>制药企业多团队协同与验证证据链管理</strong></div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      {/* 项目关注点 */}
+      <section className="case-section">
+        <div className="case-section-head">
+          <span>项目关注点</span>
+          <h2>从项目启动开始，把业务目标和验证要求同步规划</h2>
+          <p>这类项目的关键，不是单点上线，而是让业务团队、财务团队、工厂团队、IT团队和实施团队对目标、流程、数据和验证边界形成统一理解。</p>
+        </div>
+        <div className="case-card-grid">
+          <article className="case-card"><h3>本地化运营</h3><p>围绕中国业务的组织、流程、主数据和权限进行梳理，支撑跨团队协同和本地业务管理要求。</p></article>
+          <article className="case-card"><h3>产供销协同</h3><p>把采购、库存、销售、工厂与供应链计划连接起来，减少业务流转中的人工台账和信息滞后。</p></article>
+          <article className="case-card"><h3>业财打通</h3><p>让业务单据、预算、成本、资产设备和财务核算基于同一套数据流转，为经营分析提供统一口径。</p></article>
+        </div>
+      </section>
+
+      {/* 建设路径 */}
+      <section className="case-band">
+        <div className="case-section-head">
+          <span>建设路径</span>
+          <h2>医药项目不能只看上线节点，还要看证据链是否完整</h2>
+        </div>
+        <div className="case-timeline">
+          <div className="case-step"><b>01</b><div><h3>梳理业务蓝图</h3><p>明确产供销、财务、预算、标准成本、资产设备和多端数据贯通的业务范围。</p></div></div>
+          <div className="case-step"><b>02</b><div><h3>同步验证要求</h3><p>把需求、配置、权限、测试、变更和上线确认纳入CSV验证思路，减少后补材料压力。</p></div></div>
+          <div className="case-step"><b>03</b><div><h3>推动关键用户协同</h3><p>通过业务、财务、工厂、IT和项目团队共同参与，确保系统配置与真实流程一致。</p></div></div>
+          <div className="case-step"><b>04</b><div><h3>形成可扩展底座</h3><p>上线后继续围绕经营分析、流程优化和质量合规要求迭代，避免系统只停留在单次交付。</p></div></div>
+        </div>
+      </section>
+
+      {/* 可借鉴场景 */}
+      <section className="case-section">
+        <div className="case-section-head">
+          <span>可借鉴场景</span>
+          <h2>对制药企业的启发</h2>
+        </div>
+        <div className="case-result-grid">
+          <article className="case-result"><h3>先定合规边界</h3><p>涉及GMP、CSV、质量放行或审计追踪的业务，应在蓝图阶段同步规划，不等上线后补证据。</p></article>
+          <article className="case-result"><h3>再定业务闭环</h3><p>产供销、业财、预算、成本和资产设备不要拆成孤立项目，应围绕经营闭环进行集成设计。</p></article>
+          <article className="case-result"><h3>最后规划扩展</h3><p>可先从关键流程和核心数据治理开始，再扩展到ChatBI经营问数、预警和AI辅助分析场景。</p></article>
+        </div>
+      </section>
+
+      {/* 底部 CTA */}
+      <section className="case-bottom-wrap">
+        <div className="case-bottom-cta">
+          <div>
+            <h2>想复盘同类医药项目路径？</h2>
+            <p>泊冉顾问可以结合企业当前系统、GMP/GSP/CSV要求和业财闭环情况，帮助梳理优先试点场景。</p>
+          </div>
+          <a className="btn primary" href="/solution/industry/medical-pharma#diagnosis" data-track="case_detail_cta_click">预约案例复盘诊断</a>
+        </div>
+      </section>
+    </div>
+  )
+}
