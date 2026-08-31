@@ -134,6 +134,12 @@ export const solutionByBusiness: BusinessCategory[] = [
 // 解决方案分类（按行业） - 链接到 CMS 管理的行业解决方案
 export const solutionByIndustry: IndustryCategory[] = [
   {
+    name: '消费品',
+    icon: Package,
+    href: '/solution/industry/consumer-goods',
+    desc: '全渠道订单 · DMS经销协同 · 渠道价返与库存 · 业财一体',
+  },
+  {
     name: '芯片制造',
     icon: Cpu,
     href: '/solution/industry/high-tech',
@@ -170,12 +176,6 @@ export const solutionByIndustry: IndustryCategory[] = [
     desc: '数智驱动负极材料企业IPO合规与精益制造',
   },
   {
-    name: '能源行业',
-    icon: Zap,
-    href: '/solution/industry/energy',
-    desc: '数智驱动能源企业高质量发展 · 智能生产 · 设备全生命周期',
-  },
-  {
     name: '电气装备',
     icon: Zap,
     href: '/solution/industry/electrical-equipment',
@@ -186,12 +186,6 @@ export const solutionByIndustry: IndustryCategory[] = [
     icon: Globe,
     href: '/solution/business/global-operations',
     desc: 'YonBIP助力全球化经营·多语多币多时区统一管理',
-  },
-  {
-    name: '基础化工',
-    icon: FlaskConical,
-    href: '/solution/industry/basic-chemicals',
-    desc: '绿色·高端·智能 驱动化工行业数智化转型升级',
   },
   {
     name: '商务服务',
@@ -339,11 +333,8 @@ export const solutionByIndustryCategory: IndustryBusinessCategory[] = [
     ]
   },
   {
-    name: '能源化工',
-    items: [
-      { label: '能源行业', href: '/solution/industry/energy', desc: '数智驱动能源企业高质量发展 · 智能生产 · 设备全生命周期', icon: Zap },
-      { label: '基础化工', href: '/solution/industry/basic-chemicals', desc: '绿色·高端·智能 驱动化工行业数智化转型升级', icon: FlaskConical },
-    ]
+    name: '按单生产',
+    items: []
   },
   {
     name: '医药与大健康',
@@ -357,6 +348,7 @@ export const solutionByIndustryCategory: IndustryBusinessCategory[] = [
   {
     name: '消费品与餐饮',
     items: [
+      { label: '消费品', href: '/solution/industry/consumer-goods', desc: '全渠道订单 · DMS经销协同 · 渠道价返与库存 · 业财一体', icon: Package },
       { label: '白酒行业', href: '/solution/industry/baijiu', desc: '数智酿造 · 品质传承 · 产销一体化协同', icon: Wine },
       { label: '乳制品行业', href: '/solution/industry/dairy', desc: '全产业链协同 · 收奶、生产、流通实时感知 · 守护每一滴品质', icon: Milk },
       { label: '餐饮行业', href: '/solution/industry/catering', desc: '业财一体助力餐饮连锁高效经营 · 精细化成本管控 · 全渠道订单闭环', icon: Utensils },
