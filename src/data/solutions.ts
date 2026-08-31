@@ -176,6 +176,12 @@ export const solutionByIndustry: IndustryCategory[] = [
     desc: '数智驱动负极材料企业IPO合规与精益制造',
   },
   {
+    name: '能源行业',
+    icon: Zap,
+    href: '/solution/industry/energy',
+    desc: '数智驱动能源企业高质量发展 · 智能生产 · 设备全生命周期',
+  },
+  {
     name: '电气装备',
     icon: Zap,
     href: '/solution/industry/electrical-equipment',
@@ -186,6 +192,12 @@ export const solutionByIndustry: IndustryCategory[] = [
     icon: Globe,
     href: '/solution/business/global-operations',
     desc: 'YonBIP助力全球化经营·多语多币多时区统一管理',
+  },
+  {
+    name: '基础化工',
+    icon: FlaskConical,
+    href: '/solution/industry/basic-chemicals',
+    desc: '绿色·高端·智能 驱动化工行业数智化转型升级',
   },
   {
     name: '商务服务',
@@ -333,8 +345,11 @@ export const solutionByIndustryCategory: IndustryBusinessCategory[] = [
     ]
   },
   {
-    name: '按单生产',
-    items: []
+    name: '能源化工',
+    items: [
+      { label: '能源行业', href: '/solution/industry/energy', desc: '数智驱动能源企业高质量发展 · 智能生产 · 设备全生命周期', icon: Zap },
+      { label: '基础化工', href: '/solution/industry/basic-chemicals', desc: '绿色·高端·智能 驱动化工行业数智化转型升级', icon: FlaskConical },
+    ]
   },
   {
     name: '医药与大健康',
