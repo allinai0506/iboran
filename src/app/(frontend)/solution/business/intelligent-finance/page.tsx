@@ -1,8 +1,17 @@
 import type { Metadata } from 'next'
 import { IntelligentFinanceContent } from './page.content'
 import { intelligentFinanceJsonLd } from './structured-data'
+import { GeoSection } from '@/components/GeoSection'
+import type { GEOFAQ } from '@/components/GEORenderer'
+import { faqItems } from './data'
 
 const URL = 'https://www.iboran.com/solution/business/intelligent-finance'
+
+// TL;DR（AI 直接答案，LLM 爬虫可见；与内容区 FAQ 口径一致）
+const TLDR =
+  '智能财务解决方案：基于 YonSuite / YonBIP 会计事项中台打通业务与财务，覆盖智能核算、全面预算、合并报表、全球多账簿与 AI 经营分析，帮助企业从事后记账走向实时管控与业财融合。'
+
+const geoFaqs: GEOFAQ[] = faqItems.map((f) => ({ question: f.q, answer: f.a }))
 
 export const metadata: Metadata = {
   title: '智能财务解决方案_业财融合_会计事项中台_预算合并报表_全球多账簿 | 泊冉软件',
@@ -53,6 +62,16 @@ export default function Page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(intelligentFinanceJsonLd) }}
       />
       <IntelligentFinanceContent />
+      <GeoSection
+        title={metadata.title as string}
+        description={metadata.description as string}
+        keywords={metadata.keywords}
+        url={URL}
+        tldr={TLDR}
+        faqs={geoFaqs}
+        variant="solution"
+        visible={false}
+      />
     </>
   )
 }
