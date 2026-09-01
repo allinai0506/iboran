@@ -931,7 +931,12 @@
 }
 
 .faqItem {
+  position: relative;
   padding: 0;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid #dfe6f1;
+  box-shadow: 0 14px 34px rgba(16, 24, 40, 0.05);
   overflow: hidden;
 }
 
