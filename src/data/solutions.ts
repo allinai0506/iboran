@@ -301,6 +301,12 @@ export const solutionByIndustry: IndustryCategory[] = [
     href: '/solution/industry/automotive-parts',
     desc: '端到端实现整车厂协同、精益制造与全周期质量追溯',
   },
+  {
+    name: '研发型定制',
+    icon: Factory,
+    href: '/solution/industry/manufacturing-eto-yonsuite',
+    desc: 'AI项目协同 · LTC线索到回款 · 研发BOM · 外协采购 · 项目毛利',
+  },
 ]
 
 // 解决方案分类（按行业大类） - 二级分类结构
@@ -334,7 +340,9 @@ export const solutionByIndustryCategory: IndustryBusinessCategory[] = [
   },
   {
     name: '按单生产',
-    items: []
+    items: [
+      { label: '研发型定制', href: '/solution/industry/manufacturing-eto-yonsuite', desc: 'AI项目协同 · LTC线索到回款 · 研发BOM · 外协采购 · 项目毛利', icon: Factory },
+    ]
   },
   {
     name: '医药与大健康',
