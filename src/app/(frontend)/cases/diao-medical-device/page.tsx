@@ -3,7 +3,7 @@ import { DiaoCaseContent } from './page.content'
 import { GeoSection } from '@/components/GeoSection'
 
 const PAGE_URL = 'https://www.iboran.com/cases/diao-medical-device'
-const PAGE_TITLE = '迪奥医学医疗器械数智化案例 | 研发生产质量财务一体化运营'
+const PAGE_TITLE = '迪奥医学医疗器械数智化案例 | 研发生产质量财务一体化运营 | 泊冉软件'
 const PAGE_DESCRIPTION =
   '泊冉软件医疗器械行业案例详情：迪奥医学围绕销售、采购、供应、研发、生产、质量、财务全链路数据打通，推进BOM、计划、库存、成本核算和多系统集成。'
 
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     locale: 'zh_CN',
     url: PAGE_URL,
     siteName: '泊冉软件',
-    title: '迪奥医学医疗器械数智化案例 | 研发生产质量财务一体化运营',
+    title: '迪奥医学医疗器械数智化案例 | 研发生产质量财务一体化运营 | 泊冉软件',
     description: '复盘医疗器械企业从销售、采购、供应、研发、生产、质量到财务的全链路数据打通路径。',
   },
 }

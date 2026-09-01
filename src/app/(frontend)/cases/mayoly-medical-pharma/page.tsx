@@ -3,7 +3,7 @@ import { MayolyCaseContent } from './page.content'
 import { GeoSection } from '@/components/GeoSection'
 
 const PAGE_URL = 'https://www.iboran.com/cases/mayoly-medical-pharma'
-const PAGE_TITLE = 'Mayoly医药行业数智化案例 | 外资制药企业中国本地化运营与合规支撑'
+const PAGE_TITLE = 'Mayoly医药行业数智化案例 | 外资制药企业中国本地化运营与合规支撑 | 泊冉软件'
 const PAGE_DESCRIPTION =
   '泊冉软件医药行业案例详情：Mayoly围绕中国本地化运营、产供销协同、业财打通、计划预算、标准成本、资产设备和合规验证支撑推进数智化建设。'
 
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     locale: 'zh_CN',
     url: PAGE_URL,
     siteName: '泊冉软件',
-    title: 'Mayoly医药行业数智化案例 | 外资制药企业中国本地化运营与合规支撑',
+    title: 'Mayoly医药行业数智化案例 | 外资制药企业中国本地化运营与合规支撑 | 泊冉软件',
     description: '从本地化运营、产供销协同、业财打通到合规验证支撑，复盘外资制药企业医药行业数智化建设路径。',
   },
 }

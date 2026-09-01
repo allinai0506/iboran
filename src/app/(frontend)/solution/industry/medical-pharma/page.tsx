@@ -6,7 +6,7 @@ import type { GEOFAQ } from '@/components/GEORenderer'
 import { faqItems } from './data'
 
 const PAGE_URL = 'https://www.iboran.com/solution/industry/medical-pharma'
-const PAGE_TITLE = '医药ERP与医疗器械ERP解决方案 | GMP/GSP/UDI/CSV/批号效期一体化管理'
+const PAGE_TITLE = '医药ERP与医疗器械ERP解决方案 | GMP/GSP/UDI/CSV/批号效期一体化管理 | 泊冉软件'
 const PAGE_DESCRIPTION =
   '泊冉软件提供医药与医疗器械行业数智化解决方案，覆盖医药ERP、医疗器械ERP、GMP/GSP管理、UDI管理、CSV验证、批号效期、证照预警、库存追溯、财务库存一体化、ChatBI与AI数字员工。'
 
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     locale: 'zh_CN',
     url: PAGE_URL,
     siteName: '泊冉软件',
-    title: '医药ERP与医疗器械ERP解决方案｜GMP/GSP/UDI/CSV一体化管理',
+    title: '医药ERP与医疗器械ERP解决方案｜GMP/GSP/UDI/CSV一体化管理｜泊冉软件',
     description: '把GMP、GSP、UDI、CSV、批号效期和业财一体化放进同一套合规运营闭环。',
     images: [
       {
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '医药ERP与医疗器械ERP解决方案｜GMP/GSP/UDI/CSV一体化管理',
+    title: '医药ERP与医疗器械ERP解决方案｜GMP/GSP/UDI/CSV一体化管理｜泊冉软件',
     description: '覆盖GMP/GSP、UDI、CSV验证、批号效期、证照预警、库存追溯、财务库存一体化、ChatBI与AI数字员工。',
     images: ['/solution/industry/medical-pharma/medical-pharma-og.webp'],
   },
