@@ -60,13 +60,11 @@ export default function FAQ() {
                   <Plus size={20} className="text-slate-400" />
                 )}
               </button>
-              {openIdx === idx && (
-                <div className="px-20 pb-8 pr-10">
-                  <p className="text-slate-600 leading-relaxed border-l-2 border-blue-100 pl-6">
-                    {faq.answer}
-                  </p>
-                </div>
-              )}
+              <div className={`px-20 pb-8 pr-10 ${openIdx === idx ? 'block' : 'hidden'}`}>
+                <p className="text-slate-600 leading-relaxed border-l-2 border-blue-100 pl-6">
+                  {faq.answer}
+                </p>
+              </div>
             </div>
           ))}
         </div>

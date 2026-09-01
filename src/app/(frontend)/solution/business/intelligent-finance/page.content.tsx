@@ -398,7 +398,7 @@ export const IntelligentFinanceContent: React.FC = () => {
               <button type="button" aria-expanded={activeFaq === i} onClick={() => setActiveFaq(activeFaq === i ? null : i)}>
                 <span>{f.q}</span><b />
               </button>
-              {activeFaq === i && <p>{f.a}</p>}
+              <p>{f.a}</p>
             </article>
           ))}
         </div>

@@ -456,7 +456,7 @@ function FAQSection() {
               <span>{item.q}</span>
               <b />
             </button>
-            {openIdx === i && <p>{item.a}</p>}
+            <p>{item.a}</p>
           </article>
         ))}
       </div>

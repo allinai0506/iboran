@@ -171,78 +171,73 @@ export const ImplementationContent: React.FC = () => {
                 大中型 / 集团型客户
               </button>
             </div>
-            <div className={styles.segmentPanel}>
-              {activeTab === 'growth' ? (
-                <>
-                  <h3>SaaS 快速实施路径</h3>
-                  <p>面向 YonSuite SaaS 和标准产品场景，以快速上线和持续运营为目标，优先采用标准产品能力、远程交付、客户培训、智能交付工具和 CSM 持续运营。</p>
-                  <ul className={styles.chipList}>
-                    <li>快速</li><li>标准优先</li><li>远程交付</li><li>客户培训</li><li>CSM运营</li><li>持续迭代</li>
-                  </ul>
-                  <div className={styles.timeline}>
-                    <article className={styles.timelineCard} data-step="01">
-                      <strong>成功规划</strong>
-                      <p>内部交接、双方团队组建、实施主计划确认、项目启动</p>
-                      <span>客户成功规划表、实施工作任务书、项目团队通讯录、实施主计划</span>
-                    </article>
-                    <article className={styles.timelineCard} data-step="02">
-                      <strong>构建上线</strong>
-                      <p>价值引领培训、需求匹配、共建场景解决方案、系统配置、业务验证</p>
-                      <span>需求匹配清单、配置清单、项目解决方案、用户测试报告</span>
-                    </article>
-                    <article className={styles.timelineCard} data-step="03">
-                      <strong>培训上线</strong>
-                      <p>管理员培训、关键用户培训、最终用户培训、上线确认</p>
-                      <span>产品手册、操作视频、系统激活确认书、上线报告</span>
-                    </article>
-                    <article className={styles.timelineCard} data-step="04">
-                      <strong>持续运营</strong>
-                      <p>线上移交 CSM、满意度调查、应用深化、持续价值提升</p>
-                      <span>项目总结、满意度调查、CSM 交接记录</span>
-                    </article>
-                  </div>
-                </>
-              ) : (
-                <>
-                  <h3>BIP 敏捷交付路径</h3>
-                  <p>面向 YonBIP、NC、NCC、私有云、专属云、混合云等复杂项目，以可控交付、质量保障和客户价值落地为目标。</p>
-                  <ul className={styles.chipList}>
-                    <li>稳定</li><li>可控</li><li>治理</li><li>合规</li><li>可追溯</li><li>可运维</li>
-                  </ul>
-                  <div className={styles.timeline}>
-                    <article className={styles.timelineCard} data-step="01">
-                      <strong>售前评估</strong>
-                      <p>工作量评估、产品匹配评估、风险评估</p>
-                      <span>售前风险评估、工作量评估、实施工作任务书</span>
-                    </article>
-                    <article className={styles.timelineCard} data-step="02">
-                      <strong>筹建准备</strong>
-                      <p>项目经理任命、售前交接、团队组建、项目管理机制、项目计划、启动会</p>
-                      <span>售前交接单、项目章程、项目主计划、项目启动会材料</span>
-                    </article>
-                    <article className={styles.timelineCard} data-step="03">
-                      <strong>蓝图设计</strong>
-                      <p>高层访谈、标准产品培训、业务调研、流程梳理、差异分析、解决方案设计、数据迁移方案</p>
-                      <span>高层访谈纪要、业务调研报告、需求分析报告、业务解决方案、数据迁移方案</span>
-                    </article>
-                    <article className={styles.timelineCard} data-step="04">
-                      <strong>系统建设</strong>
-                      <p>PRD 环境部署、客户化开发、补丁管理、基础档案配置、业务配置、集成测试、方案验证</p>
-                      <span>配置清单、开发方案、补丁清单、集成测试报告、系统测试报告</span>
-                    </article>
-                    <article className={styles.timelineCard} data-step="05">
-                      <strong>上线切换</strong>
-                      <p>内部支持体系、应急方案、安全扫描、压测、最终用户培训、模拟演练、上线检查、系统切换</p>
-                      <span>上线切换方案、应急预案、安全扫描报告、压测报告、上线报告</span>
-                    </article>
-                    <article className={styles.timelineCard} data-step="06">
-                      <strong>持续运营</strong>
-                      <p>项目总结、客成交接、运行支持、产品升级</p>
-                      <span>项目总结报告、转客成交接单、客成运维方案、升级计划</span>
-                    </article>
-                  </div>
-                </>
-              )}
+            <div className={`${styles.segmentPanel} ${activeTab === 'growth' ? styles.segmentPanelActive : ''}`}>
+              <h3>SaaS 快速实施路径</h3>
+              <p>面向 YonSuite SaaS 和标准产品场景，以快速上线和持续运营为目标，优先采用标准产品能力、远程交付、客户培训、智能交付工具和 CSM 持续运营。</p>
+              <ul className={styles.chipList}>
+                <li>快速</li><li>标准优先</li><li>远程交付</li><li>客户培训</li><li>CSM运营</li><li>持续迭代</li>
+              </ul>
+              <div className={styles.timeline}>
+                <article className={styles.timelineCard} data-step="01">
+                  <strong>成功规划</strong>
+                  <p>内部交接、双方团队组建、实施主计划确认、项目启动</p>
+                  <span>客户成功规划表、实施工作任务书、项目团队通讯录、实施主计划</span>
+                </article>
+                <article className={styles.timelineCard} data-step="02">
+                  <strong>构建上线</strong>
+                  <p>价值引领培训、需求匹配、共建场景解决方案、系统配置、业务验证</p>
+                  <span>需求匹配清单、配置清单、项目解决方案、用户测试报告</span>
+                </article>
+                <article className={styles.timelineCard} data-step="03">
+                  <strong>培训上线</strong>
+                  <p>管理员培训、关键用户培训、最终用户培训、上线确认</p>
+                  <span>产品手册、操作视频、系统激活确认书、上线报告</span>
+                </article>
+                <article className={styles.timelineCard} data-step="04">
+                  <strong>持续运营</strong>
+                  <p>线上移交 CSM、满意度调查、应用深化、持续价值提升</p>
+                  <span>项目总结、满意度调查、CSM 交接记录</span>
+                </article>
+              </div>
+            </div>
+            <div className={`${styles.segmentPanel} ${activeTab === 'enterprise' ? styles.segmentPanelActive : ''}`}>
+              <h3>BIP 敏捷交付路径</h3>
+              <p>面向 YonBIP、NC、NCC、私有云、专属云、混合云等复杂项目，以可控交付、质量保障和客户价值落地为目标。</p>
+              <ul className={styles.chipList}>
+                <li>稳定</li><li>可控</li><li>治理</li><li>合规</li><li>可追溯</li><li>可运维</li>
+              </ul>
+              <div className={styles.timeline}>
+                <article className={styles.timelineCard} data-step="01">
+                  <strong>售前评估</strong>
+                  <p>工作量评估、产品匹配评估、风险评估</p>
+                  <span>售前风险评估、工作量评估、实施工作任务书</span>
+                </article>
+                <article className={styles.timelineCard} data-step="02">
+                  <strong>筹建准备</strong>
+                  <p>项目经理任命、售前交接、团队组建、项目管理机制、项目计划、启动会</p>
+                  <span>售前交接单、项目章程、项目主计划、项目启动会材料</span>
+                </article>
+                <article className={styles.timelineCard} data-step="03">
+                  <strong>蓝图设计</strong>
+                  <p>高层访谈、标准产品培训、业务调研、流程梳理、差异分析、解决方案设计、数据迁移方案</p>
+                  <span>高层访谈纪要、业务调研报告、需求分析报告、业务解决方案、数据迁移方案</span>
+                </article>
+                <article className={styles.timelineCard} data-step="04">
+                  <strong>系统建设</strong>
+                  <p>PRD 环境部署、客户化开发、补丁管理、基础档案配置、业务配置、集成测试、方案验证</p>
+                  <span>配置清单、开发方案、补丁清单、集成测试报告、系统测试报告</span>
+                </article>
+                <article className={styles.timelineCard} data-step="05">
+                  <strong>上线切换</strong>
+                  <p>内部支持体系、应急方案、安全扫描、压测、最终用户培训、模拟演练、上线检查、系统切换</p>
+                  <span>上线切换方案、应急预案、安全扫描报告、压测报告、上线报告</span>
+                </article>
+                <article className={styles.timelineCard} data-step="06">
+                  <strong>持续运营</strong>
+                  <p>项目总结、客成交接、运行支持、产品升级</p>
+                  <span>项目总结报告、转客成交接单、客成运维方案、升级计划</span>
+                </article>
+              </div>
             </div>
           </div>
         </div>

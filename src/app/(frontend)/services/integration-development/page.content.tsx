@@ -192,39 +192,34 @@ export const IntegrationContent: React.FC = () => {
                 大中型 / 集团型客户
               </button>
             </div>
-            <div className={`${styles.segmentPanel} ${styles.segmentPanelActive}`}>
-              {activeTab === 'growth' ? (
-                <>
-                  <h3>标准连接 + 轻量扩展</h3>
-                  <p>优先采用标准连接、OpenAPI、轻量集成和低代码扩展，满足常见业务协同需求，避免因个性化开发拖慢主系统上线。</p>
-                  <ul className={styles.chipList}>
-                    <li>快速</li><li>标准</li><li>轻量</li><li>低成本</li><li>在线化</li><li>持续迭代</li>
-                  </ul>
-                  <ul className={styles.checkList}>
-                    <li>钉钉、企业微信、OA 审批集成</li>
-                    <li>银企、商旅、电商、WMS、税务、发票等常见系统对接</li>
-                    <li>表单、流程、报表、小应用、移动端低代码扩展</li>
-                    <li>基础资料、业务单据、审批状态、凭证结果轻量同步</li>
-                    <li>ISV 应用、生态应用、轻量定制服务</li>
-                  </ul>
-                </>
-              ) : (
-                <>
-                  <h3>企业级集成治理 + 客开治理</h3>
-                  <p>强调企业级集成治理、API 生命周期管理、主数据同步、复杂接口联调、客户化开发治理、补丁管理和版本升级适配。</p>
-                  <ul className={styles.chipList}>
-                    <li>稳定</li><li>可控</li><li>治理</li><li>合规</li><li>可追溯</li><li>可运维</li>
-                  </ul>
-                  <ul className={styles.checkList}>
-                    <li>集成架构设计</li>
-                    <li>API 治理</li>
-                    <li>数据集成</li>
-                    <li>集成总线</li>
-                    <li>客户化开发</li>
-                    <li>升级适配</li>
-                  </ul>
-                </>
-              )}
+            <div className={`${styles.segmentPanel} ${activeTab === 'growth' ? styles.segmentPanelActive : ''}`}>
+              <h3>标准连接 + 轻量扩展</h3>
+              <p>优先采用标准连接、OpenAPI、轻量集成和低代码扩展，满足常见业务协同需求，避免因个性化开发拖慢主系统上线。</p>
+              <ul className={styles.chipList}>
+                <li>快速</li><li>标准</li><li>轻量</li><li>低成本</li><li>在线化</li><li>持续迭代</li>
+              </ul>
+              <ul className={styles.checkList}>
+                <li>钉钉、企业微信、OA 审批集成</li>
+                <li>银企、商旅、电商、WMS、税务、发票等常见系统对接</li>
+                <li>表单、流程、报表、小应用、移动端低代码扩展</li>
+                <li>基础资料、业务单据、审批状态、凭证结果轻量同步</li>
+                <li>ISV 应用、生态应用、轻量定制服务</li>
+              </ul>
+            </div>
+            <div className={`${styles.segmentPanel} ${activeTab === 'enterprise' ? styles.segmentPanelActive : ''}`}>
+              <h3>企业级集成治理 + 客开治理</h3>
+              <p>强调企业级集成治理、API 生命周期管理、主数据同步、复杂接口联调、客户化开发治理、补丁管理和版本升级适配。</p>
+              <ul className={styles.chipList}>
+                <li>稳定</li><li>可控</li><li>治理</li><li>合规</li><li>可追溯</li><li>可运维</li>
+              </ul>
+              <ul className={styles.checkList}>
+                <li>集成架构设计</li>
+                <li>API 治理</li>
+                <li>数据集成</li>
+                <li>集成总线</li>
+                <li>客户化开发</li>
+                <li>升级适配</li>
+              </ul>
             </div>
           </div>
         </div>

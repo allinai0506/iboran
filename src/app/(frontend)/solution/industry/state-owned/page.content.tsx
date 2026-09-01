@@ -397,18 +397,9 @@ export const StateOwnedContent: React.FC = () => {
                 {f.q}
                 <span>{activeFaq === i ? '−' : '+'}</span>
               </button>
-              <AnimatePresence>
-                {activeFaq === i && (
-                  <motion.div 
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    className={styles.faqAnswer}
-                  >
-                    {f.a}
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              <div className={styles.faqAnswer} hidden={activeFaq !== i}>
+                {f.a}
+              </div>
             </div>
           ))}
         </div>

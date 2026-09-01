@@ -263,88 +263,83 @@ export const OperationsContent: React.FC = () => {
                 大中型 / 集团型客户
               </button>
             </div>
-            <div className={`${styles.segmentPanel} ${styles.segmentPanelActive}`}>
-              {activeTab === 'growth' ? (
-                <>
-                  <h3>在线化、轻量化、持续化运维</h3>
-                  <p>帮助客户降低使用门槛、提升管理员能力、持续应用标准产品能力。</p>
-                  <ul className={styles.chipList}>
-                    <li>快速</li><li>标准</li><li>轻量</li><li>低成本</li><li>在线化</li><li>持续迭代</li>
+            <div className={`${styles.segmentPanel} ${activeTab === 'growth' ? styles.segmentPanelActive : ''}`}>
+              <h3>在线化、轻量化、持续化运维</h3>
+              <p>帮助客户降低使用门槛、提升管理员能力、持续应用标准产品能力。</p>
+              <ul className={styles.chipList}>
+                <li>快速</li><li>标准</li><li>轻量</li><li>低成本</li><li>在线化</li><li>持续迭代</li>
+              </ul>
+              <ul className={styles.checkList}>
+                <li>问题接入、工单记录、配置答疑和进度跟踪</li>
+                <li>租户管理员培训、权限配置指导、组织配置指导</li>
+                <li>审批流、权限、组织、科目表、业务流、打印模板、公式等配置调整</li>
+                <li>新版本功能说明、影响说明、操作指引</li>
+                <li>模块启用、用户活跃、流程使用情况、低活跃风险分析</li>
+                <li>操作手册、培训视频、FAQ、角色化培训</li>
+              </ul>
+            </div>
+            <div className={`${styles.segmentPanel} ${activeTab === 'enterprise' ? styles.segmentPanelActive : ''}`}>
+              <h3>集团型客户核心系统保障</h3>
+              <p>面向多组织、多账套、多系统集成和关键业务连续性要求高的客户，提供专属服务团队、阶段性驻场、关键窗口值守、重大问题升级、巡检整改、月结 / 年结 / 升级护航和客户成功运营复盘。</p>
+              <ul className={styles.chipList}>
+                <li>专属团队</li><li>驻场支持</li><li>实时响应</li><li>月结值守</li><li>升级护航</li><li>运营复盘</li>
+              </ul>
+              <div className={styles.enterpriseServiceGrid}>
+                <article className={styles.enterpriseServiceCard}>
+                  <span>01</span>
+                  <h4>专属服务小组</h4>
+                  <p>建立客户成功经理，应用顾问、技术顾问，开发 / 集成支持和本地顾问的固定服务接口。</p>
+                  <ul className={styles.miniList}>
+                    <li>明确业务，IT、财务和关键用户对接人</li>
+                    <li>按周 / 月跟踪工单、风险和优化事项</li>
                   </ul>
-                  <ul className={styles.checkList}>
-                    <li>问题接入、工单记录、配置答疑和进度跟踪</li>
-                    <li>租户管理员培训、权限配置指导、组织配置指导</li>
-                    <li>审批流、权限、组织、科目表、业务流、打印模板、公式等配置调整</li>
-                    <li>新版本功能说明、影响说明、操作指引</li>
-                    <li>模块启用、用户活跃、流程使用情况、低活跃风险分析</li>
-                    <li>操作手册、培训视频、FAQ、角色化培训</li>
+                </article>
+                <article className={styles.enterpriseServiceCard}>
+                  <span>02</span>
+                  <h4>驻场与现场保障</h4>
+                  <p>在上线后稳定期、月结窗口、升级窗口和重大问题处理阶段安排现场或驻场顾问。</p>
+                  <ul className={styles.miniList}>
+                    <li>现场梳理问题，陪同关键用户操作验证</li>
+                    <li>形成问题清单、处理计划和确认记录</li>
                   </ul>
-                </>
-              ) : (
-                <>
-                  <h3>集团型客户核心系统保障</h3>
-                  <p>面向多组织、多账套、多系统集成和关键业务连续性要求高的客户，提供专属服务团队、阶段性驻场、关键窗口值守、重大问题升级、巡检整改、月结 / 年结 / 升级护航和客户成功运营复盘。</p>
-                  <ul className={styles.chipList}>
-                    <li>专属团队</li><li>驻场支持</li><li>实时响应</li><li>月结值守</li><li>升级护航</li><li>运营复盘</li>
+                </article>
+                <article className={styles.enterpriseServiceCard}>
+                  <span>03</span>
+                  <h4>关键时段实时响应</h4>
+                  <p>对影响生产、发货、开票、结账和管理报表的事项，建立分级响应和升级通道。</p>
+                  <ul className={styles.miniList}>
+                    <li>关键窗口保障群、日会或专项协调会</li>
+                    <li>重大问题优先分诊，跨团队协同定位</li>
                   </ul>
-                  <div className={styles.enterpriseServiceGrid}>
-                    <article className={styles.enterpriseServiceCard}>
-                      <span>01</span>
-                      <h4>专属服务小组</h4>
-                      <p>建立客户成功经理，应用顾问、技术顾问，开发 / 集成支持和本地顾问的固定服务接口。</p>
-                      <ul className={styles.miniList}>
-                        <li>明确业务，IT、财务和关键用户对接人</li>
-                        <li>按周 / 月跟踪工单、风险和优化事项</li>
-                      </ul>
-                    </article>
-                    <article className={styles.enterpriseServiceCard}>
-                      <span>02</span>
-                      <h4>驻场与现场保障</h4>
-                      <p>在上线后稳定期、月结窗口、升级窗口和重大问题处理阶段安排现场或驻场顾问。</p>
-                      <ul className={styles.miniList}>
-                        <li>现场梳理问题，陪同关键用户操作验证</li>
-                        <li>形成问题清单、处理计划和确认记录</li>
-                      </ul>
-                    </article>
-                    <article className={styles.enterpriseServiceCard}>
-                      <span>03</span>
-                      <h4>关键时段实时响应</h4>
-                      <p>对影响生产、发货、开票、结账和管理报表的事项，建立分级响应和升级通道。</p>
-                      <ul className={styles.miniList}>
-                        <li>关键窗口保障群、日会或专项协调会</li>
-                        <li>重大问题优先分诊，跨团队协同定位</li>
-                      </ul>
-                    </article>
-                    <article className={styles.enterpriseServiceCard}>
-                      <span>04</span>
-                      <h4>月结 / 年结保障</h4>
-                      <p>围绕总账、应收应付、存货核算，成本、合并报表等结账链路提前检查和现场值守。</p>
-                      <ul className={styles.miniList}>
-                        <li>结账前检查、跑批监控、异常单据处理</li>
-                        <li>对账差异跟踪、结账复盘和下月优化清单</li>
-                      </ul>
-                    </article>
-                    <article className={styles.enterpriseServiceCard}>
-                      <span>05</span>
-                      <h4>升级与补丁护航</h4>
-                      <p>针对版本升级、补丁发布、客开适配和接口变更，提前做影响分析、测试验证和回退预案。</p>
-                      <ul className={styles.miniList}>
-                        <li>升级影响清单、回归测试用例、上线窗口值守</li>
-                        <li>客开、接口、报表和权限适配结果确认</li>
-                      </ul>
-                    </article>
-                    <article className={styles.enterpriseServiceCard}>
-                      <span>06</span>
-                      <h4>巡检与运营复盘</h4>
-                      <p>定期检查运行健康、权限安全、备份恢复、接口稳定性和用户使用情况，推动问题闭环。</p>
-                      <ul className={styles.miniList}>
-                        <li>巡检报告、整改建议，责任人和完成时间</li>
-                        <li>工单趋势、培训计划、流程优化和价值复盘</li>
-                      </ul>
-                    </article>
-                  </div>
-                </>
-              )}
+                </article>
+                <article className={styles.enterpriseServiceCard}>
+                  <span>04</span>
+                  <h4>月结 / 年结保障</h4>
+                  <p>围绕总账、应收应付、存货核算，成本、合并报表等结账链路提前检查和现场值守。</p>
+                  <ul className={styles.miniList}>
+                    <li>结账前检查、跑批监控、异常单据处理</li>
+                    <li>对账差异跟踪、结账复盘和下月优化清单</li>
+                  </ul>
+                </article>
+                <article className={styles.enterpriseServiceCard}>
+                  <span>05</span>
+                  <h4>升级与补丁护航</h4>
+                  <p>针对版本升级、补丁发布、客开适配和接口变更，提前做影响分析、测试验证和回退预案。</p>
+                  <ul className={styles.miniList}>
+                    <li>升级影响清单、回归测试用例、上线窗口值守</li>
+                    <li>客开、接口、报表和权限适配结果确认</li>
+                  </ul>
+                </article>
+                <article className={styles.enterpriseServiceCard}>
+                  <span>06</span>
+                  <h4>巡检与运营复盘</h4>
+                  <p>定期检查运行健康、权限安全、备份恢复、接口稳定性和用户使用情况，推动问题闭环。</p>
+                  <ul className={styles.miniList}>
+                    <li>巡检报告、整改建议，责任人和完成时间</li>
+                    <li>工单趋势、培训计划、流程优化和价值复盘</li>
+                  </ul>
+                </article>
+              </div>
             </div>
           </div>
         </div>
