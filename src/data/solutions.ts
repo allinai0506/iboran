@@ -30,7 +30,6 @@ import {
   Milk,
   Sparkles,
   Beer,
-  Microscope,
   Crown,
   Tv,
   Settings2,
@@ -159,12 +158,6 @@ export const solutionByIndustry: IndustryCategory[] = [
     icon: Pill,
     href: '/solution/industry/medical-pharma',
     desc: '赋能药企全产业链数智化 · 营销合规 · 事项会计 · AI 智能体',
-  },
-  {
-    name: '研产一体化',
-    icon: Microscope,
-    href: '/solution/industry/medical-pharma',
-    desc: '研产一体化 · GMP/CSV 合规 · 多组织协同 · 精细成本',
   },
   {
     name: '新材料',
@@ -327,7 +320,6 @@ export const solutionByIndustryCategory: IndustryBusinessCategory[] = [
     name: '医药与大健康',
     items: [
       { label: '医药健康', href: '/solution/industry/medical-pharma', desc: '赋能药企全产业链数智化 · 营销合规 · 事项会计 · AI 智能体', icon: Pill },
-      { label: '研产一体化', href: '/solution/industry/medical-pharma', desc: '研产一体化 · GMP/CSV 合规 · 多组织协同', icon: Microscope },
       { label: '医疗器械', href: '/solution/industry/medical-device', desc: '覆盖研发、制造、GSP、UDI 追溯全链路，助力医疗器械企业合规稳健增长', icon: Activity },
       { label: '中药企业', href: '/solution/industry/traditional-chinese-medicine', desc: '传承精华·守正创新 质量全追溯与成本精细化管控', icon: Pill },
     ]
