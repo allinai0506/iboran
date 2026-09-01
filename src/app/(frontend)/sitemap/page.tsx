@@ -74,7 +74,6 @@ export default function SitemapPage() {
                 <li><Link href="/solution/industry/retail" className="text-gray-600 hover:text-blue-600 transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-gray-400 rounded-full"></span>零售与消费品</Link></li>
                 <li><Link href="/solution/industry/services" className="text-gray-600 hover:text-blue-600 transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-gray-400 rounded-full"></span>专业服务</Link></li>
                 <li><Link href="/solution/industry/biopharmaceutical" className="text-gray-600 hover:text-blue-600 transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-gray-400 rounded-full"></span>生物医药</Link></li>
-                <li><Link href="/solution/industry/food" className="text-gray-600 hover:text-blue-600 transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-gray-400 rounded-full"></span>食品饮料</Link></li>
               </ul>
             </section>
 
