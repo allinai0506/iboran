@@ -307,6 +307,12 @@ export const solutionByIndustry: IndustryCategory[] = [
     href: '/solution/industry/manufacturing-eto-yonsuite',
     desc: 'AI项目协同 · LTC线索到回款 · 研发BOM · 外协采购 · 项目毛利',
   },
+  {
+    name: '制造业数智化',
+    icon: Layers,
+    href: '/solution/industry/manufacturing',
+    desc: '研产供销财一体化 · 10 类制造子行业 · MPS/MRP/LRP 计划 · AI 经营分析',
+  },
 ]
 
 // 解决方案分类（按行业大类） - 二级分类结构
@@ -336,6 +342,7 @@ export const solutionByIndustryCategory: IndustryBusinessCategory[] = [
       { label: '家用电器', href: '/solution/industry/home-appliances', desc: '全渠道订单聚合 · 多仓一盘货协作 · SN 码全程追溯', icon: Tv },
       { label: '电子组装', href: '/solution/industry/electronic-assembly', desc: '数字化车间 · 精细化委外协同 · 批次全追溯', icon: CircuitBoard },
       { label: '汽配行业', href: '/solution/industry/automotive-parts', desc: '端到端实现整车厂协同、精益制造与全周期质量追溯', icon: Settings2 },
+      { label: '制造业数智化', href: '/solution/industry/manufacturing', desc: '研产供销财一体化 · 10 类制造子行业 · MPS/MRP/LRP 计划 · AI 经营分析', icon: Layers },
     ]
   },
   {

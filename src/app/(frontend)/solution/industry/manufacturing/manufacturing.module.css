@@ -1,4 +1,5 @@
-/* Manufacturing Solution Styles */
+/* Manufacturing Solution Styles (generated from source) */
+
 .manufacturingPage {
   --boran-blue: #0052d9;
   --boran-sky: #1b80c1;
@@ -14,875 +15,1059 @@
   --amber: #d98612;
 }
 
-.hero {
-  position: relative;
-  overflow: hidden;
-  color: #fff;
-  background: linear-gradient(110deg, rgba(8, 15, 31, 0.98) 0%, rgba(14, 25, 49, 0.98) 58%, rgba(18, 45, 70, 0.98) 100%), #0f172a;
-  padding-top: 64px;
+.manufacturingPage {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family:
+    Inter, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", Arial,
+    sans-serif;
+  letter-spacing: 0;
+  overflow-x: hidden;
 }
 
-.gridBg {
-  position: absolute;
-  inset: 0;
-  opacity: 0.2;
-  background-image: linear-gradient(rgba(34, 211, 238, 0.24) 1px, transparent 1px), linear-gradient(90deg, rgba(34, 211, 238, 0.24) 1px, transparent 1px);
-  background-size: 42px 42px;
-  mask-image: linear-gradient(90deg, #000 0%, #000 74%, transparent 100%);
-}
+.manufacturingPage * { box-sizing: border-box }
 
-.heroInner {
-  position: relative;
-  z-index: 1;
-  width: min(1180px, calc(100% - 40px));
-  margin: 0 auto;
-  padding: 46px 0 58px;
-  display: grid;
-  grid-template-columns: minmax(0, 0.98fr) minmax(430px, 1.02fr);
-  gap: 42px;
-  align-items: start;
-}
+.manufacturingPage a { color: inherit; text-decoration: none }
 
-@media (max-width: 1024px) {
-  .heroInner {
-    grid-template-columns: 1fr;
-    padding: 32px 0 48px;
+.manufacturingPage img, .manufacturingPage svg { display: block }
+
+.manufacturingPage main { overflow-x: hidden }
+
+.manufacturingPage button, .manufacturingPage input, .manufacturingPage select, .manufacturingPage textarea { font: inherit }
+
+.manufacturingPage button { cursor: pointer }
+
+.manufacturingPage .siteHeader { position: fixed; inset: 0 0 auto; z-index: 50; height: 64px; background: #fff; border-bottom: 1px solid #eef2f7; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06) }
+
+.manufacturingPage .headerInner { width: 100%; max-width: 1376px; height: 100%; margin: 0 auto; padding: 0 16px; display: flex; align-items: center; justify-content: space-between; gap: 24px }
+
+.manufacturingPage .brand { display: flex; align-items: center; gap: 8px; min-width: 0; height: 44px; flex-shrink: 0 }
+
+.manufacturingPage .brand img:first-child { width: 32px; height: 32px; object-fit: contain }
+
+.manufacturingPage .brandText { display: flex; flex-direction: column; gap: 1px }
+
+.manufacturingPage .brandText strong { color: var(--boran-sky); font-size: 22px; line-height: 1; font-weight: 950; white-space: nowrap }
+
+.manufacturingPage .brandText small { color: #94a3b8; font-size: 10px; line-height: 1; font-weight: 900 }
+
+.manufacturingPage .brandDivider { width: 1px; height: 26px; margin: 0 4px; background: #e2e8f0 }
+
+.manufacturingPage .brand .yonyou { width: 48px; height: auto; opacity: 0.82 }
+
+.manufacturingPage .siteNav { display: none; align-items: center; gap: 32px; color: #1f2329; font-size: 14px; font-weight: 900 }
+
+.manufacturingPage .navLink { position: relative; display: flex; align-items: center; padding: 16px 4px; transition: color 0.2s ease }
+
+.manufacturingPage .navLink.hasChevron::before { content: ""; width: 14px; height: 14px; order: 2; margin-left: 4px; background: currentColor; mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m6 9 6 6 6-6' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+    center / contain no-repeat }
+
+.manufacturingPage .navLink::after { content: ""; position: absolute; right: 4px; bottom: 0; left: 4px; height: 2px; background: var(--boran-blue); transform: scaleX(0); transition: transform 0.2s ease }
+
+.manufacturingPage .navLink:hover { color: var(--boran-blue) }
+
+.manufacturingPage .navLink:hover::after { transform: scaleX(1) }
+
+.manufacturingPage .headerActions { display: flex; align-items: center; justify-content: flex-end; gap: 16px; margin-left: auto; flex-shrink: 0 }
+
+.manufacturingPage .headerPhone { display: none; align-items: center; gap: 12px; color: #1f2329; font-size: 20px; font-weight: 900; transition: color 0.2s ease }
+
+.manufacturingPage .headerPhone span { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 999px; color: var(--boran-blue); background: #eff6ff }
+
+.manufacturingPage .headerPhone svg, .manufacturingPage .footerIcon svg, .manufacturingPage .mobileCta svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round }
+
+.manufacturingPage .headerPhone:hover { color: var(--boran-blue) }
+
+.manufacturingPage .headerCta { position: relative; overflow: hidden; display: none; align-items: center; justify-content: center; min-height: 44px; padding: 0 24px; border-radius: 6px; color: #fff; background: var(--cta-red); font-size: 16px; font-weight: 900; box-shadow: 0 10px 24px rgba(215, 51, 36, 0.18); transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease }
+
+.manufacturingPage .headerCta:hover { background: #c92c1e; box-shadow: 0 14px 30px rgba(215, 51, 36, 0.26); transform: translateY(-1px) }
+
+.manufacturingPage .mobileMenu { position: relative; z-index: 2; width: 40px; height: 40px; border: 0; border-radius: 6px; color: #1f2329; background: transparent }
+
+.manufacturingPage .mobileMenu::before { content: ""; display: block; width: 22px; height: 2px; margin: 0 auto; border-radius: 999px; background: currentColor; box-shadow:
+    0 -6px 0 currentColor,
+    0 6px 0 currentColor }
+
+.manufacturingPage .siteHeader.isMenuOpen .siteNav { position: fixed; top: 64px; right: 0; left: 0; display: grid; gap: 0; padding: 8px 20px 16px; background: #fff; border-bottom: 1px solid #edf2f7; box-shadow: 0 20px 44px rgba(15, 23, 42, 0.12) }
+
+.manufacturingPage .siteHeader.isMenuOpen .navLink { min-height: 48px; border-bottom: 1px solid #f1f5f9 }
+
+.manufacturingPage .hero { position: relative; overflow: hidden; color: #fff; background:
+    linear-gradient(110deg, rgba(8, 15, 31, 0.98) 0%, rgba(14, 25, 49, 0.98) 58%, rgba(18, 45, 70, 0.98) 100%),
+    #0f172a }
+
+.manufacturingPage .gridBg { position: absolute; inset: 0; opacity: 0.2; background-image:
+    linear-gradient(rgba(34, 211, 238, 0.24) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 211, 238, 0.24) 1px, transparent 1px); background-size: 42px 42px; mask-image: linear-gradient(90deg, #000 0%, #000 74%, transparent 100%) }
+
+.manufacturingPage .heroInner { position: relative; z-index: 1; width: min(1180px, calc(100% - 40px)); margin: 0 auto; padding: 46px 0 58px; display: grid; grid-template-columns: minmax(0, 0.98fr) minmax(430px, 1.02fr); gap: 42px; align-items: start }
+
+.manufacturingPage .heroCopy { min-width: 0 }
+
+.manufacturingPage .eyebrow, .manufacturingPage .sectionHead > span, .manufacturingPage .diagnosisCopy > span { display: inline-flex; align-items: center; gap: 8px; color: #316dff; background: #edf4ff; border: 1px solid #cfe0ff; border-radius: 999px; padding: 6px 12px; font-size: 13px; line-height: 1.35; font-weight: 900 }
+
+.manufacturingPage .hero .eyebrow { color: #91c7ff; background: rgba(0, 82, 217, 0.16); border-color: rgba(88, 166, 255, 0.22) }
+
+.manufacturingPage .eyebrow span { width: 8px; height: 8px; border-radius: 50%; background: #3b82f6; box-shadow: 0 0 0 5px rgba(59, 130, 246, 0.18) }
+
+.manufacturingPage .hero h1 { margin: 22px 0 16px; max-width: 720px; color: #fff; font-size: 54px; line-height: 1.08; font-weight: 950; overflow-wrap: anywhere }
+
+.manufacturingPage .hero p { max-width: 690px; margin: 0 0 16px; color: #aebbd1; font-size: 17px; line-height: 1.78; font-weight: 600; overflow-wrap: anywhere }
+
+.manufacturingPage .heroLead { color: #e7f1ff; font-size: 28px; line-height: 1.34; font-weight: 950 }
+
+.manufacturingPage .heroDesc { color: #98a7bd }
+
+.manufacturingPage .valueTags { display: flex; flex-wrap: wrap; gap: 10px; max-width: 700px; margin-top: 22px }
+
+.manufacturingPage .valueTags span { display: inline-flex; align-items: center; min-height: 34px; padding: 0 12px; border-radius: 999px; color: #d8e8ff; background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.1); font-size: 13px; font-weight: 850 }
+
+.manufacturingPage .heroActions { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-top: 28px; min-width: 0 }
+
+.manufacturingPage .btn, .manufacturingPage .modalSubmit { position: relative; overflow: hidden; display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 52px; padding: 0 24px; border-radius: 6px; border: 2px solid transparent; font-size: 15px; font-weight: 900; text-align: center; max-width: 100%; transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease }
+
+.manufacturingPage .btn svg, .manufacturingPage .modalSubmit svg { width: 19px; height: 19px; fill: currentColor; transition: transform 0.2s ease }
+
+.manufacturingPage .btn:hover, .manufacturingPage .modalSubmit:hover { transform: translateY(-2px) }
+
+.manufacturingPage .btn.primary, .manufacturingPage .modalSubmit { color: #fff; background: var(--cta-red); box-shadow: 0 16px 34px rgba(215, 51, 36, 0.3) }
+
+.manufacturingPage .btn.primary:hover, .manufacturingPage .modalSubmit:hover { background: #c92c1e; box-shadow: 0 20px 42px rgba(215, 51, 36, 0.36) }
+
+.manufacturingPage .btn.primary:hover svg, .manufacturingPage .modalSubmit:hover svg { transform: translateX(4px) }
+
+.manufacturingPage .btn.secondary { color: #fff; border-color: rgba(255, 255, 255, 0.18); background: rgba(255, 255, 255, 0.06) }
+
+.manufacturingPage .btn.secondary:hover { border-color: rgba(255, 255, 255, 0.34); background: rgba(255, 255, 255, 0.1) }
+
+.manufacturingPage .btn.secondaryDark { color: #fff; border-color: rgba(255, 255, 255, 0.16); background: rgba(255, 255, 255, 0.08) }
+
+.manufacturingPage .heroQuote { max-width: 680px; margin-top: 24px; padding: 16px 18px; border-left: 4px solid var(--cta-red); color: #f2f7ff; background: rgba(255, 255, 255, 0.06); font-size: 18px; line-height: 1.58; font-weight: 950; overflow-wrap: anywhere }
+
+.manufacturingPage .heroConsole { min-width: 0; border-radius: 8px; border: 1px solid rgba(167, 193, 255, 0.22); background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.04)),
+    rgba(7, 13, 28, 0.82); box-shadow: 0 28px 80px rgba(0, 0, 0, 0.36); overflow: hidden }
+
+.manufacturingPage .heroBanner { width: 100%; aspect-ratio: 1200 / 630; height: auto; object-fit: cover; background: #0f172a }
+
+.manufacturingPage .consolePanel { padding: 18px }
+
+.manufacturingPage .panelTitle { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start }
+
+.manufacturingPage .panelTitle span { color: #8d9bb4; font-size: 12px; font-weight: 800 }
+
+.manufacturingPage .panelTitle strong { color: #ffd1c8; font-size: 13px; white-space: nowrap }
+
+.manufacturingPage .projectFlow { display: grid; grid-template-columns: 1fr 14px 1fr 14px 1fr 14px 1.35fr 14px 1.35fr 14px 1fr; align-items: center; gap: 6px; margin: 18px 0 }
+
+.manufacturingPage .projectFlow span { min-width: 0; min-height: 36px; padding: 0 8px; display: flex; align-items: center; justify-content: center; border-radius: 6px; color: #dbeafe; background: rgba(0, 82, 217, 0.22); border: 1px solid rgba(59, 130, 246, 0.24); font-size: 11px; font-weight: 900; text-align: center }
+
+.manufacturingPage .projectFlow i { height: 2px; background: linear-gradient(90deg, rgba(89, 200, 255, 0.1), rgba(89, 200, 255, 0.85)) }
+
+.manufacturingPage .metricGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-bottom: 16px }
+
+.manufacturingPage .metricGrid div { min-width: 0; padding: 14px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.08); background: rgba(3, 8, 19, 0.5) }
+
+.manufacturingPage .metricGrid small { display: block; color: #8d9bb4; font-size: 12px; font-weight: 800 }
+
+.manufacturingPage .metricGrid b { display: block; margin-top: 7px; color: #e9f2ff; font-size: 23px; font-weight: 950 }
+
+.manufacturingPage .metricGrid em { display: block; margin-top: 5px; color: #7f8ca3; font-style: normal; font-size: 12px; line-height: 1.45; font-weight: 700 }
+
+.manufacturingPage .alertRow { display: grid; grid-template-columns: 72px 1fr 54px; gap: 10px; align-items: center; margin-top: 12px }
+
+.manufacturingPage .alertRow span { color: #8d9bb4; font-size: 12px; font-weight: 800 }
+
+.manufacturingPage .alertRow b { min-width: 0; color: #dbeafe; font-size: 13px; line-height: 1.35; font-weight: 850 }
+
+.manufacturingPage .alertRow em { justify-self: end; padding: 3px 7px; border-radius: 999px; color: #9be6b6; background: rgba(47, 166, 106, 0.14); font-style: normal; font-size: 11px; font-weight: 900 }
+
+.manufacturingPage .alertRow.warn em { color: #ffe3a7; background: rgba(217, 134, 18, 0.16) }
+
+.manufacturingPage .alertRow.danger em { color: #ffd1c8; background: rgba(215, 51, 36, 0.16) }
+
+.manufacturingPage .section { width: min(1180px, calc(100% - 40px)); margin: 0 auto; padding: 92px 0 }
+
+.manufacturingPage .sectionHead { max-width: 850px; margin-bottom: 34px }
+
+.manufacturingPage .sectionHead.compact { max-width: 940px }
+
+.manufacturingPage .sectionHead h2, .manufacturingPage .diagnosisCopy h2 { margin: 16px 0 12px; color: var(--ink); font-size: 42px; line-height: 1.2; font-weight: 950; text-wrap: balance }
+
+.manufacturingPage .sectionHead p, .manufacturingPage .diagnosisCopy p { margin: 0; color: var(--muted); font-size: 17px; line-height: 1.8; font-weight: 600; text-wrap: pretty }
+
+.manufacturingPage .answer { width: min(1080px, calc(100% - 40px)); max-width: 1080px; margin: 0 auto; padding: 36px 0 72px; background: #fff; border-bottom: 0 }
+
+.manufacturingPage .answer .sectionHead { max-width: 860px; margin-bottom: 24px }
+
+.manufacturingPage .answer .sectionHead h2 { font-size: 36px }
+
+.manufacturingPage .answerSummary { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px }
+
+.manufacturingPage .answerSummary { margin-bottom: 0 }
+
+.manufacturingPage .answerSummary article { position: relative; min-width: 0; min-height: 112px; padding: 22px; border-radius: 8px; color: var(--ink); background: #fff; border: 1px solid #dbeafe; box-shadow: 0 16px 32px rgba(16, 24, 40, 0.06) }
+
+.manufacturingPage .answerSummary article::before { content: ""; display: block; width: 38px; height: 4px; margin-bottom: 16px; border-radius: 999px; background: linear-gradient(90deg, var(--cta-red), var(--boran-blue)) }
+
+.manufacturingPage .answerSummary strong { display: block; color: var(--ink); font-size: 18px; line-height: 1.3; font-weight: 950 }
+
+.manufacturingPage .answerSummary span { display: block; margin-top: 9px; color: var(--muted); font-size: 14px; line-height: 1.65; font-weight: 750 }
+
+.manufacturingPage .painLayout article, .manufacturingPage .scenarioCard, .manufacturingPage .proofCard, .manufacturingPage .roleGrid article, .manufacturingPage .governanceGrid article, .manufacturingPage .faqItem, .manufacturingPage .leadForm { min-width: 0; border-radius: 8px; border: 1px solid var(--line); background: #fff; box-shadow: 0 18px 38px rgba(16, 24, 40, 0.05) }
+
+.manufacturingPage .scenarioCard h3, .manufacturingPage .proofCard h3, .manufacturingPage .roleGrid h3, .manufacturingPage .governanceGrid h3, .manufacturingPage .leadForm h3 { margin: 0 0 12px; color: var(--ink); font-size: 20px; line-height: 1.3; font-weight: 950 }
+
+.manufacturingPage .painLayout p, .manufacturingPage .scenarioCard dd, .manufacturingPage .proofCard p, .manufacturingPage .roleGrid p, .manufacturingPage .governanceGrid p, .manufacturingPage .faqItem p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.75; font-weight: 600 }
+
+.manufacturingPage .pains { width: 100%; max-width: none; padding: 92px max(20px, calc((100% - 1180px) / 2)) 36px; background: var(--soft) }
+
+.manufacturingPage .painLayout { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px }
+
+.manufacturingPage .painLayout article { padding: 22px; box-shadow: none }
+
+.manufacturingPage .painLayout article::before { content: ""; display: block; width: 34px; height: 4px; margin-bottom: 18px; border-radius: 999px; background: linear-gradient(90deg, var(--cta-red), var(--boran-blue)) }
+
+.manufacturingPage .painLayout strong { display: block; margin: 0 0 10px; color: var(--ink); font-size: 20px; line-height: 1.3; font-weight: 950 }
+
+.manufacturingPage .painConclusion { max-width: 940px; margin-top: 20px; padding: 2px 0 2px 18px; border-radius: 0; color: #23385f; background: transparent; border: 0; border-left: 4px solid var(--boran-blue); font-size: 16px; line-height: 1.75; font-weight: 850 }
+
+.manufacturingPage .architecture { padding-bottom: 74px }
+
+.manufacturingPage .layerStack { display: grid; gap: 14px; counter-reset: layer }
+
+.manufacturingPage .layerStack article { display: grid; grid-template-columns: 70px minmax(180px, 0.45fr) minmax(0, 1fr); gap: 20px; align-items: center; min-width: 0; padding: 22px; border-radius: 8px; color: #fff; background:
+    linear-gradient(135deg, rgba(0, 82, 217, 0.18), transparent 58%),
+    var(--deep-2); border: 1px solid rgba(255, 255, 255, 0.1) }
+
+.manufacturingPage .layerStack b { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 6px; color: #fff; background: var(--boran-blue); font-size: 14px; font-weight: 950 }
+
+.manufacturingPage .layerStack h3 { margin: 0; color: #fff; font-size: 21px; line-height: 1.3; font-weight: 950 }
+
+.manufacturingPage .layerStack p { margin: 0; color: #c4d1e5; font-size: 15px; line-height: 1.75; font-weight: 650 }
+
+.manufacturingPage .scenarios { width: 100%; max-width: none; padding: 92px max(20px, calc((100% - 1180px) / 2)); background:
+    linear-gradient(110deg, rgba(8, 15, 31, 0.98), rgba(14, 25, 49, 0.98)),
+    var(--deep) }
+
+.manufacturingPage .scenarios .sectionHead h2, .manufacturingPage .scenarios .sectionHead p { color: #fff }
+
+.manufacturingPage .scenarios .sectionHead p { color: #aebbd1 }
+
+.manufacturingPage .scenarioGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px }
+
+.manufacturingPage .scenarioCard { position: relative; overflow: hidden; padding: 24px; display: flex; flex-direction: column; cursor: pointer; background: #fff; transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease }
+
+.manufacturingPage .scenarioCard::after { content: ""; position: absolute; inset: 0 0 auto; height: 4px; background: linear-gradient(90deg, var(--boran-blue), var(--cta-red)); transform: scaleX(0); transform-origin: left; transition: transform 0.2s ease }
+
+.manufacturingPage .scenarioCard:hover, .manufacturingPage .scenarioCard:focus { outline: 0; border-color: #bfd4ff; box-shadow: 0 24px 48px rgba(0, 0, 0, 0.18); transform: translateY(-2px) }
+
+.manufacturingPage .scenarioCard:hover::after, .manufacturingPage .scenarioCard:focus::after, .manufacturingPage .scenarioCard.isActive::after { transform: scaleX(1) }
+
+.manufacturingPage .scenarioCard small { display: inline-flex; margin-bottom: 10px; color: var(--boran-blue); font-size: 12px; font-weight: 950 }
+
+.manufacturingPage .scenarioCard dl { display: grid; grid-template-columns: 54px minmax(0, 1fr); gap: 10px 12px; align-items: start; margin: 4px 0 0 }
+
+.manufacturingPage .scenarioCard dt { min-height: 26px; margin: 0; display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; color: #2453a6; background: #edf4ff; font-size: 12px; font-weight: 950 }
+
+.manufacturingPage .scenarioCard dd { margin: 0; color: #344054; font-size: 15px; line-height: 1.62; font-weight: 750 }
+
+.manufacturingPage .scenarioCard span, .manufacturingPage .roleGrid span { display: inline-flex; max-width: 100%; margin-top: 18px; padding: 7px 10px; border-radius: 999px; color: #2453a6; background: #edf4ff; font-size: 12px; line-height: 1.4; font-weight: 900 }
+
+.manufacturingPage .scenarioCard > span { margin-top: auto; padding: 8px 11px; border-radius: 8px; color: #3b5f9b; background: #f2f7ff; font-size: 12px }
+
+.manufacturingPage .proof { padding-top: 76px; padding-bottom: 76px }
+
+.manufacturingPage .proof .sectionHead { margin-bottom: 26px }
+
+.manufacturingPage .proofGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px }
+
+.manufacturingPage .proofCard { position: relative; overflow: hidden; display: flex; flex-direction: column; min-height: 278px; padding: 24px; color: inherit; box-shadow: none; transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease }
+
+.manufacturingPage .proofCard::before { content: ""; position: absolute; inset: 0 0 auto; height: 4px; background: linear-gradient(90deg, var(--boran-blue), var(--cta-red)); opacity: 0.86 }
+
+.manufacturingPage .proofCard:hover, .manufacturingPage .proofCard:focus { outline: 0; border-color: #bfd4ff; box-shadow: 0 20px 44px rgba(16, 24, 40, 0.1); transform: translateY(-2px) }
+
+.manufacturingPage .proofCard small { display: inline-flex; width: fit-content; margin: 6px 0 12px; padding: 5px 9px; border-radius: 999px; color: #2453a6; background: #edf4ff; font-size: 12px; line-height: 1.2; font-weight: 950 }
+
+.manufacturingPage .proofCard p { margin-bottom: 18px }
+
+.manufacturingPage .proofMetrics { display: grid; gap: 8px; margin-top: auto }
+
+.manufacturingPage .proofMetrics span { display: flex; min-height: 34px; align-items: center; padding: 7px 10px; border-radius: 6px; color: #23385f; background: #f6f9ff; border: 1px solid #e1ecff; font-size: 13px; line-height: 1.35; font-weight: 900 }
+
+.manufacturingPage .proofToggle { position: relative; overflow: hidden; display: inline-flex; width: fit-content; align-items: center; gap: 6px; margin-top: 18px; padding: 0; border: 0; color: var(--boran-blue); background: transparent; font-size: 14px; line-height: 1.5; font-weight: 950; cursor: pointer }
+
+.manufacturingPage .proofToggle::after { content: ">"; font-size: 13px; transform: translateY(-1px) }
+
+.manufacturingPage .proofCard.isOpen .proofToggle::after { transform: rotate(90deg) }
+
+.manufacturingPage .proofDetail { display: grid; gap: 10px; margin-top: 14px; padding-top: 14px; border-top: 1px solid #e4ecf8 }
+
+.manufacturingPage .proofDetail[hidden] { display: none }
+
+.manufacturingPage .proofDetail p { margin: 0; color: #475467; font-size: 13px; line-height: 1.65; font-weight: 700 }
+
+.manufacturingPage .proofDetail b { color: #111827 }
+
+.manufacturingPage .roles { padding-bottom: 74px }
+
+.manufacturingPage .roleGrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px }
+
+.manufacturingPage .roleGrid article { padding: 24px }
+
+.manufacturingPage .roleGrid p + p { margin-top: 10px }
+
+.manufacturingPage .roleGrid strong { color: #111827 }
+
+.manufacturingPage .ai { width: 100%; max-width: none; padding: 92px max(20px, calc((100% - 1180px) / 2)); color: #fff; background:
+    linear-gradient(135deg, rgba(0, 82, 217, 0.2), transparent 46%),
+    var(--deep-2) }
+
+.manufacturingPage .ai .sectionHead h2, .manufacturingPage .ai .sectionHead p { color: #fff }
+
+.manufacturingPage .ai .sectionHead p { color: #b9c7dc }
+
+.manufacturingPage .aiLayout { display: grid; grid-template-columns: minmax(0, 1fr) 330px; gap: 24px; align-items: stretch }
+
+.manufacturingPage .aiGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px }
+
+.manufacturingPage .aiGrid article, .manufacturingPage .aiBoundary { min-width: 0; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1); background: rgba(255, 255, 255, 0.07) }
+
+.manufacturingPage .aiGrid article { padding: 20px }
+
+.manufacturingPage .aiGrid strong { display: block; color: #fff; font-size: 17px; line-height: 1.35; font-weight: 950 }
+
+.manufacturingPage .aiGrid span { display: block; margin-top: 9px; color: #c4d1e5; font-size: 13px; line-height: 1.6; font-weight: 750 }
+
+.manufacturingPage .aiBoundary { padding: 24px; display: flex; flex-direction: column; justify-content: space-between; gap: 18px }
+
+.manufacturingPage .aiBoundary h3 { margin: 0; color: #fff; font-size: 24px; font-weight: 950 }
+
+.manufacturingPage .aiBoundary p { margin: 0; color: #c4d1e5; font-size: 15px; line-height: 1.8; font-weight: 650 }
+
+.manufacturingPage .aiApplications { width: 100%; max-width: none; padding: 92px max(20px, calc((100% - 1180px) / 2)); color: #fff; background:
+    radial-gradient(circle at 78% 18%, rgba(0, 82, 217, 0.28), transparent 36%),
+    linear-gradient(135deg, rgba(215, 51, 36, 0.12), transparent 42%),
+    var(--deep-2) }
+
+.manufacturingPage .aiApplications .sectionHead h2, .manufacturingPage .aiApplications .sectionHead p { color: #fff }
+
+.manufacturingPage .aiApplications .sectionHead p { color: #b9c7dc }
+
+.manufacturingPage .aiScenarioLayout { display: grid; grid-template-columns: 0.88fr 1.12fr; gap: 22px; align-items: stretch }
+
+.manufacturingPage .aiCommandCard, .manufacturingPage .aiUsecaseGrid article, .manufacturingPage .aiApplicationNote { min-width: 0; border-radius: 8px; border: 1px solid rgba(145, 199, 255, 0.14); background: rgba(255, 255, 255, 0.07); box-shadow: 0 24px 70px rgba(3, 8, 19, 0.2) }
+
+.manufacturingPage .aiCommandCard { position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; padding: 28px; background:
+    linear-gradient(145deg, rgba(0, 82, 217, 0.22), transparent 52%),
+    rgba(255, 255, 255, 0.07) }
+
+.manufacturingPage .aiCommandCard::before { content: ""; position: absolute; inset: 0 0 auto; height: 4px; background: linear-gradient(90deg, var(--boran-blue), var(--cta-red)) }
+
+.manufacturingPage .aiCommandCard small { display: inline-flex; width: fit-content; min-height: 30px; align-items: center; padding: 0 10px; border-radius: 999px; color: #91c7ff; background: rgba(0, 82, 217, 0.18); border: 1px solid rgba(145, 199, 255, 0.2); font-size: 12px; font-weight: 950 }
+
+.manufacturingPage .aiCommandCard h3 { margin: 18px 0 0; color: #fff; font-size: 30px; line-height: 1.25; font-weight: 950 }
+
+.manufacturingPage .aiCommandCard p, .manufacturingPage .aiApplicationNote p { margin: 18px 0 0; color: #c4d1e5; font-size: 14px; line-height: 1.8; font-weight: 700 }
+
+.manufacturingPage .aiPipeline { display: grid; grid-template-columns: 1fr 18px 1fr 18px 1fr 18px 1fr 18px 1fr; gap: 8px; align-items: center; margin: 30px 0 8px }
+
+.manufacturingPage .aiPipeline span { min-height: 46px; display: grid; place-items: center; padding: 0 9px; border-radius: 8px; color: #e9f2ff; background: rgba(0, 82, 217, 0.22); border: 1px solid rgba(145, 199, 255, 0.18); text-align: center; font-size: 12px; line-height: 1.35; font-weight: 900 }
+
+.manufacturingPage .aiPipeline i { height: 2px; background: linear-gradient(90deg, rgba(145, 199, 255, 0.1), rgba(145, 199, 255, 0.9)) }
+
+.manufacturingPage .aiUsecaseGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px }
+
+.manufacturingPage .aiUsecaseGrid article { position: relative; padding: 20px 20px 20px 62px }
+
+.manufacturingPage .aiUsecaseGrid b { position: absolute; left: 20px; top: 22px; width: 28px; height: 28px; display: grid; place-items: center; border-radius: 8px; color: #fff; background: var(--boran-blue); font-size: 12px; font-weight: 950 }
+
+.manufacturingPage .aiUsecaseGrid h3 { margin: 0; color: #fff; font-size: 18px; line-height: 1.35; font-weight: 950 }
+
+.manufacturingPage .aiUsecaseGrid p { margin: 8px 0 0; color: #c4d1e5; font-size: 13px; line-height: 1.65; font-weight: 700 }
+
+.manufacturingPage .aiApplicationNote { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 14px; align-items: center; margin-top: 18px; padding: 18px 20px }
+
+.manufacturingPage .aiApplicationNote strong { display: inline-flex; min-height: 34px; align-items: center; padding: 0 12px; border-radius: 999px; color: #fff; background: rgba(215, 51, 36, 0.9); font-size: 13px; font-weight: 950 }
+
+.manufacturingPage .aiApplicationNote p { margin: 0 }
+
+.manufacturingPage .faq { width: 100%; max-width: none; padding: 92px max(20px, calc((100% - 980px) / 2)); background: var(--soft) }
+
+.manufacturingPage .faqList { display: grid; gap: 12px }
+
+.manufacturingPage .faqItem { box-shadow: none; overflow: hidden }
+
+.manufacturingPage .faqItem button { position: relative; overflow: hidden; width: 100%; min-height: 62px; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; gap: 18px; border: 0; color: var(--ink); background: transparent; text-align: left; font-size: 17px; font-weight: 950 }
+
+.manufacturingPage .faqItem button span { min-width: 0 }
+
+.manufacturingPage .faqItem button b { position: relative; flex: 0 0 22px; width: 22px; height: 22px; border-radius: 50%; background: #edf4ff }
+
+.manufacturingPage .faqItem button b::before, .manufacturingPage .faqItem button b::after { content: ""; position: absolute; inset: 10px 5px auto; height: 2px; border-radius: 999px; background: var(--boran-blue) }
+
+.manufacturingPage .faqItem button b::after { transform: rotate(90deg); transition: transform 0.2s ease }
+
+.manufacturingPage .faqItem.isOpen button b::after { transform: rotate(0) }
+
+.manufacturingPage .faqItem p { display: none; padding: 0 20px 20px }
+
+.manufacturingPage .faqItem.isOpen p { display: block }
+
+.manufacturingPage .diagnosis { width: 100%; max-width: none; display: grid; grid-template-columns: minmax(0, 0.95fr) minmax(420px, 0.72fr); gap: 34px; align-items: center; padding: 88px max(20px, calc((100% - 1180px) / 2)); color: #fff; background:
+    linear-gradient(110deg, rgba(8, 15, 31, 0.98) 0%, rgba(14, 25, 49, 0.98) 60%, rgba(20, 38, 60, 0.98) 100%),
+    #0f172a }
+
+.manufacturingPage .diagnosisCopy h2, .manufacturingPage .diagnosisCopy p { color: #fff }
+
+.manufacturingPage .diagnosisCopy p { color: #b9c7dc }
+
+.manufacturingPage .conversionLines { display: grid; gap: 10px; margin: 26px 0 0 }
+
+.manufacturingPage .conversionLines p { margin: 0; padding: 14px 16px; border-radius: 8px; color: #dbeafe; background: rgba(255, 255, 255, 0.07); border: 1px solid rgba(255, 255, 255, 0.1); font-size: 15px; line-height: 1.55; font-weight: 850 }
+
+.manufacturingPage .diagnosisChecks { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 28px }
+
+.manufacturingPage .diagnosisChecks div { min-width: 0; padding: 18px; border-radius: 8px; background: rgba(255, 255, 255, 0.07); border: 1px solid rgba(255, 255, 255, 0.1) }
+
+.manufacturingPage .diagnosisChecks strong { display: block; color: #fff; font-size: 17px; font-weight: 950 }
+
+.manufacturingPage .diagnosisChecks span { display: block; margin-top: 8px; color: #9fb1ca; font-size: 13px; line-height: 1.55; font-weight: 800 }
+
+.manufacturingPage .contactActions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px }
+
+.manufacturingPage .contactActions a { display: inline-flex; align-items: center; justify-content: center; min-height: 42px; padding: 0 16px; border-radius: 6px; color: #fff; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.12); font-size: 14px; font-weight: 900 }
+
+.manufacturingPage .leadForm { min-width: 0; padding: 28px; color: var(--ink); background: #fff; border: 1px solid rgba(255, 255, 255, 0.12); box-shadow: 0 24px 72px rgba(0, 0, 0, 0.28) }
+
+.manufacturingPage .leadForm h3 { margin-bottom: 20px; font-size: 24px }
+
+.manufacturingPage .fieldGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px }
+
+.manufacturingPage .leadForm label { display: grid; gap: 7px; margin-bottom: 13px; color: #253047; font-size: 13px; font-weight: 900 }
+
+.manufacturingPage .leadForm label span b { color: var(--cta-red) }
+
+.manufacturingPage .leadForm input, .manufacturingPage .leadForm select, .manufacturingPage .leadForm textarea { width: 100%; min-height: 44px; padding: 10px 12px; border-radius: 6px; border: 1px solid #d8e1ee; color: #111827; background: #fff; outline: none; font-size: 14px; transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease }
+
+.manufacturingPage .leadForm textarea { resize: vertical; line-height: 1.6 }
+
+.manufacturingPage .leadForm input:focus, .manufacturingPage .leadForm select:focus, .manufacturingPage .leadForm textarea:focus { border-color: var(--boran-blue); box-shadow: 0 0 0 4px rgba(0, 82, 217, 0.1) }
+
+.manufacturingPage .leadForm .isInvalid { border-color: var(--cta-red); box-shadow: 0 0 0 4px rgba(215, 51, 36, 0.1) }
+
+.manufacturingPage .issueField { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin: 0 0 14px; padding: 0; border: 0 }
+
+.manufacturingPage .issueField legend { grid-column: 1 / -1; margin-bottom: 1px; color: #253047; font-size: 13px; font-weight: 900 }
+
+.manufacturingPage .issueField label { display: flex; align-items: center; gap: 7px; min-width: 0; min-height: 34px; margin: 0; padding: 0 10px; border-radius: 999px; color: #344054; background: #f8fbff; border: 1px solid #e6eef9; font-size: 12px; font-weight: 900 }
+
+.manufacturingPage .issueField input { width: 14px; min-height: 14px; padding: 0; flex: 0 0 14px; accent-color: var(--boran-blue) }
+
+.manufacturingPage .issueField span { min-width: 0 }
+
+.manufacturingPage .formHint { margin: 0 0 16px; color: var(--muted); font-size: 13px; line-height: 1.65; font-weight: 650 }
+
+.manufacturingPage .formHint.isError { color: var(--cta-red) }
+
+.manufacturingPage .formHint.isSuccess { color: var(--green) }
+
+.manufacturingPage .modalSubmit { width: 100%; border: 0 }
+
+.manufacturingPage .siteFooter { color: #d7e0ef; background: var(--deep) }
+
+.manufacturingPage .footerInner { width: min(1180px, calc(100% - 40px)); margin: 0 auto; padding: 58px 0 28px }
+
+.manufacturingPage .footerMain { display: grid; grid-template-columns: minmax(320px, 0.95fr) minmax(0, 1.4fr); gap: 48px }
+
+.manufacturingPage .footerLogo { display: flex; align-items: center; gap: 10px }
+
+.manufacturingPage .footerLogo img { width: 34px; height: 34px }
+
+.manufacturingPage .footerLogo strong { color: #fff; font-size: 24px; font-weight: 950 }
+
+.manufacturingPage .footerLogo span { padding: 4px 8px; border-radius: 999px; color: #91c7ff; background: rgba(49, 116, 255, 0.12); font-size: 12px; font-weight: 900 }
+
+.manufacturingPage .footerBrand p { max-width: 520px; color: #9ca8bb; font-size: 14px; line-height: 1.8; font-weight: 600 }
+
+.manufacturingPage .footerContact { display: grid; gap: 14px; margin-top: 20px }
+
+.manufacturingPage .footerContact div, .manufacturingPage .footerContact a { display: flex; align-items: flex-start; gap: 10px; color: #d7e0ef; font-size: 13px; line-height: 1.6; font-weight: 700 }
+
+.manufacturingPage .footerIcon { width: 34px; height: 34px; flex: 0 0 34px; display: flex; align-items: center; justify-content: center; border-radius: 999px; color: #91c7ff; background: rgba(49, 116, 255, 0.12) }
+
+.manufacturingPage .footerLinks { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px }
+
+.manufacturingPage .footerLinks h3 { margin: 0 0 16px; color: #fff; font-size: 15px; font-weight: 950 }
+
+.manufacturingPage .footerLinks a { display: block; margin-top: 10px; color: #9ca8bb; font-size: 13px; line-height: 1.45; font-weight: 700 }
+
+.manufacturingPage .footerLinks a:hover, .manufacturingPage .footerBottom a:hover { color: #fff }
+
+.manufacturingPage .footerBottom { margin-top: 42px; padding-top: 22px; border-top: 1px solid rgba(255, 255, 255, 0.08); display: flex; flex-wrap: wrap; gap: 12px 18px; color: #8a96aa; font-size: 12px; font-weight: 700 }
+
+.manufacturingPage .mobileCta { position: fixed; right: 12px; bottom: 12px; left: 12px; z-index: 45; display: none; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; padding: 8px; border-radius: 8px; background: rgba(255, 255, 255, 0.96); border: 1px solid #dce5f2; box-shadow: 0 18px 44px rgba(15, 23, 42, 0.18) }
+
+.manufacturingPage .mobileCta a { position: relative; overflow: hidden; min-width: 0; min-height: 44px; display: flex; align-items: center; justify-content: center; gap: 7px; border-radius: 6px; color: var(--ink); background: #f8fbff; font-size: 13px; font-weight: 950 }
+
+.manufacturingPage .mobileCta a:nth-child(2) { color: #fff; background: var(--cta-red) }
+
+.manufacturingPage .targetHighlight { animation: mf-target-highlight 1.35s ease }
+
+.manufacturingPage .buttonRipple { position: absolute; width: 10px; height: 10px; pointer-events: none; border-radius: 999px; background: rgba(255, 255, 255, 0.42); transform: translate(-50%, -50%) scale(0); animation: mf-ripple 0.55s ease-out }
+
+@keyframes mf-ripple {
+to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(18);
   }
 }
 
-.eyebrow {
+@keyframes mf-target-highlight {
+0% {
+    filter: brightness(1.03);
+  }
+
+  100% {
+    filter: brightness(1);
+  }
+}
+
+@media (min-width: 1040px) {
+  .manufacturingPage .siteNav, .manufacturingPage .headerPhone, .manufacturingPage .headerCta { display: flex }
+}
+
+@media (min-width: 1040px) {
+  .manufacturingPage .mobileMenu { display: none }
+}
+
+@media (max-width: 1120px) {
+  .manufacturingPage .heroInner, .manufacturingPage .diagnosis, .manufacturingPage .footerMain { grid-template-columns: 1fr }
+}
+
+@media (max-width: 1120px) {
+  .manufacturingPage .heroConsole { max-width: 760px }
+}
+
+@media (max-width: 1120px) {
+  .manufacturingPage .answerSummary, .manufacturingPage .painLayout, .manufacturingPage .scenarioGrid, .manufacturingPage .proofGrid, .manufacturingPage .aiGrid { grid-template-columns: repeat(2, minmax(0, 1fr)) }
+}
+
+@media (max-width: 1120px) {
+  .manufacturingPage .roleGrid, .manufacturingPage .governanceGrid, .manufacturingPage .industryMap { grid-template-columns: repeat(2, minmax(0, 1fr)) }
+}
+
+@media (max-width: 1120px) {
+  .manufacturingPage .governanceGrid .wide { grid-column: span 2 }
+}
+
+@media (max-width: 1120px) {
+  .manufacturingPage .aiLayout { grid-template-columns: 1fr }
+}
+
+@media (max-width: 1120px) {
+  .manufacturingPage .aiScenarioLayout { grid-template-columns: 1fr }
+}
+
+@media (max-width: 820px) {
+  .manufacturingPage { padding-bottom: 76px }
+}
+
+@media (max-width: 820px) {
+  .manufacturingPage .heroInner, .manufacturingPage .section, .manufacturingPage .footerInner { width: calc(100vw - 32px); max-width: 1180px }
+}
+
+@media (max-width: 820px) {
+  .manufacturingPage .heroInner { padding: 34px 0 36px; gap: 28px }
+}
+
+@media (max-width: 820px) {
+  .manufacturingPage .hero h1 { font-size: 42px; word-break: break-word }
+}
+
+@media (max-width: 820px) {
+  .manufacturingPage .heroLead { font-size: 23px }
+}
+
+@media (max-width: 820px) {
+  .manufacturingPage .section { padding: 68px 0 }
+}
+
+@media (max-width: 820px) {
+  .manufacturingPage .answer { width: calc(100vw - 32px); max-width: 1080px; padding: 32px 0 56px }
+}
+
+@media (max-width: 820px) {
+  .manufacturingPage .pains, .manufacturingPage .scenarios, .manufacturingPage .proof, .manufacturingPage .ai, .manufacturingPage .faq, .manufacturingPage .diagnosis { padding-top: 68px; padding-bottom: 68px }
+}
+
+@media (max-width: 820px) {
+  .manufacturingPage .pains { padding-bottom: 32px }
+}
+
+@media (max-width: 820px) {
+  .manufacturingPage .sectionHead h2, .manufacturingPage .diagnosisCopy h2 { font-size: 32px }
+}
+
+@media (max-width: 820px) {
+  .manufacturingPage .answer .sectionHead h2 { font-size: 32px }
+}
+
+@media (max-width: 820px) {
+  .manufacturingPage .layerStack article { grid-template-columns: 56px 1fr; align-items: start }
+}
+
+@media (max-width: 820px) {
+  .manufacturingPage .layerStack p { grid-column: 2 }
+}
+
+@media (max-width: 820px) {
+  .manufacturingPage .footerLinks { grid-template-columns: 1fr }
+}
+
+@media (max-width: 820px) {
+  .manufacturingPage .mobileCta { display: grid }
+}
+
+@media (max-width: 640px) {
+  .manufacturingPage .headerInner { gap: 12px; padding: 0 14px }
+}
+
+@media (max-width: 640px) {
+  .manufacturingPage .brandText strong { font-size: 19px }
+}
+
+@media (max-width: 640px) {
+  .manufacturingPage .brand .yonyou, .manufacturingPage .brandDivider { display: none }
+}
+
+@media (max-width: 640px) {
+  .manufacturingPage .hero h1 { margin-top: 18px; font-size: 31px; line-height: 1.14; max-width: calc(100vw - 32px); white-space: normal; line-break: anywhere; word-break: break-all }
+}
+
+@media (max-width: 640px) {
+  .manufacturingPage .hero p { max-width: calc(100vw - 32px); font-size: 15px; line-height: 1.72; line-break: anywhere; word-break: break-word }
+}
+
+@media (max-width: 640px) {
+  .manufacturingPage .valueTags, .manufacturingPage .heroActions, .manufacturingPage .heroQuote { max-width: calc(100vw - 32px) }
+}
+
+@media (max-width: 640px) {
+  .manufacturingPage .heroLead { font-size: 20px }
+}
+
+@media (max-width: 640px) {
+  .manufacturingPage .heroActions { display: grid; gap: 10px }
+}
+
+@media (max-width: 640px) {
+  .manufacturingPage .btn { width: 100%; min-height: 48px; padding: 0 16px; font-size: 14px }
+}
+
+@media (max-width: 640px) {
+  .manufacturingPage .heroConsole { display: none }
+}
+
+@media (max-width: 640px) {
+  .manufacturingPage .answerSummary, .manufacturingPage .painLayout, .manufacturingPage .scenarioGrid, .manufacturingPage .proofGrid, .manufacturingPage .roleGrid, .manufacturingPage .governanceGrid, .manufacturingPage .fieldGrid, .manufacturingPage .aiGrid, .manufacturingPage .aiUsecaseGrid, .manufacturingPage .industryMap, .manufacturingPage .diagnosisChecks, .manufacturingPage .issueField { grid-template-columns: 1fr }
+}
+
+@media (max-width: 640px) {
+  .manufacturingPage .governanceGrid .wide { grid-column: span 1 }
+}
+
+@media (max-width: 640px) {
+  .manufacturingPage .leadForm { padding: 20px }
+}
+
+@media (max-width: 640px) {
+  .manufacturingPage .footerBottom { display: grid }
+}
+
+@media (max-width: 420px) {
+  .manufacturingPage .heroInner, .manufacturingPage .section, .manufacturingPage .footerInner { width: calc(100vw - 28px); max-width: 1180px }
+}
+
+@media (max-width: 420px) {
+  .manufacturingPage .eyebrow, .manufacturingPage .sectionHead > span, .manufacturingPage .diagnosisCopy > span { max-width: 100%; font-size: 12px; overflow-wrap: anywhere }
+}
+
+@media (max-width: 420px) {
+  .manufacturingPage .hero h1 { font-size: 29px; max-width: calc(100vw - 28px) }
+}
+
+@media (max-width: 420px) {
+  .manufacturingPage .hero p, .manufacturingPage .valueTags, .manufacturingPage .heroActions, .manufacturingPage .heroQuote { max-width: calc(100vw - 28px) }
+}
+
+@media (max-width: 420px) {
+  .manufacturingPage .sectionHead h2, .manufacturingPage .diagnosisCopy h2 { font-size: 28px }
+}
+
+@media (max-width: 420px) {
+  .manufacturingPage .answer .sectionHead h2 { font-size: 28px }
+}
+
+.manufacturingPage .breadcrumb { width: min(1180px, calc(100% - 40px)); min-height: 48px; margin: 0 auto; display: flex; align-items: center; gap: 9px; color: #6b778c; font-size: 13px; line-height: 1.45; font-weight: 800 }
+
+.manufacturingPage .breadcrumb a { color: #344054 }
+
+.manufacturingPage .breadcrumb a:hover { color: var(--boran-blue) }
+
+.manufacturingPage .breadcrumb strong { color: var(--ink); font-weight: 950 }
+
+.manufacturingPage .heroDesc a { color: #91c7ff; font-weight: 950; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px }
+
+.manufacturingPage .manufacturingDashboard { grid-template-columns: repeat(2, minmax(0, 1fr)) }
+
+.manufacturingPage .manufacturingDashboard div:last-child { grid-column: 1 / -1 }
+
+.manufacturingPage .flowSection { padding-top: 76px }
+
+.manufacturingPage .closedLoopDiagram { counter-reset: loop-step; position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px }
+
+.manufacturingPage .loopStage { position: relative; min-width: 0; padding: 20px; border-radius: 8px; background:
+    linear-gradient(145deg, rgba(0, 82, 217, 0.08), transparent 46%),
+    #fff; border: 1px solid #dbeafe; box-shadow: 0 18px 38px rgba(16, 24, 40, 0.06) }
+
+.manufacturingPage .loopStage:not(:last-child)::after { content: ""; position: absolute; z-index: 2; top: 56px; right: -16px; width: 28px; height: 28px; border-top: 2px solid rgba(0, 82, 217, 0.45); border-right: 2px solid rgba(215, 51, 36, 0.78); transform: rotate(45deg) }
+
+.manufacturingPage .stageHead { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 12px; align-items: center; margin-bottom: 18px }
+
+.manufacturingPage .stageHead span { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 8px; color: #fff; background:
+    linear-gradient(135deg, var(--boran-blue), #164783); font-size: 15px; font-weight: 950; box-shadow: 0 12px 24px rgba(0, 82, 217, 0.18) }
+
+.manufacturingPage .stageHead strong { display: block; color: var(--ink); font-size: 19px; line-height: 1.25; font-weight: 950 }
+
+.manufacturingPage .stageHead em { display: block; margin-top: 4px; color: #5f6b82; font-style: normal; font-size: 12px; line-height: 1.45; font-weight: 800 }
+
+.manufacturingPage .loopStage ol { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none }
+
+.manufacturingPage .loopStage li { counter-increment: loop-step; position: relative; min-height: 76px; padding: 13px 12px 13px 50px; border-radius: 8px; background: #f8fbff; border: 1px solid #e4ecf7 }
+
+.manufacturingPage .loopStage li::before { content: counter(loop-step, decimal-leading-zero); position: absolute; left: 12px; top: 14px; width: 26px; height: 26px; display: grid; place-items: center; border-radius: 999px; color: #2453a6; background: #edf4ff; font-size: 11px; font-weight: 950 }
+
+.manufacturingPage .loopStage li:not(:last-child)::after { content: ""; position: absolute; left: 25px; bottom: -10px; width: 2px; height: 10px; background: linear-gradient(180deg, rgba(0, 82, 217, 0.2), rgba(215, 51, 36, 0.72)) }
+
+.manufacturingPage .loopStage li b { display: block; color: var(--ink); font-size: 15px; line-height: 1.35; font-weight: 950 }
+
+.manufacturingPage .loopStage li small { display: block; margin-top: 4px; color: #5f6b82; font-size: 12px; line-height: 1.55; font-weight: 700 }
+
+.manufacturingPage .loopFeedback { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 14px; align-items: center; margin-top: 18px; padding: 17px 20px; border-radius: 8px; background:
+    linear-gradient(90deg, rgba(0, 82, 217, 0.08), rgba(215, 51, 36, 0.05)),
+    #fff; border: 1px solid #dbeafe }
+
+.manufacturingPage .loopFeedback strong { display: inline-flex; min-height: 34px; align-items: center; padding: 0 12px; border-radius: 999px; color: #fff; background: var(--boran-blue); font-size: 13px; font-weight: 950 }
+
+.manufacturingPage .loopFeedback p { margin: 0; color: #344054; font-size: 14px; line-height: 1.65; font-weight: 750 }
+
+.manufacturingPage .industry { padding-top: 82px }
+
+.manufacturingPage .tabList { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 18px }
+
+.manufacturingPage .tabButton { position: relative; overflow: hidden; min-height: 42px; padding: 0 16px; border-radius: 999px; border: 1px solid #dce7f6; color: #344054; background: #fff; font-size: 14px; font-weight: 950; transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease }
+
+.manufacturingPage .tabButton:hover, .manufacturingPage .tabButton:focus { outline: 0; border-color: #bfd4ff; transform: translateY(-1px) }
+
+.manufacturingPage .tabButton.isActive { color: #fff; background: var(--boran-blue); border-color: var(--boran-blue); box-shadow: 0 12px 24px rgba(0, 82, 217, 0.16) }
+
+.manufacturingPage .tabPanels { display: grid }
+
+.manufacturingPage .tabPanel { position: relative; overflow: hidden; min-width: 0; padding: 32px; border-radius: 8px; border: 1px solid var(--line); background:
+    linear-gradient(145deg, rgba(0, 82, 217, 0.07), transparent 48%),
+    linear-gradient(180deg, #ffffff 0%, #f8fbff 100%),
+    #fff; box-shadow: 0 22px 48px rgba(16, 24, 40, 0.08) }
+
+.manufacturingPage .tabPanel::before { content: ""; position: absolute; inset: 0 0 auto; height: 4px; background: linear-gradient(90deg, var(--boran-blue), var(--cta-red)) }
+
+.manufacturingPage .tabPanel::after { content: ""; position: absolute; right: 28px; top: 32px; width: 112px; height: 36px; border-radius: 8px; background:
+    linear-gradient(90deg, rgba(0, 82, 217, 0.08), rgba(215, 51, 36, 0.05)); border: 1px solid rgba(219, 234, 254, 0.9) }
+
+.manufacturingPage .tabPanel[hidden] { display: none }
+
+.manufacturingPage .tabPanel h3 { position: relative; z-index: 1; display: flex; align-items: center; gap: 10px; margin: 0 0 10px; color: var(--ink); font-size: 24px; line-height: 1.25; font-weight: 950 }
+
+.manufacturingPage .tabPanel h3::before { content: ""; width: 34px; height: 4px; flex: 0 0 auto; border-radius: 999px; background: linear-gradient(90deg, var(--cta-red), var(--boran-blue)) }
+
+.manufacturingPage .tabPanel p { position: relative; z-index: 1; max-width: 900px; margin: 0; color: var(--muted); font-size: 16px; line-height: 1.75; font-weight: 650 }
+
+.manufacturingPage .industryMap { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 22px; padding: 14px; border-radius: 8px; background: rgba(248, 251, 255, 0.9); border: 1px solid #e4ecf7 }
+
+.manufacturingPage .industryMap div { min-width: 0; padding: 18px; border-radius: 8px; background: #fff; border: 1px solid #e4ecf7; box-shadow: 0 12px 28px rgba(16, 24, 40, 0.05) }
+
+.manufacturingPage .industryMap b { display: flex; align-items: center; gap: 8px; color: var(--ink); font-size: 15px; line-height: 1.35; font-weight: 950 }
+
+.manufacturingPage .industryMap b::before { content: ""; width: 8px; height: 8px; flex: 0 0 auto; border-radius: 50%; background: var(--boran-blue); box-shadow: 0 0 0 4px rgba(0, 82, 217, 0.1) }
+
+.manufacturingPage .industryMap ul { display: grid; gap: 8px; margin: 10px 0 0; padding: 0; list-style: none }
+
+.manufacturingPage .industryMap li { position: relative; padding-left: 14px; color: #475467; font-size: 14px; line-height: 1.65; font-weight: 700 }
+
+.manufacturingPage .industryMap li::before { content: ""; position: absolute; left: 0; top: 0.72em; width: 5px; height: 5px; border-radius: 50%; background: var(--boran-blue) }
+
+.manufacturingPage .roleTags { position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; padding-top: 16px; border-top: 1px solid #e4ecf7 }
+
+.manufacturingPage .roleTags span { display: inline-flex; min-height: 32px; align-items: center; padding: 0 11px; border-radius: 999px; color: #2453a6; background: #edf4ff; border: 1px solid #dce8ff; font-size: 12px; font-weight: 950 }
+
+.manufacturingPage .rolePanels .tabPanel { background:
+    linear-gradient(135deg, rgba(215, 51, 36, 0.06), transparent 54%),
+    #fff }
+
+.manufacturingPage .rolePanels .tabPanel::before, .manufacturingPage .rolePanels .tabPanel::after, .manufacturingPage .rolePanels .tabPanel h3::before { display: none }
+
+.manufacturingPage .rolePanels .tabPanel h3 { display: block }
+
+.manufacturingPage .implementation { width: 100%; max-width: none; padding: 92px max(20px, calc((100% - 1180px) / 2)); background: var(--soft) }
+
+.manufacturingPage .implementationGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px }
+
+.manufacturingPage .implementationGrid article { min-width: 0; padding: 24px; border-radius: 8px; border: 1px solid var(--line); background: #fff; box-shadow: 0 18px 38px rgba(16, 24, 40, 0.05) }
+
+.manufacturingPage .implementationGrid b { display: inline-flex; width: 42px; height: 42px; align-items: center; justify-content: center; margin-bottom: 16px; border-radius: 6px; color: #fff; background: var(--boran-blue); font-size: 13px; font-weight: 950 }
+
+.manufacturingPage .implementationGrid h3 { margin: 0 0 10px; color: var(--ink); font-size: 20px; font-weight: 950 }
+
+.manufacturingPage .implementationGrid p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.75; font-weight: 650 }
+
+.manufacturingPage .contactActions a:nth-child(3) { color: #fff; background: rgba(0, 82, 217, 0.2); border-color: rgba(145, 199, 255, 0.24) }
+
+@media (max-width: 1120px) {
+  .manufacturingPage .implementationGrid { grid-template-columns: repeat(2, minmax(0, 1fr)) }
+}
+
+@media (max-width: 1120px) {
+  .manufacturingPage .closedLoopDiagram { grid-template-columns: repeat(2, minmax(0, 1fr)) }
+}
+
+@media (max-width: 1120px) {
+  .manufacturingPage .loopStage:not(:last-child)::after { display: none }
+}
+
+@media (max-width: 1120px) {
+  .manufacturingPage .loopStage { min-height: 100% }
+}
+
+@media (max-width: 820px) {
+  .manufacturingPage .breadcrumb { width: calc(100vw - 32px); min-height: 44px; overflow-x: auto; white-space: nowrap }
+}
+
+@media (max-width: 820px) {
+  .manufacturingPage .implementation { padding-top: 68px; padding-bottom: 68px }
+}
+
+@media (max-width: 640px) {
+  .manufacturingPage .heroConsole { display: block }
+}
+
+@media (max-width: 640px) {
+  .manufacturingPage .manufacturingConsole .heroBanner, .manufacturingPage .manufacturingFlowMini { display: none }
+}
+
+@media (max-width: 640px) {
+  .manufacturingPage .consolePanel { padding: 14px }
+}
+
+@media (max-width: 640px) {
+  .manufacturingPage .manufacturingDashboard, .manufacturingPage .implementationGrid { grid-template-columns: 1fr }
+}
+
+@media (max-width: 640px) {
+  .manufacturingPage .alertRow { grid-template-columns: 54px minmax(0, 1fr) 46px; gap: 8px }
+}
+
+@media (max-width: 640px) {
+  .manufacturingPage .closedLoopDiagram { grid-template-columns: 1fr }
+}
+
+@media (max-width: 640px) {
+  .manufacturingPage .loopStage { padding: 18px }
+}
+
+@media (max-width: 640px) {
+  .manufacturingPage .loopStage:not(:last-child)::after { display: block; top: auto; right: 50%; bottom: -20px; width: 18px; height: 18px; transform: translateX(50%) rotate(135deg) }
+}
+
+@media (max-width: 640px) {
+  .manufacturingPage .loopFeedback { grid-template-columns: 1fr; gap: 10px }
+}
+
+@media (max-width: 640px) {
+  .manufacturingPage .tabList { display: grid; grid-template-columns: 1fr }
+}
+
+@media (max-width: 640px) {
+  .manufacturingPage .tabButton { width: 100%; border-radius: 6px }
+}
+
+@media (max-width: 640px) {
+  .manufacturingPage .tabPanel { padding: 22px }
+}
+
+@media (max-width: 640px) {
+  .manufacturingPage .industryMap { grid-template-columns: 1fr; gap: 16px }
+}
+
+@media (max-width: 640px) {
+  .manufacturingPage .aiCommandCard { padding: 22px }
+}
+
+@media (max-width: 640px) {
+  .manufacturingPage .aiCommandCard h3 { font-size: 24px }
+}
+
+@media (max-width: 640px) {
+  .manufacturingPage .aiPipeline { grid-template-columns: 1fr; gap: 8px }
+}
+
+@media (max-width: 640px) {
+  .manufacturingPage .aiPipeline i { width: 2px; height: 12px; justify-self: center; background: linear-gradient(180deg, rgba(145, 199, 255, 0.1), rgba(145, 199, 255, 0.9)) }
+}
+
+@media (max-width: 640px) {
+  .manufacturingPage .aiApplicationNote { grid-template-columns: 1fr; align-items: start }
+}
+
+@media (max-width: 420px) {
+  .manufacturingPage .breadcrumb { width: calc(100vw - 28px) }
+}
+
+/* TL;DR (新增) */
+.manufacturingPage .tldr {
+  width: 100%;
+  padding: 56px max(20px, calc((100% - 1180px) / 2));
+  background: linear-gradient(180deg, #0a1020 0%, #111a2f 100%);
+  color: #e9f2ff;
+}
+
+.manufacturingPage .tldrInner {
+  display: grid;
+  gap: 28px;
+}
+
+.manufacturingPage .tldrHead {
+  display: grid;
+  gap: 12px;
+  max-width: 820px;
+}
+
+.manufacturingPage .tldrHead span {
   display: inline-flex;
+  width: fit-content;
+  min-height: 28px;
   align-items: center;
-  gap: 8px;
-  color: #91c7ff;
-  background: rgba(0, 82, 217, 0.16);
-  border: 1px solid rgba(88, 166, 255, 0.22);
-  border-radius: 999px;
-  padding: 6px 12px;
-  font-size: 13px;
-  line-height: 1.35;
-  font-weight: 900;
-}
-
-.eyebrow span {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #3b82f6;
-  box-shadow: 0 0 0 5px rgba(59, 130, 246, 0.18);
-}
-
-.hero h1 {
-  margin: 22px 0 16px;
-  max-width: 720px;
-  color: #fff;
-  font-size: 54px;
-  line-height: 1.08;
-  font-weight: 950;
-}
-
-.heroLead {
-  color: #e7f1ff;
-  font-size: 28px;
-  line-height: 1.34;
-  font-weight: 950;
-  margin-bottom: 16px;
-}
-
-.hero p {
-  max-width: 690px;
-  margin: 0 0 16px;
-  color: #aebbd1;
-  font-size: 17px;
-  line-height: 1.78;
-  font-weight: 600;
-}
-
-.heroDesc {
-  color: #98a7bd !important;
-}
-
-.heroDesc a {
-  color: #3b82f6;
-  text-decoration: underline;
-}
-
-.valueTags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  max-width: 700px;
-  margin-top: 22px;
-}
-
-.valueTags span {
-  display: inline-flex;
-  align-items: center;
-  min-height: 34px;
   padding: 0 12px;
   border-radius: 999px;
-  color: #d8e8ff;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  font-size: 13px;
-  font-weight: 850;
+  color: #91c7ff;
+  background: rgba(0, 82, 217, 0.18);
+  border: 1px solid rgba(145, 199, 255, 0.24);
+  font-size: 12px;
+  font-weight: 950;
+  letter-spacing: 0.04em;
 }
 
-.heroActions {
-  display: flex;
-  flex-wrap: wrap;
+.manufacturingPage .tldrHead h2 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(28px, 4vw, 40px);
+  line-height: 1.2;
+  font-weight: 950;
+  letter-spacing: -0.01em;
+}
+
+.manufacturingPage .tldrHead p {
+  margin: 0;
+  color: #c4d1e5;
+  font-size: 16px;
+  line-height: 1.75;
+  font-weight: 650;
+}
+
+.manufacturingPage .tldrGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
-  align-items: center;
-  margin-top: 28px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.btn {
+.manufacturingPage .tldrGrid li {
+  position: relative;
+  min-width: 0;
+  padding: 22px;
+  border-radius: 8px;
+  border: 1px solid rgba(145, 199, 255, 0.18);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 18px 38px rgba(3, 8, 19, 0.18);
+}
+
+.manufacturingPage .tldrGrid li::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 3px;
+  border-radius: 8px 8px 0 0;
+  background: linear-gradient(90deg, var(--boran-blue), var(--cta-red));
+  opacity: 0.85;
+}
+
+.manufacturingPage .tldrIcon {
   display: inline-flex;
+  width: 40px;
+  height: 40px;
   align-items: center;
   justify-content: center;
-  gap: 9px;
-  min-height: 52px;
-  padding: 0 24px;
-  border-radius: 6px;
-  font-size: 15px;
-  font-weight: 900;
-  transition: all 0.2s ease;
-  text-decoration: none;
-}
-
-.btnPrimary {
+  border-radius: 8px;
   color: #fff;
-  background: var(--cta-red);
-  box-shadow: 0 16px 34px rgba(215, 51, 36, 0.3);
+  background: linear-gradient(135deg, var(--boran-blue), #1b80c1);
+  margin-bottom: 14px;
 }
 
-.btnSecondary {
+.manufacturingPage .tldrGrid strong {
+  display: block;
   color: #fff;
-  border: 2px solid rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, 0.06);
-}
-
-.heroQuote {
-  max-width: 680px;
-  margin-top: 24px;
-  padding: 16px 18px;
-  border-left: 4px solid var(--cta-red);
-  color: #f2f7ff;
-  background: rgba(255, 255, 255, 0.06);
-  font-size: 18px;
-  line-height: 1.58;
+  font-size: 17px;
+  line-height: 1.3;
   font-weight: 950;
 }
 
-.heroConsole {
-  border-radius: 8px;
-  border: 1px solid rgba(167, 193, 255, 0.22);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.04)), rgba(7, 13, 28, 0.82);
-  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.36);
-  overflow: hidden;
-}
-
-.heroBanner {
-  width: 100%;
-  aspect-ratio: 1200 / 630;
-  object-fit: cover;
-}
-
-.consolePanel {
-  padding: 18px;
-}
-
-.panelTitle {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-.panelTitle span {
-  color: #8d9bb4;
-  font-size: 12px;
-  font-weight: 800;
-}
-
-.panelTitle strong {
-  color: #ffd1c8;
+.manufacturingPage .tldrGrid span {
+  display: block;
+  margin-top: 6px;
+  color: #c4d1e5;
   font-size: 13px;
-}
-
-.projectFlow {
-  display: grid;
-  grid-template-columns: 1fr 14px 1fr 14px 1fr 14px 1.35fr 14px 1.35fr 14px 1fr;
-  align-items: center;
-  gap: 6px;
-  margin: 18px 0;
-}
-
-.projectFlow span {
-  min-height: 36px;
-  padding: 0 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 6px;
-  color: #dbeafe;
-  background: rgba(0, 82, 217, 0.22);
-  border: 1px solid rgba(59, 130, 246, 0.24);
-  font-size: 11px;
-  font-weight: 900;
-  text-align: center;
-}
-
-.projectFlow i {
-  height: 2px;
-  background: linear-gradient(90deg, rgba(89, 200, 255, 0.1), rgba(89, 200, 255, 0.85));
-}
-
-.metricGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  margin-bottom: 16px;
-}
-
-.metricGrid div {
-  padding: 14px;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(3, 8, 19, 0.5);
-}
-
-.metricGrid small {
-  display: block;
-  color: #8d9bb4;
-  font-size: 12px;
-  font-weight: 800;
-}
-
-.metricGrid b {
-  display: block;
-  margin-top: 7px;
-  color: #e9f2ff;
-  font-size: 23px;
-  font-weight: 950;
-}
-
-.metricGrid em {
-  display: block;
-  margin-top: 5px;
-  color: #7f8ca3;
-  font-style: normal;
-  font-size: 12px;
+  line-height: 1.7;
   font-weight: 700;
 }
 
-.alertRow {
-  display: grid;
-  grid-template-columns: 72px 1fr 54px;
-  gap: 10px;
-  align-items: center;
-  margin-top: 12px;
-}
-
-.alertRow span {
-  color: #8d9bb4;
-  font-size: 12px;
-  font-weight: 800;
-}
-
-.alertRow b {
-  color: #dbeafe;
-  font-size: 13px;
-  font-weight: 850;
-}
-
-.alertRow em {
-  justify-self: end;
-  padding: 3px 7px;
-  border-radius: 999px;
-  color: #9be6b6;
-  background: rgba(47, 166, 106, 0.14);
-  font-style: normal;
-  font-size: 11px;
-  font-weight: 900;
-}
-
-.alertRow.warn em {
-  color: #ffe3a7;
-  background: rgba(217, 134, 18, 0.16);
-}
-
-.alertRow.danger em {
-  color: #ffd1c8;
-  background: rgba(215, 51, 36, 0.16);
-}
-
-.section {
-  width: min(1180px, calc(100% - 40px));
-  margin: 0 auto;
-  padding: 92px 0;
-}
-
-.sectionHead {
-  max-width: 850px;
-  margin-bottom: 34px;
-}
-
-.sectionHead span {
-  display: inline-flex;
-  align-items: center;
-  color: #316dff;
-  background: #edf4ff;
-  border: 1px solid #cfe0ff;
-  border-radius: 999px;
-  padding: 6px 12px;
-  font-size: 13px;
-  font-weight: 900;
-}
-
-.sectionHead h2 {
-  margin: 16px 0 12px;
-  color: var(--ink);
-  font-size: 42px;
-  line-height: 1.2;
-  font-weight: 950;
-}
-
-.sectionHead p {
-  color: var(--muted);
-  font-size: 17px;
-  line-height: 1.8;
-  font-weight: 600;
-}
-
-/* Pain points */
-.painLayout {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-@media (max-width: 768px) {
-  .painLayout {
-    grid-template-columns: 1fr;
-  }
-}
-
-.painLayout article {
-  padding: 24px;
-  border-radius: 8px;
-  border: 1px solid var(--line);
-  background: #fff;
-  box-shadow: 0 18px 38px rgba(16, 24, 40, 0.05);
-}
-
-.painLayout article strong {
-  display: block;
-  margin-bottom: 12px;
-  font-size: 18px;
-  font-weight: 950;
-}
-
-/* Answer summary */
-.answerSummary {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
-
-@media (max-width: 768px) {
-  .answerSummary {
-    grid-template-columns: 1fr;
-  }
-}
-
-.answerSummary article {
-  padding: 22px;
-  border-radius: 8px;
-  border: 1px solid #dbeafe;
-  background: #fff;
-  box-shadow: 0 16px 32px rgba(16, 24, 40, 0.06);
-}
-
-.answerSummary article::before {
-  content: "";
-  display: block;
-  width: 38px;
-  height: 4px;
-  margin-bottom: 16px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--cta-red), var(--boran-blue));
-}
-
-.answerSummary strong {
-  display: block;
-  font-size: 18px;
-  font-weight: 950;
-}
-
-/* Architecture Layer Stack */
-.layerStack {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.layerStack article {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  padding: 24px;
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-}
-
-.layerStack b {
-  font-size: 24px;
-  color: var(--boran-blue);
-  font-weight: 950;
-}
-
-.layerStack h3 {
-  width: 180px;
-  font-size: 18px;
-  font-weight: 950;
-  flex-shrink: 0;
-}
-
-/* Closed Loop */
-.closedLoopDiagram {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-}
-
-@media (max-width: 1024px) {
-  .closedLoopDiagram {
-    grid-template-columns: 1fr;
-  }
-}
-
-.loopStage {
-  padding: 20px;
-  background: var(--soft);
-  border-radius: 12px;
-}
-
-.stageHead {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 20px;
-}
-
-.stageHead span {
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--boran-blue);
-  color: #fff;
-  border-radius: 50%;
-  font-weight: 950;
-  font-size: 14px;
-}
-
-.stageHead strong {
-  display: block;
-  font-size: 16px;
-  font-weight: 950;
-}
-
-.stageHead em {
-  font-style: normal;
-  font-size: 12px;
-  color: var(--muted);
-}
-
-.loopStage ol {
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.loopStage li b {
-  display: block;
-  margin-bottom: 4px;
-  font-size: 15px;
-  font-weight: 900;
-}
-
-.loopStage li small {
-  display: block;
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.5;
-}
-
-/* Scenarios */
-.scenarioGrid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-
-@media (max-width: 1024px) {
-  .scenarioGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+@media (max-width: 1040px) {
+  .manufacturingPage .tldrGrid { grid-template-columns: repeat(2, minmax(0, 1fr)) }
 }
 
 @media (max-width: 640px) {
-  .scenarioGrid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.scenarioCard {
-  padding: 24px;
-  border-radius: 8px;
-  border: 1px solid var(--line);
-  background: #fff;
-  transition: all 0.3s ease;
-}
-
-.scenarioCard:hover {
-  transform: translateY(-5px);
-  border-color: var(--boran-blue);
-  box-shadow: 0 20px 40px rgba(0, 82, 217, 0.1);
-}
-
-.scenarioCard small {
-  color: var(--boran-blue);
-  font-weight: 900;
-  font-size: 11px;
-}
-
-.scenarioCard h3 {
-  margin: 8px 0 16px;
-  font-size: 18px;
-  font-weight: 950;
-}
-
-.scenarioCard dl dt {
-  color: var(--ink);
-  font-weight: 900;
-  font-size: 14px;
-  margin-top: 12px;
-}
-
-.scenarioCard dl dd {
-  margin: 4px 0 0;
-  font-size: 14px;
-  color: var(--muted);
-}
-
-.scenarioCard span {
-  display: block;
-  margin-top: 20px;
-  padding-top: 16px;
-  border-top: 1px solid var(--line);
-  font-size: 12px;
-  color: #94a3b8;
-}
-
-/* Industry Tabs */
-.tabList {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 32px;
-}
-
-.tabButton {
-  padding: 8px 16px;
-  border-radius: 6px;
-  border: 1px solid var(--line);
-  background: #fff;
-  font-size: 14px;
-  font-weight: 800;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.tabButtonActive {
-  background: var(--boran-blue);
-  color: #fff;
-  border-color: var(--boran-blue);
-}
-
-.tabPanel {
-  padding: 32px;
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-}
-
-.industryMap {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  margin-top: 24px;
-}
-
-@media (max-width: 768px) {
-  .industryMap {
-    grid-template-columns: 1fr;
-  }
-}
-
-.industryMap b {
-  display: block;
-  margin-bottom: 16px;
-  font-size: 16px;
-  font-weight: 950;
-  color: var(--boran-blue);
-}
-
-.industryMap ul {
-  padding-left: 18px;
-  margin: 0;
-}
-
-.industryMap li {
-  font-size: 14px;
-  color: var(--muted);
-  margin-bottom: 8px;
-  font-weight: 600;
-}
-
-.roleTags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 32px;
-}
-
-.roleTags span {
-  padding: 4px 12px;
-  background: var(--soft);
-  border-radius: 4px;
-  font-size: 12px;
-  font-weight: 800;
-  color: var(--boran-sky);
-}
-
-/* Implementation Grid */
-.implementationGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-@media (max-width: 768px) {
-  .implementationGrid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.implementationGrid article {
-  padding: 24px;
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-}
-
-.implementationGrid b {
-  display: block;
-  font-size: 24px;
-  color: var(--boran-blue);
-  margin-bottom: 12px;
-}
-
-/* AI Applications */
-.aiScenarioLayout {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 32px;
-}
-
-@media (max-width: 1024px) {
-  .aiScenarioLayout {
-    grid-template-columns: 1fr;
-  }
-}
-
-.aiCommandCard {
-  padding: 32px;
-  background: var(--deep);
-  color: #fff;
-  border-radius: 12px;
-}
-
-.aiPipeline {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin: 24px 0;
-}
-
-.aiPipeline span {
-  font-size: 12px;
-  font-weight: 900;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 6px 10px;
-  border-radius: 4px;
-}
-
-.aiUsecaseGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-}
-
-@media (max-width: 640px) {
-  .aiUsecaseGrid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.aiUsecaseGrid article {
-  padding: 20px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-}
-
-/* FAQ */
-.faqList {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.faqItem {
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.faqQuestion {
-  width: 100%;
-  padding: 20px 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #fff;
-  border: 0;
-  text-align: left;
-  font-size: 16px;
-  font-weight: 900;
-}
-
-.faqAnswer {
-  padding: 20px 24px;
-  color: var(--muted);
-  font-size: 15px;
-  line-height: 1.7;
-  border-top: 1px solid var(--line);
-}
-
-/* Diagnosis */
-.diagnosis {
-  width: min(1180px, calc(100% - 40px));
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
-  padding: 92px 0;
-}
-
-@media (max-width: 1024px) {
-  .diagnosis {
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
-}
-
-.diagnosisCopy span {
-  display: inline-flex;
-  color: var(--boran-blue);
-  font-weight: 900;
-  font-size: 13px;
-  margin-bottom: 16px;
-}
-
-.diagnosisChecks {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  margin: 32px 0;
-}
-
-.diagnosisChecks div strong {
-  display: block;
-  font-size: 16px;
-  font-weight: 950;
-  margin-bottom: 4px;
-}
-
-.contactActions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-.contactActions a {
-  font-weight: 800;
-  color: var(--boran-blue);
-  text-decoration: underline;
-}
-
-.leadForm {
-  padding: 32px;
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  box-shadow: 0 20px 50px rgba(16, 24, 40, 0.1);
-}
-
-.fieldGrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-bottom: 16px;
-}
-
-@media (max-width: 640px) {
-  .fieldGrid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.leadForm label {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.leadForm label span {
-  font-size: 14px;
-  font-weight: 900;
-}
-
-.leadForm input, .leadForm select {
-  height: 44px;
-  padding: 0 12px;
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  font-size: 14px;
-}
-
-.modalSubmit {
-  width: 100%;
-  margin-top: 16px;
-  border: 0;
-  cursor: pointer;
-  background: var(--cta-red);
-  color: #fff;
-  height: 48px;
-  border-radius: 6px;
-  font-weight: 900;
+  .manufacturingPage .tldr { padding: 48px 20px }
+  .manufacturingPage .tldrGrid { grid-template-columns: 1fr }
+  .manufacturingPage .tldrHead h2 { font-size: 26px }
 }
