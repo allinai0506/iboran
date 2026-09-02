@@ -21,7 +21,8 @@
 }
 .cg-scope {
   margin: 0;
-  padding-top: 64px;
+  /* 2026-09-02: 移除 padding-top:64px —— hero-inner 自带 84px padding-top，
+     与 fixed header(64px) 叠加会在 hero 上方留出空白带 */
   color: var(--ink);
   background: var(--paper);
   font-family:
