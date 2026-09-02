@@ -263,7 +263,6 @@ export function HomeContent({ latestPosts, homeData }: HomeContentProps) {
               <div className="group-title"><span>Industries</span><h3>典型行业</h3></div>
               <strong className="group-card-title">{entry.industries?.groupTitle || '看行业方案'}</strong>
               <p className="group-desc">{entry.industries?.groupDesc || '按企业所在行业或组织形态，查看更贴近真实业务场景的解决方案。'}</p>
-              <Link href="/solution/industry/yonyou-bip"><strong>多组织集团</strong><em>集团管控、多组织协同、合并与主数据治理</em></Link>
               <Link href="/solution/industry/consumer-goods"><strong>消费品</strong><em>渠道订单、价格政策、库存周转与毛利</em></Link>
               <Link href="/solution/industry/manufacturing-yonsuite"><strong>个性化制造</strong><em>订单、BOM、计划、生产、质量与成本</em></Link>
               <Link href="/solution/industry/medical-pharma-yonsuite"><strong>医药医疗器械</strong><em>合规、追溯、渠道协同与经营分析</em></Link>
