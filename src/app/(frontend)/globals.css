@@ -433,3 +433,29 @@
 .prose ul.lexical-checklist > li::before {
   display: none !important;
 }
+
+/* ========================================
+   移动端：屏蔽爱番番自动注入的悬浮入口（底部通栏/浮球/邀请语），
+   避免遮挡页面自带的 MobileStickyBar（拨打电话/预约专家评估/在线咨询）。
+   仅 @media (max-width: 1023px) 生效，PC 端不受影响。
+   保留 .lxb-container / #lxb-container（对话弹窗本体），"在线咨询"仍可唤起。
+   ======================================== */
+@media (max-width: 1023px) {
+  /* 爱番番右下角竖条浮球及其内部层（实测 class） */
+  .embed-icon,
+  .embed-icon > *,
+  .embed-icon-default,
+  .embed-icon-pcIcon1,
+  .embed-icon-mobile,
+  /* 邀请语/引导气泡 */
+  #nb_invite_ok,
+  .nb-invite-ok,
+  .embed-hot-issue,
+  /* 入口图标 wrap（openAifafanChat 已知选择器） */
+  #nb_icon_wrap,
+  .nb-icon-inner-wrap,
+  #lxb-container-icon,
+  .lxb-container-icon {
+    display: none !important;
+  }
+}
