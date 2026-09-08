@@ -131,6 +131,13 @@
   .pb-safe-offset-2 {
     padding-bottom: calc(env(safe-area-inset-bottom) + 0.5rem);
   }
+  /* 给移动端底部固定栏 (MobileStickyBar) 让出空间
+     - 96px = MobileStickyBar 高度（含按钮 + padding + border）
+     - + env(safe-area-inset-bottom) 适配 iPhone home indicator
+     - 桌面端 (≥1024px) 不生效 */
+  .pb-mobile-sticky {
+    padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px));
+  }
 }
 
 /* Shimmer animation for brand text */

@@ -98,7 +98,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           }}
         />
       </head>
-      <body suppressHydrationWarning className="antialiased font-sans lg:pb-0 pb-20">
+      <body suppressHydrationWarning className="antialiased font-sans lg:pb-0 pb-mobile-sticky">
         <OrganizationJsonLd />
         {/* <ReactScan /> */}
         <WebVitals />
