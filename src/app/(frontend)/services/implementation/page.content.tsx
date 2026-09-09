@@ -79,7 +79,7 @@ export const ImplementationContent: React.FC = () => {
               <span>客户成功移交</span>
             </div>
             <div className={styles.heroActions}>
-              <Link href="#diagnosis" className={`${styles.btn} ${styles.btnPrimary}`}>
+              <Link href="#lead-form" className={`${styles.btn} ${styles.btnPrimary}`}>
                 <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><path d="M4 5h16v14H4V5Zm3 3v2h10V8H7Zm0 4v2h7v-2H7Zm0 4v1h4v-1H7Z" fill="currentColor" /></svg>
                 预约实施评估
               </Link>
@@ -530,7 +530,7 @@ export const ImplementationContent: React.FC = () => {
             <h2>让项目从一开始就可控。</h2>
             <p>我们可以根据您的产品形态、上线目标和组织复杂度，评估适合采用 SaaS 快速实施还是 BIP 敏捷交付路径。</p>
           </div>
-          <Link href="#diagnosis" className={`${styles.btn} ${styles.btnPrimary}`}>预约实施评估</Link>
+          <Link href="#lead-form" className={`${styles.btn} ${styles.btnPrimary}`}>预约实施评估</Link>
         </div>
       </section>
 
@@ -552,7 +552,7 @@ export const ImplementationContent: React.FC = () => {
             </div>
           </div>
 
-          <form className={styles.leadForm} onSubmit={handleSubmit}>
+          <form id="lead-form" className={styles.leadForm} onSubmit={handleSubmit}>
             <h3>预约企业数智化服务评估</h3>
             <input type="hidden" name="source_page" value="implementation" />
             <input type="hidden" name="source_path" value="/services/implementation" />

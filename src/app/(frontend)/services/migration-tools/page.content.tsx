@@ -75,7 +75,7 @@ export const MigrationContent: React.FC = () => {
               <span>数据脱敏</span><span>云巡检</span><span>业务转凭证</span><span>数据备份</span>
             </div>
             <div className={styles.heroActions}>
-              <Link href="#diagnosis" className={`${styles.btn} ${styles.btnPrimary}`} data-track="hero_cta_click" data-prefill-interest="迁移与工具服务">
+              <Link href="#lead-form" className={`${styles.btn} ${styles.btnPrimary}`} data-track="hero_cta_click" data-prefill-interest="迁移与工具服务">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4V5Zm3 3v2h10V8H7Zm0 4v2h7v-2H7Zm0 4v1h4v-1H7Z" /></svg>
                 预约迁移评估
               </Link>
@@ -323,7 +323,7 @@ export const MigrationContent: React.FC = () => {
       <section className={styles.section}>
         <div className={styles.ctaPanel}>
           <div><h2>数据迁移越复杂，越需要提前评估。</h2><p>我们可以帮助您梳理源系统、目标系统、迁移范围、数据质量、接口风险和上线窗口，形成可执行的迁移与工具服务方案。</p></div>
-          <Link href="#diagnosis" className={`${styles.btn} ${styles.btnPrimary}`} data-track="bottom_cta_click">预约迁移评估</Link>
+          <Link href="#lead-form" className={`${styles.btn} ${styles.btnPrimary}`} data-track="bottom_cta_click">预约迁移评估</Link>
         </div>
       </section>
 
@@ -344,7 +344,7 @@ export const MigrationContent: React.FC = () => {
             </div>
           </div>
 
-          <form className={styles.leadForm} onSubmit={handleSubmit}>
+          <form id="lead-form" className={styles.leadForm} onSubmit={handleSubmit}>
             <h3>预约企业数智化服务评估</h3>
             <input type="hidden" name="source_page" value="migration-tools" />
             <input type="hidden" name="source_path" value="/services/migration-tools" />

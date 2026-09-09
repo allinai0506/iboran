@@ -79,7 +79,7 @@ export const ServicesContent: React.FC = () => {
               <span>客户成功</span>
             </div>
             <div className={styles.heroActions}>
-              <a href="#diagnosis" className={`${styles.btn} ${styles.btnPrimary}`} data-track="hero_cta_click">
+              <a href="#lead-form" className={`${styles.btn} ${styles.btnPrimary}`} data-track="hero_cta_click">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4V5Zm3 3v2h10V8H7Zm0 4v2h7v-2H7Zm0 4v1h4v-1H7Z" /></svg>
                 预约服务评估
               </a>
@@ -498,7 +498,7 @@ export const ServicesContent: React.FC = () => {
             <h2>不确定该选哪类服务？先做一次服务评估。</h2>
             <p>我们将根据您的产品形态、企业规模、系统复杂度、数据范围、集成需求和上线目标，给出适合的服务路径建议。</p>
           </div>
-          <a href="#diagnosis" className={`${styles.btn} ${styles.btnPrimary}`} data-track="bottom_cta_click">预约服务评估</a>
+          <a href="#lead-form" className={`${styles.btn} ${styles.btnPrimary}`} data-track="bottom_cta_click">预约服务评估</a>
         </div>
       </section>
 
@@ -519,7 +519,7 @@ export const ServicesContent: React.FC = () => {
           </div>
         </div>
 
-        <form className={styles.leadForm} onSubmit={handleSubmit}>
+        <form id="lead-form" className={styles.leadForm} onSubmit={handleSubmit}>
           <h3>预约企业数智化服务评估</h3>
           <input type="hidden" name="source_page" value="services-overview" />
           <input type="hidden" name="source_path" value="/services" />

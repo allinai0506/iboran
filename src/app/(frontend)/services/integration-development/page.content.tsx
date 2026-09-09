@@ -79,7 +79,7 @@ export const IntegrationContent: React.FC = () => {
               <span>客户化开发</span>
             </div>
             <div className={styles.heroActions}>
-              <Link href="#diagnosis" className={`${styles.btn} ${styles.btnPrimary}`}>
+              <Link href="#lead-form" className={`${styles.btn} ${styles.btnPrimary}`}>
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4V5Zm3 3v2h10V8H7Zm0 4v2h7v-2H7Zm0 4v1h4v-1H7Z" /></svg>
                 预约集成评估
               </Link>
@@ -480,7 +480,7 @@ export const IntegrationContent: React.FC = () => {
             <h2>不要让接口成为项目上线后的隐患。</h2>
             <p>我们可以先帮您梳理系统清单、接口现状、数据流向和集成风险，再给出适合的集成与开发服务方案。</p>
           </div>
-          <Link href="#diagnosis" className={`${styles.btn} ${styles.btnPrimary}`}>预约集成评估</Link>
+          <Link href="#lead-form" className={`${styles.btn} ${styles.btnPrimary}`}>预约集成评估</Link>
         </div>
       </section>
 
@@ -501,7 +501,7 @@ export const IntegrationContent: React.FC = () => {
             </div>
           </div>
 
-          <form className={styles.leadForm} onSubmit={handleSubmit}>
+          <form id="lead-form" className={styles.leadForm} onSubmit={handleSubmit}>
             <h3>预约企业数智化服务评估</h3>
             <input type="hidden" name="source_page" value="integration-development" />
             <input type="hidden" name="source_path" value="/services/integration-development" />

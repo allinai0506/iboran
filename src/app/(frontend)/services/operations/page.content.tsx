@@ -79,7 +79,7 @@ export const OperationsContent: React.FC = () => {
               <span>客户成功</span>
             </div>
             <div className={styles.heroActions}>
-              <Link href="#diagnosis" className={`${styles.btn} ${styles.btnPrimary}`}>
+              <Link href="#lead-form" className={`${styles.btn} ${styles.btnPrimary}`}>
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4V5Zm3 3v2h10V8H7Zm0 4v2h7v-2H7Zm0 4v1h4v-1H7Z" /></svg>
                 预约运维评估
               </Link>
@@ -593,7 +593,7 @@ export const OperationsContent: React.FC = () => {
             <h2>上线不是终点，稳定运行才是长期价值的开始。</h2>
             <p>我们可以为您的系统建立运维服务档案、巡检机制和关键时刻保障方案，降低运行风险，提升应用价值。</p>
           </div>
-          <Link href="#diagnosis" className={`${styles.btn} ${styles.btnPrimary}`}>预约运维评估</Link>
+          <Link href="#lead-form" className={`${styles.btn} ${styles.btnPrimary}`}>预约运维评估</Link>
         </div>
       </section>
 
@@ -614,7 +614,7 @@ export const OperationsContent: React.FC = () => {
             </div>
           </div>
 
-          <form className={styles.leadForm} onSubmit={handleSubmit}>
+          <form id="lead-form" className={styles.leadForm} onSubmit={handleSubmit}>
             <h3>预约企业数智化服务评估</h3>
             <input type="hidden" name="source_page" value="operations" />
             <input type="hidden" name="source_path" value="/services/operations" />
