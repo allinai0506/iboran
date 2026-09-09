@@ -438,16 +438,28 @@
    移动端：屏蔽爱番番自动注入的悬浮入口（底部通栏/浮球/邀请语），
    避免遮挡页面自带的 MobileStickyBar（拨打电话/预约专家评估/在线咨询）。
    仅 @media (max-width: 1023px) 生效，PC 端不受影响。
-   保留 .lxb-container / #lxb-container（对话弹窗本体），"在线咨询"仍可唤起。
+   保留 .embed-chat / .embed-call-container（对话与通话弹窗本体），
+   "在线咨询"仍可通过 openAifafanChat 唤起。
+   class 清单来源：抓取 goutong.baidu.com/site/78/<siteToken>/b.js
+   → aff-im.cdn.bcebos.com/.../mobile-affim.js（爱番番移动端 SDK）实测枚举。
    ======================================== */
 @media (max-width: 1023px) {
-  /* 爱番番右下角竖条浮球及其内部层（实测 class） */
+  /* 底部通栏：红"在线咨询" + 蓝"拨打电话"（fixed bottom:0, z-index 2147482100） */
+  .embed-toolbar,
+  .embed-toolbar-btn,
+  /* 右下角竖条浮球及其内部层 */
   .embed-icon,
   .embed-icon > *,
   .embed-icon-default,
   .embed-icon-pcIcon1,
   .embed-icon-mobile,
-  /* 邀请语/引导气泡 */
+  .embed-icon-unread,
+  .embed-icon-content,
+  /* 自动邀请弹框 / 消息横幅 / 数字人挂件 */
+  .embed-invite,
+  .embed-msgbanner,
+  .embed-digital,
+  /* 旧版商桥邀请语/引导气泡 */
   #nb_invite_ok,
   .nb-invite-ok,
   .embed-hot-issue,

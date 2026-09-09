@@ -2,6 +2,10 @@ const AIFAFAN_FALLBACK_URL =
   'https://affim.baidu.com/unique_52771578/chat?siteId=22949567&userId=52771578&siteToken=aac20df95e015006d1b11e4bd6e64a83'
 
 const AIFAFAN_WIDGET_SELECTORS = [
+  // 新版爱番番 SDK（mobile-affim.js / aff-im-root）入口
+  '.embed-icon',
+  '.embed-toolbar .embed-toolbar-btn',
+  // 旧版商桥/离线宝入口
   '#nb_icon_wrap',
   '.nb-icon-inner-wrap',
   '#lxb-container-icon',
