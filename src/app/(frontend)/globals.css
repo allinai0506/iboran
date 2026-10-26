@@ -438,8 +438,9 @@
    移动端：屏蔽爱番番自动注入的悬浮入口（底部通栏/浮球/邀请语），
    避免遮挡页面自带的 MobileStickyBar（拨打电话/预约专家评估/在线咨询）。
    仅 @media (max-width: 1023px) 生效，PC 端不受影响。
-   保留 .embed-chat / .embed-call-container（对话与通话弹窗本体），
-   "在线咨询"仍可通过 openAifafanChat 唤起。
+   保留 .embed-chat / .embed-call-container（对话与通话弹窗本体）。
+   ⚠️ 2026-10-26：入口被隐藏后，对隐藏元素 click() 无任何反馈，
+   "在线咨询"改为由 openAifafanChat 判断：无可见入口时直接跳转爱番番聊天页，不再依赖这些隐藏入口。
    class 清单来源：抓取 goutong.baidu.com/site/78/<siteToken>/b.js
    → aff-im.cdn.bcebos.com/.../mobile-affim.js（爱番番移动端 SDK）实测枚举。
    ======================================== */
