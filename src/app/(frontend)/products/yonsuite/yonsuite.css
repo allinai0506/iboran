@@ -1348,6 +1348,7 @@ select,
 
 .yonsuite-scope .lead-form{
   min-width: 0;
+  scroll-margin-top: 76px;
   padding: 28px;
   border-radius: 8px;
   color: var(--ink);
@@ -1650,8 +1651,8 @@ select,
 }
 
 @media (min-width: 1080px) {
-  .site-nav,
-  .header-phone,
+.yonsuite-scope .site-nav,
+.yonsuite-scope .header-phone,
 .yonsuite-scope .header-cta{
     display: flex;
   }
@@ -1666,8 +1667,8 @@ select,
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .ai-layout,
-  .governance-panel,
+.yonsuite-scope .ai-layout,
+.yonsuite-scope .governance-panel,
 .yonsuite-scope .diagnosis{
     grid-template-columns: 1fr;
   }
@@ -1713,7 +1714,7 @@ select,
     font-size: 24px;
   }
 
-  .answer-cards,
+.yonsuite-scope .answer-cards,
 .yonsuite-scope .service-grid{
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1759,13 +1760,13 @@ select,
     font-size: 19px;
   }
 
-  .brand .yonyou,
+.yonsuite-scope .brand .yonyou,
 .yonsuite-scope .brand-divider{
     display: none;
   }
 
-  .hero-inner,
-  .section,
+.yonsuite-scope .hero-inner,
+.yonsuite-scope .section,
 .yonsuite-scope .footer-inner{
     width: min(100% - 32px, 1180px);
   }
@@ -1801,6 +1802,7 @@ select,
   .yonsuite-scope .hero-proof,
   .yonsuite-scope .suite-map,
   .yonsuite-scope .console-flow,
+  .yonsuite-scope .ai-layout,
   .yonsuite-scope .answer-cards,
   .yonsuite-scope .matrix-grid,
   .yonsuite-scope .ai-grid,
@@ -1821,11 +1823,11 @@ select,
     min-height: auto;
   }
 
-  .section,
-  .product-matrix,
-  .architecture,
-  .industries,
-  .implementation,
+.yonsuite-scope .section,
+.yonsuite-scope .product-matrix,
+.yonsuite-scope .architecture,
+.yonsuite-scope .industries,
+.yonsuite-scope .implementation,
 .yonsuite-scope .diagnosis{
     padding-top: 62px;
     padding-bottom: 62px;
@@ -1875,12 +1877,12 @@ select,
     line-height: 1.7;
   }
 
-  .industry-fields div,
-  .industry-fields div:nth-child(1),
-  .industry-fields div:nth-child(2),
-  .industry-fields div:nth-child(3),
-  .industry-fields div:nth-child(4),
-  .industry-fields div:nth-child(5),
+.yonsuite-scope .industry-fields div,
+.yonsuite-scope .industry-fields div:nth-child(1),
+.yonsuite-scope .industry-fields div:nth-child(2),
+.yonsuite-scope .industry-fields div:nth-child(3),
+.yonsuite-scope .industry-fields div:nth-child(4),
+.yonsuite-scope .industry-fields div:nth-child(5),
 .yonsuite-scope .industry-fields div:nth-child(6){
     grid-column: 1 / -1;
   }
@@ -1897,7 +1899,7 @@ select,
     padding: 22px;
   }
 
-  .footer-main,
+.yonsuite-scope .footer-main,
 .yonsuite-scope .footer-bottom{
     grid-template-columns: 1fr;
     display: grid;
@@ -1909,21 +1911,21 @@ select,
 }
 
 @media (max-width: 420px) {
-  .hero-inner,
-  .section,
+.yonsuite-scope .hero-inner,
+.yonsuite-scope .section,
 .yonsuite-scope .footer-inner{
     width: min(100% - 28px, 1180px);
   }
 
-  .hero-console,
-  .lead-form,
+.yonsuite-scope .hero-console,
+.yonsuite-scope .lead-form,
 .yonsuite-scope .governance-panel{
     padding: 20px;
   }
 
-  .answer-cards article,
-  .matrix-grid article,
-  .service-grid article,
+.yonsuite-scope .answer-cards article,
+.yonsuite-scope .matrix-grid article,
+.yonsuite-scope .service-grid article,
 .yonsuite-scope .scenario-grid article{
     padding: 20px;
   }

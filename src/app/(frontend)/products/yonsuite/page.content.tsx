@@ -97,7 +97,7 @@ export const YonsuiteContent: React.FC = () => {
               <span>泊冉顾问式实施</span>
             </div>
             <div className="hero-actions">
-              <a className="btn primary" href="#diagnosis" data-scroll-target data-track="yonsuite_hero_cta_click" data-cta-mode="consult">
+              <a className="btn primary" href="#consult-form" data-scroll-target data-track="yonsuite_hero_cta_click" data-cta-mode="consult">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4V5Zm3 3v2h10V8H7Zm0 4v2h7v-2H7Zm0 4v1h4v-1H7Z" /></svg>
                 预约YonSuite方案咨询
               </a>
@@ -482,7 +482,7 @@ export const YonsuiteContent: React.FC = () => {
             <div><strong>持续运营</strong><span>上线后继续优化指标、报表和AI场景</span></div>
           </div>
         </div>
-        <form className="lead-form" noValidate data-form-name="yonsuite-consultation" onSubmit={handleLeadFormSubmit}>
+        <form id="consult-form" className="lead-form" noValidate data-form-name="yonsuite-consultation" onSubmit={handleLeadFormSubmit}>
           <h3>提交咨询需求</h3>
           <div className="field-grid">
             <label><span>公司名称 <b>*</b></span><input name="company" type="text" autoComplete="organization" required /></label>
