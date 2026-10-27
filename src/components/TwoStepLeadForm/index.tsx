@@ -1,12 +1,23 @@
 'use client'
 
+/**
+ * 线索表单（原「两步表单」，2026-10-27 简化为单步）
+ *
+ * 简化原因：移动端底部栏「预约专家评估」弹出后，第一步要填姓名/公司/手机，
+ * 点「下一步」后还要再填邮箱/角色/当前系统/备注共 4 项，第二步字段比第一步还多，
+ * 用户感知是"步骤太多"。现改为一屏填完：姓名 / 公司 / 手机 / 需求类型。
+ *
+ * 后端约束（/api/leads）：name、company、phone 必填，手机需满足 ^1[3-9]\d{9}$；
+ * message/remark 会写入线索的「补充说明」，因此需求类型复用 message 字段传递。
+ */
+
 import React, { useState } from 'react'
 import Link from 'next/link'
-import { useForm, type UseFormRegister, type FieldErrors } from 'react-hook-form'
-import { ChevronRight, CheckCircle2, Loader2 } from 'lucide-react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { useForm } from 'react-hook-form'
+import { CheckCircle2, Loader2 } from 'lucide-react'
+import { motion } from 'framer-motion'
 
-interface TwoStepLeadFormProps {
+interface LeadFormProps {
   onSubmit: (data: LeadFormData) => Promise<void>
   source?: string
   submitLabel?: string
@@ -16,51 +27,26 @@ interface LeadFormData {
   name: string
   company: string
   phone: string
+  intent?: string
+  message?: string
   email?: string
   role?: string
   currentSystem?: string
-  message?: string
   source?: string
 }
 
-interface Step1Props {
-  register: UseFormRegister<LeadFormData>
-  errors: FieldErrors<LeadFormData>
-  isLoading: boolean
-}
-
-interface Step2Props {
-  register: UseFormRegister<LeadFormData>
-  errors: FieldErrors<LeadFormData>
-  isLoading: boolean
-  error: string | null
-  onBack: () => void
-  submitLabel: string
-}
-
-const ROLE_OPTIONS = [
-  { label: '企业决策者', value: 'executive' },
-  { label: 'IT/技术负责人', value: 'it' },
-  { label: '财务负责人', value: 'finance' },
-  { label: '业务负责人', value: 'business' },
-  { label: '其他', value: 'other' },
+const INTENT_OPTIONS = [
+  '当前系统运维与优化',
+  '系统升级评估（U8 / NC 等）',
+  '新平台实施（YonSuite / BIP）',
+  '系统集成与二次开发',
+  '其他',
 ]
 
-const SYSTEM_OPTIONS = [
-  { label: '用友', value: 'yonyou' },
-  { label: '金蝶', value: 'kingdee' },
-  { label: 'SAP', value: 'sap' },
-  { label: 'Oracle', value: 'oracle' },
-  { label: '暂无系统', value: 'none' },
-  { label: '其他', value: 'other' },
-]
-
-export const TwoStepLeadForm: React.FC<TwoStepLeadFormProps> = ({ onSubmit, source, submitLabel = '提交预约' }) => {
-  const [step, setStep] = useState<1 | 2>(1)
+export const LeadForm: React.FC<LeadFormProps> = ({ onSubmit, source, submitLabel = '提交预约' }) => {
   const [isSuccess, setIsSuccess] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
-  const [coreData, setCoreData] = useState<Partial<LeadFormData>>({})
 
   const {
     register,
@@ -68,16 +54,19 @@ export const TwoStepLeadForm: React.FC<TwoStepLeadFormProps> = ({ onSubmit, sour
     formState: { errors },
   } = useForm<LeadFormData>()
 
-  const handleStep1Submit = async (data: Pick<LeadFormData, 'name' | 'company' | 'phone'>) => {
-    setCoreData(data)
-    setStep(2)
-  }
-
-  const handleFinalSubmit = async (data: LeadFormData) => {
+  const onFormSubmit = async (data: LeadFormData) => {
     setIsLoading(true)
     setError(null)
     try {
-      await onSubmit({ ...coreData, ...data, source })
+      // 需求类型写入 message，后端会作为「补充说明」进入线索记录与通知邮件
+      const message = data.intent ? `需求类型：${data.intent}` : data.message
+      await onSubmit({
+        name: data.name,
+        company: data.company,
+        phone: data.phone,
+        message,
+        source,
+      })
       if (window._agl) {
         window._agl.push(['track', ['success', { t: 3 }]])
       }
@@ -91,179 +80,103 @@ export const TwoStepLeadForm: React.FC<TwoStepLeadFormProps> = ({ onSubmit, sour
   }
 
   if (isSuccess) {
-    return <SuccessState onAddMore={() => { setIsSuccess(false); setStep(2) }} onClose={() => setIsSuccess(false)} />
+    return <SuccessState onClose={() => setIsSuccess(false)} />
   }
 
   return (
-    <form onSubmit={step === 1 ? handleSubmit(handleStep1Submit) : handleSubmit(handleFinalSubmit)}>
-      <AnimatePresence mode="wait">
-        {step === 1 && (
-          <Step1 key="step1" register={register} errors={errors} isLoading={isLoading} />
-        )}
-        {step === 2 && (
-          <Step2
-            key="step2"
-            register={register}
-            errors={errors}
-            isLoading={isLoading}
-            error={error}
-            onBack={() => setStep(1)}
-            submitLabel={submitLabel}
+    <form onSubmit={handleSubmit(onFormSubmit)}>
+      <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="space-y-4">
+        <div className="grid grid-cols-2 gap-4">
+          <div>
+            <label className="block text-sm font-medium text-[#1F2329] mb-1.5">
+              姓名 <span className="text-[#E60012]">*</span>
+            </label>
+            <input
+              {...register('name', { required: '请输入姓名' })}
+              type="text"
+              placeholder="您的姓名"
+              className={`w-full px-4 py-2.5 border rounded-lg text-base md:text-sm focus:outline-none focus:ring-2 focus:ring-[#0052D9]/20 ${
+                errors.name ? 'border-red-300' : 'border-slate-200'
+              }`}
+            />
+            {errors.name && <p className="mt-1 text-sm text-red-500">{errors.name.message}</p>}
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-[#1F2329] mb-1.5">
+              公司名称 <span className="text-[#E60012]">*</span>
+            </label>
+            <input
+              {...register('company', { required: '请输入公司名称' })}
+              type="text"
+              placeholder="您的公司"
+              className={`w-full px-4 py-2.5 border rounded-lg text-base md:text-sm focus:outline-none focus:ring-2 focus:ring-[#0052D9]/20 ${
+                errors.company ? 'border-red-300' : 'border-slate-200'
+              }`}
+            />
+            {errors.company && <p className="mt-1 text-sm text-red-500">{errors.company.message}</p>}
+          </div>
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium text-[#1F2329] mb-1.5">
+            手机号 <span className="text-[#E60012]">*</span>
+          </label>
+          <input
+            {...register('phone', {
+              required: '请输入手机号',
+              pattern: { value: /^1[3-9]\d{9}$/, message: '请输入有效手机号' },
+            })}
+            type="tel"
+            inputMode="numeric"
+            autoComplete="tel"
+            placeholder="您的手机号"
+            className={`w-full px-4 py-2.5 border rounded-lg text-base md:text-sm focus:outline-none focus:ring-2 focus:ring-[#0052D9]/20 ${
+              errors.phone ? 'border-red-300' : 'border-slate-200'
+            }`}
           />
-        )}
-      </AnimatePresence>
+          {errors.phone && <p className="mt-1 text-sm text-red-500">{errors.phone.message}</p>}
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium text-[#1F2329] mb-1.5">
+            您想先解决什么 <span className="text-[#E60012]">*</span>
+          </label>
+          <select
+            {...register('intent', { required: '请选择需求类型' })}
+            className={`w-full px-4 py-2.5 border rounded-lg text-base md:text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#0052D9]/20 ${
+              errors.intent ? 'border-red-300' : 'border-slate-200'
+            }`}
+          >
+            <option value="">请选择</option>
+            {INTENT_OPTIONS.map((opt) => (
+              <option key={opt} value={opt}>
+                {opt}
+              </option>
+            ))}
+          </select>
+          {errors.intent && <p className="mt-1 text-sm text-red-500">{errors.intent.message}</p>}
+        </div>
+
+        {error && <div className="p-3 bg-red-50 text-red-600 text-sm rounded-lg">{error}</div>}
+
+        <button
+          type="submit"
+          disabled={isLoading}
+          className="w-full py-3 bg-[#E60012] hover:bg-red-700 text-white font-bold rounded-lg transition-colors flex items-center justify-center gap-2"
+        >
+          {isLoading ? <Loader2 className="w-5 h-5 animate-spin" /> : submitLabel}
+        </button>
+
+        <p className="text-xs text-slate-400 text-center">我们只用于本次沟通，不会向第三方共享您的信息</p>
+      </motion.div>
     </form>
   )
 }
 
-// Step 1: 核心信息（必填）
-const Step1: React.FC<Step1Props> = ({ register, errors, isLoading }) => (
-  <motion.div
-    initial={{ opacity: 0, x: 20 }}
-    animate={{ opacity: 1, x: 0 }}
-    exit={{ opacity: 0, x: -20 }}
-    className="space-y-4"
-  >
-    <div className="grid grid-cols-2 gap-4">
-      <div>
-        <label className="block text-sm font-medium text-[#1F2329] mb-1.5">
-          姓名 <span className="text-[#E60012]">*</span>
-        </label>
-        <input
-          {...register('name', { required: '请输入姓名' })}
-          type="text"
-          placeholder="您的姓名"
-          className={`w-full px-4 py-2.5 border rounded-lg text-base md:text-sm focus:outline-none focus:ring-2 focus:ring-[#0052D9]/20 ${
-            errors.name ? 'border-red-300' : 'border-slate-200'
-          }`}
-        />
-      </div>
-      <div>
-        <label className="block text-sm font-medium text-[#1F2329] mb-1.5">
-          公司名称 <span className="text-[#E60012]">*</span>
-        </label>
-        <input
-          {...register('company', { required: '请输入公司名称' })}
-          type="text"
-          placeholder="您的公司"
-          className={`w-full px-4 py-2.5 border rounded-lg text-base md:text-sm focus:outline-none focus:ring-2 focus:ring-[#0052D9]/20 ${
-            errors.company ? 'border-red-300' : 'border-slate-200'
-          }`}
-        />
-      </div>
-    </div>
-    <div>
-      <label className="block text-sm font-medium text-[#1F2329] mb-1.5">
-        手机号 <span className="text-[#E60012]">*</span>
-      </label>
-      <input
-        {...register('phone', {
-          required: '请输入手机号',
-          pattern: { value: /^1[3-9]\d{9}$/, message: '请输入有效手机号' },
-        })}
-        type="tel"
-        placeholder="您的手机号"
-        className={`w-full px-4 py-2.5 border rounded-lg text-base md:text-sm focus:outline-none focus:ring-2 focus:ring-[#0052D9]/20 ${
-          errors.phone ? 'border-red-300' : 'border-slate-200'
-        }`}
-      />
-    </div>
-    <button
-      type="submit"
-      disabled={isLoading}
-      className="w-full py-3 bg-[#E60012] hover:bg-red-700 text-white font-bold rounded-lg transition-colors flex items-center justify-center gap-2"
-    >
-      {isLoading ? <Loader2 className="w-5 h-5 animate-spin" /> : '下一步'}
-      <ChevronRight className="w-4 h-4" />
-    </button>
-  </motion.div>
-)
+/** 兼容旧引用：名称已改为 LeadForm，保留别名避免遗漏的 import 导致构建失败 */
+export const TwoStepLeadForm = LeadForm
 
-// Step 2: 补充信息（可选）
-const Step2: React.FC<Step2Props> = ({ register, errors, isLoading, error, onBack, submitLabel }) => (
-  <motion.div
-    initial={{ opacity: 0, x: 20 }}
-    animate={{ opacity: 1, x: 0 }}
-    exit={{ opacity: 0, x: -20 }}
-    className="space-y-4"
-  >
-    <p className="text-sm text-slate-500 bg-slate-50 p-3 rounded-lg">
-      补充以下信息可帮助我们更好地了解您的需求（选填）
-    </p>
-
-    <div className="grid grid-cols-2 gap-4">
-      <div>
-        <label className="block text-sm font-medium text-[#1F2329] mb-1.5">邮箱</label>
-        <input
-          {...register('email', {
-            pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: '请输入有效邮箱' },
-          })}
-          type="email"
-          placeholder="您的邮箱"
-          className={`w-full px-4 py-2.5 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#0052D9]/20 ${
-            errors.email ? 'border-red-300' : 'border-slate-200'
-          }`}
-        />
-        {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email.message}</p>}
-      </div>
-      <div>
-        <label className="block text-sm font-medium text-[#1F2329] mb-1.5">您的角色</label>
-        <select {...register('role')} className="w-full px-4 py-2.5 border border-slate-200 rounded-lg text-sm bg-white">
-          <option value="">请选择</option>
-          {ROLE_OPTIONS.map((opt) => (
-            <option key={opt.value} value={opt.value}>
-              {opt.label}
-            </option>
-          ))}
-        </select>
-      </div>
-    </div>
-
-    <div>
-      <label className="block text-sm font-medium text-[#1F2329] mb-1.5">当前使用的系统</label>
-      <select {...register('currentSystem')} className="w-full px-4 py-2.5 border border-slate-200 rounded-lg text-sm bg-white">
-        <option value="">请选择</option>
-        {SYSTEM_OPTIONS.map((opt) => (
-          <option key={opt.value} value={opt.value}>
-            {opt.label}
-          </option>
-        ))}
-      </select>
-    </div>
-
-    <div>
-      <label className="block text-sm font-medium text-[#1F2329] mb-1.5">备注</label>
-      <textarea
-        {...register('message')}
-        rows={2}
-        placeholder="请简要描述您的需求"
-        className="w-full px-4 py-2.5 border border-slate-200 rounded-lg text-sm resize-none"
-      />
-    </div>
-
-    {error && <div className="p-3 bg-red-50 text-red-600 text-sm rounded-lg">{error}</div>}
-
-    <div className="flex gap-3">
-      <button
-        type="button"
-        onClick={onBack}
-        className="px-6 py-3 border border-slate-200 text-slate-600 rounded-lg hover:bg-slate-50"
-      >
-        返回
-      </button>
-      <button
-        type="submit"
-        disabled={isLoading}
-        className="flex-1 py-3 bg-[#E60012] hover:bg-red-700 text-white font-bold rounded-lg transition-colors flex items-center justify-center gap-2"
-      >
-        {isLoading ? <Loader2 className="w-5 h-5 animate-spin" /> : submitLabel}
-      </button>
-    </div>
-  </motion.div>
-)
-
-// 成功态 - 销售接管设计
-const SuccessState: React.FC<{ onAddMore: () => void; onClose: () => void }> = ({ onAddMore, onClose }) => (
+const SuccessState: React.FC<{ onClose: () => void }> = ({ onClose }) => (
   <div className="text-center py-8">
     <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
       <CheckCircle2 className="w-8 h-8 text-green-600" />
@@ -274,25 +187,22 @@ const SuccessState: React.FC<{ onAddMore: () => void; onClose: () => void }> = (
     </p>
 
     <div className="bg-slate-50 rounded-xl p-4 mb-6 text-left">
-      <p className="text-sm font-medium text-[#1F2329] mb-3">接下来您可以：</p>
+      <p className="text-sm font-medium text-[#1F2329] mb-3">等待期间您可以：</p>
       <ul className="space-y-2 text-sm text-slate-600">
         <li className="flex items-center gap-2">
           <CheckCircle2 className="w-4 h-4 text-green-500" />
-          <Link href="/cases" className="hover:text-[#0052D9]">查看同行业成功案例</Link>
+          <Link href="/cases" className="hover:text-[#0052D9]">
+            查看同行业成功案例
+          </Link>
         </li>
         <li className="flex items-center gap-2">
           <CheckCircle2 className="w-4 h-4 text-green-500" />
-          <Link href="/solution" className="hover:text-[#0052D9]">了解详细的解决方案</Link>
+          <Link href="/solution" className="hover:text-[#0052D9]">
+            了解详细的解决方案
+          </Link>
         </li>
       </ul>
     </div>
-
-    <button
-      onClick={onAddMore}
-      className="text-sm text-[#0052D9] hover:underline mb-6"
-    >
-      补充更多信息可提高响应效率
-    </button>
 
     <button onClick={onClose} className="w-full py-3 bg-[#0052D9] text-white rounded-lg font-medium hover:bg-blue-700">
       关闭

@@ -5,7 +5,7 @@ import { X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { createPortal } from 'react-dom'
 import { useAttribution } from '@/providers/Attribution'
-import { TwoStepLeadForm } from '@/components/TwoStepLeadForm'
+import { LeadForm } from '@/components/TwoStepLeadForm'
 import { getClientSideURL } from '@/utilities/getURL'
 
 interface DemoRequestModalProps {
@@ -180,7 +180,7 @@ export const DemoRequestModal: React.FC<DemoRequestModalProps> = ({
 
                                 {/* Content */}
                                 <div className="p-6">
-                                    <TwoStepLeadForm onSubmit={onSubmit} source={sourceProp} submitLabel={submitLabel} />
+                                    <LeadForm onSubmit={onSubmit} source={sourceProp} submitLabel={submitLabel} />
                                 </div>
                             </motion.div>
                         </motion.div>

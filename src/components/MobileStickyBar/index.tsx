@@ -60,6 +60,9 @@ export const MobileStickyBar: React.FC<{ contactData?: Contact }> = React.memo((
             <DemoRequestModal
                 isOpen={isDemoModalOpen}
                 onClose={handleCloseDemo}
+                title="预约专家评估"
+                subtitle="顾问将在 1 个工作日内与您联系，先沟通现状再谈方案"
+                submitLabel="提交预约"
             />
         </>
     )
