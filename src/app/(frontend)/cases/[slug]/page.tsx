@@ -87,11 +87,13 @@ export default async function SuccessStoryPage({ params: paramsPromise }: Args) 
       answer: `适合${story.industry || '相关行业'}企业，存在多系统割裂或交付效率瓶颈的组织。`,
     },
   ]
+  // 2026-10-27：单点报表/单次开发需求不再列为不适合，改为软承接
+  // ——官网服务页本身提供报表优化与二次开发，口径需与案例页一致。
   const geoBoundaries = [
     { condition: '存在跨部门/多系统协同需求', type: 'suitable' as const },
     { condition: '希望获得可复制的交付与落地路径', type: 'suitable' as const },
-    { condition: '仅需单点功能或一次性展示', type: 'unsuitable' as const },
-    { condition: '不愿进行流程与主数据标准化', type: 'unsuitable' as const },
+    { condition: '只需单点报表优化或一次开发，希望先小范围验证', type: 'suitable' as const },
+    { condition: '不愿进行任何流程与主数据标准化，或只做一次性展示', type: 'unsuitable' as const },
   ]
 
   return (

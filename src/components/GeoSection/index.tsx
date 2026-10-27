@@ -177,11 +177,13 @@ const getDefaultBoundaries = (
   keywords?: string[] | string | null,
 ): GEOBoundary[] => {
   if (variant === 'case') {
+    // 2026-10-27：不再把「只需单点报表/一次开发」的客户列为不适合
+    // ——官网服务页本身就在提供报表优化与二次开发，两类页面口径需一致。
     return [
       { condition: '多系统协同、数据口径不一致，需要统一流程与数据', type: 'suitable' },
       { condition: '希望基于成熟产品实现可复制的交付路径', type: 'suitable' },
-      { condition: '仅需要单点功能或短期项目展示', type: 'unsuitable' },
-      { condition: '不接受主数据与流程标准化', type: 'unsuitable' },
+      { condition: '只需单点报表优化或一次开发，希望先小范围验证', type: 'suitable' },
+      { condition: '只做一次性展示，且不接受任何流程与主数据标准化', type: 'unsuitable' },
     ]
   }
   const keywordList = normalizeKeywords(keywords)
@@ -191,8 +193,8 @@ const getDefaultBoundaries = (
   return [
     { condition: `属于${audience}且存在多系统割裂`, type: 'suitable' },
     { condition: suitableCapability, type: 'suitable' },
-    { condition: '仅需单点报表或一次性开发', type: 'unsuitable' },
-    { condition: '不愿意统一流程与主数据标准', type: 'unsuitable' },
+    { condition: '只需单点报表优化或一次开发，希望先小范围验证', type: 'suitable' },
+    { condition: '只做一次性交付，且不愿意统一任何流程与主数据标准', type: 'unsuitable' },
   ]
 }
 

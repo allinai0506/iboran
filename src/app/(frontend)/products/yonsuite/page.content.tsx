@@ -32,32 +32,17 @@ export const YonsuiteContent: React.FC = () => {
       return
     }
 
-    const remarkParts: string[] = []
-    const city = (formData.get('city') || '').toString().trim()
-    if (city) remarkParts.push(`所在城市: ${city}`)
-    const industry = (formData.get('industry') || '').toString().trim()
-    if (industry) remarkParts.push(`所属行业: ${industry}`)
-    const companySize = (formData.get('company_size') || '').toString().trim()
-    if (companySize) remarkParts.push(`企业规模: ${companySize}`)
-    const launchTime = (formData.get('launch_time') || '').toString().trim()
-    if (launchTime) remarkParts.push(`计划上线: ${launchTime}`)
-    const problem = (formData.get('problem') || '').toString().trim()
-    if (problem) remarkParts.push(`当前问题: ${problem}`)
-    const description = (formData.get('description') || '').toString().trim()
-    if (description) remarkParts.push(`需求说明: ${description}`)
-    const title = (formData.get('title') || '').toString().trim()
-    if (title) remarkParts.push(`联系人职位: ${title}`)
-
-    const hasYonyou = (formData.get('has_yonyou') || '').toString().trim()
-    const currentSystemParts = [hasYonyou, (formData.get('current_system') || '').toString().trim()].filter(Boolean)
+    // 2026-10-27 精简：表单由 12 项（5 必填）改为 5 项（3 必填）。
+    // 仅保留两个选填结构化字段，后端会写入线索 notes：当前系统 / 关注服务。
+    const currentSystem = (formData.get('current_system') || '').toString().trim()
+    const focusScene = (formData.get('focus_scene') || '').toString().trim()
 
     const data = {
       name: contact,
       phone,
       company,
-      currentSystem: currentSystemParts.join('；') || undefined,
-      interest: (formData.get('focus_scene') || '').toString().trim() || undefined,
-      remark: remarkParts.join('\n'),
+      currentSystem: currentSystem || undefined,
+      interest: focusScene || undefined,
       source: '用友YonSuite',
       sourcePageUrl: typeof window !== 'undefined' ? window.location.href : '',
       utmData: attribution
@@ -501,74 +486,36 @@ export const YonsuiteContent: React.FC = () => {
           <h3>提交咨询需求</h3>
           <div className="field-grid">
             <label><span>公司名称 <b>*</b></span><input name="company" type="text" autoComplete="organization" required /></label>
-            <label><span>所在城市 <b>*</b></span><input name="city" type="text" autoComplete="address-level2" required /></label>
-          </div>
-          <div className="field-grid">
-            <label>
-              <span>行业 <b>*</b></span>
-              <select name="industry" required>
-                <option value="">请选择</option>
-                <option>制造业</option>
-                <option>现代服务业</option>
-                <option>医药与医疗</option>
-                <option>消费品</option>
-                <option>IP运营</option>
-                <option>新能源</option>
-                <option>新材料</option>
-                <option>芯片研发</option>
-                <option>跨境与全球化</option>
-                <option>其他</option>
-              </select>
-            </label>
             <label><span>联系人 <b>*</b></span><input name="contact" type="text" autoComplete="name" required /></label>
           </div>
           <div className="field-grid">
-            <label><span>职位</span><input name="title" type="text" autoComplete="organization-title" /></label>
-            <label><span>手机 <b>*</b></span><input name="phone" type="tel" autoComplete="tel" required /></label>
-          </div>
-          <div className="field-grid">
+            <label><span>手机 <b>*</b></span><input name="phone" type="tel" inputMode="numeric" autoComplete="tel" required /></label>
             <label>
-              <span>企业规模</span>
-              <select name="company_size">
+              <span>当前使用的系统</span>
+              <select name="current_system" defaultValue="">
                 <option value="">请选择</option>
-                <option>50人以下</option>
-                <option>50-200人</option>
-                <option>200-500人</option>
-                <option>500-1000人</option>
-                <option>1000人以上</option>
-              </select>
-            </label>
-            <label><span>当前系统</span><input name="current_system" type="text" placeholder="ERP / OA / CRM / MES / WMS / 多套系统" /></label>
-          </div>
-          <div className="field-grid">
-            <label><span>关注场景</span><input name="focus_scene" type="text" placeholder="业财一体化 / 制造 / 采购 / ChatBI / AI智能体" /></label>
-            <label>
-              <span>是否已有用友产品</span>
-              <select name="has_yonyou">
-                <option value="">请选择</option>
-                <option>已有YonSuite</option>
-                <option>已有U8 / U9 / NC / 其他用友产品</option>
-                <option>暂未使用用友产品</option>
-                <option>不确定</option>
+                <option>暂无系统</option>
+                <option>用友 U8 / U9 / NC</option>
+                <option>用友其他产品</option>
+                <option>金蝶</option>
+                <option>SAP / Oracle</option>
+                <option>其他</option>
               </select>
             </label>
           </div>
           <label>
-            <span>计划上线时间</span>
-            <select name="launch_time">
+            <span>关注场景</span>
+            <select name="focus_scene" defaultValue="">
               <option value="">请选择</option>
-              <option>1个月内评估</option>
-              <option>3个月内启动</option>
-              <option>6个月内上线</option>
-              <option>今年内规划</option>
-              <option>暂不确定</option>
+              <option>业财一体化</option>
+              <option>制造</option>
+              <option>采购</option>
+              <option>ChatBI</option>
+              <option>AI 智能体</option>
+              <option>其他</option>
             </select>
           </label>
-          <label>
-            <span>需要解决的问题</span>
-            <textarea name="problem" rows={4} placeholder="例如：业财对账慢、库存不准、采购寻源不规范、项目毛利看不清、希望试点ChatBI或AI智能体"></textarea>
-          </label>
-          <p className="form-hint" role="status" aria-live="polite">提交后，泊冉顾问将结合行业、企业规模、当前系统和关注场景，与您沟通YonSuite试点和实施路径。</p>
+          <p className="form-hint" role="status" aria-live="polite">提交后，泊冉顾问将结合您的当前系统和关注场景与您沟通YonSuite试点与实施路径。</p>
           <button className="modal-submit" type="submit">
             预约YonSuite顾问咨询
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12.2l-5.1-5.1L14 5l8 8-8 8-1.9-1.9 5.1-5.1H5v-2Z" /></svg>
