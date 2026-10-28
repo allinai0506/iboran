@@ -20,33 +20,15 @@ export const ETOManufacturingYonSuiteContent: React.FC = () => {
       return
     }
 
-    const painPoints = Array.from(formData.getAll('pain_point'))
-    const industry = String(formData.get('industry') || '')
-    const companySize = String(formData.get('company_size') || '')
-    const role = String(formData.get('role') || '')
     const erpStatus = String(formData.get('erp_status') || '')
-    const systemStatus = String(formData.get('system_status') || '')
-    const launchTime = String(formData.get('launch_time') || '')
     const remarkText = String(formData.get('remark') || '')
-
-    const structured = [
-      industry && `所在行业: ${industry}`,
-      companySize && `企业规模: ${companySize}`,
-      role && `角色: ${role}`,
-      erpStatus && `当前ERP: ${erpStatus}`,
-      systemStatus && `现有系统: ${systemStatus}`,
-      launchTime && `启动时间: ${launchTime}`,
-    ].filter(Boolean).join('\n')
-    const remark = [structured, remarkText].filter(Boolean).join('\n')
 
     const data = {
       name: formData.get('name'),
       phone,
       company: formData.get('company'),
-      customer_type: role,
       current_system: erpStatus,
-      interest: painPoints,
-      remark,
+      remark: remarkText,
       source: '研发型定制制造解决方案',
       sourcePath: '/solution/industry/manufacturing-eto-yonsuite',
       sourcePageUrl: typeof window !== 'undefined' ? window.location.href : '',
@@ -489,65 +471,7 @@ export const ETOManufacturingYonSuiteContent: React.FC = () => {
             <label><span>手机号 <b>*</b></span><input name="phone" type="tel" autoComplete="tel" inputMode="tel" required /></label>
           </div>
           <div className={styles.fieldGrid}>
-            <label><span>公司名称</span><input name="company" type="text" autoComplete="organization" /></label>
-            <label>
-              <span>所在行业</span>
-              <select name="industry">
-                <option value="">请选择</option>
-                <option>科研仪器</option>
-                <option>检测设备</option>
-                <option>专用设备</option>
-                <option>机器人与自动化</option>
-                <option>医疗设备</option>
-                <option>实验室设备</option>
-                <option>非标设备</option>
-                <option>系统集成类设备企业</option>
-                <option>其他研发型定制制造</option>
-              </select>
-            </label>
-          </div>
-          <div className={styles.fieldGrid}>
-            <label>
-              <span>企业规模</span>
-              <select name="company_size">
-                <option value="">请选择</option>
-                <option>100人以下</option>
-                <option>100-500人</option>
-                <option>500-1000人</option>
-                <option>1000人以上</option>
-                <option>多组织/多工厂</option>
-              </select>
-            </label>
-            <label>
-              <span>您的角色</span>
-              <select name="role">
-                <option value="">请选择</option>
-                <option>老板 / 总经理</option>
-                <option>CFO / 财务负责人</option>
-                <option>CIO / 信息化负责人</option>
-                <option>销售 / 方案负责人</option>
-                <option>研发负责人</option>
-                <option>采购 / 供应链负责人</option>
-                <option>项目负责人</option>
-                <option>售后负责人</option>
-                <option>其他</option>
-              </select>
-            </label>
-          </div>
-          <fieldset className={styles.issueField}>
-            <legend>当前主要痛点</legend>
-            <label><input type="checkbox" name="pain_point" value="方案报价" /><span>方案报价</span></label>
-            <label><input type="checkbox" name="pain_point" value="研发BOM/项目BOM" /><span>研发BOM/项目BOM</span></label>
-            <label><input type="checkbox" name="pain_point" value="外协采购" /><span>外协采购</span></label>
-            <label><input type="checkbox" name="pain_point" value="供应商交期" /><span>供应商交期</span></label>
-            <label><input type="checkbox" name="pain_point" value="项目计划" /><span>项目计划</span></label>
-            <label><input type="checkbox" name="pain_point" value="项目成本" /><span>项目成本</span></label>
-            <label><input type="checkbox" name="pain_point" value="现场安装" /><span>现场安装</span></label>
-            <label><input type="checkbox" name="pain_point" value="开票回款" /><span>开票回款</span></label>
-            <label><input type="checkbox" name="pain_point" value="售后维保" /><span>售后维保</span></label>
-            <label><input type="checkbox" name="pain_point" value="AI经营分析" /><span>AI经营分析</span></label>
-          </fieldset>
-          <div className={styles.fieldGrid}>
+            <label><span>公司名称 <b>*</b></span><input name="company" type="text" autoComplete="organization" required /></label>
             <label>
               <span>是否已有ERP</span>
               <select name="erp_status">
@@ -561,30 +485,7 @@ export const ETOManufacturingYonSuiteContent: React.FC = () => {
                 <option>其他</option>
               </select>
             </label>
-            <label>
-              <span>是否已有PLM/OA/CRM/售后系统</span>
-              <select name="system_status">
-                <option value="">请选择</option>
-                <option>已有PLM</option>
-                <option>已有OA/BPM</option>
-                <option>已有CRM</option>
-                <option>已有售后服务系统</option>
-                <option>已有多个系统</option>
-                <option>暂未建设</option>
-                <option>不确定</option>
-              </select>
-            </label>
           </div>
-          <label>
-            <span>计划启动时间</span>
-            <select name="launch_time">
-              <option value="">请选择</option>
-              <option>1个月内</option>
-              <option>3个月内</option>
-              <option>半年内</option>
-              <option>仅调研</option>
-            </select>
-          </label>
           <label>
             <span>备注</span>
             <textarea name="remark" rows={4} placeholder="例如：目前方案报价和外协采购靠Excel跟进，想先评估AI报价草稿、研发BOM协同、供应商交期和项目毛利分析" />

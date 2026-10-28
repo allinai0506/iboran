@@ -71,34 +71,15 @@ export const BipContent: React.FC = () => {
       return
     }
 
-    const currentSystemParts = [
-      (formData.get('current_system') || '').toString().trim(),
-      (formData.get('upgrade_direction') || '').toString().trim(),
-    ].filter(Boolean)
-
-    const focusScene = (formData.get('focus_scene') || '').toString().trim()
-
-    const remarkParts: string[] = []
-    const companySize = (formData.get('company_size') || '').toString().trim()
-    if (companySize) remarkParts.push(`企业规模: ${companySize}`)
-    const industry = (formData.get('industry') || '').toString().trim()
-    if (industry) remarkParts.push(`所属行业: ${industry}`)
-    const localization = (formData.get('localization') || '').toString().trim()
-    if (localization) remarkParts.push(`是否涉及信创国产替代: ${localization}`)
-    const aiInterest = (formData.get('ai_interest') || '').toString().trim()
-    if (aiInterest) remarkParts.push(`是否关注YonGPT/智友/DataAgent/智能体: ${aiInterest}`)
-    const contactTime = (formData.get('contact_time') || '').toString().trim()
-    if (contactTime) remarkParts.push(`期望沟通时间: ${contactTime}`)
+    const currentSystem = (formData.get('current_system') || '').toString().trim()
     const remark = (formData.get('remark') || '').toString().trim()
-    if (remark) remarkParts.push(`补充说明: ${remark}`)
 
     const data = {
       name: contact,
       phone,
       company,
-      currentSystem: currentSystemParts.join('；') || undefined,
-      interest: focusScene ? [focusScene] : undefined,
-      remark: remarkParts.join('\n') || undefined,
+      currentSystem: currentSystem || undefined,
+      remark: remark || undefined,
       source: '用友BIP商业创新平台',
       sourcePageUrl: typeof window !== 'undefined' ? window.location.href : '',
       utmData: attribution
@@ -558,64 +539,10 @@ export const BipContent: React.FC = () => {
             <label><span>手机 / 微信 <b>*</b></span><input name="phone_wechat" type="text" autoComplete="tel" required /></label>
             <label><span>当前系统概况</span><input name="current_system" type="text" placeholder="例如：NC / SAP / 金蝶 / MES / 多套自研系统" /></label>
           </div>
-          <div className="field-grid">
-            <label>
-              <span>计划方向</span>
-              <select name="upgrade_direction">
-                <option value="">请选择</option>
-                <option>新建BIP</option>
-                <option>旧系统升级</option>
-                <option>迁移与集成</option>
-                <option>信创国产替代</option>
-                <option>企业AI落地</option>
-                <option>还在评估</option>
-              </select>
-            </label>
-            <label>
-              <span>关注场景</span>
-              <select name="focus_scene">
-                <option value="">请选择</option>
-                <option>财务共享 / 预算 / 资金</option>
-                <option>供应链 / 采购 / 库存</option>
-                <option>制造 / 成本 / 质量</option>
-                <option>项目 / 资产 / 人力</option>
-                <option>经营分析 / 企业AI</option>
-                <option>集团整体建设</option>
-              </select>
-            </label>
-          </div>
           <label>
             <span>补充说明</span>
             <textarea name="remark" rows={3} placeholder="例如：当前NC与MES/WMS并存，想评估财务共享、采购、库存预警和信创替代路径。"></textarea>
           </label>
-          <details className="optional-fields">
-            <summary>补充企业规模、行业、信创与AI关注点</summary>
-            <div className="field-grid">
-              <label><span>企业规模</span><input name="company_size" type="text" placeholder="例如：500人 / 多法人集团 / 央国企二级单位" /></label>
-              <label><span>所属行业</span><input name="industry" type="text" placeholder="制造 / 消费品 / 医药流通 / 服务项目 / 央国企" /></label>
-            </div>
-            <div className="field-grid">
-              <label>
-                <span>是否涉及信创国产替代</span>
-                <select name="localization">
-                  <option value="">请选择</option>
-                  <option>是</option>
-                  <option>否</option>
-                  <option>待评估</option>
-                </select>
-              </label>
-              <label>
-                <span>是否关注YonGPT / 智友 / DataAgent / 智能体</span>
-                <select name="ai_interest">
-                  <option value="">请选择</option>
-                  <option>是</option>
-                  <option>否</option>
-                  <option>待评估</option>
-                </select>
-              </label>
-            </div>
-            <label><span>期望沟通时间</span><input name="contact_time" type="text" placeholder="例如：本周工作日 / 月底前 / 先电话沟通" /></label>
-          </details>
           <p className="form-hint" role="status" aria-live="polite">提交后，泊冉顾问将根据您的系统现状和业务场景，初步判断适合新建、迁移、集成、并行切换还是分阶段替换。</p>
           <button className="modal-submit" type="submit">
             提交BIP建设需求

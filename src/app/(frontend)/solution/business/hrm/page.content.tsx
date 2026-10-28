@@ -60,35 +60,15 @@ export const HrContent: React.FC = () => {
       return
     }
 
-    const focusScenarios = Array.from(formData.getAll('focusScenarios')).map(String)
-    if (focusScenarios.length === 0) {
-      alert('请选择当前最关注的HR场景')
-      return
-    }
-    const multiScope = Array.from(formData.getAll('multiScope')).map(String)
-
-    const remarkParts: string[] = []
     const message = (formData.get('message') || '').toString().trim()
-    if (message) remarkParts.push(`补充说明: ${message}`)
-    const industry = (formData.get('industry') || '').toString().trim()
-    if (industry) remarkParts.push(`所属行业: ${industry}`)
-    const employeeScale = (formData.get('employeeScale') || '').toString().trim()
-    if (employeeScale) remarkParts.push(`员工规模: ${employeeScale}`)
-    if (multiScope.length) remarkParts.push(`组织形态: ${multiScope.join('/')}`)
-    const email = (formData.get('email') || '').toString().trim()
-    if (email) remarkParts.push(`邮箱: ${email}`)
-
     const hasHrSystem = (formData.get('hasHrSystem') || '').toString().trim()
-    const hasAttendanceOrCollab = (formData.get('hasAttendanceOrCollab') || '').toString().trim()
-    const currentSystemParts = [hasHrSystem, hasAttendanceOrCollab].filter(Boolean)
 
     const data = {
       name: (formData.get('name') || '').toString().trim(),
       phone: (formData.get('phone') || '').toString().trim(),
       company: (formData.get('company') || '').toString().trim(),
-      currentSystem: currentSystemParts.join('；') || undefined,
-      interest: focusScenarios,
-      remark: remarkParts.join('\n'),
+      currentSystem: hasHrSystem || undefined,
+      remark: message || undefined,
       source: '成长型企业人力资源数智化管理方案',
       sourcePageUrl: typeof window !== 'undefined' ? window.location.href : '',
       utmData: attribution
@@ -561,69 +541,18 @@ export const HrContent: React.FC = () => {
             <label><span>姓名 <b>*</b></span><input name="name" type="text" autoComplete="name" required /></label>
             <label><span>手机号 <b>*</b></span><input name="phone" type="tel" autoComplete="tel" inputMode="tel" required /></label>
           </div>
-          <div className="field-grid">
-            <label><span>公司名称 <b>*</b></span><input name="company" type="text" autoComplete="organization" required /></label>
-            <label><span>邮箱</span><input name="email" type="email" autoComplete="email" /></label>
-          </div>
-          <div className="field-grid">
-            <label><span>所属行业</span><input name="industry" type="text" placeholder="例如：制造、零售、服务、医药、互联网" /></label>
-            <label>
-              <span>员工规模 <b>*</b></span>
-              <select name="employeeScale" required>
-                <option value="">请选择</option>
-                <option>50人以下</option>
-                <option>50-100人</option>
-                <option>100-300人</option>
-                <option>300-1000人</option>
-                <option>1000人以上</option>
-              </select>
-            </label>
-          </div>
+          <label><span>公司名称 <b>*</b></span><input name="company" type="text" autoComplete="organization" required /></label>
 
-          <fieldset className="choice-field compact-choice">
-            <legend>是否多组织/多门店/多工厂/多项目</legend>
-            <label><input type="checkbox" name="multiScope" value="多组织" /><span>多组织</span></label>
-            <label><input type="checkbox" name="multiScope" value="多门店" /><span>多门店</span></label>
-            <label><input type="checkbox" name="multiScope" value="多工厂" /><span>多工厂</span></label>
-            <label><input type="checkbox" name="multiScope" value="多项目" /><span>多项目</span></label>
-          </fieldset>
-
-          <fieldset className="choice-field focus-choice" data-required-group="focusScenarios">
-            <legend>当前最关注的HR场景 <b>*</b></legend>
-            <label><input type="checkbox" name="focusScenarios" value="员工自助" /><span>员工自助</span></label>
-            <label><input type="checkbox" name="focusScenarios" value="移动审批" /><span>移动审批</span></label>
-            <label><input type="checkbox" name="focusScenarios" value="入转调离" /><span>入转调离</span></label>
-            <label><input type="checkbox" name="focusScenarios" value="考勤假勤" /><span>考勤假勤</span></label>
-            <label><input type="checkbox" name="focusScenarios" value="排班调班" /><span>排班调班</span></label>
-            <label><input type="checkbox" name="focusScenarios" value="薪酬核对" /><span>薪酬核对</span></label>
-            <label><input type="checkbox" name="focusScenarios" value="绩效反馈" /><span>绩效反馈</span></label>
-            <label><input type="checkbox" name="focusScenarios" value="招聘协同" /><span>招聘协同</span></label>
-            <label><input type="checkbox" name="focusScenarios" value="人效分析" /><span>人效分析</span></label>
-            <label><input type="checkbox" name="focusScenarios" value="系统集成" /><span>系统集成</span></label>
-          </fieldset>
-
-          <div className="field-grid">
-            <label>
-              <span>当前是否已有HR系统</span>
-              <select name="hasHrSystem">
-                <option value="">请选择</option>
-                <option>已有，使用较稳定</option>
-                <option>已有，但大量依赖表格补充</option>
-                <option>暂未建设，主要依赖表格和线下流程</option>
-                <option>不确定，需要梳理</option>
-              </select>
-            </label>
-            <label>
-              <span>当前是否已有考勤或协同系统</span>
-              <select name="hasAttendanceOrCollab">
-                <option value="">请选择</option>
-                <option>已有考勤和协同入口</option>
-                <option>已有考勤，协同入口不统一</option>
-                <option>已有协同入口，考勤仍需整合</option>
-                <option>暂未建设或不确定</option>
-              </select>
-            </label>
-          </div>
+          <label>
+            <span>当前是否已有HR系统</span>
+            <select name="hasHrSystem">
+              <option value="">请选择</option>
+              <option>已有，使用较稳定</option>
+              <option>已有，但大量依赖表格补充</option>
+              <option>暂未建设，主要依赖表格和线下流程</option>
+              <option>不确定，需要梳理</option>
+            </select>
+          </label>
 
           <label>
             <span>希望沟通的问题</span>

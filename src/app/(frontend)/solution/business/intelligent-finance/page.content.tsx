@@ -59,28 +59,15 @@ export const IntelligentFinanceContent: React.FC = () => {
       return
     }
 
-    const interestScenarios = Array.from(formData.getAll('interestScenarios')).map(String)
-    const financeNeeds = Array.from(formData.getAll('financeNeeds')).map(String)
-
-    const remarkParts: string[] = []
     const message = (formData.get('message') || '').toString().trim()
-    if (message) remarkParts.push(`补充说明: ${message}`)
-    const companySize = (formData.get('companySize') || '').toString().trim()
-    if (companySize) remarkParts.push(`企业规模: ${companySize}`)
-    const isMultiOrg = (formData.get('isMultiOrg') || '').toString().trim()
-    if (isMultiOrg) remarkParts.push(`是否多组织: ${isMultiOrg}`)
-    const hasOverseasEntity = (formData.get('hasOverseasEntity') || '').toString().trim()
-    if (hasOverseasEntity) remarkParts.push(`是否涉及海外主体: ${hasOverseasEntity}`)
-    if (financeNeeds.length) remarkParts.push(`专项需求: ${financeNeeds.join(', ')}`)
+    const currentSystem = (formData.get('currentSystem') || '').toString().trim()
 
     const data = {
       name: (formData.get('name') || '').toString().trim(),
       phone: (formData.get('phone') || '').toString().trim(),
       company: (formData.get('company') || '').toString().trim(),
-      role: (formData.get('role') || '').toString().trim(),
-      currentSystem: (formData.get('currentSystem') || '').toString().trim(),
-      interest: interestScenarios,
-      remark: remarkParts.join('\n'),
+      currentSystem: currentSystem || undefined,
+      remark: message || undefined,
       source: '智能财务解决方案',
       sourcePageUrl: typeof window !== 'undefined' ? window.location.href : '',
       utmData: attribution
@@ -429,61 +416,8 @@ export const IntelligentFinanceContent: React.FC = () => {
           </div>
           <div className="field-grid">
             <label><span>公司名称 <b>*</b></span><input name="company" type="text" autoComplete="organization" required /></label>
-            <label><span>职位</span><input name="role" type="text" placeholder="例如：CFO / 财务负责人 / CIO" /></label>
-          </div>
-          <div className="field-grid">
-            <label>
-              <span>企业规模</span>
-              <select name="companySize">
-                <option value="">请选择</option>
-                <option>100人以下</option>
-                <option>100-500人</option>
-                <option>500-2000人</option>
-                <option>2000人以上</option>
-                <option>集团型 / 多法人</option>
-              </select>
-            </label>
             <label><span>当前使用系统</span><input name="currentSystem" type="text" placeholder="例如：YonSuite / YonBIP / U8 / OA / 多套业务系统" /></label>
           </div>
-
-          <fieldset className="choice-field" data-required-group="interestScenarios">
-            <legend>关注场景 <b>*</b></legend>
-            <label><input type="checkbox" name="interestScenarios" value="业财融合与会计事项中台" /><span>业财融合</span></label>
-            <label><input type="checkbox" name="interestScenarios" value="智能核算" /><span>智能核算</span></label>
-            <label><input type="checkbox" name="interestScenarios" value="全面预算" /><span>全面预算</span></label>
-            <label><input type="checkbox" name="interestScenarios" value="合并报表" /><span>合并报表</span></label>
-            <label><input type="checkbox" name="interestScenarios" value="全球多账簿" /><span>全球多账簿</span></label>
-            <label><input type="checkbox" name="interestScenarios" value="AI财务分析" /><span>AI 问数</span></label>
-          </fieldset>
-
-          <div className="field-grid">
-            <label>
-              <span>是否多组织</span>
-              <select name="isMultiOrg">
-                <option value="">请选择</option>
-                <option>是，多法人 / 多门店 / 多项目</option>
-                <option>否，单组织为主</option>
-                <option>暂不确定</option>
-              </select>
-            </label>
-            <label>
-              <span>是否涉及海外主体</span>
-              <select name="hasOverseasEntity">
-                <option value="">请选择</option>
-                <option>是，已有海外主体</option>
-                <option>计划出海</option>
-                <option>暂不涉及</option>
-              </select>
-            </label>
-          </div>
-
-          <fieldset className="choice-field compact-choice">
-            <legend>是否需要预算 / 合并报表 / 多账簿</legend>
-            <label><input type="checkbox" name="financeNeeds" value="预算管理" /><span>预算管理</span></label>
-            <label><input type="checkbox" name="financeNeeds" value="合并报表" /><span>合并报表</span></label>
-            <label><input type="checkbox" name="financeNeeds" value="全球多账簿" /><span>多账簿</span></label>
-            <label><input type="checkbox" name="financeNeeds" value="智能财资" /><span>智能财资</span></label>
-          </fieldset>
 
           <label>
             <span>补充说明</span>

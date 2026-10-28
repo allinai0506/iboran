@@ -8,7 +8,7 @@
  * 用户感知是"步骤太多"。现改为一屏填完：姓名 / 公司 / 手机 / 需求类型。
  *
  * 后端约束（/api/leads）：name、company、phone 必填，手机需满足 ^1[3-9]\d{9}$；
- * message/remark 会写入线索的「补充说明」，因此需求类型复用 message 字段传递。
+ * message/remark 会写入线索的「补充说明」，因此需求描述复用 message 字段传递。
  */
 
 import React, { useState } from 'react'
@@ -35,14 +35,6 @@ interface LeadFormData {
   source?: string
 }
 
-const INTENT_OPTIONS = [
-  '当前系统运维与优化',
-  '系统升级评估（U8 / NC 等）',
-  '新平台实施（YonSuite / BIP）',
-  '系统集成与二次开发',
-  '其他',
-]
-
 export const LeadForm: React.FC<LeadFormProps> = ({ onSubmit, source, submitLabel = '提交预约' }) => {
   const [isSuccess, setIsSuccess] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
@@ -58,8 +50,8 @@ export const LeadForm: React.FC<LeadFormProps> = ({ onSubmit, source, submitLabe
     setIsLoading(true)
     setError(null)
     try {
-      // 需求类型写入 message，后端会作为「补充说明」进入线索记录与通知邮件
-      const message = data.intent ? `需求类型：${data.intent}` : data.message
+      // 需求描述写入 message，后端会作为「补充说明」进入线索记录与通知邮件
+      const message = data.intent?.trim() ? data.intent.trim() : data.message
       await onSubmit({
         name: data.name,
         company: data.company,
@@ -139,22 +131,16 @@ export const LeadForm: React.FC<LeadFormProps> = ({ onSubmit, source, submitLabe
 
         <div>
           <label className="block text-sm font-medium text-[#1F2329] mb-1.5">
-            您想先解决什么 <span className="text-[#E60012]">*</span>
+            您想先解决什么 <span className="text-slate-400 text-xs">选填</span>
           </label>
-          <select
-            {...register('intent', { required: '请选择需求类型' })}
-            className={`w-full px-4 py-2.5 border rounded-lg text-base md:text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#0052D9]/20 ${
+          <textarea
+            {...register('intent')}
+            rows={2}
+            placeholder="例如：U8 报表优化、NC 升级评估、系统集成与二次开发等"
+            className={`w-full px-4 py-2.5 border rounded-lg text-base md:text-sm focus:outline-none focus:ring-2 focus:ring-[#0052D9]/20 resize-none ${
               errors.intent ? 'border-red-300' : 'border-slate-200'
             }`}
-          >
-            <option value="">请选择</option>
-            {INTENT_OPTIONS.map((opt) => (
-              <option key={opt} value={opt}>
-                {opt}
-              </option>
-            ))}
-          </select>
-          {errors.intent && <p className="mt-1 text-sm text-red-500">{errors.intent.message}</p>}
+          />
         </div>
 
         {error && <div className="p-3 bg-red-50 text-red-600 text-sm rounded-lg">{error}</div>}

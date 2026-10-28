@@ -24,10 +24,8 @@ export const ServicesContent: React.FC = () => {
       name: formData.get('name'),
       phone,
       company: formData.get('company'),
-      customer_type: formData.get('customer_type'),
       current_system: formData.get('current_system'),
       remark: formData.get('remark') || '',
-      interest: Array.from(formData.getAll('interest')),
       source: '服务体系总览',
       sourcePageUrl: typeof window !== 'undefined' ? window.location.href : '',
       utmData: attribution ? {
@@ -529,34 +527,17 @@ export const ServicesContent: React.FC = () => {
           </div>
           <div className={styles.fieldGrid}>
             <label><span>公司名称 <b>*</b></span><input name="company" type="text" autoComplete="organization" required /></label>
-            <label><span>客户类型</span>
-              <select name="customer_type">
+            <label><span>当前系统或计划系统</span>
+              <select name="current_system">
                 <option value="">请选择</option>
-                <option>中小型 / 成长型客户</option>
-                <option>大中型 / 集团型客户</option>
-                <option>不确定，需要评估</option>
+                <option>YonSuite</option>
+                <option>YonBIP</option>
+                <option>NC / NCC</option>
+                <option>其他 ERP / 业务系统</option>
+                <option>暂未确定</option>
               </select>
             </label>
           </div>
-          <label><span>当前系统或计划系统</span>
-            <select name="current_system">
-              <option value="">请选择</option>
-              <option>YonSuite</option>
-              <option>YonBIP</option>
-              <option>NC / NCC</option>
-              <option>其他 ERP / 业务系统</option>
-              <option>暂未确定</option>
-            </select>
-          </label>
-          <fieldset className={styles.issueField}>
-            <legend>关注服务</legend>
-            <label><input type="checkbox" name="interest" value="系统实施服务" /><span>系统实施服务</span></label>
-            <label><input type="checkbox" name="interest" value="集成与开发服务" /><span>集成与开发服务</span></label>
-            <label><input type="checkbox" name="interest" value="系统运维服务" /><span>系统运维服务</span></label>
-            <label><input type="checkbox" name="interest" value="迁移与工具服务" /><span>迁移与工具服务</span></label>
-            <label><input type="checkbox" name="interest" value="上海及长三角本地化保障" /><span>上海及长三角本地化保障</span></label>
-            <label><input type="checkbox" name="interest" value="AI 赋能服务" /><span>AI 赋能服务</span></label>
-          </fieldset>
           <label><span>补充说明</span><textarea name="remark" rows={4} placeholder="例如：计划 8 月上线 YonSuite，需要评估实施周期、接口范围和上海现场支持" /></label>
           <p className={styles.formHint}>提交后由泊冉顾问联系，不做无效打扰。</p>
           <button type="submit" className={styles.modalSubmit} data-track="form_submit">
