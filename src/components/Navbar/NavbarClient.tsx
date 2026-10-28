@@ -859,7 +859,7 @@ const NavbarMobileMenu = React.memo(function NavbarMobileMenu({
                     <div className="bg-slate-50 pb-2">
                       {mobileActiveDropdown.includes(item.label) && (
                         <>
-                          {item.label === '业务方案' && (
+                          {item.label === '解决方案' && (
                             <div className="max-h-[min(60vh,calc(100dvh-14rem))] overflow-y-auto overscroll-y-contain touch-pan-y">
                               {solutionByBusiness.map((category) => (
                                 <div key={category.name} className="pt-3 first:pt-2">
@@ -929,7 +929,7 @@ const NavbarMobileMenu = React.memo(function NavbarMobileMenu({
                               ))}
                             </div>
                           )}
-                          {item.label === '核心产品' && (
+                          {item.label === '产品' && (
                             <div className="max-h-[min(60vh,calc(100dvh-14rem))] overflow-y-auto overscroll-y-contain touch-pan-y">
                               {productCategories.map((category) => (
                                 <div key={category.name} className="pt-3 first:pt-2">
@@ -964,7 +964,7 @@ const NavbarMobileMenu = React.memo(function NavbarMobileMenu({
                               ))}
                             </div>
                           )}
-                          {item.label === '交付服务' && (
+                          {item.label === '实施服务' && (
                             <div className="max-h-[min(60vh,calc(100dvh-14rem))] overflow-y-auto overscroll-y-contain touch-pan-y">
                               {[
                                 { label: '服务总览', href: '/services', desc: '四大服务线闭环' },
