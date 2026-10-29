@@ -31,7 +31,7 @@ export default function ERPMigrationPage() {
   ]
 
   return (
-    <main className="min-h-screen pt-20">
+    <main className="min-h-screen">
       <GEOJsonLd
         title={metadata.title as string}
         description={metadata.description as string}
