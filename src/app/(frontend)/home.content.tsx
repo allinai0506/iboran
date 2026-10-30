@@ -99,7 +99,13 @@ export function HomeContent({ latestPosts, homeData }: HomeContentProps) {
         }),
       })
 
-      if (!res.ok) throw new Error('提交失败')
+      if (!res.ok) {
+        if (res.status === 429) {
+          const dupData = await res.json().catch(() => null)
+          throw new Error(dupData?.error || dupData?.message || '您刚刚提交过，请勿重复提交。')
+        }
+        throw new Error('提交失败，请稍后再试或致电 400-9955-161。')
+      }
       
       setHint({ msg: '已收到评估需求。泊冉顾问会结合当前系统和关注方向沟通下一步。', type: 'success' })
       trackEvent(eventName, {
@@ -111,8 +117,13 @@ export function HomeContent({ latestPosts, homeData }: HomeContentProps) {
       if (location === 'modal') {
         setTimeout(closeModal, 2000)
       }
-    } catch {
-      setHint({ msg: '提交失败，请稍后再试或致电 400-9955-161。', type: 'error' })
+    } catch (error) {
+      setHint({
+        msg: error instanceof Error && error.message
+          ? error.message
+          : '提交失败，请稍后再试或致电 400-9955-161。',
+        type: 'error',
+      })
     } finally {
       setLoading(false)
     }

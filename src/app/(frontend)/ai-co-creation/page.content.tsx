@@ -516,7 +516,13 @@ function DiagnosisSection() {
               : undefined,
           }),
         })
-        if (!res.ok) throw new Error('提交失败')
+        if (!res.ok) {
+          if (res.status === 429) {
+            const dupData = await res.json().catch(() => null)
+            throw new Error(dupData?.error || dupData?.message || '您刚刚提交过，请勿重复提交。')
+          }
+          throw new Error('提交失败，请稍后再试或致电 400-9955-161。')
+        }
         if (typeof window !== 'undefined' && window._agl) {
           window._agl.push(['track', ['success', { t: 3 }]])
         }
@@ -525,8 +531,13 @@ function DiagnosisSection() {
           type: 'success',
         })
         form.reset()
-      } catch {
-        setHint({ msg: '提交失败，请稍后再试或致电 400-9955-161。', type: 'error' })
+      } catch (error) {
+        setHint({
+          msg: error instanceof Error && error.message
+            ? error.message
+            : '提交失败，请稍后再试或致电 400-9955-161。',
+          type: 'error',
+        })
       } finally {
         setLoading(false)
       }

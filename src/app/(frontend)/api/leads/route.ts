@@ -87,9 +87,11 @@ export async function POST(req: Request) {
 
     // Reject if same phone submitted within 10 minutes
     if (hasRecentDuplicate) {
+      const duplicateMsg = '您刚刚提交过，我们已收到您的信息，请勿重复提交，服务顾问会尽快与您联系。'
       return NextResponse.json({
         success: false,
-        message: '请稍后再试，您刚刚提交过',
+        error: duplicateMsg,
+        message: duplicateMsg,
         retryAfter: 600, // seconds
       }, { status: 429 })
     }
